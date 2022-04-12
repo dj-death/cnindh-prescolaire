@@ -1,0 +1,220 @@
+[
+    {
+      "date_delegation": "2019-04-01T00:04:00.000+01:00",
+      "lotId": "fc3fe845-e0f7-4dc0-b0ab-819fa6bbd967",
+      "plan_actions": 2019,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Programme d'Urgence 2019  / Aménagement"
+    },
+    {
+      "date_delegation": "2019-04-01T00:04:00.000+01:00",
+      "lotId": "fc3fe845-e0f7-4dc0-b0ab-819fa6bbd967",
+      "plan_actions": 2019,
+      "nature_affectation": "Equipement ",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 2,
+      "libelle": "Programme d'Urgence 2019 / Equipement"
+    },
+    {
+      "date_delegation": "2019-04-01T00:04:00.000+01:00",
+      "lotId": "fc3fe845-e0f7-4dc0-b0ab-819fa6bbd967",
+      "plan_actions": 2019,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 24,
+      "tranche_no": 3,
+      "libelle": "Programme d'Urgence 2019 / Fonctionnement"
+    },
+    {
+      "date_delegation": "2020-03-01T00:03:00.000+01:00",
+      "lotId": "ef698230-9874-4d1e-8607-b3dcbb9b5125",
+      "plan_actions": 2019,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Rallonge de crédits de Création PA 2019"
+    },
+    {
+      "date_delegation": "2020-03-01T00:03:00.000+01:00",
+      "lotId": "ef698230-9874-4d1e-8607-b3dcbb9b5125",
+      "plan_actions": 2019,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 24,
+      "tranche_no": 1,
+      "libelle": "Rallonge des Crédits de Fonctionnement PA 2019"
+    },
+    {
+      "date_delegation": "2020-04-01T00:04:00.000+01:00",
+      "lotId": "eea35fc5-afd6-430b-80b1-b5d3e3ddfd48",
+      "plan_actions": 2020,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Construction PA 2020"
+    },
+    {
+      "date_delegation": "2020-09-01T00:09:00.000+01:00",
+      "lotId": "885a8895-8b83-40fa-9428-ef272d43b9f8",
+      "plan_actions": 2020,
+      "nature_affectation": "Equipement ",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 2,
+      "libelle": "Equipement PA 2020"
+    },
+    {
+      "date_delegation": "2020-09-01T00:09:00.000+01:00",
+      "lotId": "117d953a-9ccc-4ebe-a8eb-6bf1589dc4b4",
+      "plan_actions": 2020,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 6,
+      "tranche_no": 3,
+      "libelle": "ATFALOUNA 2020"
+    },
+    {
+      "date_delegation": "2020-10-01T00:10:00.000+01:00",
+      "lotId": "830810da-e97d-400c-b4a1-ab90971ed1b5",
+      "plan_actions": 2020,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Rallonge des Crédits de Construction PA 2020"
+    },
+    {
+      "date_delegation": "2021-04-01T00:04:00.000+01:00",
+      "lotId": "85a8d11f-12db-4c9a-b74a-e7de41c300aa",
+      "plan_actions": 2021,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Création PA 2021"
+    },
+    {
+      "date_delegation": "2021-08-01T00:08:00.000+01:00",
+      "lotId": "851300e8-8cd2-4e74-b178-cb5c8ae7ab7f",
+      "plan_actions": 2020,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 6,
+      "tranche_no": 3,
+      "libelle": "Tranche 1 des Crédits de Fonctionnement PA 2020"
+    },
+    {
+      "date_delegation": "2021-09-01T00:09:00.000+01:00",
+      "lotId": "638b4441-0006-4aa2-bc3a-7f10e5ea111f",
+      "plan_actions": 2019,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 12,
+      "tranche_no": 4,
+      "libelle": "Tranche 1 des Crédits de Fonctionnement de la 3ème année PA 2019"
+    },
+    {
+      "date_delegation": "2021-10-01T00:10:00.000+01:00",
+      "lotId": "b3dc0fc8-c735-4e6f-96b6-6b3661242407",
+      "plan_actions": 2021,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Rallonge des Crédits de Construction PA 2021"
+    },
+    {
+      "date_delegation": "2021-10-01T00:10:00.000+01:00",
+      "lotId": "b3dc0fc8-c735-4e6f-96b6-6b3661242407",
+      "plan_actions": 2021,
+      "nature_affectation": "Equipement ",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 2,
+      "libelle": "Equipement PA 2021"
+    },
+    {
+      "date_delegation": "2021-10-01T00:10:00.000+01:00",
+      "lotId": "b3dc0fc8-c735-4e6f-96b6-6b3661242407",
+      "plan_actions": 2021,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 6,
+      "tranche_no": 3,
+      "libelle": "Tranche 1 des Crédits de Fonctionnement PA 2021"
+    },
+    {
+      "date_delegation": "2021-10-01T00:10:00.000+01:00",
+      "lotId": "b3dc0fc8-c735-4e6f-96b6-6b3661242407",
+      "plan_actions": 2020,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 6,
+      "tranche_no": 3,
+      "libelle": "Tranche 2 des Crédits de Fonctionnement PA 2020"
+    },
+    {
+      "date_delegation": "2021-10-15T00:10:00.000+01:00",
+      "lotId": "768456d9-3e87-4415-9a43-1bf7231a02ef",
+      "plan_actions": 2022,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 0,
+      "libelle": "Etudes PA 2022"
+    },
+    {
+      "date_delegation": "2022-03-15T00:03:00.000+01:00",
+      "lotId": "e5c135bd-e762-4c41-a884-47cc05aa99c0",
+      "plan_actions": 2019,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 12,
+      "tranche_no": 4,
+      "libelle": "Tranche 2 des Crédits de Fonctionnement de la 3ème année PA 2019"
+    },
+    {
+      "date_delegation": "2022-03-15T00:03:00.000+01:00",
+      "lotId": "e5c135bd-e762-4c41-a884-47cc05aa99c0",
+      "plan_actions": 2019,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 12,
+      "tranche_no": 5,
+      "libelle": "Tranche 1 des Crédits de Fonctionnement de la 4ème année PA 2019"
+    },
+    {
+      "date_delegation": "2022-03-15T00:03:00.000+01:00",
+      "lotId": "e5c135bd-e762-4c41-a884-47cc05aa99c0",
+      "plan_actions": 2020,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 6,
+      "tranche_no": 4,
+      "libelle": "Tranche 2 des Crédits de Fonctionnement PA 2020"
+    },
+    {
+      "date_delegation": "2022-03-15T00:03:00.000+01:00",
+      "lotId": "e5c135bd-e762-4c41-a884-47cc05aa99c0",
+      "plan_actions": 2020,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 6,
+      "tranche_no": 4,
+      "libelle": "Tranche 3 des Crédits de Fonctionnement PA 2020"
+    },
+    {
+      "date_delegation": "2022-03-15T00:03:00.000+01:00",
+      "lotId": "e5c135bd-e762-4c41-a884-47cc05aa99c0",
+      "plan_actions": 2021,
+      "nature_affectation": "Fonctionnement",
+      "nbre_mois_fonctionnement": 6,
+      "tranche_no": 3,
+      "libelle": "Tranche 1 des Crédits pour Equipement et 6 Mois de Fonctionnement PA 2021"
+    },
+    {
+      "date_delegation": "2022-03-15T00:03:00.000+01:00",
+      "lotId": "e5c135bd-e762-4c41-a884-47cc05aa99c0",
+      "plan_actions": 2021,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Demandes de Crédits pour Construction PA 2021",
+      "observations": "24 T1, 2T2"
+    },
+    {
+      "date_delegation": "2022-03-15T00:03:00.000+01:00",
+      "lotId": "e5c135bd-e762-4c41-a884-47cc05aa99c0",
+      "plan_actions": 2022,
+      "nature_affectation": "Création",
+      "nbre_mois_fonctionnement": null,
+      "tranche_no": 1,
+      "libelle": "Demandes de Crédits pour Construction PA 2022",
+      "observations": "60 T1"
+    }
+   ]

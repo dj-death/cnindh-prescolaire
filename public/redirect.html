@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lien Tableau de Bord Axe Préscolaire</title>
+    <link
+      href="http://fonts.googleapis.com/css?family=Raleway:400,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="redirect/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="redirect/css/style.css" />
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body class="color-3">
+    <div class="container">
+      <header class="codrops-header">
+        <h1><span>CN-INDH</span> Tableau de Bord Axe Préscolaire</h1>
+      </header>
+      <form
+        id="submit-form"
+        class="fs-form fs-form-full"
+        method="get"
+        action="./sheet-redirect"
+        autocomplete="off"
+      >
+        <section>
+          <select
+            id="province-sel"
+            name="province"
+            class="cs-select cs-skin-elastic"
+            required
+          >
+            <option value="" disabled selected>
+              Sélectionner Votre Province
+            </option>
+            <option value=""></option>
+            <option>Agadir Ida-Ou-Tanane</option>
+            <option>Al Haouz</option>
+            <option>Al Hoceima</option>
+            <option>Aousserd</option>
+            <option>Assa-Zag</option>
+            <option>Azilal</option>
+            <option>Béni Mellal</option>
+            <option>Benslimane</option>
+            <option>Berkan</option>
+            <option>Berrechid</option>
+            <option>Boujdour</option>
+            <option>Boulemane</option>
+            <option>Chefchaouen</option>
+            <option>Chichaoua</option>
+            <option>Chtouka-Aït Baha</option>
+            <option>Driouch</option>
+            <option>El Hajeb</option>
+            <option>El Jadida</option>
+            <option>Errachidia</option>
+            <option>Essaouira</option>
+            <option>Es-Semara</option>
+            <option>Fahs-Anjra</option>
+            <option>Fès</option>
+            <option>Figuig</option>
+            <option>Fquih Ben Salah</option>
+            <option>Guelmim</option>
+            <option>Guercif</option>
+            <option>Ifrane</option>
+            <option>Inezgane-Aït Melloul</option>
+            <option>Jerada</option>
+            <option>Kelâa des Sraghna</option>
+            <option>Kénitra</option>
+            <option>Khémisset</option>
+            <option>Khénifra</option>
+            <option>Khouribga</option>
+            <option>Laâyoune</option>
+            <option>Larache</option>
+            <option>Marrakech</option>
+            <option>M'diq-Fnideq</option>
+            <option>Médiouna</option>
+            <option>Meknès</option>
+            <option>Midelt</option>
+            <option>Mohammadia</option>
+            <option>Moulay Yacoub</option>
+            <option>Nador</option>
+            <option>Nouaceur</option>
+            <option>Ouarzazate</option>
+            <option>Ouazzane</option>
+            <option>Oued Ed-Dahab</option>
+            <option>Oujda-Angad</option>
+            <option>Rabat</option>
+            <option>Rehamna</option>
+            <option>Safi</option>
+            <option>Salé</option>
+            <option>Sefrou</option>
+            <option>Settat</option>
+            <option>Sidi Bennour</option>
+            <option>Sidi Ifni</option>
+            <option>Sidi Kacem</option>
+            <option>Sidi Slimane</option>
+            <option>Skhirate-Témara</option>
+            <option>Tanger-Assilah</option>
+            <option>Tan-Tan</option>
+            <option>Taounate</option>
+            <option>Taourirt</option>
+            <option>Tarfaya</option>
+            <option>Taroudannt</option>
+            <option>Tata</option>
+            <option>Taza</option>
+            <option>Tétouan</option>
+            <option>Tinghir</option>
+            <option>Tiznit</option>
+            <option>Youssoufia</option>
+            <option>Zagora</option>
+          </select>
+        </section>
+
+        <div style="text-align: center">
+          <button id="submit-btn" type="submit" class="fs-continue fs-show">
+            Accéder
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <footer>
+      Si Vous êtes connecté depuis Intranet, l'accès à votre tableau de bord
+      pourrait être bloqué. Dans ce cas, veuillez s'il vous plait utiliser un
+      autre dispositif (ordinateur ou téléphone) disposant d'un accès à internet
+    </footer>
+    <!-- /container -->
+    <script src="redirect/js/classie.js"></script>
+    <script src="redirect/js/selectFx.js"></script>
+    <script>
+      (function () {
+        var form = document.getElementById("submit-form");
+        var select = document.getElementById("province-sel");
+
+        form.addEventListener("submit", onSubmit);
+
+        function onSubmit() {
+          var province = select.value;
+          if (province) {
+            localStorage.setItem("province", province);
+          } else {
+            alert("Vous devez Choisir Votre Province !");
+          }
+        }
+
+        var province = localStorage.getItem("province");
+        if (province) {
+          select.value = province;
+        }
+
+        /*if (screen.width >= 768) {
+          new SelectFx(select);
+        }*/
+      })();
+    </script>
+  </body>
+</html>

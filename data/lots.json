@@ -1,0 +1,152 @@
+[
+  {
+    "date_delegation": "2022-03-14T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2019 / Tranche 1 Fonctionnement 4ème année"
+  },
+  {
+    "date_delegation": "2021-08-31T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2019 / Tranche 1 Fonctionnement 3ème année"
+  },
+  {
+    "date_delegation": "2019-03-31T23:00:00.000Z",
+    "loi_finances": "2019",
+    "nature_affectation": "Equipement",
+    "libelle": "PA 2019 / Equipement"
+  },
+  {
+    "date_delegation": "2019-03-31T23:00:00.000Z",
+    "loi_finances": "2019",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2019 / Fonctionnement 2 années"
+  },
+  {
+    "date_delegation": "2019-03-31T23:00:00.000Z",
+    "loi_finances": "2019",
+    "nature_affectation": "Création",
+    "libelle": "PA 2019 / Création en Aménagement"
+  },
+  {
+    "date_delegation": "2022-03-14T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2019 / Tranche 2 Fonctionnement 3ème année"
+  },
+  {
+    "date_delegation": "2020-02-29T23:00:00.000Z",
+    "loi_finances": "2020",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2019 / Rallonge des Crédits de Fonctionnement"
+  },
+  {
+    "date_delegation": "2020-02-29T23:00:00.000Z",
+    "loi_finances": "2020",
+    "nature_affectation": "Création",
+    "libelle": "PA 2019 / Rallonge des Crédits de Création"
+  },
+  {
+    "date_delegation": "2022-03-14T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2020 / Tranche 3 Fonctionnement"
+  },
+  {
+    "date_delegation": "2021-09-30T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2020 / Tranche 2 Fonctionnement"
+  },
+  {
+    "date_delegation": "2021-07-31T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2020 / Tranche 1 Fonctionnement"
+  },
+  {
+    "date_delegation": "2020-08-31T23:00:00.000Z",
+    "loi_finances": "2020",
+    "nature_affectation": "Equipement",
+    "libelle": "PA 2020 / Equipement"
+  },
+  {
+    "date_delegation": "2020-03-31T23:00:00.000Z",
+    "loi_finances": "2020",
+    "nature_affectation": "Création",
+    "libelle": "PA 2020 / Création"
+  },
+  {
+    "date_delegation": "2020-08-31T23:00:00.000Z",
+    "loi_finances": "2020",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2020 / ATFALOUNA"
+  },
+  {
+    "date_delegation": "2020-08-31T23:00:00.000Z",
+    "loi_finances": "2020",
+    "nature_affectation": "Création",
+    "libelle": "PA 2020 / Rallonge des Crédits de Construction"
+  },
+  {
+    "date_delegation": "2022-03-14T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2020 / Vague 2 Tranche 2 Fonctionnement"
+  },
+  {
+    "date_delegation": "2021-09-30T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2021 / Tranche 1 Fonctionnement"
+  },
+  {
+    "date_delegation": "2021-08-31T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Equipement",
+    "libelle": "PA 2021 / Equipement"
+  },
+  {
+    "date_delegation": "2021-03-31T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Création",
+    "libelle": "PA 2021 / Création"
+  },
+  {
+    "date_delegation": "2021-08-31T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Création",
+    "libelle": "PA 2021 / Rallonge des Crédits de Construction"
+  },
+  {
+    "date_delegation": "2022-03-14T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2021 / Vague 2 Tranche 1 Fonctionnement"
+  },
+  {
+    "date_delegation": "2022-03-14T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Equipement",
+    "libelle": "PA 2021 / Tranche 1 Equipement"
+  },
+  {
+    "date_delegation": "2022-03-14T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Création",
+    "libelle": "PA 2022 / Construction"
+  },
+  {
+    "date_delegation": "2021-09-30T23:00:00.000Z",
+    "loi_finances": "2021",
+    "nature_affectation": "Création",
+    "libelle": "PA 2022 / Etudes"
+  },
+  {
+    "date_delegation": "2022-02-20T23:00:00.000Z",
+    "loi_finances": "2022",
+    "nature_affectation": "Fonctionnement",
+    "libelle": "PA 2019 / Tranche 2 Fonctionnement 3ème année Taroudannt"
+  }
+]

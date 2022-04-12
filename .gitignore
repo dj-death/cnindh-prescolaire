@@ -1,0 +1,4 @@
+/.vscode
+/public/app.watch.lock
+/node_modules
+*.log

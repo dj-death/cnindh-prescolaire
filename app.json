@@ -1,0 +1,25 @@
+{
+    "name": "cn-indh-prescolaire",
+    "description": "cn-indh-prescolaire",
+    "repository": "",
+    "logo": "",
+    "keywords": [],
+    "image": "heroku/nodejs",
+    "buildpacks": [
+        {
+        "url": "heroku/nodejs"
+        }
+    ],
+
+    "env": {
+        "SECRET_TOKEN": {
+            "description": "A secret key for verifying the integrity of signed cookies.",
+            "generator": "secret"
+        },
+        "WEB_CONCURRENCY": {
+            "description": "The number of processes to run.",
+            "value": "5"
+        },
+        "NODE_ENV": "production"
+    }
+}

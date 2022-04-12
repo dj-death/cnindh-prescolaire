@@ -1,0 +1,87 @@
+{
+  "cors": {
+    "enabled": true,
+    "origin": "*",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    "allowedHeaders": "Content-Type,Origin,X-Requested-With,Authorization,Accept,Authorization,Content-Length",
+    "preflightContinue": false,
+    "optionsSuccessStatus": "204",
+    "credentials": true,
+    "maxAge": 3600
+  },
+
+  "cron": {
+    "reset": "0 * * * *",
+    "sync": "0 0 * * *"
+  },
+
+  "server": {
+    "uploadEnabled": true,
+    "fileUploadFolder": "./public/uploads"
+  },
+
+  "direct": {
+    "rootNamespace": "Server",
+    "apiName": "API",
+    "apiUrl": "/api",
+    "classRouteUrl": "/api",
+    "classPath": "/api",
+    "server": "cnindh-prescolaire.herokuapp.com",
+    "port": "80",
+    "protocol": "https",
+    "timeout": 600000,
+    "cacheAPI": false,
+    "relativeUrl": false,
+    "appendRequestResponseObjects": true,
+    "enableProcessors": false,
+    "enableMetadata": true,
+    "responseHelper": true
+  },
+
+  "database": {
+    "dialect": "postgres",
+    "host": "ec2-52-18-116-67.eu-west-1.compute.amazonaws.com",
+    "username": "avdftljcdocnmr",
+    "password": "02ce3750bfde643c17f5fa3b81b600c9cd933550303dc8c045e6dc828e8363f6",
+    "database": "d38gim4gs580ib",
+
+    "port": 5432,
+    "operatorsAliases": false,
+    "quoteIdentifiers": false,
+    "underscored": false,
+
+    "ssl": false,
+
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false,
+        "cert": ""
+      }
+    },
+
+    "pool": {
+      "max": 20,
+      "min": 0,
+      "idle": 10000,
+      "acquire": 60000
+    },
+
+    "logging": false,
+    "define": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "deletedAt": "deleted",
+      "underscored": true
+    }
+  },
+
+  "session": {
+    "secret": "62P59nE68F38q0q2wvHho58oR38aY7U9",
+    "duration": 86400
+  },
+
+  "client": {
+    "path": "../client"
+  }
+}
