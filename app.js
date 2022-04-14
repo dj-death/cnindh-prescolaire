@@ -12,7 +12,6 @@ var config = require('./config.json');
 var data = require('./utils/data.js');
 var helpers = require('./utils/helpers.js');
 
-var importer = require('./utils/importer.js');
 var excelUtils = require('./utils/excel.js');
 var errors = require('./utils/errors.js');
 
@@ -84,12 +83,13 @@ app.set('view engine', 'jade');
 
 //app.use(require('morgan')('default', { "stream": logger.stream }));
 //app.use(bodyParser.json());
-app.use(bodyParser.json({ limit: '150mb' }));
+app.use(bodyParser.json({ limit: '50mb' }));
 
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-    limit: '150mb',
-    extended: true
+    limit: '50mb',
+    extended: true,
+    parameterLimit: 50000
 }));
 
 app.use(cookieParser());
@@ -163,42 +163,49 @@ if (config.server.uploadEnabled) {
     })
 
     app.post('/upload', multerMid.any(), async function (req, res, next) {
-        const records = await excelUtils.readWorkbook(req.files[0], req.body.nature);
-        const ids = records.map(rec => rec.fp_id);
-        const unique = [...new Set(ids)].length;
-
-        if (unique !== ids.length) {            
-            const groupedByFPID = helpers.groupBy(records, 'fp_id');
-
-            let msg = '';
-
-            for (const [key, value] of Object.entries(groupedByFPID)) {
-               if (value.length === 1) continue;
-               msg += `Id [${key}]: ${value.map(r => r.douar_quartier).join(', ')}`;
+        try {
+            const records = await excelUtils.readWorkbook(req.files[0], req.body.nature);
+            const ids = records.map(rec => rec.fp_id);
+            const unique = [...new Set(ids)].length;
+    
+            if (unique !== ids.length) {            
+                const groupedByFPID = helpers.groupBy(records, 'fp_id');
+    
+                let msg = '';
+    
+                for (const [key, value] of Object.entries(groupedByFPID)) {
+                   if (value.length === 1) continue;
+                   msg += `Id [${key}]: ${value.map(r => r.douar_quartier).join(', ')}`;
+                }
+    
+                res.json({
+                    success: false,
+                    message: `Unicité des ID FP non respectée ! ${unique} uniques sur ${ids.length}. ${msg}`
+                });     
+                
+                return;
             }
 
-            return res.json({
-                success: false,
-                error: `Unicité des ID FP non respectée ! ${unique} uniques sur ${ids.length}. ${msg}`
-            });            
-        }
-
-        try {
             data.upsertUnites(records).then(function (rows) {
+                //console.log(rows);
+                const newRecords = rows.filter(row => row.isNewRecord);
+                const modifiedRecords = rows.filter(row => row.changed());
+
                 res.json({
                     success: true,
-                    count: rows.length
+                    count: rows.length,
+                    message: `${newRecords.length} nouvelles UP identifiées. ${modifiedRecords.length} UP modifiées.`
                 })
             }).catch(function (err) {
                 return res.json({
                     success: false,
-                    error: err.message
+                    message: err.message
                 });   
             })
         } catch (err) {
             return res.json({
                 success: false,
-                error: err.message
+                message: err.message
             });   
         }
     });

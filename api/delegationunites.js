@@ -55,23 +55,11 @@ var Service = {
                 return;
             }
 
-            params = Array.isArray(params) ? params : [params]
-
-            params = params.map(_param => {
-                _param.delegation_id = _param.delegation.id;
-                _param.lot_id = _param.lot.id
-                _param.unite_id = _param.unite.id
-
-                delete _param.delegation;
-                delete _param.lot;
-                delete _param.unite;
-
-                return _param;
-            })
+            params = Array.isArray(params) ? params : [params];
 
             return models.DelegationUnites/*.cache()*/.bulkCreate(params/*, { include: [{ model: models.Delegation, as: 'delegation' }, { model: models.Lot, as: 'lot' }] }*/)
         }).then(function (row) {
-            callback(null, { data: row });
+            callback(null, { data: null /*row*/ });
         }).catch(function (err) {
             callback(errors.parse(err));
         });

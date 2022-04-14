@@ -5,16 +5,14 @@ const { distance, closest } = require('fastest-levenshtein')
 
 
 const helpers = require('./helpers');
-const regions = helpers.regions
+const decoupage = helpers.decoupage;
 const provinces = helpers.provinces
-const emails = helpers.emails
-const mappingPPRegions = helpers.mappingPPRegions
-const fpMapping = helpers.fpMapping
 const fondations = helpers.fondations
 
 const latinize = require('latinize');
+const { help } = require('yargs');
 const columns = [
-  'plan_actions', 'fondation_partenaire', 'annexe_administrative', 'province', 'region', 'commune', 'douar_quartier', 'intitule',
+  'plan_actions', 'fondation_partenaire', 'annexe_administrative', 'province', 'commune', 'douar_quartier', 'intitule',
   'type_unite', 'nbre_salles', 'nbre_classes', 'programme', 'montant_delegue', 'cout_travaux', 'cout_unitaire', 'cout_equipement', 'cout_fonctionnement',
   'montant_engage', 'montant_emis', 'date_lancement_trvx', 'tx_avancement_physique', 'statut', 'statut_latin', 'phase',
   'difficultes_rencontrees', 'date_ouverture', 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',
@@ -27,7 +25,8 @@ const columns = [
 
   'saison_2021_2022_total_filles', 'saison_2021_2022_total_garcons',
   'saison_2020_2021_total_filles', 'saison_2020_2021_total_garcons',
-  'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_programmee', 'est_resiliee'
+  'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_programmee', 'est_resiliee',
+  'fp_id', 'inscrits_primaire_total', 'inscrits_primaire_filles', 'inscrits_primaire_garcons', 'ms_passe_gs', 'ms_reinscrit_ms', 'ms_passe_primaire', 'gs_primaire', 'gs_refait_gs', 'nbre_arret_scolarite'
 ]
 
 const fmpsMapping = {
@@ -287,28 +286,33 @@ var ExcelUtils = {
       }
 
       if (objRow.province && !provinces.includes(objRow.province)) {
-        objRow.province = closest(objRow.province, provinces)
+        objRow.province = closest(objRow.province, provinces);
       }
 
-      if (!objRow.fondation_partenaire) {
-        objRow.fondation_partenaire = objRow.province && fpMapping[objRow.province] || nature
-      } else {
+      if (objRow.province) objRow.province_code = decoupage.find(rec => rec.label ===  objRow.province).value;
+      if (!objRow.province_code) {
+        console.log(objRow.province);
+      }
+
+      if (objRow.fondation_partenaire) {
         objRow.fondation_partenaire = objRow.fondation_partenaire.toUpperCase()
-
-        if (!fondations.includes(objRow.fondation_partenaire)) {
-          objRow.fondation_partenaire = objRow.province && fpMapping[objRow.province] || nature
-        }
       }
 
-      if (objRow.region) {
+      if (!objRow.fondation_partenaire || !fondations.includes(objRow.fondation_partenaire)) {
+        var provinceMatch = decoupage.find(rec => rec.label ===  objRow.province);
+        objRow.fondation_partenaire = provinceMatch ? provinceMatch.fp : nature;
+      }
+
+      /*if (objRow.region) {
         if (!regions.includes(objRow.region)) {
           objRow.region = closest(objRow.region, regions)
         }
       } else {
         if (objRow.province) {
-          objRow.region = mappingPPRegions[objRow.province]
+          const provinceMatch = decoupage.find(pp => pp.label === objRow.province);
+          objRow.region = provinceMatch ? provinceMatch.region : null;
         }
-      }
+      }*/
 
       if (objRow.commune) objRow.commune = helpers.titleCase(objRow.commune)
       if (objRow.douar_quartier) objRow.douar_quartier = helpers.titleCase(objRow.douar_quartier)
@@ -338,12 +342,12 @@ var ExcelUtils = {
       }
 
       objRow.date_situation = new Date();
-
+      delete objRow.province;
       return objRow
     }).filter(row => !!row.intitule)
 
-    console.debug("Headers", titles, maxColumns)
-    console.debug(data, nature)
+    //console.debug("Headers", titles, maxColumns)
+    //console.debug(data, nature)
 
     return data
   },

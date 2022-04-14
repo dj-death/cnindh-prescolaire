@@ -4,421 +4,758 @@ const config = require('../utils/config');
 const latinize = require('latinize');
 const moment = require('moment');
 
-const regionsCodesMapping = {
-    "0": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
-    ],
-    "1": [
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16
-    ],
-    "2": [
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23,
-        24,
-        25
-    ],
-    "3": [
-        26,
-        27,
-        28,
-        29,
-        30,
-        31,
-        32
-    ],
-    "4": [
-        33,
-        34,
-        35,
-        36,
-        37
-    ],
-    "5": [
-        38,
-        39,
-        40,
-        41,
-        42,
-        43,
-        44,
-        45,
-        46
-    ],
-    "6": [
-        47,
-        48,
-        49,
-        50,
-        51,
-        52,
-        53,
-        54
-    ],
-    "7": [
-        55,
-        56,
-        57,
-        58,
-        59
-    ],
-    "8": [
-        60,
-        61,
-        62,
-        63,
-        64,
-        65
-    ],
-    "9": [
-        66,
-        67,
-        68,
-        69
-    ],
-    "10": [
-        70,
-        71,
-        72,
-        73
-    ],
-    "11": [
-        74,
-        75
-    ]
-}
+const decoupage = [
+    {
+        "value": 1,
+        "label": "Tanger-Assilah",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FMPS",
+        "email": "Wdas.tanger@gmail.com"
+    },
+    {
+        "value": 2,
+        "label": "M’diq-Fnideq",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FMPS"
+    },
+    {
+        "value": 3,
+        "label": "Tétouan",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FMPS",
+        "email": "brirhetm@gmail.com"
+    },
+    {
+        "value": 4,
+        "label": "Fahs-Anjra",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FMPS",
+        "email": "Tassammite.mohammed@gmail.com"
+    },
+    {
+        "value": 5,
+        "label": "Larache",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FZ",
+        "email": "Taimi.outhman@gmail.com"
+    },
+    {
+        "value": 6,
+        "label": "Al Hoceima",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FMPS",
+        "email": "dasalhoceima@gmail.com"
+    },
+    {
+        "value": 7,
+        "label": "Chefchaouen",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FZ",
+        "email": "mrinimd@gmail.com"
+    },
+    {
+        "value": 8,
+        "label": "Ouezzane",
+        "region_code": 0,
+        "region": "Tanger-Tétouan-Al Hoceima",
+        "fp": "FMPS"
+    },
+    {
+        "value": 9,
+        "label": "Oujda-Angad",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FMPS",
+        "email": "Hafida.mi@hotmail.fr"
+    },
+    {
+        "value": 10,
+        "label": "Nador",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FMPS",
+        "email": "mohamedwariachi@yahoo.fr"
+    },
+    {
+        "value": 11,
+        "label": "Driouch",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FMPS",
+        "email": "Abdellaari@gmail.com"
+    },
+    {
+        "value": 12,
+        "label": "Jerada",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FMPS",
+        "email": "Jalal.tagmouti@gmail.com"
+    },
+    {
+        "value": 13,
+        "label": "Berkane",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FZ",
+        "email": "Mohammed.mimouni@hotmail.com"
+    },
+    {
+        "value": 14,
+        "label": "Taourirt",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FMPS",
+        "email": "AKHTIB@taourirt.interieur.gov.ma"
+    },
+    {
+        "value": 15,
+        "label": "Guercif",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FMPS",
+        "email": "dasguercif@gmail.com"
+    },
+    {
+        "value": 16,
+        "label": "Figuig",
+        "region_code": 1,
+        "region": "L’Oriental",
+        "fp": "FMPS",
+        "email": "dassgprfiguig@yahoo.fr"
+    },
+    {
+        "value": 17,
+        "label": "Fès",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": "ramibahae@yahoo.fr"
+    },
+    {
+        "value": 18,
+        "label": "Meknès",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": "dasmeknes@gmail.com"
+    },
+    {
+        "value": 19,
+        "label": "El Hajeb",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": "daselhajeb@yahoo.fr"
+    },
+    {
+        "value": 20,
+        "label": "Ifrane",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": ""
+    },
+    {
+        "value": 21,
+        "label": "Moulay Yacoub",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": "dasmyyacoub@gmail.com"
+    },
+    {
+        "value": 22,
+        "label": "Sefrou",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": ""
+    },
+    {
+        "value": 23,
+        "label": "Boulemane",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": "dascomboulemane@gmail.com"
+    },
+    {
+        "value": 24,
+        "label": "Taounate",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": "aminaoufal@gmail.com"
+    },
+    {
+        "value": 25,
+        "label": "Taza",
+        "region_code": 2,
+        "region": "Fès-Meknès",
+        "fp": "FMPS",
+        "email": "Abdelkrim.mouhoute@gmail.com"
+    },
+    {
+        "value": 26,
+        "label": "Rabat",
+        "region_code": 3,
+        "region": "Rabat-Salé-Kénitra",
+        "email": "mbellakbircharfi@rabat.interieur.gov.ma"
+    },
+    {
+        "value": 27,
+        "label": "Salé",
+        "region_code": 3,
+        "region": "Rabat-Salé-Kénitra",
+        "fp": "FZ",
+        "email": ""
+    },
+    {
+        "value": 28,
+        "label": "Skhirate-Témara",
+        "region_code": 3,
+        "region": "Rabat-Salé-Kénitra",
+        "fp": "FMPS",
+        "email": "rguignaoual@hotmail.com/ addi.afnane@gmail.com"
+    },
+    {
+        "value": 29,
+        "label": "Kénitra",
+        "region_code": 3,
+        "region": "Rabat-Salé-Kénitra",
+        "fp": "FMPS",
+        "email": "ebtissamwilaya@gmail.com"
+    },
+    {
+        "value": 30,
+        "label": "Khémisset",
+        "region_code": 3,
+        "region": "Rabat-Salé-Kénitra",
+        "fp": "FMPS",
+        "email": "Dassfrc05@gmail.com"
+    },
+    {
+        "value": 31,
+        "label": "Sidi Kacem",
+        "region_code": 3,
+        "region": "Rabat-Salé-Kénitra",
+        "fp": "FZ",
+        "email": ""
+    },
+    {
+        "value": 32,
+        "label": "Sidi Slimane",
+        "region_code": 3,
+        "region": "Rabat-Salé-Kénitra",
+        "fp": "FMPS",
+        "email": "Das.sidislimane@gmail.com"
+    },
+    {
+        "value": 33,
+        "label": "Béni Mellal",
+        "region_code": 4,
+        "region": "Beni Mellal-Khénifra",
+        "fp": "FMPS",
+        "email": "Jaberabderrahman@yahoo.fr"
+    },
+    {
+        "value": 34,
+        "label": "Azilal",
+        "region_code": 4,
+        "region": "Beni Mellal-Khénifra",
+        "fp": "FMPS",
+        "email": "azilaldas@gmail.com"
+    },
+    {
+        "value": 35,
+        "label": "Fquih Ben Salah",
+        "region_code": 4,
+        "region": "Beni Mellal-Khénifra",
+        "fp": "FZ",
+        "email": "larbi.bouabidi@gmail.com"
+    },
+    {
+        "value": 36,
+        "label": "Khénifra",
+        "region_code": 4,
+        "region": "Beni Mellal-Khénifra",
+        "fp": "FMPS",
+        "email": "Ziani_das@yahoo.fr"
+    },
+    {
+        "value": 37,
+        "label": "Khouribga",
+        "region_code": 4,
+        "region": "Beni Mellal-Khénifra",
+        "fp": "FZ",
+        "email": "daskhouribga@gmail.com"
+    },
+    {
+        "value": 38,
+        "label": "Casablanca",
+        "region_code": 5,
+        "region": "Casablanca-Settat"
+    },
+    {
+        "value": 39,
+        "label": "Mohammadia",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FZ"
+    },
+    {
+        "value": 40,
+        "label": "El Jadida",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FMPS",
+        "email": "m.houboub@gmail.com"
+    },
+    {
+        "value": 41,
+        "label": "Nouaceur",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FMPS",
+        "email": "Das.prnouaceur@gmail.com"
+    },
+    {
+        "value": 42,
+        "label": "Médiouna",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FMPS"
+    },
+    {
+        "value": 43,
+        "label": "Benslimane",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FMPS",
+        "email": "hassandas@gmail.com"
+    },
+    {
+        "value": 44,
+        "label": "Berrechid",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FMPS",
+        "email": "das.berrechid@gmail.com"
+    },
+    {
+        "value": 45,
+        "label": "Settat",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FZ",
+        "email": "dasettat@gmail.com"
+    },
+    {
+        "value": 46,
+        "label": "Sidi Bennour",
+        "region_code": 5,
+        "region": "Casablanca-Settat",
+        "fp": "FMPS",
+        "email": "Indh.sidibennour@gmail.com"
+    },
+    {
+        "value": 47,
+        "label": "Marrakech",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FMPS",
+        "email": "Anouar.dbira@gmail.com"
+    },
+    {
+        "value": 48,
+        "label": "Chichaoua",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FZ",
+        "email": "Loudinisa1966@gmail.com"
+    },
+    {
+        "value": 49,
+        "label": "Al Haouz",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FMPS",
+        "email": "dashaouz@gmail.com"
+    },
+    {
+        "value": 50,
+        "label": "El Kelâa des Sraghna",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FZ",
+        "email": "m002siraj@yahoo.fr"
+    },
+    {
+        "value": 51,
+        "label": "Essaouira",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FMPS",
+        "email": "khairiprovince@gmail.com"
+    },
+    {
+        "value": 52,
+        "label": "Rehamna",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FMPS",
+        "email": "dasrhamna@gmail.com"
+    },
+    {
+        "value": 53,
+        "label": "Safi",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FMPS",
+        "email": "mi.dassafi@gmail.com"
+    },
+    {
+        "value": 54,
+        "label": "Youssoufia",
+        "region_code": 6,
+        "region": "Marrakech-Safi",
+        "fp": "FMPS",
+        "email": "dasprovinceyoussoufia@gmail.com"
+    },
+    {
+        "value": 55,
+        "label": "Errachidia",
+        "region_code": 7,
+        "region": "Drâa-Tafilalet",
+        "fp": "FMPS",
+        "email": "tzeggwagh@gmail.com"
+    },
+    {
+        "value": 56,
+        "label": "Ouarzazate",
+        "region_code": 7,
+        "region": "Drâa-Tafilalet",
+        "fp": "FMPS",
+        "email": "dasouarzazate@gmail.com"
+    },
+    {
+        "value": 57,
+        "label": "Midelt",
+        "region_code": 7,
+        "region": "Drâa-Tafilalet",
+        "fp": "FMPS",
+        "email": "dasmidelt@gmail.com"
+    },
+    {
+        "value": 58,
+        "label": "Tinghir",
+        "region_code": 7,
+        "region": "Drâa-Tafilalet",
+        "fp": "FMPS",
+        "email": "indhtinghir@gmail.com"
+    },
+    {
+        "value": 59,
+        "label": "Zagora",
+        "region_code": 7,
+        "region": "Drâa-Tafilalet",
+        "fp": "FMPS",
+        "email": "hassanbtb@gmail.com"
+    },
+    {
+        "value": 60,
+        "label": "Agadir-Ida-Ou-Tanane",
+        "region_code": 8,
+        "region": "Souss-Massa",
+        "fp": "FMPS",
+        "email": "benkiranesaloua@gmail.com"
+    },
+    {
+        "value": 61,
+        "label": "Inezgane-Aït Melloul",
+        "region_code": 8,
+        "region": "Souss-Massa",
+        "fp": "FMPS",
+        "email": "draissislimane@gmail.com"
+    },
+    {
+        "value": 62,
+        "label": "Chtouka-Aït Baha",
+        "region_code": 8,
+        "region": "Souss-Massa",
+        "fp": "FZ",
+        "email": "Das.chtouka@gmail.com"
+    },
+    {
+        "value": 63,
+        "label": "Taroudannt",
+        "region_code": 8,
+        "region": "Souss-Massa",
+        "fp": "FZ",
+        "email": "dastaroudannt@taroudann.interieur.gov.ma"
+    },
+    {
+        "value": 64,
+        "label": "Tiznit",
+        "region_code": 8,
+        "region": "Souss-Massa",
+        "fp": "FZ",
+        "email": "dastiznit@gmail.com"
+    },
+    {
+        "value": 65,
+        "label": "Tata",
+        "region_code": 8,
+        "region": "Souss-Massa",
+        "fp": "FZ",
+        "email": "Mkhaldi6@gmail.com"
+    },
+    {
+        "value": 66,
+        "label": "Guelmim",
+        "region_code": 9,
+        "region": "Guelmim-Oued Noun",
+        "fp": "FMPS",
+        "email": "M.joumani@gmail.com"
+    },
+    {
+        "value": 67,
+        "label": "Assa-Zag",
+        "region_code": 9,
+        "region": "Guelmim-Oued Noun",
+        "fp": "FMPS",
+        "email": ""
+    },
+    {
+        "value": 68,
+        "label": "Tan-Tan",
+        "region_code": 9,
+        "region": "Guelmim-Oued Noun",
+        "fp": "FMPS",
+        "email": "dastantan@yahoo.fr"
+    },
+    {
+        "value": 69,
+        "label": "Sidi Ifni",
+        "region_code": 9,
+        "region": "Guelmim-Oued Noun",
+        "fp": "FMPS",
+        "email": "dassidiifni@gmail.com"
+    },
+    {
+        "value": 70,
+        "label": "Laâyoune",
+        "region_code": 10,
+        "region": "Laâyoune-Sakia Al Hamra",
+        "fp": "FMPS",
+        "email": "dailadaila1972@gmail.com"
+    },
+    {
+        "value": 71,
+        "label": "Boujdour",
+        "region_code": 10,
+        "region": "Laâyoune-Sakia Al Hamra",
+        "fp": "FMPS",
+        "email": "boujdourprovince@yahoo.fr"
+    },
+    {
+        "value": 72,
+        "label": "Tarfaya",
+        "region_code": 10,
+        "region": "Laâyoune-Sakia Al Hamra",
+        "fp": "FMPS",
+        "email": "Talbi.hasanna@gmail.com"
+    },
+    {
+        "value": 73,
+        "label": "Es-Semara",
+        "region_code": 10,
+        "region": "Laâyoune-Sakia Al Hamra",
+        "email": ""
+    },
+    {
+        "value": 74,
+        "label": "Oued Ed-Dahab",
+        "region_code": 11,
+        "region": "Dakhla-Oued Eddahab",
+        "fp": "FMPS",
+        "email": "DAS@ouededdahab.interieur.gov.ma"
+    },
+    {
+        "value": 75,
+        "label": "Aousserd",
+        "region_code": 11,
+        "region": "Dakhla-Oued Eddahab",
+        "fp": "FMPS",
+        "email": "dasprovinceaousserd@gmail.com"
+    }
+];
 
-const urls = {
-    Benslimane: '1YTOpLVniaylvFSYlsBNsokjQuhQIzihdoudUepbYUrs',
-    'Khémisset': '1nKeEsn4Q3uScex8jyaj7M33pHKKS_her35NJg4iXHMk',
-    Settat: '1p7y3PAYyd7_diNky3-57KS_gqvACG3iHoS7O5p0Yh8w',
-    Essaouira: '1mrwLfZoNbaoK8HFF8av-8_dr4ZKWqIIGTCRaKjnsya4',
-    Rehamna: '1I6sGg93jxhAsWnvJVTnZTdMWwXx9mCldcH-jXZa_ZCI',
-    Rabat: '1JgjZhixxcvsQtKUPaoJd9Bxt_LnJ-xA1YTKAeDkWZ0E',
-    'Fquih Ben Salah': '1uEw3C4KnHH8yrK9KXnjALjyb1An0nyMRtoTzWEfRPmk',
-    'Al Haouz': '1zkhflVju_290ZQ-m4wVrWXb2RtvACibArew0zI15w-A',
-    Zagora: '1hDkmHALuDz5Z7QUdyNERzKvKU7Ponkj23hDcMZNse84',
-    Berrechid: '1aeKGsNkMIixH2r47qfJQjGNfbEe4CxkWOqzN9oS3y5k',
-    Nouaceur: '1SjMxIywj59DNoQFhVVH17vn9dryoGOZXiHrAxdCCEfI',
-    'Médiouna': '148lVGHtq-3FVSNmN0HvektPzs_OSP2IoplF0klLGZFA',
-    Tinghir: '1UIgS1QxtwTA2UFy5mn-6s_RTs30F0-Mrq6j5IbpiPXw',
-    Marrakech: '1cbiaO88UTGHaxDekqDtEc6TOm1SKjuESasvW7EjEX8Q',
-    'El Jadida': '1vxWZQWjrYP4Yhz7NgIqCZVL4ngyKrNrNQDjj5-w91yw',
-    Taounate: '1e2S8xuW_3vAvO8YowMMqH0tzHGUauA7kzVN9PLEv-80',
-    'Moulay Yacoub': '16pFjI04T9qbMvu6GOZ-VHswpgjXEjUki18i6_wC0LKY',
-    'El Hajeb': '1-PT1_5PnB_K0B8pOkEZ-yFGmCieBrWTkVoEOH57GkLo',
-    'Fès': '1gLo1-ExP0D8kHyDp5FV9R8PDBA2t5PD58l7r8Vhytkk',
-    Midelt: '1_nVazkFOOk-bIZTk-oBBbM5y12MbXK8mrq8OKLrVv9U',
-    Ouarzazate: '1Fdm4JuSu6f3txh_KXnE-g51WhA9QlCZDVKh6SjewkXQ',
-    Safi: '12QSQhN3p1NxSc8KGWKTBUHW0ATZpRljXiB7uBjVHCWU',
-    Chichaoua: '1VuoYsuLir-mdsVcn1kcKJ9DCDi-zfLS_2khep38ziO8',
-    'Laâyoune': '1IJw27n7NnucgIvBlTV7u0bIv5MDE3ZmLSlxe9N8Sm1o',
-    'Oued Ed-Dahab': '16AZAECOHY4cgiBJa0zQO0f6bVo76PMqCRbH_kjqQbrw',
-    'Meknès': '1S5CbYOhNZU9WLsKGZMBXiW7-wqHjGEyKzQj2q7qbeCc',
-    'Sidi Kacem': '1qyNttvED-YlU0Mg_ZQsGys8jgm8MbDwvbBQ20m1s2Fk',
-    Guelmim: '1Yi5nS26kUpTRsUkFvQCu7c2J9tLAw482Eb5YjKXPzUI',
-    Taza: '17Tbg_LgCyU_GaWbzaFtHdPp_cCP1yrGNesEbrHiIQ84',
-    Tata: '16V9PDmCVDBvFmCnHosrd4HRCCC84GK1ib-_J1Pspoto',
-    'Al Hoceima': '1cmwnUK5YMtW905nl6FShyOJ3er8j74DEmrt-8lRdUpw',
-    'M\'diq-Fnideq': '1pqLRyqjTBW9DVswRXchETx6cKs0YKjWoAEkGX_lBMI4',
-    Larache: '1SiiNaW6J_gshf5uMEfl8FeHHAMmKlgyfzG95wgjHGOc',
-    'Sidi Slimane': '1ke2JI0JivLFOpcJfbw9xWAzruame8-6U-UuYyt0VK7Y',
-    'Tétouan': '1hFu8-QJS_lMvfzElQyHmuEBfReUpn-844L5OWrNrSmA',
-    'Skhirate-Témara': '1vg1WE-_deKBGuVyNuRN28mP6OG7XyWox33EeVktu0Ro',
-    Tiznit: '1lZzbyqMCwv1OpRHq4F9ECiQnoCRX5oSjviDZx-Inehw',
-    'Assa-Zag': '1jHETqYxDXNOgb2W718ceo7Felgr4D5b4MePMNfdMp0g',
-    Ifrane: '1jFyT1tBgO9cYuwA6WCCaoE0KVejE65k-1MH8Bn4Omwk',
-    Nador: '1pj_SdcFCdxiyO_EvwEnFGQQayt5Qp5DAojlgr2Aez3g',
-    'Chtouka-Aït Baha': '1lfTG4tRFckGWlGL4CUEZDvHlcCDbaSgtO9CMUEulRkY',
-    'Tanger-Assilah': '1VwLb1uBNWthJzyNmOVfQOobM1aXukHVc3uLthcbfcKY',
-    'Aousserd': '1rPIVx0vNOk3XMrvNsgBx5-amEMU5IzwtpW2UhKdlPc0',
-    Sefrou: '12l1BRVKRfoJJcWtVkTKx9rcuHKBSHI9DqBwZmqRHYnM',
-    'Fahs-Anjra': '1tUy7o_8gOeM3KwwnFEotqMvU1kGKOgmtnriSEwmA9fc',
-    Boulemane: '1KrBXGhoDu4Rc-Aa12Xqo3BX23Bx1qHjJpVxzkPMMMRs',
-    Chefchaouen: '14DBelqEqEy-sgp70DnTXSUQ68WxHAqjeCUX4ENwFBwM',
-    Berkan: '1Glv2ELkaScVG1a-HQ7xUIDpcnd_jR7FJ-ALAcOS9BH4',
-    'Sidi Bennour': '1Zq_LpZsHfbjfrQDgO7iuK86VjMn46NTsTwmw-dhLBgU',
-    Mohammadia: '1uLHF99GQmo68T5RHlLaW4CR12H1IW_EcGhPNBH3UXYg',
-    Driouch: '1-LiCVpvRmqBITxib-ZjDeQ9NjPlBTh2eTxb2-K7yrVw',
-    'Agadir Ida-Ou-Tanane': '1eJF4SDV7hGvCLHoXIU8qmR6S3pb6omAJpI4ifjYQqJ8',
-    'Inezgane-Aït Melloul': '1O5OuNgan5TW8U9kUN-RvJvleknN4YT58bEPXaHCkDek',
-    Jerada: '1SQ84muPtgKhgJrDijkj0PmqcEicCTNOrv9TPE4imdX8',
-    'Oujda-Angad': '1SjiPlnK24wwWhEIbPDREM6rcvUQrhBBBq9CDbTZwzBU',
-    Youssoufia: '1PSab8vWx_qYSwxjyi0yCrUpc9JBlp7gV--JyvtBAMhA',
-    'Khouribga': '16PzjoGHoBghaJzMRTrNHpl5hEfQ64tOd_uDu0ao4z3w',
-    Figuig: '1vwiXwDSnwv9c83CTOJU_rPNUsOg456ocC05SRs8GZ7s',
-    Errachidia: '12e0TNk-GGLS3AKZJIl4qwr-s5Fs4aCQzNEk1cqL9RYY',
-    'Béni Mellal': '1cPRJ0UKVCA1n6BdMHOI6KeKQ4S5GmwL09zE2OsEx0PY',
-    'Kelâa des Sraghna': '1F-lUxlB06Cku0lqabFEqBDaPD87zuuDNAwwgt72Jvzo',
-    Guercif: '1i8U_kLh7alKhjBuaflSCYORuUkTO_1_Sj2zO22JW_D0',
-    'Tan-Tan': '1GsHpLHH0ZYM2wxiwww3o_qMPBQMNdUUsKsGSh8h-a6Y',
-    Taroudannt: '1_s5hCP7JUXr-NCdPDzzu_vIEg7gNbIDr4_qz4QWjIUQ',
-    Taourirt: '1NkIqJdObsq2z647IKEAxwtJyI5XaffZttkjjXhdHyis',
-    Ouazzane: '1raMczRPdNkSdiAPu8jnKFdjchWecV99P0cLr6n2JGuo',
-    'Sidi Ifni': '1bZ--WQ78VKAKz4YQ4QIYXYZamqziQNx3EIzStiHWs5U',
-    'Khénifra': '1Pe6DMn53Rt2_v15gkhhcCzXrpVbpZGZta2S4EiovtXY',
-    'Salé': '1d-DtUTLWss4DL2Oi9ug2lEnar6CUZj6RvoZagoKkMc0',
-    Tarfaya: '17CBfBmtmEBUx70QzL2v7veTnrCS4KQNVoTe24j_ITXQ',
-    'Kénitra': '1r4tEecw2_O5RqkM3iAgB-u-RAivoCuYhDxlJ89OHOrA',
-    Boujdour: '1YS0-Tw8LFMZaAniXFn5xiR1clLf_yS1goF5ZMB9CH88',
-    Azilal: '1hE2sN_5K0hJa0U7xrJKKmjeGCtuyr8PIPZ5hxXDCrbw',
-    'Es-Semara': '1e71BwFDc7OM7TttwNtgRanTgO2YZeCh23a0S2thbq9w'
-}
+const decoupageRegions = [
+    {
+        "value": 0,
+        "label": "Tanger-Tétouan-Al Hoceima",
+        "provinces": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+        ]
+    },
+    {
+        "value": 1,
+        "label": "L’Oriental",
+        "provinces": [
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+        ]
+    },
+    {
+        "value": 2,
+        "label": "Fès-Meknès",
+        "provinces": [
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+        ]
+    },
+    {
+        "value": 3,
+        "label": "Rabat-Salé-Kénitra",
+        "provinces": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32
+        ]
+    },
+    {
+        "value": 4,
+        "label": "Beni Mellal-Khénifra",
+        "provinces": [
+            33,
+            34,
+            35,
+            36,
+            37
+        ]
+    },
+    {
+        "value": 5,
+        "label": "Casablanca-Settat",
+        "provinces": [
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+        ]
+    },
+    {
+        "value": 6,
+        "label": "Marrakech-Safi",
+        "provinces": [
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54
+        ]
+    },
+    {
+        "value": 7,
+        "label": "Drâa-Tafilalet",
+        "provinces": [
+            55,
+            56,
+            57,
+            58,
+            59
+        ]
+    },
+    {
+        "value": 8,
+        "label": "Souss-Massa",
+        "provinces": [
+            60,
+            61,
+            62,
+            63,
+            64,
+            65
+        ]
+    },
+    {
+        "value": 9,
+        "label": "Guelmim-Oued Noun",
+        "provinces": [
+            66,
+            67,
+            68,
+            69
+        ]
+    },
+    {
+        "value": 10,
+        "label": "Laâyoune-Sakia Al Hamra",
+        "provinces": [
+            70,
+            71,
+            72,
+            73
+        ]
+    },
+    {
+        "value": 11,
+        "label": "Dakhla-Oued Eddahab",
+        "provinces": [
+            74,
+            75
+        ]
+    }
+];
 
-const mappingPPRegions = {
-    'Oujda-Angad': 'L’Oriental',
-    'Nador': 'L’Oriental',
-    'Driouch': 'L’Oriental',
-    'Jerada': 'L’Oriental',
-    'Berkan': 'L’Oriental',
-    'Taourirt': 'L’Oriental',
-    'Guercif': 'L’Oriental',
-    'Figuig': 'L’Oriental',
-    'Marrakech': 'Marrakech-Safi',
-    'Chichaoua': 'Marrakech-Safi',
-    'Al Haouz': 'Marrakech-Safi',
-    'Kelâa des Sraghna': 'Marrakech-Safi',
-    'Essaouira': 'Marrakech-Safi',
-    'Rehamna': 'Marrakech-Safi',
-    'Safi': 'Marrakech-Safi',
-    'Youssoufia': 'Marrakech-Safi',
-    'Errachidia': 'Drâa-Tafilalet',
-    'Ouarzazate': 'Drâa-Tafilalet',
-    'Midelt': 'Drâa-Tafilalet',
-    'Tinghir': 'Drâa-Tafilalet',
-    'Zagora': 'Drâa-Tafilalet',
-    'Fès': 'Fès-Meknès',
-    'Meknès': 'Fès-Meknès',
-    'El Hajeb': 'Fès-Meknès',
-    'Ifrane': 'Fès-Meknès',
-    'Moulay Yacoub': 'Fès-Meknès',
-    'Sefrou': 'Fès-Meknès',
-    'Boulemane': 'Fès-Meknès',
-    'Taounate': 'Fès-Meknès',
-    'Taza': 'Fès-Meknès',
-    'Guelmim': 'Guelmim-oued Noun',
-    'Assa-Zag': 'Guelmim-oued Noun',
-    'Tan-Tan': 'Guelmim-oued Noun',
-    'Sidi Ifni': 'Guelmim-oued Noun',
-    'Tanger-Assilah': 'Tanger-Tétouan-Al Hoceima',
-    "M'diq-Fnideq": 'Tanger-Tétouan-Al Hoceima',
-    'Tétouan': 'Tanger-Tétouan-Al Hoceima',
-    'Fahs-Anjra': 'Tanger-Tétouan-Al Hoceima',
-    'Larache': 'Tanger-Tétouan-Al Hoceima',
-    'Al Hoceima': 'Tanger-Tétouan-Al Hoceima',
-    'Chefchaouen': 'Tanger-Tétouan-Al Hoceima',
-    'Ouazzane': 'Tanger-Tétouan-Al Hoceima',
-    'Agadir Ida-Ou-Tanane': 'Souss-Massa',
-    'Inezgane-Aït Melloul': 'Souss-Massa',
-    'Chtouka-Aït Baha': 'Souss-Massa',
-    'Taroudannt': 'Souss-Massa',
-    'Tiznit': 'Souss-Massa',
-    'Tata': 'Souss-Massa',
-    'Casablanca': 'Casablanca-Settat',
-    'Mohammadia': 'Casablanca-Settat',
-    'El Jadida': 'Casablanca-Settat',
-    'Nouaceur': 'Casablanca-Settat',
-    'Médiouna': 'Casablanca-Settat',
-    'Benslimane': 'Casablanca-Settat',
-    'Berrechid': 'Casablanca-Settat',
-    'Settat': 'Casablanca-Settat',
-    'Sidi Bennour': 'Casablanca-Settat',
-    'Oued Ed-Dahab': 'Dakhla-Oued Eddahab',
-    'Aousserd': 'Dakhla-Oued Eddahab',
-    'Béni Mellal': 'Beni Mellal-Khénifra',
-    'Azilal': 'Beni Mellal-Khénifra',
-    'Fquih Ben Salah': 'Beni Mellal-Khénifra',
-    'Khénifra': 'Beni Mellal-Khénifra',
-    'Khouribga': 'Beni Mellal-Khénifra',
-    'Rabat': 'Rabat-Salé-Kénitra',
-    'Salé': 'Rabat-Salé-Kénitra',
-    'Skhirate-Témara': 'Rabat-Salé-Kénitra',
-    'Kénitra': 'Rabat-Salé-Kénitra',
-    'Khémisset': 'Rabat-Salé-Kénitra',
-    'Sidi Kacem': 'Rabat-Salé-Kénitra',
-    'Sidi Slimane': 'Rabat-Salé-Kénitra',
-    'Laâyoune': 'Laâyoune-Sakia Al Hamra',
-    'Boujdour': 'Laâyoune-Sakia Al Hamra',
-    'Tarfaya': 'Laâyoune-Sakia Al Hamra',
-    'Es-Semara': 'Laâyoune-Sakia Al Hamra'
-}
-
-const emails = {
-    "Tanger-Assilah": "Wdas.tanger@gmail.com",
-    "M'diq-Fnideq": "",
-    "Al Hoceima": "dasalhoceima@gmail.com",
-    "Chefchaouen": "mrinimd@gmail.com",
-    "Fahs-Anjra": "Tassammite.mohammed@gmail.com",
-    "Larache": "Taimi.outhman@gmail.com",
-    "Ouazzane": "",
-    "Tétouan": "brirhetm@gmail.com",
-    "Oujda-Angad": "Hafida.mi@hotmail.fr",
-    "Berkan": "Mohammed.mimouni@hotmail.com",
-    "Driouch": "Abdellaari@gmail.com",
-    "Figuig": "dassgprfiguig@yahoo.fr",
-    "Guercif": "dasguercif@gmail.com",
-    "Jerada": "Jalal.tagmouti@gmail.com",
-    "Nador": "mohamedwariachi@yahoo.fr",
-    "Taourirt": "AKHTIB@taourirt.interieur.gov.ma",
-    "Fès": "ramibahae@yahoo.fr",
-    "Meknès": "dasmeknes@gmail.com",
-    "Boulemane": "dascomboulemane@gmail.com",
-    "El Hajeb": "daselhajeb@yahoo.fr",
-    "Ifrane": "",
-    "Moulay Yacoub": "dasmyyacoub@gmail.com",
-    "Sefrou": "",
-    "Taounate": "aminaoufal@gmail.com",
-    "Taza": "Abdelkrim.mouhoute@gmail.com",
-    "Rabat": "mbellakbircharfi@rabat.interieur.gov.ma",
-    "Salé": "",
-    "Skhirate-Témara": "rguignaoual@hotmail.com/ addi.afnane@gmail.com",
-    "Kénitra": "ebtissamwilaya@gmail.com",
-    "Khémisset": "Dassfrc05@gmail.com",
-    "Sidi Kacem": "",
-    "Sidi Slimane": "Das.sidislimane@gmail.com",
-    "Benslimane": "hassandas@gmail.com",
-    "Berrechid": "das.berrechid@gmail.com",
-    "El Jadida": "m.houboub@gmail.com",
-    "Nouaceur": "Das.prnouaceur@gmail.com",
-    "Settat": "dasettat@gmail.com",
-    "Sidi Bennour": "Indh.sidibennour@gmail.com",
-    "Azilal": "azilaldas@gmail.com",
-    "Béni Mellal": "Jaberabderrahman@yahoo.fr",
-    "Fquih Ben Salah": "larbi.bouabidi@gmail.com",
-    "Khénifra": "Ziani_das@yahoo.fr",
-    "Khouribga": "daskhouribga@gmail.com",
-    "Marrakech": "Anouar.dbira@gmail.com",
-    "Al Haouz": "dashaouz@gmail.com",
-    "Chichaoua": "Loudinisa1966@gmail.com",
-    "Kelâa des Sraghna": "m002siraj@yahoo.fr",
-    "Essaouira": "khairiprovince@gmail.com",
-    "Rehamna": "dasrhamna@gmail.com",
-    "Safi": "mi.dassafi@gmail.com",
-    "Youssoufia": "dasprovinceyoussoufia@gmail.com",
-    "Errachidia": "tzeggwagh@gmail.com",
-    "Midelt": "dasmidelt@gmail.com",
-    "Ouarzazate": "dasouarzazate@gmail.com",
-    "Tinghir": "indhtinghir@gmail.com",
-    "Zagora": "hassanbtb@gmail.com",
-    "Agadir Ida-Ou-Tanane": "benkiranesaloua@gmail.com",
-    "Inezgane-Aït Melloul": "draissislimane@gmail.com",
-    "Chtouka-Aït Baha": "Das.chtouka@gmail.com",
-    "Taroudannt": "dastaroudannt@taroudann.interieur.gov.ma",
-    "Tata": "Mkhaldi6@gmail.com",
-    "Tiznit": "dastiznit@gmail.com",
-    "Guelmim": "M.joumani@gmail.com",
-    "Assa-Zag": "",
-    "Sidi Ifni": "dassidiifni@gmail.com",
-    "Tan-Tan": "dastantan@yahoo.fr",
-    "Laâyoune": "dailadaila1972@gmail.com",
-    "Boujdour": "boujdourprovince@yahoo.fr",
-    "Es-Semara": "",
-    "Tarfaya": "Talbi.hasanna@gmail.com",
-    "Oued Ed-Dahab": "DAS@ouededdahab.interieur.gov.ma",
-    "Aousserd": "dasprovinceaousserd@gmail.com"
-}
-
-const fpMapping = {
-    "Agadir Ida-Ou-Tanane": "FMPS",
-    "Al Haouz": "FMPS",
-    "Al Hoceima": "FMPS",
-    "Aousserd": "FMPS",
-    "Assa-Zag": "FMPS",
-    "Azilal": "FMPS",
-    "Béni Mellal": "FMPS",
-    "Benslimane": "FMPS",
-    "Berkan": "FZ",
-    "Berrechid": "FMPS",
-    "Boujdour": "FMPS",
-    "Boulemane": "FMPS",
-    "Chefchaouen": "FZ",
-    "Chichaoua": "FZ",
-    "Chtouka-Aït Baha": "FZ",
-    "Driouch": "FMPS",
-    "El Hajeb": "FMPS",
-    "El Jadida": "FMPS",
-    "Errachidia": "FMPS",
-    "Essaouira": "FMPS",
-    "Fahs-Anjra": "FMPS",
-    "Fès": "FMPS",
-    "Figuig": "FMPS",
-    "Fquih Ben Salah": "FZ",
-    "Guelmim": "FMPS",
-    "Guercif": "FMPS",
-    "Ifrane": "FMPS",
-    "Inezgane-Aït Melloul": "FMPS",
-    "Jerada": "FMPS",
-    "Kelâa des Sraghna": "FZ",
-    "Kénitra": "FMPS",
-    "Khémisset": "FMPS",
-    "Khénifra": "FMPS",
-    "Khouribga": "FZ",
-    "Laâyoune": "FMPS",
-    "Larache": "FZ",
-    "Marrakech": "FMPS",
-    "M'diq-Fnideq": "FMPS",
-    "Médiouna": "FMPS",
-    "Meknès": "FMPS",
-    "Midelt": "FMPS",
-    "Mohammadia": "FZ",
-    "Moulay Yacoub": "FMPS",
-    "Nador": "FMPS",
-    "Nouaceur": "FMPS",
-    "Ouarzazate": "FMPS",
-    "Ouazzane": "FMPS",
-    "Oued Ed-Dahab": "FMPS",
-    "Oujda-Angad": "FMPS",
-    "Rehamna": "FMPS",
-    "Safi": "FMPS",
-    "Salé": "FZ",
-    "Sefrou": "FMPS",
-    "Settat": "FZ",
-    "Sidi Bennour": "FMPS",
-    "Sidi ifni": "FMPS",
-    "Sidi Kacem": "FZ",
-    "Sidi Slimane": "FMPS",
-    "Skhirate-Témara": "FMPS",
-    "Tanger-Assilah": "FMPS",
-    "Tan-Tan": "FMPS",
-    "Taounate": "FMPS",
-    "Taourirt": "FMPS",
-    "Tarfaya": "FMPS",
-    "Taroudannt": "FZ",
-    "Tata": "FZ",
-    "Taza": "FMPS",
-    "Tétouan": "FMPS",
-    "Tinghir": "FMPS",
-    "Tiznit": "FZ",
-    "Youssoufia": "FMPS",
-    "Zagora": "FMPS"
-}
 
 var Helpers = {
-    urls,
-    mappingPPRegions,
-    provinces: Object.keys(mappingPPRegions),
-    regions: [...new Set(Object.values(mappingPPRegions))],
-    emails,
-    fpMapping,
-    fondations: [...new Set(Object.values(fpMapping))],
+    decoupage,
+    decoupageRegions,
+    provinces: decoupage.map(pp => pp.label),
+    regions: decoupageRegions.map(pp => pp.label),
+    fondations: ['FMPS', 'FZ'],
     apiUrl: (function () {
         var direct = config.direct;
         if (direct.relativeUrl) {
@@ -660,11 +997,11 @@ var Helpers = {
             return val.getTime() !== val.getTime() ? null : val;
         }
 
-        if (val.include('&')) {
+        if (val.includes('&')) {
             val = val.split('&')[1].trim();
         }
 
-        if (val.include('et')) {
+        if (val.includes('et')) {
             val = val.split('et')[1].trim();
         }
 
@@ -725,9 +1062,11 @@ var Helpers = {
             params['filter'] = params['filter'] || []
 
             if (userRole === 2) {
-                locationFilter.property = 'province_code'
-                locationFilter.operator = 'in'
-                locationFilter.value = regionsCodesMapping[userRegion];
+                locationFilter.property = 'province_code';
+                locationFilter.operator = 'in';
+
+                const regionMatch = decoupageRegions.find(rec => rec.value == userRegion);
+                locationFilter.value = regionMatch ? regionMatch.provinces : [];
             } else if (userRole === 3) {
                 locationFilter.property = 'province_code'
                 locationFilter.value = userProvince
@@ -761,7 +1100,8 @@ var Helpers = {
 
             const userProvince = user.get('province_code');
             const userRegion = user.get('region_code');
-            const userRegionProvinces = regionsCodesMapping[userRegion];
+            const regionMatch = decoupageRegions.find(rec => rec.value == userRegion);
+            const userRegionProvinces = regionMatch ? regionMatch.provinces : [];
             const userFP = user.get('fondation');
 
             return (userRole === 2 && userRegionProvinces.includes(recProvince)) ||

@@ -63,30 +63,7 @@ module.exports = {
 
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
-                const newRecords = records.filter(rec => !rec.fp_id);
-                console.log(newRecords.length);
-
-                return models.Unite.bulkCreate(records, { transaction: t, updateOnDuplicate: fields });
-                /*return Promise.map(records, function (record, index) {
-                    if (!conflictField || !record[conflictField]) {
-                        console.log(`Create ${record.douar_quartier}`)
-                        return models.Unite.create(record);
-                    }
-
-                    const query = {};
-                    query[conflictField] = record[conflictField].toString();
-
-                    return models.Unite.findOne({
-                        where: query
-                    }).then(function (row) {
-                        if (!row) {
-                            console.log(`Create ${record.douar_quartier}`)
-                            return models.Unite.create(record)
-                        }
-
-                        return row.update(record);
-                    })
-                })*/
+                return models.Unite.bulkCreate(records, { transaction: t, updateOnDuplicate: fields, returning: ['id'] });
             })
         })
     },
