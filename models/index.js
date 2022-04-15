@@ -73,7 +73,7 @@ const RedisAdaptor = require('../utils/sequelize-transparent-cache-ioredis');
 const redisAdaptor = new RedisAdaptor({
     client: redisClient,
     namespace: 'model',
-    lifetime: 60 * 60 // 1H in seconds
+    lifetime: 60
 })
 
 const sequelizeCache = require('../utils/sequelize-transparent-cache');
