@@ -281,8 +281,7 @@ module.exports = function (sequelize, DataTypes) {
         Model.addScope('nested', {
             attributes: {
                 include: [
-                    [sequelize.literal('(SELECT COUNT(*) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id)'), 'delegationscount'],
-                    [sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id)'), 'total_delegue'],
+                    //[sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id)'), 'total_delegue'],
                     [sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id AND DelegationUnites.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.nature_affectation = \'Fonctionnement\'))'), 'montant_delegue_fct'],
                     [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
 
@@ -296,6 +295,36 @@ module.exports = function (sequelize, DataTypes) {
                 model: models.Effectif,
                 as: 'effectifs'
             }*/]
+        });
+
+        Model.addScope('projections', {
+            attributes: {
+                include: [
+                    'id',
+                    'plan_actions',
+                    'fondation_partenaire',
+                    'province_code',
+                    'commune',
+                    'intitule',
+                    'nbre_salles',
+                    'nbre_salles_ouvertes',
+                    'cout_travaux_estime',
+                    'delai_execution',
+                    'date_ouverture',
+                    'date_resiliation',
+                    'date_arret',
+                    'tx_avancement_physique',
+                    'statut',
+                    'est_ouverte',
+                    'est_resiliee',
+                    'est_en_arret',
+                    //[sequelize.literal('(SELECT COUNT(*) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id)'), 'delegationscount'],
+                    [sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id AND DelegationUnites.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.nature_affectation = \'Fonctionnement\'))'), 'montant_delegue_fct'],
+                    [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
+                ]
+            },
+
+            include: []
         });
     }
 

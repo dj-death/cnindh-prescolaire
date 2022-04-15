@@ -58,18 +58,18 @@ module.exports = function (sequelize, DataTypes) {
         Model.addScope('browse', {
             attributes: {
                 include: [
-                    [sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id)'), 'montant_global'],
+                    //[sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id)'), 'montant_global'],
                     [sequelize.literal('(SELECT COUNT(*) FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id)'), 'unitescount'],
                     [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.id IN (SELECT unite_id FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id))'), 'sallescount'],
                     [sequelize.literal('(SELECT COUNT(DISTINCT province_code) FROM Unites WHERE Unites.id IN (SELECT unite_id FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id))'), 'provincescount'],
 
                     [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'montant_effectif'],
                     [sequelize.literal('(SELECT COUNT(*) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'provincescount_effectif'],
-                    [sequelize.literal('(SELECT SUM(nbre_ups_concernees) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'unitescount_effectif'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'sallescount_effectif']
+                    //[sequelize.literal('(SELECT SUM(nbre_ups_concernees) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'unitescount_effectif'],
+                    //[sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'sallescount_effectif']
                 ]
             },
-            include: [
+            include: [/*
                 { 
                     model: models.Lot,
                     as: 'lot',
@@ -80,7 +80,7 @@ module.exports = function (sequelize, DataTypes) {
                 { 
                     model: models.SousDelegation,
                     as: 'sousdelegations'
-                }
+                }*/
             ]
         });
 
@@ -88,9 +88,11 @@ module.exports = function (sequelize, DataTypes) {
             attributes: {
                 include: [
                     [sequelize.literal('(SELECT COUNT(*) FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id)'), 'unitescount'],
-                    [sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id)'), 'montant_global'],
+                    //[sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id)'), 'montant_global'],
                     [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.id IN (SELECT unite_id FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id))'), 'sallescount'],
-                    [sequelize.literal('(SELECT COUNT(DISTINCT province_code) FROM Unites WHERE Unites.id IN (SELECT unite_id FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id))'), 'provincescount'],
+                    //[sequelize.literal('(SELECT COUNT(DISTINCT province_code) FROM Unites WHERE Unites.id IN (SELECT unite_id FROM DelegationUnites WHERE DelegationUnites.delegation_id = Delegation.id))'), 'provincescount'],
+                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'montant_effectif'],
+                    [sequelize.literal('(SELECT COUNT(*) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'provincescount_effectif'],
 
                     /*[sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'montant_effectif'],
                     [sequelize.literal('(SELECT COUNT(*) FROM SousDelegations WHERE SousDelegations.delegation_id = Delegation.id)'), 'provincescount_effectif'],
@@ -103,16 +105,18 @@ module.exports = function (sequelize, DataTypes) {
                     model: models.Unite,
                     as: 'unites',
                     attributes: [
-                        'id', 'province_code', 'plan_actions', 'fondation_partenaire', 'commune', 'douar_quartier', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture'
-                    ]
-                },
+                        'id', 'province_code', 'plan_actions', 'fondation_partenaire', 'commune', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture'
+                    ],
+
+                    through: { attributes: ['montant', 'delegation_id'] }
+                }/*,
                 { 
                     model: models.Lot,
                     as: 'lot',
                     attributes: [
                         'id', 'libelle'
                     ]
-                }/*,
+                },
                 { 
                     model: models.SousDelegation,
                     as: 'sousdelegations'

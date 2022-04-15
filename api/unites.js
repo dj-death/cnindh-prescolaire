@@ -34,6 +34,7 @@ var Service = {
 
             if (params.id && qScope === 'browse') qScope = 'nested';
 
+
             return models.Unite.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Unite))
         }).then(function (result) {
             let payload;
