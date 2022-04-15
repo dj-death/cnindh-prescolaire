@@ -114,6 +114,12 @@ if (process.env.NODE_ENV !== 'production') {
     config.direct.cacheAPI = false;
 }
 
+if (process.env.HEROKU) {
+    config.direct.server = "cnindh-prescolaire.herokuapp.com";
+    config.direct.port = 80;
+    config.direct.protocol = "https";
+}
+
 var directApi = direct.initApi(config.direct);
 var directRouter = direct.initRouter(config.direct);
 
