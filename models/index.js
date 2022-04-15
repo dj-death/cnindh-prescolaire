@@ -50,15 +50,14 @@ config.operatorsAliases = {
     $col: Op.col
 };
 
+/*
 process.env.REDISCLOUD_URL = process.env.REDISCLOUD_URL || "redis://default:IX4Sk07AMXNvXOyPlvs8BtRXe4Z30255@redis-12680.c243.eu-west-1-3.ec2.cloud.redislabs.com:12680";
 
 const Redis = require('ioredis');
 const redisClient = new Redis(process.env.REDISCLOUD_URL, {
     no_ready_check: true
-    /*tls: {
-        rejectUnauthorized: false
-    }*/
 });
+*/
 
 var sequelize;
 
@@ -68,7 +67,7 @@ if (process.env.DATABASE_URL) {
     sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-
+/*
 const RedisAdaptor = require('../utils/sequelize-transparent-cache-ioredis');
 const redisAdaptor = new RedisAdaptor({
     client: redisClient,
@@ -78,6 +77,7 @@ const redisAdaptor = new RedisAdaptor({
 
 const sequelizeCache = require('../utils/sequelize-transparent-cache');
 const { withCache } = sequelizeCache(redisAdaptor);
+*/
 
 var db = {};
 
@@ -88,9 +88,9 @@ fs.readdirSync(__dirname)
     .forEach(function (file) {
         try {
             var model = sequelize.import(path.join(__dirname, file));
-            db[model.name] = withCache(model);
+            db[model.name] = model; //withCache(model);
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
     });
 
@@ -102,6 +102,6 @@ Object.keys(db).forEach(function (modelName) {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-db.withCache = withCache;
+//db.withCache = withCache;
 
 module.exports = db;
