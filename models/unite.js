@@ -289,10 +289,10 @@ module.exports = function (sequelize, DataTypes) {
                 ]
             },
 
-            include: [{
+            include: [/*{
                 model: models.Delegation,
                 as: 'delegations'
-            }/*, {
+            }, {
                 model: models.Effectif,
                 as: 'effectifs'
             }*/]

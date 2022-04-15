@@ -150,6 +150,13 @@ app.post(config.direct.classRouteUrl, function (req, res) {
     directRouter.processRoute(req, res);
 });
 
+app.get('/cn', function (req, res) {
+    res.redirect('http://144.24.195.153:3000');
+});
+
+app.get('/redirect', function (req, res) {
+    res.redirect('/');
+});
 
 if (config.server.uploadEnabled) {
     const multer = require('multer')
