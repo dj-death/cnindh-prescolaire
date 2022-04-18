@@ -59,7 +59,8 @@ module.exports = {
     },
 
     upsertUnites: function (records) {
-        const fields = Object.keys(models.Unite.rawAttributes).filter(f => !['id', 'created', 'fp_id'].includes(f))
+        //const fields = Object.keys(models.Unite.rawAttributes).filter(f => !['id', 'created', 'fp_id'].includes(f))
+        const fields = Object.keys(records[0]).filter(f => !['id', 'created', 'fp_id'].includes(f));
 
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
