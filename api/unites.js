@@ -21,24 +21,18 @@ var Service = {
 
             params.filter = accessFilters;
 
-            console.log(params.filter);
-
             if (params.id && Object.keys(params).length === 1) {
                 return models.Unite.scope('nested').findByPk(params.id);
             }
 
-            const qScope = params.scope || 'browse';
+            let qScope = params.scope || 'browse';
 
             // no limit no filter then need to fetch from cache
             if (!params.limit && (!params.filter || params.filter.length === 0) && scopeName === 'browse') {
-                console.log(params)
                 return models.Unite.scope(qScope)/*.cache('unites')*/.findAll(helpers.sequelizify(params, models.Unite));
             }
 
             if (params.id && qScope === 'browse') qScope = 'nested';
-
-
-            console.log(params)
             return models.Unite.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Unite))
         }).then(function (result) {
             let payload;

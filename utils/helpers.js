@@ -813,9 +813,8 @@ var Helpers = {
                     // Special case for the "#search" property
                     prop = '$or';
                     cond = me.searchableAttributes(model).map(function (attr) {
-                        return { [attr]: { $like: '%' + value + '%' } };
+                        return { [attr]: { $iLike: '%' + value + '%' } };
                     });
-
                 } else {
 
                     switch (filter.operator) {
@@ -826,7 +825,7 @@ var Helpers = {
                         case '!=': cond = { $ne: value }; break;
                         case 'in': cond = { $in: value }; break;
                         case 'notin': cond = { $notIn: value }; break;
-                        case 'like': cond = { $like: value }; break;
+                        case 'like': cond = { $iLike: value }; break;
                         case 'notlike': cond = { $notLike: value }; break;
 
                         case 'between': cond = { $between: value }; break;

@@ -329,6 +329,8 @@ var ExcelUtils = {
 
       if (objRow.date_ouverture) objRow.date_ouverture = helpers.extractDate(objRow.date_ouverture)
 
+      if (objRow.est_ouverte == null) objRow.est_ouverte = false;
+
       if (nature === 'FZ') {
         objRow.fp_id =  `${objRow.province_code}/${objRow.plan_actions}/${objRow.commune}/${objRow.douar_quartier}/${objRow.intitule}`; 
 
