@@ -325,10 +325,12 @@ var ExcelUtils = {
 
       if (!objRow.douar_quartier && objRow.intitule) objRow.douar_quartier = objRow.intitule
 
+      if (objRow.douar_quartier) objRow.douar_quartier = objRow.douar_quartier.replace(/\bdouar\b/i, '').trim();
+
       if (objRow.date_ouverture) objRow.date_ouverture = helpers.extractDate(objRow.date_ouverture)
 
       if (nature === 'FZ') {
-        objRow.fp_id =  `${objRow.province}/${objRow.plan_actions}/${objRow.commune}/${objRow.douar_quartier}/${objRow.intitule}`; 
+        objRow.fp_id =  `${objRow.province_code}/${objRow.plan_actions}/${objRow.commune}/${objRow.douar_quartier}/${objRow.intitule}`; 
 
         if (!objRow.est_ouverte && objRow.est_livree && objRow.date_ouverture && objRow.fp_comments) {
           objRow.est_ouverte = true

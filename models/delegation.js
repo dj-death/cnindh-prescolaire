@@ -108,7 +108,7 @@ module.exports = function (sequelize, DataTypes) {
                         'id', 'province_code', 'plan_actions', 'fondation_partenaire', 'commune', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture'
                     ],
 
-                    through: { attributes: ['montant', 'delegation_id'/*, 'unite_id'*/] }
+                    through: { attributes: ['id', 'montant', 'delegation_id'/*, 'unite_id'*/] }
                 },
                 { 
                     model: models.Lot,

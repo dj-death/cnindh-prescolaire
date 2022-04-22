@@ -1056,7 +1056,8 @@ var Helpers = {
         } else if (userRole > 1) {
             const userRegion = user.get('region_code');
             const userProvince = user.get('province_code');
-
+            const userFP = user.get('fondation');
+            
             var locationFilter = { property: '', value: '' }
 
             params['filter'] = params['filter'] || []
@@ -1079,6 +1080,7 @@ var Helpers = {
                 return false;
             }
 
+            console.log(locationFilter)
             params.filter.push(locationFilter)
         }
 
