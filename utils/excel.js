@@ -345,7 +345,7 @@ var ExcelUtils = {
         objRow.tx_avancement_physique = 100;
       }
 
-      objRow.fondation_partenaire_code = objRow.fondation_partenaire === 'FMPS' ? 0 : 1;
+      objRow.fp_code = objRow.fondation_partenaire === 'FMPS' ? 0 : 1;
       delete objRow.fondation_partenaire;
 
       delete objRow.province;

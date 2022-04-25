@@ -56,7 +56,7 @@ module.exports = function (sequelize, DataTypes) {
                     model: models.Unite,
                     as: 'unite',
                     attributes: [
-                        'id', 'province_code', 'plan_actions', 'fondation_partenaire_code', 'commune', 'douar_quartier', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture'
+                        'id', 'province_code', 'plan_actions', 'fp_code', 'commune', 'douar_quartier', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture'
                     ]
                 },
                 { model: models.Delegation, as: 'delegation' }]
