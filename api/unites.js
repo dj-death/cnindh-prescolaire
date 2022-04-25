@@ -77,7 +77,18 @@ var Service = {
                 return;
             }
 
-            return models.Unite/*.cache()*/.bulkCreate(Array.isArray(params) ? params : [params]);
+            var data = Array.isArray(params) ? params : [params];
+            data.forEach(function (rec) {
+                if (rec.fp_id) return;
+
+                if (rec.fondation_partenaire_code == 0) { // FMPS
+                    rec.fp_id = 'temp_' + Date.now()
+                } else {
+                    rec.fp_id = `${rec.province_code}/${rec.plan_actions}/${rec.commune}/${rec.douar_quartier}/${rec.intitule}`; 
+                }
+            })
+
+            return models.Unite/*.cache()*/.bulkCreate(data);
         }).then(function (row) {
             callback(null, { data: row });
         }).catch(function (err) {

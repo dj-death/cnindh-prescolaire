@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         plan_actions: { type: DataTypes.STRING, searchable: true },
-        fondation_partenaire: { type: DataTypes.STRING, searchable: true },
+        fondation_partenaire_code: { type: DataTypes.INTEGER },
         annexe_administrative: { type: DataTypes.STRING },
         province_code: { type: DataTypes.INTEGER, allowNull: false },
         commune: { type: DataTypes.STRING, searchable: true },
@@ -274,7 +274,7 @@ module.exports = function (sequelize, DataTypes) {
         });
 
         Model.addScope('browse', {
-            attributes: ['id', 'created', 'updated', 'province_code', 'cercle', 'commune', 'annexe_administrative', 'douar_quartier', 'adresse', 'plan_actions', 'fondation_partenaire', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 'date_ouverture', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons'],
+            attributes: ['id', 'created', 'updated', 'province_code', 'cercle', 'commune', 'annexe_administrative', 'douar_quartier', 'adresse', 'plan_actions', 'fondation_partenaire_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 'date_ouverture', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons'],
             include: []
         });
 
@@ -302,7 +302,7 @@ module.exports = function (sequelize, DataTypes) {
                 include: [
                     'id',
                     'plan_actions',
-                    'fondation_partenaire',
+                    'fondation_partenaire_code',
                     'province_code',
                     'commune',
                     'intitule',

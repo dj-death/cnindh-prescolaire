@@ -83,12 +83,7 @@ module.exports = function (sequelize, DataTypes) {
 
         province_code: { type: DataTypes.INTEGER, allowNull: false },
         region_code: { type: DataTypes.INTEGER, allowNull: false },
-
-        fondation: {
-            type: DataTypes.STRING,
-            searchable: true,
-            allowNull: true
-        }
+        fondation_code: { type: DataTypes.INTEGER, allowNull: true }
     }, {
         defaultScope: {
             attributes: {

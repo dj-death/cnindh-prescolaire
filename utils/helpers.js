@@ -1055,7 +1055,7 @@ var Helpers = {
         } else if (userRole > 1) {
             const userRegion = user.get('region_code');
             const userProvince = user.get('province_code');
-            const userFP = user.get('fondation');
+            const userFP = user.get('fondation_code');
             
             var locationFilter = { property: '', value: '' }
 
@@ -1071,7 +1071,7 @@ var Helpers = {
                 locationFilter.property = 'province_code'
                 locationFilter.value = userProvince
             } else if (userRole === 4) {
-                locationFilter.property = 'fondation_partenaire'
+                locationFilter.property = 'fondation_partenaire_code'
                 locationFilter.value = userFP
             }
 
@@ -1097,13 +1097,13 @@ var Helpers = {
 
         if (userRole > 1) {
             const recProvince = typeof (rec.get) === 'function' ? rec.get('province_code') : rec.province_code;
-            const recFP = typeof (rec.get) === 'function' ? rec.get('fondation_partenaire') : rec.fondation_partenaire;
+            const recFP = typeof (rec.get) === 'function' ? rec.get('fondation_partenaire_code') : rec.fondation_partenaire_code;
 
             const userProvince = user.get('province_code');
             const userRegion = user.get('region_code');
             const regionMatch = decoupageRegions.find(rec => rec.value == userRegion);
             const userRegionProvinces = regionMatch ? regionMatch.provinces : [];
-            const userFP = user.get('fondation');
+            const userFP = user.get('fondation_code');
 
             return (userRole === 2 && userRegionProvinces.includes(recProvince)) ||
                 (userRole === 3 && userProvince === recProvince) ||

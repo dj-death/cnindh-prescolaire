@@ -345,8 +345,13 @@ var ExcelUtils = {
         objRow.tx_avancement_physique = 100;
       }
 
-      objRow.date_situation = new Date();
+      objRow.fondation_partenaire_code = objRow.fondation_partenaire === 'FMPS' ? 0 : 1;
+      delete objRow.fondation_partenaire;
+
       delete objRow.province;
+
+      objRow.date_situation = new Date();
+
       return objRow
     }).filter(row => !!row.intitule)
 
