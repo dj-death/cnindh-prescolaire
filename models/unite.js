@@ -17,8 +17,9 @@ module.exports = function (sequelize, DataTypes) {
         fp_code: { type: DataTypes.INTEGER },
         annexe_administrative: { type: DataTypes.STRING },
         province_code: { type: DataTypes.INTEGER, allowNull: false },
+        cercle_code: { type: DataTypes.INTEGER, allowNull: false },
+        commune_code: { type: DataTypes.INTEGER, allowNull: false },
         commune: { type: DataTypes.STRING, searchable: true },
-        cercle: { type: DataTypes.STRING, searchable: true },
         douar_quartier: { type: DataTypes.STRING, searchable: true },
         dans_ecole: { type: DataTypes.BOOLEAN, defaultValue: false },
         adresse: { type: DataTypes.STRING, searchable: true },
@@ -274,7 +275,7 @@ module.exports = function (sequelize, DataTypes) {
         });
 
         Model.addScope('browse', {
-            attributes: ['id', 'created', 'updated', 'province_code', 'cercle', 'commune', 'annexe_administrative', 'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 'date_ouverture', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons'],
+            attributes: ['id', 'created', 'updated', 'province_code', 'cercle_code', 'commune', 'annexe_administrative', 'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 'date_ouverture', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons'],
             include: []
         });
 
