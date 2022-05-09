@@ -21,41 +21,21 @@ var Service = {
 
             params.filter = accessFilters;
 
-            if (params.id && Object.keys(params).length === 1) {
-                return models.Unite.scope('nested').findByPk(params.id);
-            }
-
             let qScope = params.scope || 'browse';
 
             // no limit no filter then need to fetch from cache
-            if (!params.limit && (!params.filter || params.filter.length === 0) && scopeName === 'browse') {
-                return models.Unite.scope(qScope)/*.cache('unites')*/.findAll(helpers.sequelizify(params, models.Unite));
-            }
+            /*if (!params.limit && (!params.filter || params.filter.length === 0) && scopeName === 'browse') {
+                return models.Unite.scope(qScope).cache('unites').findAll(helpers.sequelizify(params, models.Unite));
+            }*/
 
             if (params.id && qScope === 'browse') qScope = 'nested';
             return models.Unite.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Unite))
         }).then(function (result) {
-            let payload;
-
-            if (result && result.rows) {
-                payload = {
-                    total: result.count,
-                    data: result.rows,
-                    lastupdated: new Date()
-                }
-            } else if (Array.isArray(result)) {
-                payload = {
-                    total: result.length,
-                    data: result
-                }
-            } else {
-                payload = {
-                    total: 1,
-                    data: result
-                }
-            }
-
-            callback(null, payload);
+            callback(null, {
+                total: result.count,
+                data: result.rows,
+                lastupdated: new Date()
+            });
         }).catch(function (err) {
             callback(err);
         });

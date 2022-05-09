@@ -12,6 +12,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
+        plan_actions: { type: DataTypes.STRING, allowNull: false },
         province_code: { type: DataTypes.INTEGER, allowNull: false },
         nbre_ups_concernees: { type: DataTypes.INTEGER },
         nbre_salles_concernees: { type: DataTypes.INTEGER },

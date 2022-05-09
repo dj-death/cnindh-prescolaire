@@ -1,15 +1,10 @@
 const Excel = require('exceljs-lightweight');
-const fs = require("fs");
-const path = require("path");
-const { distance, closest } = require('fastest-levenshtein')
-
 
 const helpers = require('./helpers');
 const decoupage = helpers.decoupage;
 const provinces = helpers.provinces
 const fondations = helpers.fondations
 
-const latinize = require('latinize');
 const { help } = require('yargs');
 const columns = [
   'plan_actions', 'fondation_partenaire', 'annexe_administrative', 'province', 'commune', 'douar_quartier', 'intitule',
@@ -286,7 +281,7 @@ var ExcelUtils = {
       }
 
       if (objRow.province && !provinces.includes(objRow.province)) {
-        objRow.province = closest(objRow.province, provinces);
+        objRow.province = helpers.closestEntry(objRow.province, provinces, true, true);
       }
 
       if (objRow.province) objRow.province_code = decoupage.find(rec => rec.label ===  objRow.province).value;
@@ -303,19 +298,19 @@ var ExcelUtils = {
         objRow.fondation_partenaire = provinceMatch ? provinceMatch.fp : nature;
       }
 
-      /*if (objRow.region) {
-        if (!regions.includes(objRow.region)) {
-          objRow.region = closest(objRow.region, regions)
-        }
-      } else {
-        if (objRow.province) {
-          const provinceMatch = decoupage.find(pp => pp.label === objRow.province);
-          objRow.region = provinceMatch ? provinceMatch.region : null;
-        }
-      }*/
+      if (objRow.commune) {
+        objRow.commune = helpers.titleCase(objRow.commune);
+        let commune_code = helpers.getCommuneCode(objRow.commune, objRow.province_code);
+        objRow.commune_code = commune_code;
 
-      if (objRow.commune) objRow.commune = helpers.titleCase(objRow.commune)
-      if (objRow.douar_quartier) objRow.douar_quartier = helpers.titleCase(objRow.douar_quartier)
+        var communeMatch = helpers.communesCfg.find(comm => comm.value === commune_code);
+        var cercleMatch = communeMatch ? helpers.cerclesCfg.find(cercle => cercle.value === communeMatch.cercle_code) : null;
+        objRow.cercle_code = cercleMatch ? cercleMatch.value : null;
+      }
+
+      let hasIntituleAndDouar = !!objRow.douar_quartier && !!objRow.intitule;
+
+      if (objRow.douar_quartier) objRow.douar_quartier = helpers.titleCase(objRow.douar_quartier);
 
       if (objRow.intitule) {
         objRow.intitule = helpers.titleCase(objRow.intitule)
@@ -323,16 +318,35 @@ var ExcelUtils = {
         if (objRow.douar_quartier) objRow.intitule = objRow.douar_quartier
       }
 
-      if (!objRow.douar_quartier && objRow.intitule) objRow.douar_quartier = objRow.intitule
+      objRow.intitule = objRow.intitule ? helpers.sanitizeDouar(objRow.intitule) : null;
 
-      if (objRow.douar_quartier) objRow.douar_quartier = objRow.douar_quartier.replace(/\bdouar\b/i, '').trim();
+      if (!objRow.douar_quartier && objRow.intitule) {
+        objRow.douar_quartier = objRow.intitule
+      } else if (objRow.douar_quartier) {
+        objRow.douar_quartier = helpers.sanitizeDouar(objRow.douar_quartier);
+      }
+
+
+      if (objRow.douar_quartier) {
+        let douar_quartier = objRow.douar_quartier;
+        douar_quartier = douar_quartier.replace(/\b(douar|up)\.?\b\s/ig, '');
+        douar_quartier = douar_quartier.replace(/\s?\([a-zA-Zé ]+\)\s?/, "");
+        douar_quartier = douar_quartier.replace(/^(ecole|nm_|nm_ecole)\s?/i, '');
+
+        if (!hasIntituleAndDouar && (douar_quartier.match(/\d/g) || []).length === 1) {
+          douar_quartier = douar_quartier.replace(/[\-\s]{0,2}[1-4][\-\s]{0,2}$/, '');
+        }
+
+        douar_quartier = helpers.titleCase(douar_quartier);
+        objRow.douar_quartier = helpers.sanitizeDouar(douar_quartier);
+      }
 
       if (objRow.date_ouverture) objRow.date_ouverture = helpers.extractDate(objRow.date_ouverture)
 
       if (objRow.est_ouverte == null) objRow.est_ouverte = false;
 
       if (nature === 'FZ') {
-        objRow.fp_id =  `${objRow.province_code}/${objRow.plan_actions}/${objRow.commune}/${objRow.douar_quartier}/${objRow.intitule}`; 
+        objRow.fp_id =  `${objRow.province_code}/${objRow.plan_actions}/${objRow.commune_code}/${helpers.nameSig(objRow.douar_quartier)}/${helpers.nameSig(objRow.intitule)}`; 
 
         if (!objRow.est_ouverte && objRow.est_livree && objRow.date_ouverture && objRow.fp_comments) {
           objRow.est_ouverte = true
@@ -393,9 +407,9 @@ var ExcelUtils = {
       }
 
 
-      const near = closest(col, columns);
+      const near = helpers.closestEntry(col, columns, true, false, 0.6);
 
-      if (distance(col, near) <= 3 && result.indexOf(near) === -1) {
+      if (near && result.indexOf(near) === -1) {
         result.push(near);
         return;
       }

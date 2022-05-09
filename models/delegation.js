@@ -12,6 +12,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
+        plan_actions: { type: DataTypes.STRING, allowNull: false },
         tranche_no: { type: DataTypes.INTEGER, allowNull: false },
         nature_affectation: { type: DataTypes.STRING, allowNull: false, searchable: true },
         date_delegation: {
@@ -105,10 +106,10 @@ module.exports = function (sequelize, DataTypes) {
                     model: models.Unite,
                     as: 'unites',
                     attributes: [
-                        'id', 'province_code', 'plan_actions', 'fp_code', 'commune', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture'
+                        'id', 'province_code', 'plan_actions', 'fp_code', 'commune_code', 'intitule', 'nbre_salles', 'est_ouverte', 'est_resiliee', 'date_ouverture'
                     ],
 
-                    through: { attributes: ['id', 'montant', 'delegation_id'/*, 'unite_id'*/] }
+                    through: { attributes: ['id', 'montant', 'delegation_id' ] }
                 },
                 { 
                     model: models.Lot,
@@ -116,10 +117,14 @@ module.exports = function (sequelize, DataTypes) {
                     attributes: [
                         'id', 'libelle'
                     ]
-                }/*,
-                { 
+                },
+                /*{ 
                     model: models.SousDelegation,
-                    as: 'sousdelegations'
+                    as: 'sousdelegations',
+
+                    attributes: [
+                        'province_code', 'montant_effectif'
+                    ]
                 }*/
             ]
         });

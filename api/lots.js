@@ -20,20 +20,14 @@ var Service = {
             }
 
             const key = 'lots_'
-            if (params.id) {
-                return models.Lot.scope('nested')/*.cache()*/.findByPk(params.id);
-            }
-
             const qScope = params.scope || (params.id ? 'nested' : 'browse');
-            return models.Lot.scope(qScope)/*.cache(key)*/.findAll(
+
+            return models.Lot.scope(qScope)/*.cache(key)*/.findAndCountAll(
                 helpers.sequelizify(params, models.Lot));
         }).then(function (result) {
-            result = Array.isArray(result) ? result : [result];
-            result = result.filter(rec => rec != null);
-            
             callback(null, {
-                total: result.count || result.length,
-                data: result.rows || result,
+                total: result.count,
+                data: result.rows,
                 lastupdated: new Date()
             });
         }).catch(function (err) {

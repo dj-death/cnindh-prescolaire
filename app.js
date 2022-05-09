@@ -188,12 +188,12 @@ if (config.server.uploadEnabled) {
     
                 for (const [key, value] of Object.entries(groupedByFPID)) {
                    if (value.length === 1) continue;
-                   msg += `Id [${key}]: ${value.map(r => r.douar_quartier).join(', ')}`;
+                   msg += `Id [${key}]: ${value.map(r => r.douar_quartier + ' ' + r.plan_actions).join(', ')};<br/>`;
                 }
     
                 res.json({
                     success: false,
-                    message: `Unicité des ID FP non respectée ! ${unique} uniques sur ${ids.length}. ${msg}`
+                    message: `Unicité des ID FP non respectée ! ${unique} uniques sur ${ids.length}:<br/><br/>${msg}`
                 });     
                 
                 return;
@@ -268,10 +268,8 @@ if (yargs['first-launch']) {
     // populate initial data
     data.reset();
 } else {
-
     data.sync().then(function () {
         console.info('Table creation: DONE');
-        
         //const Heroku = require('heroku-client')
         //const heroku = new Heroku({ token: "dc53688c-1f72-4878-af5f-a57115e6ca29" })
         // data.insertReportings()
@@ -280,9 +278,10 @@ if (yargs['first-launch']) {
         })*/
 
         //data.insertDelegations()
+
+        //data.setCommunesCode();
     })
 }
-
 
 process.on('SIGINT', function () {
     models.Sequelize.close();

@@ -3,6 +3,8 @@
 var models = require("../models");
 var sequelize = models.sequelize;
 var Promise = models.Sequelize.Promise;
+var throat = require('throat');
+const helpers = require('./helpers');
 
 function pick(items, index) {
     var count = items.length;
@@ -67,6 +69,56 @@ module.exports = {
                 return models.Unite.bulkCreate(records, { transaction: t, updateOnDuplicate: fields, returning: ['id'] });
             })
         })
+    },
+
+    setCommunesCode: function () {
+        let diffCount = 0;
+
+        models.Unite.findAll(/*{ where: { plan_actions: '2021', fp_code: 1 } }*/).then(function (unites) {
+            return Promise.all(/*Promise.map(unites,*/ unites.map(throat(1, function (unite, index) {
+                /*var douar_quartier = unite.get('douar_quartier');
+                var commune_code = unite.get('commune_code');
+
+                var cleanedDr = helpers.titleCase(douar_quartier).replace(/\b(douar|up)\.?\b/i, '').trim();
+                cleanedDr = cleanedDr.replace(/\bCoop\.?\b\s/i, 'Coopérative ').trim();
+        
+                if ((cleanedDr.match(/\d/g) || []).length === 1) {
+                    cleanedDr = cleanedDr.replace(/[\-\s]{0,2}[1-4][\-\s]{0,2}$/, '').trim();
+                }
+
+                var communeMatch = helpers.communesCfg.find(comm => comm.value === commune_code);
+                var cercleMatch = communeMatch ? helpers.cerclesCfg.find(cercle => cercle.value === communeMatch.cercle_code) : null;
+                
+                if (/coop/i.test(cleanedDr)) console.log(douar_quartier, cleanedDr);*/
+
+                var intitule = helpers.sanitizeDouar(unite.get('intitule'));
+                var douar_quartier = intitule;
+
+                douar_quartier = douar_quartier.replace(/\b(douar|up)\.?\b\s/ig, '');
+                douar_quartier = douar_quartier.replace(/\s?\([a-zA-Zé ]+\)\s?/, "");
+                douar_quartier = douar_quartier.replace(/^(ecole|nm_|nm_ecole)\s?/i, '');
+        
+                if ((douar_quartier.match(/\d/g) || []).length === 1) {
+                  douar_quartier = douar_quartier.replace(/[\-\s]{0,2}[1-4][\-\s]{0,2}$/, '');
+                }
+        
+                douar_quartier = helpers.titleCase(douar_quartier);
+
+                return unite.update({
+                    intitule: intitule,
+                    douar_quartier: douar_quartier,
+                    adresse: unite.get('fp_code') === 1 ? `${helpers.nameSig(douar_quartier)}/${helpers.nameSig(intitule)}` : null
+                });
+            })));  
+        }).then(function () {
+            console.log('end = ', diffCount);
+        })
+
+        /*return sequelize.transaction(function (t) {
+            return sequelize.sync({ force: false, transaction: t }).then(function () {
+                return models.Unite.bulkCreate(records, { transaction: t, updateOnDuplicate: fields, returning: ['id'] });
+            })
+        })*/
     },
 
     insertLots: function (records, query) {

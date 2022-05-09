@@ -38,21 +38,16 @@ var Service = {
                 return;
             }
 
-            if (params.id) {
-                return models.Delegation.scope('nested')/*.cache()*/.findByPk(params.id);
-            }
-
             const key = 'delegations_' + ( params.filter ? JSON.stringify(params.filter) : '')
             let qScope = params.scope || (params.id ? 'nested' : 'browse');
             if (params.id && qScope === 'browse') qScope = 'nested';
 
-            return models.Delegation.scope(qScope)/*.cache(key)*/.findAll(
+            return models.Delegation.scope(qScope)/*.cache(key)*/.findAndCountAll(
                 helpers.sequelizify(params, models.Delegation));
         }).then(function (result) {
-            result = Array.isArray(result) ? result : [result];
             callback(null, {
-                total: result.count || result.length,
-                data: result.rows || result,
+                total: result.count,
+                data: result.rows,
                 lastupdated: new Date()
             });
         }).catch(function (err) {

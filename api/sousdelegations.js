@@ -5,7 +5,15 @@ var session = require('../utils/session.js');
 var errors = require('../utils/errors.js');
 var models = require('../models');
 
+const _ = require('lodash');
+
 var Promise = models.Sequelize.Promise;
+var PromiseThrottle = require('promise-throttle');
+var promiseThrottle = new PromiseThrottle({
+    requestsPerSecond: 50,           // up to 1 request per second
+    promiseImplementation: Promise  // the Promise library you are using
+});
+
 
 function hasFilter(coll, property) {
     if (!Array.isArray(coll)) {
@@ -23,17 +31,19 @@ var Service = {
     list: function (params, callback, sid, req) {
         session.verify(req).then(function (session) {
             const user = session.user;
-            const accessFilters = helpers.checkListAuthorization(user, params)
-            
-            if (accessFilters === false) {
+            const userRole = user.get('role');
+
+            if (userRole > 1) {
                 callback(new Error('Not authorized'));
                 return;
             }
 
-            params.filter = accessFilters;            
+            const key = 'sousdelegations_' + ( params.filter ? JSON.stringify(params.filter) : '')
+            let qScope = params.scope || (params.id ? 'nested' : 'browse');
+            if (params.id && qScope === 'browse') qScope = 'nested';
 
-            const qScope = params.scope || 'browse';
-            return models.Reporting.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Reporting));
+            return models.SousDelegation.scope(qScope)/*.cache(key)*/.findAndCountAll(
+                helpers.sequelizify(params, models.SousDelegation));
         }).then(function (result) {
             callback(null, {
                 total: result.count,
@@ -45,18 +55,18 @@ var Service = {
         });
     },
 
-
     insert: function (params, callback, sid, req) {
-        let user
+        let user;
         session.verify(req).then(function (session) {
             user = session.user;
+            const userRole = user.get('role');
 
-            if (helpers.checkModifyAuthorization(user, params) === false) {
+            if (userRole > 1) {
                 callback(new Error('Not authorized'));
                 return;
             }
 
-            return models.Reporting/*.cache()*/.create(params);
+            return models.SousDelegation/*.cache()*/.create(params);
         }).then(function (row) {
             callback(null, { data: row });
         }).catch(function (err) {
@@ -65,44 +75,14 @@ var Service = {
     },
 
     update: function (params, callback, sid, req) {
-        let user
+        let user;
+
         session.verify(req).then(function (session) {
             user = session.user;
 
-            if (user.get('role') > 3) {
+            if (user.get('role') > 1) {
                 callback(new Error('Not authorized'));
                 return;
-            }
-
-            if (Array.isArray(params)) {
-                return Promise.map(params, function (_param) {
-                    if (!_param.id) {
-                        throw errors.types.invalidParams({
-                            path: 'id', message: 'Missing required parameter: id',
-                        });
-                    }
-
-                    return models.Reporting/*.cache()*/.findByPk(_param.id).then(function (row) {
-                        if (!row) {
-                            throw errors.types.invalidParams({
-                                path: 'id', message: 'Reporting with the specified id cannot be found',
-                            });
-                        }
-
-                        if (helpers.checkModifyAuthorization(user, row) === false) {
-                            callback(new Error('Not authorized'));
-                            return;
-                        }
-
-                        _param.modified_by = user.get('title') || user.get('username');
-                        _param.date_situation = new Date();
-
-                        return row/*.cache()*/.update(_param);
-                    }).then(function (row) {
-                        // reload record data in case associations have been updated.
-                        return row/*.cache()*/.reload();
-                    })
-                })
             }
 
             if (!params.id) {
@@ -111,43 +91,28 @@ var Service = {
                 });
             }
 
-            return models.Reporting/*.cache()*/.findByPk(params.id);
+            return models.SousDelegation/*.cache()*/.findOne({
+                where: {
+                    id: params.id
+                }
+            });
         }).then(function (row) {
-            if (Array.isArray(row)) {
-                callback(null, {
-                    data: row,
-                    total: row.length
+            if (!row) {
+                throw errors.types.invalidParams({
+                    path: 'id', message: 'SousDelegation with the specified id cannot be found',
                 });
-            } else {
-
-                if (!row) {
-                    throw errors.types.invalidParams({
-                        path: 'id', message: 'Reporting with the specified id cannot be found',
-                    });
-                }
-
-                if (helpers.checkModifyAuthorization(user, row) === false) {
-                    callback(new Error('Not authorized'));
-                    return;
-                }
-
-                params.modified_by = user.get('title') || user.get('username');
-                params.date_situation = new Date();
-
-                return row/*.cache()*/.update(params)/*.then(function (row) {
-                    // reload record data in case associations have been updated.
-                    return row.cache().reload();
-
-                })*/.then(function (row) {
-                    callback(null, {
-                        data: [row],
-                        total: 1
-                    });
-                })
             }
-        }).catch(function (err) {
-            console.log(err)
 
+            return row/*.cache()*/.update(params);
+        }).then(function (row) {
+            // reload record data in case associations have been updated.
+            return row/*.cache()*/.reload();
+        }).then(function (row) {
+            callback(null, {
+                data: [row],
+                total: 1
+            });
+        }).catch(function (err) {
             callback(errors.parse(err));
         });
     },
@@ -157,7 +122,7 @@ var Service = {
         session.verify(req).then(function (session) {
             user = session.user;
 
-            if (user.get('role') > 3) {
+            if (user.get('role') > 1) {
                 callback(new Error('Not authorized'));
                 return;
             }
@@ -167,19 +132,25 @@ var Service = {
                     path: 'id', message: 'Missing required parameter: id',
                 });
             }
-            return models.Reporting/*.cache()*/.findByPk(params.id);
+
+            return models.SousDelegation.findOne({
+                where: {
+                    id: params.id
+                }
+            });
         }).then(function (row) {
             if (!row) {
                 throw errors.types.invalidParams({
-                    path: 'id', message: 'Reporting with the specified id cannot be found',
+                    path: 'id', message: 'Délégation with the specified id cannot be found',
                 });
             }
 
-            if (helpers.checkModifyAuthorization(user, row) === false) {
+            const userRole = user.get('role');
+
+            if (userRole > 1) {
                 callback(new Error('Not authorized'));
                 return;
             }
-
             return row/*.cache()*/.destroy();
         }).then(function (row) {
             callback(null, {
@@ -193,7 +164,7 @@ var Service = {
 
     filters: function (params, callback, sid, req) {
         session.verify(req).then(function () {
-            return helpers.fetchFilters(params, models.Reporting);
+            return helpers.fetchFilters(params, models.SousDelegation);
         }).then(function (results) {
             callback(null, {
                 data: results
@@ -207,13 +178,13 @@ var Service = {
 
         /*const user = session.user;
         const userRole = user.get('role');
-
+     
         if (userRole > 3) {
             callback(new Error('Not authorized'));
             return;
         }*/
 
-        return models.Reporting.findAll({
+        return models.SousDelegation.findAll({
             limit: 1,
             where: {},
             attributes: ['updated'],
