@@ -12,7 +12,6 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        plan_actions: { type: DataTypes.STRING, allowNull: false },
         province_code: { type: DataTypes.INTEGER, allowNull: false },
         nbre_ups_concernees: { type: DataTypes.INTEGER },
         nbre_salles_concernees: { type: DataTypes.INTEGER },
@@ -38,7 +37,6 @@ module.exports = function (sequelize, DataTypes) {
         Model.addScope('nested', {
             attributes: {
                 include: [
-                    
                 ]
             },
             
@@ -46,7 +44,7 @@ module.exports = function (sequelize, DataTypes) {
                 model: models.Delegation,
                 as: 'delegation',
                 attributes: [
-                    'id', 'libelle', 'nature_affectation', 'date_delegation', 'tranche_no'
+                    'id', 'libelle', 'plan_actions', 'nature_affectation', 'date_delegation', 'tranche_no'
                 ]
             }]
         });

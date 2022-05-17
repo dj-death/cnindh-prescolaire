@@ -199,6 +199,12 @@ if (config.server.uploadEnabled) {
                 return;
             }
 
+            /*records.forEach(rec => {
+                console.info(rec.fp_id, ';', rec.intitule);
+            })
+
+            return;*/
+
             data.upsertUnites(records).then(function (rows) {
                 //console.log(rows);
                 const newRecords = rows.filter(row => row.isNewRecord);
@@ -280,6 +286,8 @@ if (yargs['first-launch']) {
         //data.insertDelegations()
 
         //data.setCommunesCode();
+
+        //data.insertSousDelegations();
     })
 }
 
