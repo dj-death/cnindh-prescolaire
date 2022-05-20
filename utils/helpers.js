@@ -12919,6 +12919,11 @@ var Helpers = {
             return val.getTime() !== val.getTime() ? null : val;
         }
 
+        if (typeof(val) !== 'string') {
+            console.info(val)
+            return;
+        }
+
         if ((val.match(/[\/\-]/g) || []).length > 2 || val.includes('&') || val.includes('et')) {
             const parts = val.match(/[0-9]{1,2}[\/\-][0-9]{1,2}[\/\-][0-9]{2,4}/g);
             if (parts.length) val = parts.pop();

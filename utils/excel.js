@@ -5,8 +5,8 @@ const decoupage = helpers.decoupage;
 const provinces = helpers.provinces
 const fondations = helpers.fondations
 
-const { help } = require('yargs');
 const columns = [
+  'id',
   'plan_actions', 'fondation_partenaire', 'annexe_administrative', 'province', 'commune', 'douar_quartier', 'intitule',
   'type_unite', 'nbre_salles', 'nbre_classes', 'programme', 'montant_delegue', 'cout_travaux', 'cout_unitaire', 'cout_equipement', 'cout_fonctionnement',
   'montant_engage', 'montant_emis', 'date_lancement_trvx', 'tx_avancement_physique', 'statut', 'statut_latin', 'phase',
@@ -69,6 +69,7 @@ const fmpsMapping = {
 }
 
 const fzMapping = {
+  id_cn: 'id',
   fp: 'fondation_partenaire',
   up_programmees: 'intitule',
   douar: 'douar_quartier',
@@ -354,6 +355,9 @@ var ExcelUtils = {
         }
       }
 
+      if (objRow.id) objRow.id = objRow.id.toLowerCase();
+
+
       if (objRow.est_ouverte) {
         objRow.statut = 'Opérationnel';
         objRow.tx_avancement_physique = 100;
@@ -369,7 +373,7 @@ var ExcelUtils = {
       return objRow
     }).filter(row => !!row.intitule)
 
-    //console.debug("Headers", titles, maxColumns)
+    console.debug("Headers", titles, maxColumns)
     //console.debug(data, nature)
 
     return data

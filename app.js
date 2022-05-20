@@ -181,7 +181,7 @@ if (config.server.uploadEnabled) {
             const ids = records.map(rec => rec.fp_id);
             const unique = [...new Set(ids)].length;
     
-            if (unique !== ids.length) {            
+            if (typeof(records[0].id) === 'undefined' && unique !== ids.length) {            
                 const groupedByFPID = helpers.groupBy(records, 'fp_id');
     
                 let msg = '';
@@ -199,11 +199,8 @@ if (config.server.uploadEnabled) {
                 return;
             }
 
-            /*records.forEach(rec => {
-                console.info(rec.fp_id, ';', rec.intitule);
-            })
-
-            return;*/
+            //console.log(records);
+            //return;
 
             data.upsertUnites(records).then(function (rows) {
                 //console.log(rows);
