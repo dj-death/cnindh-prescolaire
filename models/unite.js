@@ -182,6 +182,7 @@ module.exports = function (sequelize, DataTypes) {
 
         nombre_educatrices_femme: { type: DataTypes.INTEGER },
         nombre_educatrices_homme: { type: DataTypes.INTEGER },
+        nombre_educatrices_total: { type: DataTypes.INTEGER },
 
         contact_educateurs: {
             type: DataTypes.STRING,
@@ -275,7 +276,7 @@ module.exports = function (sequelize, DataTypes) {
         });
 
         Model.addScope('browse', {
-            attributes: ['id', 'fp_id', 'created', 'updated', 'province_code', 'cercle_code', 'commune_code', 'annexe_administrative', 'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 'date_ouverture', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons'],
+            attributes: ['id', 'fp_id', 'created', 'updated', 'province_code', 'cercle_code', 'commune_code', 'annexe_administrative', 'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 'date_ouverture', 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons'],
             include: []
         });
 
