@@ -94,8 +94,10 @@ var Service = {
                             return;
                         }
 
-                        _param.modified_by = user.get('title') || user.get('username');
-                        _param.date_situation = new Date();
+                        if (user.get('role') > 0) {
+                            _param.modified_by = user.get('title') || user.get('username');
+                            _param.date_situation = new Date();
+                        }
 
                         return row/*.cache()*/.update(_param);
                     }).then(function (row) {
@@ -131,8 +133,10 @@ var Service = {
                     return;
                 }
 
-                params.modified_by = user.get('title') || user.get('username');
-                params.date_situation = new Date();
+                if (user.get('role') > 0) {
+                    params.modified_by = user.get('title') || user.get('username');
+                    params.date_situation = new Date();
+                }
 
                 return row/*.cache()*/.update(params)/*.then(function (row) {
                     // reload record data in case associations have been updated.
