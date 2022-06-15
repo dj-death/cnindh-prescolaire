@@ -21,7 +21,9 @@ const columns = [
   'saison_2021_2022_total_filles', 'saison_2021_2022_total_garcons',
   'saison_2020_2021_total_filles', 'saison_2020_2021_total_garcons',
   'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_programmee', 'est_resiliee',
-  'fp_id', 'inscrits_primaire_total', 'inscrits_primaire_filles', 'inscrits_primaire_garcons', 'ms_passe_gs', 'ms_reinscrit_ms', 'ms_passe_primaire', 'gs_primaire', 'gs_refait_gs', 'nbre_arret_scolarite'
+  'fp_id', 'inscrits_primaire_total', 'inscrits_primaire_filles', 'inscrits_primaire_garcons', 'ms_passe_gs', 'ms_reinscrit_ms', 'ms_passe_primaire', 'gs_primaire', 'gs_refait_gs', 'nbre_arret_scolarite',
+
+  'saison_2019_2020_total_global', 'saison_2019_2020_total_grande_section', 'saison_2019_2020_total_moyenne_section', 'saison_2019_2020_inscrits_primaire_total', 'saison_2019_2020_inscrits_primaire_filles', 'saison_2019_2020_inscrits_primaire_garcons', 'saison_2019_2020_ms_passe_gs', 'saison_2019_2020_ms_reinscrit_ms', 'saison_2019_2020_ms_passe_primaire', 'saison_2019_2020_gs_primaire', 'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite'
 ]
 
 const fmpsMapping = {
@@ -65,7 +67,21 @@ const fmpsMapping = {
   ms_passe_primaire: 'ms_passe_primaire',
   gs_primaire: 'gs_primaire',
   gs_refait_gs: 'gs_refait_gs',
-  arret_scolarite: 'nbre_arret_scolarite'
+  arret_scolarite: 'nbre_arret_scolarite',
+
+
+  enfant_2019: 'saison_2019_2020_total_global',
+  gs_2019: 'saison_2019_2020_total_grande_section',
+  ms_2019: 'saison_2019_2020_total_moyenne_section',
+  primaire_1: 'saison_2019_2020_inscrits_primaire_total',
+  primaire_f_1: 'saison_2019_2020_inscrits_primaire_filles',
+  primaire_m_1: 'saison_2019_2020_inscrits_primaire_garcons',
+  ms_passe_gs_1: 'saison_2019_2020_ms_passe_gs',
+  ms_reinscrit_ms_1: 'saison_2019_2020_ms_reinscrit_ms',
+  ms_passe_primaire_1: 'saison_2019_2020_ms_passe_primaire',
+  gs_primaire_1: 'saison_2019_2020_gs_primaire',
+  gs_refait_gs_1: 'saison_2019_2020_gs_refait_gs',
+  arret_scolarite_1: 'saison_2019_2020_nbre_arret_scolarite'
 }
 
 const fzMapping = {
@@ -221,7 +237,6 @@ var ExcelUtils = {
 
     let x = 0
     let combinedTitles
-    let title
 
     for (; x < maxColumns; x++) {
       combinedTitles = headers.map(rowCells => {
@@ -234,6 +249,8 @@ var ExcelUtils = {
 
       titles.push(title)
     }
+
+    console.log(titles);
 
     let samples = lines.slice(10).reduce((acc, curr) => {
       if (!curr || !curr.length) return acc;
