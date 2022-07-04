@@ -4,6 +4,7 @@ var helpers = require('../utils/helpers.js');
 var session = require('../utils/session.js');
 var errors = require('../utils/errors.js');
 var models = require('../models');
+var sequelize = models.sequelize;
 
 const _ = require('lodash');
 
@@ -28,7 +29,47 @@ function hasFilter(coll, property) {
 }
 
 var Service = {
+    get: function (id) {
+        return models.Delegation.scope('nested').findByPk(id).then(function (deleg) {
+            return Promise.all([
+                deleg.getSousdelegations({
+                    attributes: [
+                        'province_code', 'montant_effectif', 'montant_effectif2', 'observations'
+                    ]
+                }),
+
+                deleg.getUnites({
+                    attributes: [
+                        'id', 'province_code', 'plan_actions', 'fp_code', 'commune_code', 'intitule', 'nbre_salles', 'est_ouverte', 'est_resiliee', 'date_ouverture',
+                        [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche']
+                    ],
+
+                    through: { attributes: ['id', 'montant', 'delegation_id' ] }
+                })
+            ]).then(function (assocData) {
+
+                var result = deleg.get({ plain: true });
+                result.sousdelegations = (assocData[0] || []).map(r => r.toJSON());
+                result.unites = (assocData[1] || []).map(r => {
+                    let plain = r.toJSON();
+                    let item = plain.DelegationUnites;
+
+                    plain.DelegationUnites = item ? { id: item.id, montant: item.montant, delegation_id: item.delegation_id } : null
+
+                    return plain;
+                });
+
+                return {
+                    count: 1,
+                    rows: [result]
+                };
+            })
+        })
+    },
+
     list: function (params, callback, sid, req) {
+        let qScope;
+
         session.verify(req).then(function (session) {
             const user = session.user;
             const userRole = user.get('role');
@@ -39,8 +80,10 @@ var Service = {
             }
 
             const key = 'delegations_' + ( params.filter ? JSON.stringify(params.filter) : '')
-            let qScope = params.scope || (params.id ? 'nested' : 'browse');
-            if (params.id && qScope === 'browse') qScope = 'nested';
+            qScope = params.scope || (params.id ? 'nested' : 'browse');
+            if (params.id && qScope === 'browse') {
+                return Service.get(params.id);
+            } //qScope = 'nested';
 
             return models.Delegation.scope(qScope)/*.cache(key)*/.findAndCountAll(
                 helpers.sequelizify(params, models.Delegation));
@@ -102,6 +145,7 @@ var Service = {
                 return;
             }
 
+            if (params.lot_id) params.lotId = params.lot_id
             return models.Delegation/*.cache()*/.create(params);
         }).then(function (row) {
             callback(null, { data: row });

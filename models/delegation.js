@@ -102,7 +102,7 @@ module.exports = function (sequelize, DataTypes) {
                 ]
             },
             include: [
-                { 
+                /*{ 
                     model: models.Unite,
                     as: 'unites',
                     attributes: [
@@ -110,7 +110,7 @@ module.exports = function (sequelize, DataTypes) {
                     ],
 
                     through: { attributes: ['id', 'montant', 'delegation_id' ] }
-                },
+                },*/
                 { 
                     model: models.Lot,
                     as: 'lot',
@@ -118,14 +118,14 @@ module.exports = function (sequelize, DataTypes) {
                         'id', 'libelle'
                     ]
                 },
-                { 
+                /*{ 
                     model: models.SousDelegation,
                     as: 'sousdelegations',
 
                     attributes: [
                         'province_code', 'montant_effectif', 'observations'
                     ]
-                }
+                }*/
             ]
         });
     };

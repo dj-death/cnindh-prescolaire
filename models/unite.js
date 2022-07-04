@@ -21,6 +21,7 @@ module.exports = function (sequelize, DataTypes) {
         commune_code: { type: DataTypes.INTEGER, allowNull: false },
         commune: { type: DataTypes.STRING, searchable: true },
         douar_quartier: { type: DataTypes.STRING, searchable: true },
+        code_douar: { type: DataTypes.STRING, searchable: true },
         dans_ecole: { type: DataTypes.BOOLEAN, defaultValue: false },
         adresse: { type: DataTypes.STRING, searchable: true },
         location: {
@@ -344,6 +345,30 @@ module.exports = function (sequelize, DataTypes) {
                     [sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id AND DelegationUnites.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.nature_affectation = \'Fonctionnement\'))'), 'montant_delegue_fct'],
                     [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
                     [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt'],
+                ]
+            },
+
+            include: []
+        });
+
+
+        Model.addScope('lastdelegation', {
+            attributes: {
+                include: [
+                    'id',
+                    'plan_actions',
+                    'fp_code',
+                    'province_code',
+                    'commune_code',
+                    'intitule',
+                    'nbre_salles',
+                    'nbre_salles_ouvertes',
+                    'date_ouverture',
+                    'est_ouverte',
+                    'est_resiliee',
+                    'est_en_arret',
+                    [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
+                    [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
                 ]
             },
 

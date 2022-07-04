@@ -15,6 +15,13 @@ module.exports = function (sequelize, DataTypes) {
         province_code: { type: DataTypes.INTEGER, allowNull: false },
         nbre_ups_concernees: { type: DataTypes.INTEGER },
         nbre_salles_concernees: { type: DataTypes.INTEGER },
+
+        nbre_t1: { type: DataTypes.INTEGER },
+        nbre_t2: { type: DataTypes.INTEGER },
+        nbre_t3: { type: DataTypes.INTEGER },
+        nbre_amg: { type: DataTypes.INTEGER },
+        nbre_modulaire: { type: DataTypes.INTEGER },
+
         montant_effectif: { type: DataTypes.DECIMAL(10, 2) },
         montant_effectif2: { type: DataTypes.DECIMAL(10, 2) },
         observations: { type: DataTypes.TEXT, allowNull: true }

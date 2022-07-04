@@ -15,6 +15,31 @@ function pick(items, index) {
     return items[index % count];
 }
 
+var corr = { "08577051706102": "AGLF",
+"08577051702001": "AGRAD NOUAMASSIOUNE",
+"08577051704802": "AGULZI NIKKAINE",
+"08577051700801": "AKHBOU",
+"08577051701101": "AMERDOUL AZOUGAGHE",
+"08577051702105": "ANOU NOUAACHA",
+"08577051703301": "ASSFALOU",
+"10473050103603": "Aتكمي افلا",
+"08577051702801": "BOUGAFER",
+"08577051702701": "DAW BOUTAGLIMTE",
+"08577051705901": "ID ZAGHANE",
+"08577051702702": "IKISS TAADI",
+"08577051703201": "Imin ouargue",
+"08577051704701": "IZILI",
+"08577051703401": "OUGOUG",
+"08577051701701": "TAFRAOUTE NOULKOUDE",
+"08577051702703": "Taghda Nikiss",
+"08577051706101": "TAGLIOUITE",
+"08577051700201": "TALBACHATE",
+"08577051702101": "TALOUDATE",
+"08577051703302": "Tanghourte",
+"08577051703101": "Tigolzatine",
+"08577051703001": "TISLITE NOUSSILKANE"
+        }
+
 module.exports = {
 
     sync: function () {
@@ -127,6 +152,53 @@ module.exports = {
                 /*return models.Lot.destroy({ where: query, truncate: query ? false : true, transaction: t })
             }).then(function () {*/
                 return models.Lot.bulkCreate(require('../data/lots.json'), { transaction: t })
+            }).catch(function (err) {
+                console.log(err)
+            })
+        })
+    },
+
+    insertDouars: function (records, query) {
+        var douars = require('../data/douars.json');
+        douars = douars.map(function (dr) {
+            let province = helpers.closestEntry(dr.province, helpers.provinces, true, true);
+            if (province) dr.province_code = helpers.decoupage.find(rec => rec.label ===  province).value;
+              
+
+            if (dr.code_sous_douar && corr[dr.code_sous_douar.toString()]) {
+                dr.nom_fr = corr[dr.code_sous_douar.toString()];
+            }
+
+            dr.nom_fr = helpers.titleCase(dr.nom_fr);
+            dr.commune = helpers.titleCase(dr.commune);
+            let commune_code = helpers.getCommuneCode(dr.commune, dr.province_code);
+            dr.commune_code = commune_code;
+
+            var communeMatch = helpers.communesCfg.find(comm => comm.value === commune_code);
+            var cercleMatch = communeMatch ? helpers.cerclesCfg.find(cercle => cercle.value === communeMatch.cercle_code) : null;
+            dr.cercle_code = cercleMatch ? cercleMatch.value : null;
+
+            if (dr.code_sous_douar) {
+                dr.code_douar_mere = dr.code_douar;
+                dr.code_douar = dr.code_sous_douar;
+            }
+
+            dr.type = ["Douars", "Sous-Douar", "Nomades", "Sous-Quartier"].indexOf(dr.type) + 1;
+            dr.milieu = ["rural", "urbain"].indexOf(dr.milieu) + 1;
+
+            dr.location = {
+                longitude: dr.longitude,
+                latitude: dr.latitude
+            }
+
+            return dr;
+        });
+
+        return sequelize.transaction(function (t) {
+            return sequelize.sync({ force: false, transaction: t }).then(function () {
+                /*return models.Lot.destroy({ where: query, truncate: query ? false : true, transaction: t })
+            }).then(function () {*/
+                return models.Douar.bulkCreate(douars, { transaction: t })
             }).catch(function (err) {
                 console.log(err)
             })

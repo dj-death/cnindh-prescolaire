@@ -7,7 +7,7 @@ const fondations = helpers.fondations
 
 const columns = [
   'id',
-  'plan_actions', 'fondation_partenaire', 'annexe_administrative', 'province', 'commune', 'douar_quartier', 'intitule',
+  'plan_actions', 'fondation_partenaire', 'annexe_administrative', 'province', 'commune', 'douar_quartier', 'code_douar', 'intitule',
   'type_unite', 'nbre_salles', 'nbre_classes', 'programme', 'montant_delegue', 'cout_travaux', 'cout_unitaire', 'cout_equipement', 'cout_fonctionnement',
   'montant_engage', 'montant_emis', 'date_lancement_trvx', 'tx_avancement_physique', 'statut', 'statut_latin', 'phase',
   'difficultes_rencontrees', 'date_ouverture', 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',
@@ -31,6 +31,7 @@ const fmpsMapping = {
   fp: 'fondation_partenaire',
   up: 'intitule',
   douar: 'douar_quartier',
+  ref_douar: 'code_douar',
   datedemiseenservice: 'date_ouverture',
   up_programmees: 'est_programmee',
   up_conv_signee: 'dispose_convention_signee',
@@ -391,7 +392,7 @@ var ExcelUtils = {
     }).filter(row => !!row.intitule)
 
     console.debug("Headers", titles, maxColumns)
-    //console.debug(data, nature)
+    console.debug(data, nature)
 
     return data
   },

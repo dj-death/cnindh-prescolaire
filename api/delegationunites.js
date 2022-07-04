@@ -56,6 +56,12 @@ var Service = {
             }
 
             params = Array.isArray(params) ? params : [params];
+            params = params.map(p => {
+                p.delegationId = p.delegation_id;
+                p.uniteId = p.unite_id;
+                p.lotId = p.lot_id;
+                return p;
+            })
 
             return models.DelegationUnites/*.cache()*/.bulkCreate(params/*, { include: [{ model: models.Delegation, as: 'delegation' }, { model: models.Lot, as: 'lot' }] }*/)
         }).then(function (row) {
