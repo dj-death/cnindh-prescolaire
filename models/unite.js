@@ -270,7 +270,19 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 notEmpty: true
             }
+        },
+
+        montant_delegue_fct: { type: DataTypes.DECIMAL(10, 2) },
+        last_tranche: { type: DataTypes.INTEGER },
+        last_delegation_dt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
         }
+
     }, {
         indexes: [
           {
@@ -292,13 +304,34 @@ module.exports = function (sequelize, DataTypes) {
 
         Model.addScope('browse', {
             attributes: [
+                'id',
+                'province_code', 'cercle_code', 'commune_code', 'douar_quartier', 
+                'plan_actions', 'intitule',
+                'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
+                'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture',
+                'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 
+                'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons',
+                'inscrits_primaire_total', 'inscrits_primaire_filles', 'inscrits_primaire_garcons', 'ms_passe_gs', 'ms_reinscrit_ms', 'ms_passe_primaire', 'gs_primaire', 'gs_refait_gs', 'nbre_arret_scolarite',
+
+                'last_tranche',
+                'last_delegation_dt'
+            ],
+            include: []
+        });
+
+        Model.addScope('browse_effectifs', {
+            attributes: [
                 'id', 'fp_id', 'created', 'updated', 'province_code', 'cercle_code', 'commune_code', 'annexe_administrative', 'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 'date_ouverture',
                 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons',
                 'inscrits_primaire_total', 'inscrits_primaire_filles', 'inscrits_primaire_garcons', 'ms_passe_gs', 'ms_reinscrit_ms', 'ms_passe_primaire', 'gs_primaire', 'gs_refait_gs', 'nbre_arret_scolarite',
-                'saison_2019_2020_total_global', 'saison_2019_2020_total_grande_section', 'saison_2019_2020_total_moyenne_section', 'saison_2019_2020_inscrits_primaire_total', 'saison_2019_2020_inscrits_primaire_filles', 'saison_2019_2020_inscrits_primaire_garcons', 'saison_2019_2020_ms_passe_gs', 'saison_2019_2020_ms_reinscrit_ms', 'saison_2019_2020_ms_passe_primaire', 'saison_2019_2020_gs_primaire', 'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite'
-        ],
+                'saison_2019_2020_total_global', 'saison_2019_2020_total_grande_section', 'saison_2019_2020_total_moyenne_section', 'saison_2019_2020_inscrits_primaire_total', 'saison_2019_2020_inscrits_primaire_filles', 'saison_2019_2020_inscrits_primaire_garcons', 'saison_2019_2020_ms_passe_gs', 'saison_2019_2020_ms_reinscrit_ms', 'saison_2019_2020_ms_passe_primaire', 'saison_2019_2020_gs_primaire', 'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite',
+
+                'last_tranche',
+                'last_delegation_dt'
+            ],
             include: []
         });
+
 
         Model.addScope('nested', {
             attributes: {
@@ -341,10 +374,16 @@ module.exports = function (sequelize, DataTypes) {
                     'est_ouverte',
                     'est_resiliee',
                     'est_en_arret',
+
                     //[sequelize.literal('(SELECT COUNT(*) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id)'), 'delegationscount'],
-                    [sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id AND DelegationUnites.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.nature_affectation = \'Fonctionnement\'))'), 'montant_delegue_fct'],
-                    [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
-                    [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt'],
+                    
+                    //[sequelize.literal('(SELECT SUM(montant) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id AND DelegationUnites.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.nature_affectation = \'Fonctionnement\'))'), 'montant_delegue_fct'],
+                    //[sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
+                    //[sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt'],
+                
+                    'montant_delegue_fct',
+                    'last_tranche',
+                    'last_delegation_dt'
                 ]
             },
 
@@ -367,8 +406,12 @@ module.exports = function (sequelize, DataTypes) {
                     'est_ouverte',
                     'est_resiliee',
                     'est_en_arret',
-                    [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
-                    [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
+
+                    //[sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
+                    //[sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
+                
+                    'last_tranche',
+                    'last_delegation_dt'
                 ]
             },
 

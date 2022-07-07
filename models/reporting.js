@@ -58,6 +58,15 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Model.associate = function (models) {
+        Model.addScope('simple', {
+            attributes: {
+                include: [
+                ]
+            },
+
+            include: []
+        });
+
         Model.addScope('browse', {
             attributes: {
                 include: [

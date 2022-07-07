@@ -42,6 +42,11 @@ module.exports = function(sequelize, DataTypes) {
             searchable: true
         },
 
+        est_sousdouar: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
+        },
+
         commune: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -94,8 +99,13 @@ module.exports = function(sequelize, DataTypes) {
         has_ecole: {
             type: DataTypes.BOOLEAN,
             allowNull: true
+        },
+
+        has_prescolaire: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
         }
-    }, {
+    }/*, {
         hooks: {
 			afterUpdate: function (instance, options) {
 				var result = [],
@@ -116,22 +126,22 @@ module.exports = function(sequelize, DataTypes) {
 				
 				return true;
 			}
-        },
-        
-        classMethods: {
-            associate: function(models) {
-                Model.belongsTo(models.Person, { as: 'recipient', constraints: false });
-
-                Model.belongsTo(models.Person);
-                Model.addScope('nested', {
-                    include: [{
-                        model: models.Person,
-                        as: 'recipient'
-                    }]
-                });
-            }
         }
-    });
+    }*/);
+
+    Model.associate = function (models) {
+        //Model.belongsTo(models.Unite, { as: 'unite' });
+
+        Model.addScope('browse', {
+            include: []
+        });
+
+        Model.addScope('nested', {
+            include: [
+                //{ model: models.Unite, as: 'unite' }
+            ]
+        });
+    };
 
     return Model;
 };
