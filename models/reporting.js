@@ -43,6 +43,16 @@ module.exports = function (sequelize, DataTypes) {
         cout_global_marches_travaux: { type: DataTypes.DECIMAL(10, 2) },
         cout_unitaire_moyen_marches_travaux: { type: DataTypes.DECIMAL(10, 2) },
 
+        date_lancement_etudes: {
+            type: DataTypes.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+        nbre_encours_validation: { type: DataTypes.INTEGER },
+
         remarques: { type: DataTypes.TEXT },
 
         date_situation: {
