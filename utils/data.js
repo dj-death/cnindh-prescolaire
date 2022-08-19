@@ -77,8 +77,8 @@ module.exports = {
     insertUnites: function (records, query) {
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
-                return models.Unite.destroy({ where: query, truncate: query ? false : true, transaction: t })
-            }).then(function () {
+                /*return models.Unite.destroy({ where: query, truncate: query ? false : true, transaction: t })
+            }).then(function () {*/
                 console.log(records.length);
                 return models.Unite.bulkCreate(records, { transaction: t });
             })

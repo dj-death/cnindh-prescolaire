@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
         nbre_modulaire: { type: DataTypes.INTEGER },
 
         montant_effectif: { type: DataTypes.DECIMAL(10, 2) },
-        montant_effectif2: { type: DataTypes.DECIMAL(10, 2) },
+        //montant_effectif2: { type: DataTypes.DECIMAL(10, 2) },
         observations: { type: DataTypes.TEXT, allowNull: true }
     }, {
         tableName: "sousdelegations"

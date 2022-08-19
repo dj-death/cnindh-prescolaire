@@ -251,7 +251,7 @@ var ExcelUtils = {
       titles.push(title)
     }
 
-    console.log(titles);
+    //console.log(titles);
 
     let samples = lines.slice(10).reduce((acc, curr) => {
       if (!curr || !curr.length) return acc;
@@ -391,8 +391,8 @@ var ExcelUtils = {
       return objRow
     }).filter(row => !!row.intitule)
 
-    console.debug("Headers", titles, maxColumns)
-    console.debug(data, nature)
+    //console.debug("Headers", titles, maxColumns)
+    //console.debug(data, nature)
 
     return data
   },

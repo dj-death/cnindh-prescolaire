@@ -34,7 +34,7 @@ var Service = {
             return Promise.all([
                 deleg.getSousdelegations({
                     attributes: [
-                        'province_code', 'montant_effectif', 'montant_effectif2', 'observations'
+                        'province_code', 'montant_effectif', 'montant_effectif', 'observations'
                     ]
                 }),
 

@@ -67,7 +67,7 @@ var Service = {
             }
 
             if (params.delegation_id) params.delegationId = params.delegation_id
-            if (!params.montant_effectif2 && params.montant_effectif > 0) params.montant_effectif2 = params.montant_effectif
+            if (!params.montant_effectif && params.montant_effectif > 0) params.montant_effectif = params.montant_effectif
 
             return models.SousDelegation/*.cache()*/.create(params);
         }).then(function (row) {

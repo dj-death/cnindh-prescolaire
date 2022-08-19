@@ -180,6 +180,8 @@ if (config.server.uploadEnabled) {
             const records = await excelUtils.readWorkbook(req.files[0], req.body.nature);
             const ids = records.map(rec => rec.fp_id);
             const unique = [...new Set(ids)].length;
+
+            console.log(records[records.length - 1]);
     
             if (typeof(records[0].id) === 'undefined' && unique !== ids.length) {            
                 const groupedByFPID = helpers.groupBy(records, 'fp_id');
@@ -213,12 +215,14 @@ if (config.server.uploadEnabled) {
                     message: `${newRecords.length} nouvelles UP identifiées. ${modifiedRecords.length} UP modifiées.`
                 })
             }).catch(function (err) {
+                console.error(err);
                 return res.json({
                     success: false,
                     message: err.message
                 });   
             })
         } catch (err) {
+            console.error(err);
             return res.json({
                 success: false,
                 message: err.message
