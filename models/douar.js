@@ -131,6 +131,7 @@ module.exports = function(sequelize, DataTypes) {
 
     Model.associate = function (models) {
         //Model.belongsTo(models.Unite, { as: 'unite' });
+        Model.hasMany(models.Unite, { as: 'unites' });
 
         Model.addScope('browse', {
             include: []

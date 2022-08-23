@@ -19,7 +19,6 @@ module.exports = function (sequelize, DataTypes) {
         nbre_programmees_t3: { type: DataTypes.INTEGER },
         nbre_programmees_amg: { type: DataTypes.INTEGER },
         nbre_salles: { type: DataTypes.INTEGER },
-        nbre_non_demarrees: { type: DataTypes.INTEGER },
         nbre_encours_25: { type: DataTypes.INTEGER },
         nbre_encours_25_50: { type: DataTypes.INTEGER },
         nbre_encours_50_75: { type: DataTypes.INTEGER },
