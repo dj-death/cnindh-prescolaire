@@ -38,7 +38,13 @@ module.exports = function (sequelize, DataTypes) {
                     
                 ]
             },
-            include: []
+            include: [{ 
+                model: models.Delegation,
+                as: 'delegation',
+                attributes: [
+                    'id', 'libelle', 'plan_actions', 'nature_affectation', 'date_delegation', 'tranche_no'
+                ]
+            }]
         });
 
         Model.addScope('nested', {
