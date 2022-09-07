@@ -54,6 +54,22 @@ module.exports = function (sequelize, DataTypes) {
 
         remarques: { type: DataTypes.TEXT },
 
+
+        salles_delegation_tr1: { type: DataTypes.INTEGER },
+        salles_delegation_tr2: { type: DataTypes.INTEGER },
+        salles_delegation_tr3: { type: DataTypes.INTEGER },
+        salles_delegation_tr4: { type: DataTypes.INTEGER },
+
+        salles_ouvertes_a_deleger_tr1: { type: DataTypes.INTEGER },
+        salles_ouvertes_a_deleger_tr2: { type: DataTypes.INTEGER },
+        salles_ouvertes_a_deleger_tr3: { type: DataTypes.INTEGER },
+        salles_ouvertes_a_deleger_tr4: { type: DataTypes.INTEGER },
+
+        salles_nonouvertes_a_deleger_tr1: { type: DataTypes.INTEGER },
+        salles_nonouvertes_a_deleger_tr2: { type: DataTypes.INTEGER },
+        salles_nonouvertes_a_deleger_tr3: { type: DataTypes.INTEGER },
+        salles_nonouvertes_a_deleger_tr4: { type: DataTypes.INTEGER },
+
         date_situation: {
             type: DataTypes.DATE,
             allowNull: true,

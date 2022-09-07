@@ -275,7 +275,7 @@ if (yargs['first-launch']) {
     // populate initial data
     data.reset();
 } else {
-    data.sync().then(function () {
+    data.sync({ alter: true }).then(function () {
         console.info('Table creation: DONE');
         //const Heroku = require('heroku-client')
         //const heroku = new Heroku({ token: "dc53688c-1f72-4878-af5f-a57115e6ca29" })
