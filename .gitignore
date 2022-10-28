@@ -2,3 +2,4 @@
 /public/app.watch.lock
 /node_modules
 *.log
+/data
