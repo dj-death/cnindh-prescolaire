@@ -1,0 +1,2117 @@
+[
+    {
+      "delegationId": "3514b03b-86df-4104-b944-2df4c01efade",
+      "province": "Berkane",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 2938902.55,
+      "province_code": 13,
+      "observations": "10 T1 ; 2 T2; Coût unitaire T1: 229.312 DH ; T2 : 322.890 DH."
+    },
+    {
+      "delegationId": "3514b03b-86df-4104-b944-2df4c01efade",
+      "province": "Meknès",
+      "nbre_ups_concernees": 9,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 817187.1,
+      "province_code": 18,
+      "observations": "2 T1 ; 7 UP Amg; Coût unitaire T1: 250.000 DH ; Amg: 45.300 DH. - Ces crédits concernent 9 UP des 31 UP programmées dans le PA 2022 et dont les marchés ont récemment été adjugés."
+    },
+    {
+      "delegationId": "3514b03b-86df-4104-b944-2df4c01efade",
+      "province": "Ifrane",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 4201507.58,
+      "province_code": 20,
+      "observations": "15 T1; Coût unitaire T1: 280.100 DH"
+    },
+    {
+      "delegationId": "3514b03b-86df-4104-b944-2df4c01efade",
+      "province": "Skhirate-Témara",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 477612,
+      "province_code": 28,
+      "observations": "1 T2; Coût unitaire T2: 477.612 DH"
+    },
+    {
+      "delegationId": "3514b03b-86df-4104-b944-2df4c01efade",
+      "province": "Essaouira",
+      "nbre_ups_concernees": 75,
+      "nbre_salles_concernees": 75,
+      "montant_effectif": 18280962,
+      "province_code": 51,
+      "observations": "74 T1 ; 1 Amg; Coût unitaire T1: 246.374 DH ; Amg: 49.275 DH."
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Nador",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 60000,
+      "province_code": 10,
+      "observations": "3 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Taourirt",
+      "nbre_ups_concernees": 13,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 260000,
+      "province_code": 14,
+      "observations": "13 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Figuig",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 560000,
+      "province_code": 16,
+      "observations": "28 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Moulay Yacoub",
+      "nbre_ups_concernees": 18,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 360000,
+      "province_code": 21,
+      "observations": "18 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Khémisset",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 60000,
+      "province_code": 30,
+      "observations": "3 UP: 2 T1 ; 1 T2"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Azilal",
+      "nbre_ups_concernees": 52,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 1040000,
+      "province_code": 34,
+      "observations": "52 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Settat",
+      "nbre_ups_concernees": 68,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 1360000,
+      "province_code": 45,
+      "observations": "68 UP: 44 T1 ; 24 T2"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Safi",
+      "nbre_ups_concernees": 18,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 360000,
+      "province_code": 53,
+      "observations": "18 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Errachidia",
+      "nbre_ups_concernees": 23,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 460000,
+      "province_code": 55,
+      "observations": "23 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Tinghir",
+      "nbre_ups_concernees": 52,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 1040000,
+      "province_code": 58,
+      "observations": "52 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Zagora",
+      "nbre_ups_concernees": 52,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 1040000,
+      "province_code": 59,
+      "observations": "52 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Tata",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 300000,
+      "province_code": 65,
+      "observations": "15 T1"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Assa-Zag",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 60000,
+      "province_code": 67,
+      "observations": "3 T2"
+    },
+    {
+      "delegationId": "22fc5bd5-523b-46af-9e18-1bf88bf71615",
+      "province": "Sidi Ifni",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": null,
+      "montant_effectif": 520000,
+      "province_code": 69,
+      "observations": "26 T1"
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Tanger-Assilah",
+      "nbre_ups_concernees": 4,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 50000,
+      "province_code": 1,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Tétouan",
+      "nbre_ups_concernees": 14,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 350000,
+      "province_code": 3,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Larache",
+      "nbre_ups_concernees": 23,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 625000,
+      "province_code": 5,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Ouezzane",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "province_code": 8,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Oujda-Angad",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 50000,
+      "province_code": 9,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Nador",
+      "nbre_ups_concernees": 44,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1100000,
+      "province_code": 10,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Driouch",
+      "nbre_ups_concernees": 17,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 425000,
+      "province_code": 11,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Jerada",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "province_code": 12,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Berkane",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 350000,
+      "province_code": 13,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Taourirt",
+      "nbre_ups_concernees": 18,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 450000,
+      "province_code": 14,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Guercif",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "province_code": 15,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Figuig",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 550000,
+      "province_code": 16,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Fès",
+      "nbre_ups_concernees": 8,
+      "nbre_salles_concernees": 16,
+      "montant_effectif": 400000,
+      "province_code": 17,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Meknès",
+      "nbre_ups_concernees": 31,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 875000,
+      "province_code": 18,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "El Hajeb",
+      "nbre_ups_concernees": 10,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "province_code": 19,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Ifrane",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "province_code": 20,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Moulay Yacoub",
+      "nbre_ups_concernees": 37,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 950000,
+      "province_code": 21,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Taounate",
+      "nbre_ups_concernees": 71,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 1775000,
+      "province_code": 24,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Taza",
+      "nbre_ups_concernees": 32,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 875000,
+      "province_code": 25,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Salé",
+      "nbre_ups_concernees": 8,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 200000,
+      "province_code": 27,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Skhirate-Témara",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 50000,
+      "province_code": 28,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Khémisset",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 550000,
+      "province_code": 30,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Sidi Kacem",
+      "nbre_ups_concernees": 63,
+      "nbre_salles_concernees": 64,
+      "montant_effectif": 725000,
+      "province_code": 31,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Sidi Slimane",
+      "nbre_ups_concernees": 40,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1150000,
+      "province_code": 32,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Béni Mellal",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 925000,
+      "province_code": 33,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Fquih Ben Salah",
+      "nbre_ups_concernees": 32,
+      "nbre_salles_concernees": 39,
+      "montant_effectif": 975000,
+      "province_code": 35,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Khénifra",
+      "nbre_ups_concernees": 13,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 325000,
+      "province_code": 36,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "El Jadida",
+      "nbre_ups_concernees": 39,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 1075000,
+      "province_code": 40,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Nouaceur",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 250000,
+      "province_code": 41,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Benslimane",
+      "nbre_ups_concernees": 34,
+      "nbre_salles_concernees": 34,
+      "montant_effectif": 850000,
+      "province_code": 43,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Berrechid",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 650000,
+      "province_code": 44,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Settat",
+      "nbre_ups_concernees": 55,
+      "nbre_salles_concernees": 67,
+      "montant_effectif": 1675000,
+      "province_code": 45,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Sidi Bennour",
+      "nbre_ups_concernees": 59,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 1775000,
+      "province_code": 46,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Al Haouz",
+      "nbre_ups_concernees": 160,
+      "nbre_salles_concernees": 163,
+      "montant_effectif": 4075000,
+      "province_code": 49,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Essaouira",
+      "nbre_ups_concernees": 75,
+      "nbre_salles_concernees": 75,
+      "montant_effectif": 1875000,
+      "province_code": 51,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Rehamna",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "province_code": 52,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Safi",
+      "nbre_ups_concernees": 82,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 2050000,
+      "province_code": 53,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Ouarzazate",
+      "nbre_ups_concernees": 47,
+      "nbre_salles_concernees": 47,
+      "montant_effectif": 1175000,
+      "province_code": 56,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Midelt",
+      "nbre_ups_concernees": 53,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1375000,
+      "province_code": 57,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Zagora",
+      "nbre_ups_concernees": 76,
+      "nbre_salles_concernees": 76,
+      "montant_effectif": 1900000,
+      "province_code": 59,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Agadir-Ida-Ou-Tanane",
+      "nbre_ups_concernees": 7,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 100000,
+      "province_code": 60,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Inezgane-Aït Melloul",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "province_code": 61,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Chtouka-Aït Baha",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "province_code": 62,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Tiznit",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "province_code": 64,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Tata",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 125000,
+      "province_code": 65,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Guelmim",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "province_code": 66,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Assa-Zag",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 25000,
+      "province_code": 67,
+      "observations": null
+    },
+    {
+      "delegationId": "b2343fe4-6566-4505-a0e2-611274dbd76d",
+      "province": "Boujdour",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "province_code": 71,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Tanger-Assilah",
+      "nbre_ups_concernees": 4,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 177000,
+      "province_code": 1,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Tétouan",
+      "nbre_ups_concernees": 14,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 812000,
+      "province_code": 3,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Larache",
+      "nbre_ups_concernees": 23,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 1450000,
+      "province_code": 5,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Chefchaouen",
+      "nbre_ups_concernees": 65,
+      "nbre_salles_concernees": 65,
+      "montant_effectif": 1982500,
+      "province_code": 7,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Ouezzane",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 348000,
+      "province_code": 8,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Oujda-Angad",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 116000,
+      "province_code": 9,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Nador",
+      "nbre_ups_concernees": 44,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 2552000,
+      "province_code": 10,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Driouch",
+      "nbre_ups_concernees": 17,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 986000,
+      "province_code": 11,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Jerada",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 12,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Berkane",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 812000,
+      "province_code": 13,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Taourirt",
+      "nbre_ups_concernees": 18,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 1044000,
+      "province_code": 14,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Guercif",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 348000,
+      "province_code": 15,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Figuig",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 1276000,
+      "province_code": 16,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Fès",
+      "nbre_ups_concernees": 8,
+      "nbre_salles_concernees": 16,
+      "montant_effectif": 928000,
+      "province_code": 17,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Meknès",
+      "nbre_ups_concernees": 31,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 2030000,
+      "province_code": 18,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "El Hajeb",
+      "nbre_ups_concernees": 10,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 870000,
+      "province_code": 19,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Ifrane",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 870000,
+      "province_code": 20,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Moulay Yacoub",
+      "nbre_ups_concernees": 37,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 2204000,
+      "province_code": 21,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Taounate",
+      "nbre_ups_concernees": 71,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 4118000,
+      "province_code": 24,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Taza",
+      "nbre_ups_concernees": 32,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 2030000,
+      "province_code": 25,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Salé",
+      "nbre_ups_concernees": 8,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 464000,
+      "province_code": 27,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Skhirate-Témara",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 116000,
+      "province_code": 28,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Khémisset",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 1276000,
+      "province_code": 30,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Sidi Kacem",
+      "nbre_ups_concernees": 63,
+      "nbre_salles_concernees": 64,
+      "montant_effectif": 2749500,
+      "province_code": 31,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Sidi Slimane",
+      "nbre_ups_concernees": 40,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 2668000,
+      "province_code": 32,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Béni Mellal",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 2146000,
+      "province_code": 33,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Fquih Ben Salah",
+      "nbre_ups_concernees": 32,
+      "nbre_salles_concernees": 39,
+      "montant_effectif": 2262000,
+      "province_code": 35,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Khénifra",
+      "nbre_ups_concernees": 13,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 754000,
+      "province_code": 36,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "El Jadida",
+      "nbre_ups_concernees": 39,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 2494000,
+      "province_code": 40,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Nouaceur",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 580000,
+      "province_code": 41,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Benslimane",
+      "nbre_ups_concernees": 34,
+      "nbre_salles_concernees": 34,
+      "montant_effectif": 1972000,
+      "province_code": 43,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Berrechid",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 1508000,
+      "province_code": 44,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Settat",
+      "nbre_ups_concernees": 55,
+      "nbre_salles_concernees": 67,
+      "montant_effectif": 3886000,
+      "province_code": 45,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Sidi Bennour",
+      "nbre_ups_concernees": 59,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 4118000,
+      "province_code": 46,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Marrakech",
+      "nbre_ups_concernees": 36,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1189000,
+      "province_code": 47,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Al Haouz",
+      "nbre_ups_concernees": 160,
+      "nbre_salles_concernees": 163,
+      "montant_effectif": 9454000,
+      "province_code": 49,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Essaouira",
+      "nbre_ups_concernees": 75,
+      "nbre_salles_concernees": 75,
+      "montant_effectif": 4350000,
+      "province_code": 51,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Rehamna",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 870000,
+      "province_code": 52,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Safi",
+      "nbre_ups_concernees": 82,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 4756000,
+      "province_code": 53,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Errachidia",
+      "nbre_ups_concernees": 24,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 696000,
+      "province_code": 55,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Ouarzazate",
+      "nbre_ups_concernees": 47,
+      "nbre_salles_concernees": 47,
+      "montant_effectif": 2726000,
+      "province_code": 56,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Midelt",
+      "nbre_ups_concernees": 53,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 3190000,
+      "province_code": 57,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Tinghir",
+      "nbre_ups_concernees": 66,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 2013000,
+      "province_code": 58,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Zagora",
+      "nbre_ups_concernees": 76,
+      "nbre_salles_concernees": 76,
+      "montant_effectif": 4408000,
+      "province_code": 59,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Agadir-Ida-Ou-Tanane",
+      "nbre_ups_concernees": 7,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 354000,
+      "province_code": 60,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Inezgane-Aït Melloul",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 348000,
+      "province_code": 61,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Chtouka-Aït Baha",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 870000,
+      "province_code": 62,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Taroudannt",
+      "nbre_ups_concernees": 32,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 928000,
+      "province_code": 63,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Tiznit",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 64,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Tata",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 290000,
+      "province_code": 65,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Guelmim",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 348000,
+      "province_code": 66,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Assa-Zag",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 58000,
+      "province_code": 67,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Boujdour",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 71,
+      "observations": null
+    },
+    {
+      "delegationId": "ac412bcd-7647-4e2b-8f2f-952403dfea0c",
+      "province": "Aousserd",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 30500,
+      "province_code": 75,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Fès",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 175000,
+      "province_code": 17,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Ifrane",
+      "nbre_ups_concernees": 33,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 925000,
+      "province_code": 20,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Sefrou",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 500000,
+      "province_code": 22,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Taza",
+      "nbre_ups_concernees": 45,
+      "nbre_salles_concernees": 45,
+      "montant_effectif": 375000,
+      "province_code": 25,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Salé",
+      "nbre_ups_concernees": 16,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 25000,
+      "province_code": 27,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Marrakech",
+      "nbre_ups_concernees": 38,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 250000,
+      "province_code": 47,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Essaouira",
+      "nbre_ups_concernees": 66,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 800000,
+      "province_code": 51,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Rehamna",
+      "nbre_ups_concernees": 41,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 450000,
+      "province_code": 52,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Ouarzazate",
+      "nbre_ups_concernees": 13,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 100000,
+      "province_code": 56,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Agadir-Ida-Ou-Tanane",
+      "nbre_ups_concernees": 0,
+      "nbre_salles_concernees": 0,
+      "montant_effectif": 50000,
+      "province_code": 60,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Tata",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 125000,
+      "province_code": 65,
+      "observations": null
+    },
+    {
+      "delegationId": "cd016854-d888-4df2-bde7-a5c38f2966bf",
+      "province": "Boujdour",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "province_code": 71,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Larache",
+      "nbre_ups_concernees": 9,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 261000,
+      "province_code": 5,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Ouezzane",
+      "nbre_ups_concernees": 16,
+      "nbre_salles_concernees": 16,
+      "montant_effectif": 464000,
+      "province_code": 8,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Nador",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "province_code": 10,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Berkane",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 1073000,
+      "province_code": 13,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Taourirt",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "province_code": 14,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Fès",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 696000,
+      "province_code": 17,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Meknès",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "province_code": 18,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Ifrane",
+      "nbre_ups_concernees": 33,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 2146000,
+      "province_code": 20,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Sefrou",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 1334000,
+      "province_code": 22,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Boulemane",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "province_code": 23,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Taounate",
+      "nbre_ups_concernees": 67,
+      "nbre_salles_concernees": 67,
+      "montant_effectif": 1943000,
+      "province_code": 24,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Taza",
+      "nbre_ups_concernees": 45,
+      "nbre_salles_concernees": 45,
+      "montant_effectif": 1740000,
+      "province_code": 25,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Salé",
+      "nbre_ups_concernees": 16,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 638000,
+      "province_code": 27,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Skhirate-Témara",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "province_code": 28,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Béni Mellal",
+      "nbre_ups_concernees": 8,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 15000,
+      "province_code": 33,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Fquih Ben Salah",
+      "nbre_ups_concernees": 16,
+      "nbre_salles_concernees": 28,
+      "montant_effectif": 812000,
+      "province_code": 35,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Mohammadia",
+      "nbre_ups_concernees": 27,
+      "nbre_salles_concernees": 27,
+      "montant_effectif": 783000,
+      "province_code": 39,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "El Jadida",
+      "nbre_ups_concernees": 14,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 493000,
+      "province_code": 40,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Nouaceur",
+      "nbre_ups_concernees": 4,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "province_code": 41,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Settat",
+      "nbre_ups_concernees": 169,
+      "nbre_salles_concernees": 182,
+      "montant_effectif": 5278000,
+      "province_code": 45,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Marrakech",
+      "nbre_ups_concernees": 38,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1374000,
+      "province_code": 47,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Essaouira",
+      "nbre_ups_concernees": 66,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 2842000,
+      "province_code": 51,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Rehamna",
+      "nbre_ups_concernees": 41,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1898000,
+      "province_code": 52,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Errachidia",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "province_code": 55,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Ouarzazate",
+      "nbre_ups_concernees": 13,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 696000,
+      "province_code": 56,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Tata",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 290000,
+      "province_code": 65,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Assa-Zag",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "province_code": 67,
+      "observations": null
+    },
+    {
+      "delegationId": "0535693f-8bb9-4349-8704-6d66fd90546c",
+      "province": "Boujdour",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 71,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Tanger-Assilah",
+      "nbre_ups_concernees": 10,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 580000,
+      "province_code": 1,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Tétouan",
+      "nbre_ups_concernees": 10,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 580000,
+      "province_code": 3,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Larache",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 27,
+      "montant_effectif": 1885000,
+      "province_code": 5,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Chefchaouen",
+      "nbre_ups_concernees": 87,
+      "nbre_salles_concernees": 96,
+      "montant_effectif": 5568000,
+      "province_code": 7,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Ouezzane",
+      "nbre_ups_concernees": 56,
+      "nbre_salles_concernees": 56,
+      "montant_effectif": 3683000,
+      "province_code": 8,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Oujda-Angad",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 435000,
+      "province_code": 9,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Nador",
+      "nbre_ups_concernees": 42,
+      "nbre_salles_concernees": 42,
+      "montant_effectif": 2436000,
+      "province_code": 10,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Driouch",
+      "nbre_ups_concernees": 41,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 2378000,
+      "province_code": 11,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Jerada",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 12,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Taourirt",
+      "nbre_ups_concernees": 18,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 1044000,
+      "province_code": 14,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Guercif",
+      "nbre_ups_concernees": 44,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 2552000,
+      "province_code": 15,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Figuig",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 1566000,
+      "province_code": 16,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Fès",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 174000,
+      "province_code": 17,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Meknès",
+      "nbre_ups_concernees": 41,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 2639000,
+      "province_code": 18,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "El Hajeb",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 1769000,
+      "province_code": 19,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Moulay Yacoub",
+      "nbre_ups_concernees": 65,
+      "nbre_salles_concernees": 65,
+      "montant_effectif": 3770000,
+      "province_code": 21,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Boulemane",
+      "nbre_ups_concernees": 9,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 580000,
+      "province_code": 23,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Khémisset",
+      "nbre_ups_concernees": 20,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 1218000,
+      "province_code": 30,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Sidi Kacem",
+      "nbre_ups_concernees": 50,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 3219000,
+      "province_code": 31,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Sidi Slimane",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 1305000,
+      "province_code": 32,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Béni Mellal",
+      "nbre_ups_concernees": 20,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 1392000,
+      "province_code": 33,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Khénifra",
+      "nbre_ups_concernees": 36,
+      "nbre_salles_concernees": 36,
+      "montant_effectif": 1740000,
+      "province_code": 36,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "El Jadida",
+      "nbre_ups_concernees": 80,
+      "nbre_salles_concernees": 88,
+      "montant_effectif": 5104000,
+      "province_code": 40,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Benslimane",
+      "nbre_ups_concernees": 33,
+      "nbre_salles_concernees": 33,
+      "montant_effectif": 1914000,
+      "province_code": 43,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Berrechid",
+      "nbre_ups_concernees": 98,
+      "nbre_salles_concernees": 102,
+      "montant_effectif": 5916000,
+      "province_code": 44,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Marrakech",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 174000,
+      "province_code": 47,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Al Haouz",
+      "nbre_ups_concernees": 149,
+      "nbre_salles_concernees": 161,
+      "montant_effectif": 9338000,
+      "province_code": 49,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Essaouira",
+      "nbre_ups_concernees": 88,
+      "nbre_salles_concernees": 96,
+      "montant_effectif": 5568000,
+      "province_code": 51,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Rehamna",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 116000,
+      "province_code": 52,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Safi",
+      "nbre_ups_concernees": 82,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 4756000,
+      "province_code": 53,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Errachidia",
+      "nbre_ups_concernees": 119,
+      "nbre_salles_concernees": 119,
+      "montant_effectif": 6902000,
+      "province_code": 55,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Ouarzazate",
+      "nbre_ups_concernees": 107,
+      "nbre_salles_concernees": 139,
+      "montant_effectif": 8816000,
+      "province_code": 56,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Midelt",
+      "nbre_ups_concernees": 67,
+      "nbre_salles_concernees": 74,
+      "montant_effectif": 4292000,
+      "province_code": 57,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Tinghir",
+      "nbre_ups_concernees": 106,
+      "nbre_salles_concernees": 114,
+      "montant_effectif": 6612000,
+      "province_code": 58,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Zagora",
+      "nbre_ups_concernees": 140,
+      "nbre_salles_concernees": 149,
+      "montant_effectif": 8642000,
+      "province_code": 59,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Agadir-Ida-Ou-Tanane",
+      "nbre_ups_concernees": 8,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 638000,
+      "province_code": 60,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Inezgane-Aït Melloul",
+      "nbre_ups_concernees": 13,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 1305000,
+      "province_code": 61,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Taroudannt",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 1305000,
+      "province_code": 63,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Tiznit",
+      "nbre_ups_concernees": 18,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 1566000,
+      "province_code": 64,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Tata",
+      "nbre_ups_concernees": 7,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 609000,
+      "province_code": 65,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Guelmim",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 348000,
+      "province_code": 66,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Tan-Tan",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 68,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Laâyoune",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 116000,
+      "province_code": 70,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Boujdour",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 406000,
+      "province_code": 71,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Oued Ed-Dahab",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 232000,
+      "province_code": 74,
+      "observations": null
+    },
+    {
+      "delegationId": "8e79f50b-6aa0-46ac-bc0c-c304dc212b96",
+      "province": "Aousserd",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 75,
+      "observations": null
+    },
+    {
+      "delegationId": "61bbb4bb-2411-4e55-8482-695adb67eb10",
+      "province": "Boulemane",
+      "nbre_ups_concernees": 13,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 377000,
+      "province_code": 23,
+      "observations": null
+    },
+    {
+      "delegationId": "61bbb4bb-2411-4e55-8482-695adb67eb10",
+      "province": "Taounate",
+      "nbre_ups_concernees": 40,
+      "nbre_salles_concernees": 40,
+      "montant_effectif": 1160000,
+      "province_code": 24,
+      "observations": null
+    },
+    {
+      "delegationId": "61bbb4bb-2411-4e55-8482-695adb67eb10",
+      "province": "Marrakech",
+      "nbre_ups_concernees": 10,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 580000,
+      "province_code": 47,
+      "observations": null
+    },
+    {
+      "delegationId": "61bbb4bb-2411-4e55-8482-695adb67eb10",
+      "province": "Tan-Tan",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "province_code": 68,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Larache",
+      "nbre_ups_concernees": 40,
+      "nbre_salles_concernees": 45,
+      "montant_effectif": 1305000,
+      "province_code": 5,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Ouezzane",
+      "nbre_ups_concernees": 23,
+      "nbre_salles_concernees": 23,
+      "montant_effectif": 667000,
+      "province_code": 8,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Nador",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "province_code": 10,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Figuig",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": 30,
+      "montant_effectif": 1740000,
+      "province_code": 16,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Ifrane",
+      "nbre_ups_concernees": 23,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 1392000,
+      "province_code": 20,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Moulay Yacoub",
+      "nbre_ups_concernees": 22,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 638000,
+      "province_code": 21,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Sefrou",
+      "nbre_ups_concernees": 9,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 261000,
+      "province_code": 22,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Boulemane",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 696000,
+      "province_code": 23,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Taounate",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 87000,
+      "province_code": 24,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Taza",
+      "nbre_ups_concernees": 55,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 3161000,
+      "province_code": 25,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Sidi Kacem",
+      "nbre_ups_concernees": 19,
+      "nbre_salles_concernees": 19,
+      "montant_effectif": 551000,
+      "province_code": 31,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Sidi Slimane",
+      "nbre_ups_concernees": 38,
+      "nbre_salles_concernees": 39,
+      "montant_effectif": 1421000,
+      "province_code": 32,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Fquih Ben Salah",
+      "nbre_ups_concernees": 25,
+      "nbre_salles_concernees": 34,
+      "montant_effectif": 986000,
+      "province_code": 35,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Mohammadia",
+      "nbre_ups_concernees": 6,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 348000,
+      "province_code": 39,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "El Jadida",
+      "nbre_ups_concernees": 17,
+      "nbre_salles_concernees": 27,
+      "montant_effectif": 783000,
+      "province_code": 40,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Benslimane",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 986000,
+      "province_code": 43,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Settat",
+      "nbre_ups_concernees": 26,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 742500,
+      "province_code": 45,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Sidi Bennour",
+      "nbre_ups_concernees": 48,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 3828000,
+      "province_code": 46,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Marrakech",
+      "nbre_ups_concernees": 38,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 2204000,
+      "province_code": 47,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Ouarzazate",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "province_code": 56,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Tinghir",
+      "nbre_ups_concernees": 32,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 928000,
+      "province_code": 58,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Taroudannt",
+      "nbre_ups_concernees": 44,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1276000,
+      "province_code": 63,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Tata",
+      "nbre_ups_concernees": 9,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 522000,
+      "province_code": 65,
+      "observations": null
+    },
+    {
+      "delegationId": "bc024fcf-3703-407f-be54-936e985f8c77",
+      "province": "Guelmim",
+      "nbre_ups_concernees": 1,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 58000,
+      "province_code": 66,
+      "observations": null
+    }
+  ]

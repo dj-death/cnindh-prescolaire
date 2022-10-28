@@ -1,0 +1,282 @@
+[
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "Kénitra",
+      "nbre_ups_concernees": 9,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 450000,
+      "province_code": 29
+    },
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "Azilal",
+      "nbre_ups_concernees": 147,
+      "nbre_salles_concernees": 173,
+      "montant_effectif": 4325000,
+      "province_code": 34
+    },
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "Khouribga",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 325000,
+      "province_code": 37
+    },
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "Chichaoua",
+      "nbre_ups_concernees": 43,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 775000,
+      "province_code": 48
+    },
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "El Kelâa des Sraghna",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 875000,
+      "province_code": 50
+    },
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "Youssoufia",
+      "nbre_ups_concernees": 21,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 525000,
+      "province_code": 54
+    },
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "Tarfaya",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "province_code": 72
+    },
+    {
+      "delegationId": "4676dabd-7ff8-4ae9-a4c2-3dab40938171",
+      "province": "Es-Semara",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 75000,
+      "province_code": 73
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "Kénitra",
+      "nbre_ups_concernees": 9,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 1044000,
+      "province_code": 29
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "Azilal",
+      "nbre_ups_concernees": 147,
+      "nbre_salles_concernees": 173,
+      "montant_effectif": 10034000,
+      "province_code": 34
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "Khouribga",
+      "nbre_ups_concernees": 15,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 815000,
+      "province_code": 37
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "Chichaoua",
+      "nbre_ups_concernees": 43,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 2164000,
+      "province_code": 48
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "El Kelâa des Sraghna",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 2030000,
+      "province_code": 50
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "Youssoufia",
+      "nbre_ups_concernees": 21,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 1218000,
+      "province_code": 54
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "Tarfaya",
+      "nbre_ups_concernees": 3,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 174000,
+      "province_code": 72
+    },
+    {
+      "delegationId": "26087b97-2b7a-48db-a27b-bb588b567e26",
+      "province": "Es-Semara",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 340000,
+      "province_code": 73
+    },
+    {
+      "delegationId": "f2efbb51-025f-4393-adf8-45c4b0a856cf",
+      "province": "Al Hoceima",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": 29,
+      "montant_effectif": 625000,
+      "province_code": 6
+    },
+    {
+      "delegationId": "f2efbb51-025f-4393-adf8-45c4b0a856cf",
+      "province": "El Kelâa des Sraghna",
+      "nbre_ups_concernees": 29,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 250000,
+      "province_code": 50
+    },
+    {
+      "delegationId": "090a8fe0-30b0-4348-a2c0-1308b3fa4a6f",
+      "province": "Al Hoceima",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": 29,
+      "montant_effectif": 1782000,
+      "province_code": 6
+    },
+    {
+      "delegationId": "090a8fe0-30b0-4348-a2c0-1308b3fa4a6f",
+      "province": "Azilal",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "province_code": 34
+    },
+    {
+      "delegationId": "090a8fe0-30b0-4348-a2c0-1308b3fa4a6f",
+      "province": "Chichaoua",
+      "nbre_ups_concernees": 12,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 350000,
+      "province_code": 48
+    },
+    {
+      "delegationId": "090a8fe0-30b0-4348-a2c0-1308b3fa4a6f",
+      "province": "El Kelâa des Sraghna",
+      "nbre_ups_concernees": 29,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1479000,
+      "province_code": 50
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "Al Hoceima",
+      "nbre_ups_concernees": 24,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 1450000,
+      "province_code": 6
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "Kénitra",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 290000,
+      "province_code": 29
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "Azilal",
+      "nbre_ups_concernees": 48,
+      "nbre_salles_concernees": 51,
+      "montant_effectif": 2987000,
+      "province_code": 34
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "Khouribga",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 1856000,
+      "province_code": 37
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "Chichaoua",
+      "nbre_ups_concernees": 66,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 3828000,
+      "province_code": 48
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "El Kelâa des Sraghna",
+      "nbre_ups_concernees": 25,
+      "nbre_salles_concernees": 33,
+      "montant_effectif": 2349000,
+      "province_code": 50
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "Youssoufia",
+      "nbre_ups_concernees": 57,
+      "nbre_salles_concernees": 57,
+      "montant_effectif": 3306000,
+      "province_code": 54
+    },
+    {
+      "delegationId": "0577feb6-e54c-4bb4-98a6-1fee2a6fe872",
+      "province": "Tarfaya",
+      "nbre_ups_concernees": 5,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 319000,
+      "province_code": 72
+    },
+    {
+      "delegationId": "45316b0b-fbfd-499e-af2c-976a7268ac62",
+      "province": "M’diq-Fnideq",
+      "nbre_ups_concernees": 2,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "province_code": 2
+    },
+    {
+      "delegationId": "e38d428d-a4e7-4d27-9643-17064278c96b",
+      "province": "Al Hoceima",
+      "nbre_ups_concernees": 52,
+      "nbre_salles_concernees": 61,
+      "montant_effectif": 1827000,
+      "province_code": 6
+    },
+    {
+      "delegationId": "e38d428d-a4e7-4d27-9643-17064278c96b",
+      "province": "Azilal",
+      "nbre_ups_concernees": 4,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 116000,
+      "province_code": 34
+    },
+    {
+      "delegationId": "e38d428d-a4e7-4d27-9643-17064278c96b",
+      "province": "Chichaoua",
+      "nbre_ups_concernees": 17,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 899000,
+      "province_code": 48
+    },
+    {
+      "delegationId": "e38d428d-a4e7-4d27-9643-17064278c96b",
+      "province": "El Kelâa des Sraghna",
+      "nbre_ups_concernees": 28,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 2117000,
+      "province_code": 50
+    }
+  ]

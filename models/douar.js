@@ -42,6 +42,12 @@ module.exports = function(sequelize, DataTypes) {
             searchable: true
         },
 
+        douar_mere: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            searchable: true
+        },
+
         est_sousdouar: {
             type: DataTypes.BOOLEAN,
             allowNull: true

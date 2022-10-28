@@ -222,7 +222,7 @@ module.exports = {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
                 /*return models.Delegation.destroy({ where: query, truncate: query ? false : true, transaction: t })
             }).then(function () {*/
-                return models.SousDelegation.bulkCreate(require('../data/sousdelegations.json').filter(d => ['13e5db8f-ff82-4449-b36d-edf91861dff3', '31ebeca9-9bd6-4aaf-ba4d-673bb31bc12d'].includes(d.delegationId)), { include: [{ model: models.Delegation, as: 'delegation' }], transaction: t })
+                return models.SousDelegation.bulkCreate(require('../data/sousdelegsoct212022.json'), { include: [{ model: models.Delegation, as: 'delegation' }], transaction: t })
             })
         })
     },

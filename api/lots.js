@@ -22,6 +22,21 @@ var Service = {
             const key = 'lots_'
             const qScope = params.scope || (params.id ? 'nested' : 'browse');
 
+            params['filter'] = params['filter'] || []
+
+            let anneeBudgFilter = params.filter.find(filt => filt.property === 'annee_budgetaire')
+            
+            if (anneeBudgFilter) {
+                anneeBudgFilter.operator = 'between';
+                anneeBudgFilter.property = 'date_delegation';
+
+                let year = anneeBudgFilter.value;
+                let fromDt = new Date(year, 0, 1);
+                let toDt = new Date(year, 11, 31);
+
+                anneeBudgFilter.value = [fromDt, toDt];
+            }
+
             return models.Lot.scope(qScope)/*.cache(key)*/.findAndCountAll(
                 helpers.sequelizify(params, models.Lot));
         }).then(function (result) {
