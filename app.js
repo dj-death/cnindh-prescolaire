@@ -118,6 +118,10 @@ if (process.env.HEROKU) {
     config.direct.server = "cnindh-prescolaire.herokuapp.com";
     config.direct.port = 80;
     config.direct.protocol = "https";
+} else if (process.env.CYCLIC) {
+    config.direct.server = "cnindh-prescolaire.cyclic.app";
+    config.direct.port = 80;
+    config.direct.protocol = "https";
 }
 
 var directApi = direct.initApi(config.direct);
