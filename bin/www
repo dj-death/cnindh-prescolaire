@@ -6,7 +6,6 @@
 
 try {
   const app = require('../app');
-  const debug = require('debug')('server:server');
   const http = require('http');
 
 
@@ -89,7 +88,7 @@ try {
     var bind = typeof addr === 'string'
       ? 'pipe ' + addr
       : 'port ' + addr.port;
-    debug('Listening on ' + bind);
+    console.log('Listening on ' + bind);
   }
 
 } catch (e) {
