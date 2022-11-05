@@ -1,11 +1,12 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Unite", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -13,19 +14,19 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        plan_actions: { type: DataTypes.STRING, searchable: true },
-        fp_code: { type: DataTypes.INTEGER },
-        annexe_administrative: { type: DataTypes.STRING },
-        province_code: { type: DataTypes.INTEGER, allowNull: false },
-        cercle_code: { type: DataTypes.INTEGER, allowNull: false },
-        commune_code: { type: DataTypes.INTEGER, allowNull: false },
-        commune: { type: DataTypes.STRING, searchable: true },
-        douar_quartier: { type: DataTypes.STRING, searchable: true },
-        code_douar: { type: DataTypes.STRING, searchable: true },
-        dans_ecole: { type: DataTypes.BOOLEAN, defaultValue: false },
-        adresse: { type: DataTypes.STRING, searchable: true },
+        plan_actions: { type: Sequelize.STRING, searchable: true },
+        fp_code: { type: Sequelize.INTEGER },
+        annexe_administrative: { type: Sequelize.STRING },
+        province_code: { type: Sequelize.INTEGER, allowNull: false },
+        cercle_code: { type: Sequelize.INTEGER, allowNull: false },
+        commune_code: { type: Sequelize.INTEGER, allowNull: false },
+        commune: { type: Sequelize.STRING, searchable: true },
+        douar_quartier: { type: Sequelize.STRING, searchable: true },
+        code_douar: { type: Sequelize.STRING, searchable: true },
+        dans_ecole: { type: Sequelize.BOOLEAN, defaultValue: false },
+        adresse: { type: Sequelize.STRING, searchable: true },
         location: {
-            type: DataTypes.TEXT,
+            type: Sequelize.TEXT,
             allowNull: true,
             get: function () {
                 var val = this.getDataValue('location');
@@ -51,44 +52,44 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        intitule: { type: DataTypes.STRING, searchable: true },
-        type_unite: { type: DataTypes.STRING },
-        mode_creation: { type: DataTypes.STRING },
-        nbre_salles: { type: DataTypes.INTEGER },
-        nbre_salles_ouvertes: { type: DataTypes.INTEGER },
-        nbre_classes: { type: DataTypes.INTEGER },
-        programme: { type: DataTypes.STRING },
+        intitule: { type: Sequelize.STRING, searchable: true },
+        type_unite: { type: Sequelize.STRING },
+        mode_creation: { type: Sequelize.STRING },
+        nbre_salles: { type: Sequelize.INTEGER },
+        nbre_salles_ouvertes: { type: Sequelize.INTEGER },
+        nbre_classes: { type: Sequelize.INTEGER },
+        programme: { type: Sequelize.STRING },
 
         proprietaire_foncier: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
         },
 
         type_foncier: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
         },
 
         mode_mobilisation_foncier: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
         },
         
 
-        montant_delegue: { type: DataTypes.DECIMAL(10, 2) },
-        cout_travaux: { type: DataTypes.DECIMAL(10, 2) },
-        cout_unitaire: { type: DataTypes.DECIMAL(10, 2) },
-        cout_equipement: { type: DataTypes.DECIMAL(10, 2) },
-        cout_fonctionnement: { type: DataTypes.DECIMAL(10, 2) },
-        montant_engage: { type: DataTypes.DECIMAL(10, 2) },
-        montant_emis: { type: DataTypes.DECIMAL(10, 2) },
+        montant_delegue: { type: Sequelize.DECIMAL(10, 2) },
+        cout_travaux: { type: Sequelize.DECIMAL(10, 2) },
+        cout_unitaire: { type: Sequelize.DECIMAL(10, 2) },
+        cout_equipement: { type: Sequelize.DECIMAL(10, 2) },
+        cout_fonctionnement: { type: Sequelize.DECIMAL(10, 2) },
+        montant_engage: { type: Sequelize.DECIMAL(10, 2) },
+        montant_emis: { type: Sequelize.DECIMAL(10, 2) },
 
-        cout_travaux_estime: { type: DataTypes.DECIMAL(10, 2) },
+        cout_travaux_estime: { type: Sequelize.DECIMAL(10, 2) },
 
-        delai_execution: { type: DataTypes.INTEGER },
+        delai_execution: { type: Sequelize.INTEGER },
 
         date_lancement_trvx: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -97,7 +98,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_lancement_marche: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -106,7 +107,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_ouverture_plis: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -115,7 +116,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_ouverture: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -124,7 +125,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_ouverture_pp: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -133,7 +134,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_ouverture_prevu: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -142,7 +143,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_resiliation: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -151,7 +152,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_arret: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -159,78 +160,96 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        tx_avancement_physique: { type: DataTypes.DECIMAL(5, 2) },
-        statut: { type: DataTypes.STRING },
-        //statut_fp: { type: DataTypes.STRING },
-        statut_latin: { type: DataTypes.STRING },
-        phase: { type: DataTypes.STRING },
-        difficultes_rencontrees: { type: DataTypes.STRING },
+        tx_avancement_physique: { type: Sequelize.DECIMAL(5, 2) },
+        statut: { type: Sequelize.STRING },
+        //statut_fp: { type: Sequelize.STRING },
+        statut_latin: { type: Sequelize.STRING },
+        phase: { type: Sequelize.STRING },
+        difficultes_rencontrees: { type: Sequelize.STRING },
         problemes_fonctionnement: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
         },
 
-        dispose_eau: { type: DataTypes.BOOLEAN, allowNull: true },
-        dispose_electricite: { type: DataTypes.BOOLEAN, allowNull: true },
-        dispose_assainissement: { type: DataTypes.BOOLEAN, allowNull: true },
+        dispose_eau: { type: Sequelize.BOOLEAN, allowNull: true },
+        dispose_electricite: { type: Sequelize.BOOLEAN, allowNull: true },
+        dispose_assainissement: { type: Sequelize.BOOLEAN, allowNull: true },
 
-        dispose_convention_signee: { type: DataTypes.BOOLEAN, defaultValue: true },
-        est_programmee: { type: DataTypes.BOOLEAN, defaultValue: true },
-        est_livree: { type: DataTypes.BOOLEAN, defaultValue: true },
-        est_ouverte: { type: DataTypes.BOOLEAN, allowNull: true },
-        est_resiliee: { type: DataTypes.BOOLEAN, defaultValue: false },
-        est_en_arret: { type: DataTypes.BOOLEAN, defaultValue: false, allowNull: true },
+        dispose_convention_signee: { type: Sequelize.BOOLEAN, defaultValue: true },
+        est_programmee: { type: Sequelize.BOOLEAN, defaultValue: true },
+        est_livree: { type: Sequelize.BOOLEAN, defaultValue: true },
+        est_ouverte: { type: Sequelize.BOOLEAN, allowNull: true },
+        est_resiliee: { type: Sequelize.BOOLEAN, defaultValue: false },
+        est_en_arret: { type: Sequelize.BOOLEAN, defaultValue: false, allowNull: true },
 
-        nombre_educatrices_femme: { type: DataTypes.INTEGER },
-        nombre_educatrices_homme: { type: DataTypes.INTEGER },
-        nombre_educatrices_total: { type: DataTypes.INTEGER },
+        nombre_educatrices_femme: { type: Sequelize.INTEGER },
+        nombre_educatrices_homme: { type: Sequelize.INTEGER },
+        nombre_educatrices_total: { type: Sequelize.INTEGER },
 
         contact_educateurs: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
         },
 
-        saison_2019_2020_total_global: { type: DataTypes.INTEGER },
-        saison_2019_2020_total_grande_section: { type: DataTypes.INTEGER },
-        saison_2019_2020_total_moyenne_section: { type: DataTypes.INTEGER },
-        saison_2019_2020_inscrits_primaire_total: { type: DataTypes.INTEGER },
-        saison_2019_2020_inscrits_primaire_filles: { type: DataTypes.INTEGER },
-        saison_2019_2020_inscrits_primaire_garcons: { type: DataTypes.INTEGER },
-        saison_2019_2020_ms_passe_gs: { type: DataTypes.INTEGER },
-        saison_2019_2020_ms_reinscrit_ms: { type: DataTypes.INTEGER },
-        saison_2019_2020_ms_passe_primaire: { type: DataTypes.INTEGER },
-        saison_2019_2020_gs_primaire: { type: DataTypes.INTEGER },
-        saison_2019_2020_gs_refait_gs: { type: DataTypes.INTEGER },
-        saison_2019_2020_nbre_arret_scolarite: { type: DataTypes.INTEGER },
+        saison_2019_2020_total_global: { type: Sequelize.INTEGER },
+        saison_2019_2020_total_grande_section: { type: Sequelize.INTEGER },
+        saison_2019_2020_total_moyenne_section: { type: Sequelize.INTEGER },
+        saison_2019_2020_inscrits_primaire_total: { type: Sequelize.INTEGER },
+        saison_2019_2020_inscrits_primaire_filles: { type: Sequelize.INTEGER },
+        saison_2019_2020_inscrits_primaire_garcons: { type: Sequelize.INTEGER },
+        saison_2019_2020_ms_passe_gs: { type: Sequelize.INTEGER },
+        saison_2019_2020_ms_reinscrit_ms: { type: Sequelize.INTEGER },
+        saison_2019_2020_ms_passe_primaire: { type: Sequelize.INTEGER },
+        saison_2019_2020_gs_primaire: { type: Sequelize.INTEGER },
+        saison_2019_2020_gs_refait_gs: { type: Sequelize.INTEGER },
+        saison_2019_2020_nbre_arret_scolarite: { type: Sequelize.INTEGER },
 
 
-        saison_2020_2021_moyenne_section_filles: { type: DataTypes.INTEGER },
-        saison_2020_2021_moyenne_section_garcons: { type: DataTypes.INTEGER },
-        saison_2020_2021_total_moyenne_section: { type: DataTypes.INTEGER },
+        saison_2020_2021_moyenne_section_filles: { type: Sequelize.INTEGER },
+        saison_2020_2021_moyenne_section_garcons: { type: Sequelize.INTEGER },
+        saison_2020_2021_total_moyenne_section: { type: Sequelize.INTEGER },
+        saison_2020_2021_grande_section_filles: { type: Sequelize.INTEGER },
+        saison_2020_2021_grande_section_garcons: { type: Sequelize.INTEGER },
+        saison_2020_2021_total_grande_section: { type: Sequelize.INTEGER },
+        saison_2020_2021_total_global: { type: Sequelize.INTEGER },
 
-        saison_2020_2021_grande_section_filles: { type: DataTypes.INTEGER },
-        saison_2020_2021_grande_section_garcons: { type: DataTypes.INTEGER },
-        saison_2020_2021_total_grande_section: { type: DataTypes.INTEGER },
+        saison_2022_2023_moyenne_section_filles: { type: Sequelize.INTEGER },
+        saison_2021_2022_moyenne_section_garcons: { type: Sequelize.INTEGER },
+        saison_2021_2022_grande_section_filles: { type: Sequelize.INTEGER },
+        saison_2021_2022_grande_section_garcons: { type: Sequelize.INTEGER },
 
-        saison_2020_2021_total_global: { type: DataTypes.INTEGER },
+        saison_2020_2021_inscrits_primaire_total: { type: Sequelize.INTEGER },
+        saison_2020_2021_inscrits_primaire_filles: { type: Sequelize.INTEGER },
+        saison_2020_2021_inscrits_primaire_garcons: { type: Sequelize.INTEGER },
+        saison_2020_2021_ms_passe_gs: { type: Sequelize.INTEGER },
+        saison_2020_2021_ms_reinscrit_ms: { type: Sequelize.INTEGER },
+        saison_2020_2021_ms_passe_primaire: { type: Sequelize.INTEGER },
+        saison_2020_2021_gs_primaire: { type: Sequelize.INTEGER },
+        saison_2020_2021_gs_refait_gs: { type: Sequelize.INTEGER },
+        saison_2020_2021_nbre_arret_scolarite: { type: Sequelize.INTEGER },
 
-        saison_2021_2022_moyenne_section_filles: { type: DataTypes.INTEGER },
-        saison_2021_2022_moyenne_section_garcons: { type: DataTypes.INTEGER },
-        saison_2021_2022_grande_section_filles: { type: DataTypes.INTEGER },
-        saison_2021_2022_grande_section_garcons: { type: DataTypes.INTEGER },
 
-        inscrits_primaire_total: { type: DataTypes.INTEGER },
-        inscrits_primaire_filles: { type: DataTypes.INTEGER },
-        inscrits_primaire_garcons: { type: DataTypes.INTEGER },
-        ms_passe_gs: { type: DataTypes.INTEGER },
-        ms_reinscrit_ms: { type: DataTypes.INTEGER },
-        ms_passe_primaire: { type: DataTypes.INTEGER },
-        gs_primaire: { type: DataTypes.INTEGER },
-        gs_refait_gs: { type: DataTypes.INTEGER },
-        nbre_arret_scolarite: { type: DataTypes.INTEGER },
+        saison_2022_2023_moyenne_section_filles: { type: Sequelize.INTEGER },
+        saison_2022_2023_moyenne_section_garcons: { type: Sequelize.INTEGER },
+        saison_2022_2023_total_moyenne_section: { type: Sequelize.INTEGER },
+        saison_2022_2023_grande_section_filles: { type: Sequelize.INTEGER },
+        saison_2022_2023_grande_section_garcons: { type: Sequelize.INTEGER },
+        saison_2022_2023_total_grande_section: { type: Sequelize.INTEGER },
+        saison_2022_2023_total_global: { type: Sequelize.INTEGER },
+
+        saison_2021_2022_inscrits_primaire_total: { type: Sequelize.INTEGER },
+        saison_2021_2022_inscrits_primaire_filles: { type: Sequelize.INTEGER },
+        saison_2021_2022_inscrits_primaire_garcons: { type: Sequelize.INTEGER },
+        saison_2021_2022_ms_passe_gs: { type: Sequelize.INTEGER },
+        saison_2021_2022_ms_reinscrit_ms: { type: Sequelize.INTEGER },
+        saison_2021_2022_ms_passe_primaire: { type: Sequelize.INTEGER },
+        saison_2021_2022_gs_primaire: { type: Sequelize.INTEGER },
+        saison_2021_2022_gs_refait_gs: { type: Sequelize.INTEGER },
+        saison_2021_2022_nbre_arret_scolarite: { type: Sequelize.INTEGER },
+
 
         date_situation: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -238,20 +257,20 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        modified_by: { type: DataTypes.STRING },
+        modified_by: { type: Sequelize.STRING },
 
         fp_comments: {
-            type: DataTypes.TEXT,
+            type: Sequelize.TEXT,
             allowNull: true
         },
 
         comments: {
-            type: DataTypes.TEXT,
+            type: Sequelize.TEXT,
             allowNull: true
         },
 
         images: {
-            type: DataTypes.TEXT,
+            type: Sequelize.TEXT,
             allowNull: true,
             get: function () {
                 return JSON.parse(this.getDataValue('images'));
@@ -262,7 +281,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         fp_id: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             unique: {
                 msg: 'ID FP existe déjà'
@@ -272,10 +291,10 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        /*montant_delegue_fct: { type: DataTypes.DECIMAL(10, 2) },
-        last_tranche: { type: DataTypes.INTEGER },
+        /*montant_delegue_fct: { type: Sequelize.DECIMAL(10, 2) },
+        last_tranche: { type: Sequelize.INTEGER },
         last_delegation_dt: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -313,8 +332,12 @@ module.exports = function (sequelize, DataTypes) {
                 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
                 'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture',
                 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 
+                'saison_2022_2023_moyenne_section_filles', 'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_grande_section_filles', 'saison_2022_2023_grande_section_garcons',
                 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons',
-                'inscrits_primaire_total', 'inscrits_primaire_filles', 'inscrits_primaire_garcons', 'ms_passe_gs', 'ms_reinscrit_ms', 'ms_passe_primaire', 'gs_primaire', 'gs_refait_gs', 'nbre_arret_scolarite',
+                
+                'saison_2021_2022_inscrits_primaire_total', 'saison_2021_2022_inscrits_primaire_filles',
+                'saison_2021_2022_inscrits_primaire_garcons', 'saison_2021_2022_ms_passe_gs', 'saison_2021_2022_ms_reinscrit_ms',
+                'saison_2021_2022_ms_passe_primaire', 'saison_2021_2022_gs_primaire', 'saison_2021_2022_gs_refait_gs', 'saison_2021_2022_nbre_arret_scolarite',
 
                 [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
                 [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
@@ -331,8 +354,14 @@ module.exports = function (sequelize, DataTypes) {
                 'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
                 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 
                 'date_ouverture',
-                'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons', 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons',
-                'inscrits_primaire_total', 'inscrits_primaire_filles', 'inscrits_primaire_garcons', 'ms_passe_gs', 'ms_reinscrit_ms', 'ms_passe_primaire', 'gs_primaire', 'gs_refait_gs', 'nbre_arret_scolarite',
+                'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',
+                'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons',
+                'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons',
+                'saison_2022_2023_moyenne_section_filles', 'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_grande_section_filles', 'saison_2022_2023_grande_section_garcons',
+
+                'saison_2021_2022_inscrits_primaire_total', 'saison_2021_2022_inscrits_primaire_filles',
+                'saison_2021_2022_inscrits_primaire_garcons', 'saison_2021_2022_ms_passe_gs', 'saison_2021_2022_ms_reinscrit_ms',
+                'saison_2021_2022_ms_passe_primaire', 'saison_2021_2022_gs_primaire', 'saison_2021_2022_gs_refait_gs', 'saison_2021_2022_nbre_arret_scolarite',
                 'saison_2019_2020_total_global', 'saison_2019_2020_total_grande_section', 'saison_2019_2020_total_moyenne_section', 'saison_2019_2020_inscrits_primaire_total', 'saison_2019_2020_inscrits_primaire_filles', 'saison_2019_2020_inscrits_primaire_garcons', 'saison_2019_2020_ms_passe_gs', 'saison_2019_2020_ms_reinscrit_ms', 'saison_2019_2020_ms_passe_primaire', 'saison_2019_2020_gs_primaire', 'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite'
                 
                 [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],

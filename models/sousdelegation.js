@@ -1,10 +1,11 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("SousDelegation", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -12,19 +13,19 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        province_code: { type: DataTypes.INTEGER, allowNull: false },
-        nbre_ups_concernees: { type: DataTypes.INTEGER },
-        nbre_salles_concernees: { type: DataTypes.INTEGER },
+        province_code: { type: Sequelize.INTEGER, allowNull: false },
+        nbre_ups_concernees: { type: Sequelize.INTEGER },
+        nbre_salles_concernees: { type: Sequelize.INTEGER },
 
-        nbre_t1: { type: DataTypes.INTEGER },
-        nbre_t2: { type: DataTypes.INTEGER },
-        nbre_t3: { type: DataTypes.INTEGER },
-        nbre_amg: { type: DataTypes.INTEGER },
-        nbre_modulaire: { type: DataTypes.INTEGER },
+        nbre_t1: { type: Sequelize.INTEGER },
+        nbre_t2: { type: Sequelize.INTEGER },
+        nbre_t3: { type: Sequelize.INTEGER },
+        nbre_amg: { type: Sequelize.INTEGER },
+        nbre_modulaire: { type: Sequelize.INTEGER },
 
-        montant_effectif: { type: DataTypes.DECIMAL(10, 2) },
-        //montant_effectif2: { type: DataTypes.DECIMAL(10, 2) },
-        observations: { type: DataTypes.TEXT, allowNull: true }
+        montant_effectif: { type: Sequelize.DECIMAL(10, 2) },
+        //montant_effectif2: { type: Sequelize.DECIMAL(10, 2) },
+        observations: { type: Sequelize.TEXT, allowNull: true }
     }, {
         tableName: "sousdelegations"
     });

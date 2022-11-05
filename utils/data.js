@@ -2,7 +2,7 @@
 
 var models = require("../models");
 var sequelize = models.sequelize;
-var Promise = models.Sequelize.Promise;
+//var Promise = models.Sequelize.Promise;
 var throat = require('throat');
 const helpers = require('./helpers');
 
@@ -89,9 +89,16 @@ module.exports = {
         //const fields = Object.keys(models.Unite.rawAttributes).filter(f => !['id', 'created', 'fp_id'].includes(f))
         const fields = Object.keys(records[0]).filter(f => !['id', 'created', 'fp_id'].includes(f));
 
+        //console.log(records)
+        //console.log('fields', fields)
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
-                return models.Unite.bulkCreate(records, { transaction: t, updateOnDuplicate: fields, returning: ['id'] });
+                /*return Promise.all(records.map(throat(1, function (record, index) {
+                    if (index <= 500) return Promise.resolve()
+                    return models.Unite.upsert(record, { validate: false, transaction: t, updateOnDuplicate: fields, returning: ['id'] })
+                })))*/
+
+                return models.Unite.bulkCreate(records, { validate: false, transaction: t, updateOnDuplicate: fields, returning: ['id'] });
             })
         })
     },

@@ -185,7 +185,7 @@ if (config.server.uploadEnabled) {
             const ids = records.map(rec => rec.fp_id);
             const unique = [...new Set(ids)].length;
 
-            console.log(records[records.length - 1]);
+            console.log('first row', records[records.length - 1]);
     
             if (typeof(records[0].id) === 'undefined' && unique !== ids.length) {            
                 const groupedByFPID = helpers.groupBy(records, 'fp_id');
@@ -210,13 +210,13 @@ if (config.server.uploadEnabled) {
 
             data.upsertUnites(records).then(function (rows) {
                 //console.log(rows);
-                const newRecords = rows.filter(row => row.isNewRecord);
-                const modifiedRecords = rows.filter(row => row.changed());
+                /*const newRecords = rows.filter(row => row.isNewRecord);
+                const modifiedRecords = rows.filter(row => row.changed());*/
 
                 res.json({
                     success: true,
                     count: rows.length,
-                    message: `${newRecords.length} nouvelles UP identifiées. ${modifiedRecords.length} UP modifiées.`
+                    message: 'ok' //`${newRecords.length} nouvelles UP identifiées. ${modifiedRecords.length} UP modifiées.`
                 })
             }).catch(function (err) {
                 console.error(err);

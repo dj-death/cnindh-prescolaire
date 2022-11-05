@@ -1,78 +1,78 @@
 "use strict";
-
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Reporting", {
         id: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true,
             searchable: true
         },
-        province_code: { type: DataTypes.INTEGER, allowNull: false },
-        plan_actions: { type: DataTypes.STRING, allowNull: false },
-        fondation_partenaire: { type: DataTypes.STRING, searchable: true },
-        nbre_programmees: { type: DataTypes.INTEGER },
-        nbre_programmees_t1: { type: DataTypes.INTEGER },
-        nbre_programmees_t2: { type: DataTypes.INTEGER },
-        nbre_programmees_t3: { type: DataTypes.INTEGER },
-        nbre_programmees_amg: { type: DataTypes.INTEGER },
-        nbre_salles: { type: DataTypes.INTEGER },
-        nbre_encours_25: { type: DataTypes.INTEGER },
-        nbre_encours_25_50: { type: DataTypes.INTEGER },
-        nbre_encours_50_75: { type: DataTypes.INTEGER },
-        nbre_encours_75: { type: DataTypes.INTEGER },
-        nbre_achevees: { type: DataTypes.INTEGER },
-        nbre_encours_reception: { type: DataTypes.INTEGER },
-        nbre_encours_inscription: { type: DataTypes.INTEGER },
-        nbre_encours_equip: { type: DataTypes.INTEGER },
-        nbre_ouvertes: { type: DataTypes.INTEGER },
-        nbre_livrees: { type: DataTypes.INTEGER },
-        nbre_restantes: { type: DataTypes.INTEGER },
+        province_code: { type: Sequelize.INTEGER, allowNull: false },
+        plan_actions: { type: Sequelize.STRING, allowNull: false },
+        fondation_partenaire: { type: Sequelize.STRING, searchable: true },
+        nbre_programmees: { type: Sequelize.INTEGER },
+        nbre_programmees_t1: { type: Sequelize.INTEGER },
+        nbre_programmees_t2: { type: Sequelize.INTEGER },
+        nbre_programmees_t3: { type: Sequelize.INTEGER },
+        nbre_programmees_amg: { type: Sequelize.INTEGER },
+        nbre_salles: { type: Sequelize.INTEGER },
+        nbre_encours_25: { type: Sequelize.INTEGER },
+        nbre_encours_25_50: { type: Sequelize.INTEGER },
+        nbre_encours_50_75: { type: Sequelize.INTEGER },
+        nbre_encours_75: { type: Sequelize.INTEGER },
+        nbre_achevees: { type: Sequelize.INTEGER },
+        nbre_encours_reception: { type: Sequelize.INTEGER },
+        nbre_encours_inscription: { type: Sequelize.INTEGER },
+        nbre_encours_equip: { type: Sequelize.INTEGER },
+        nbre_ouvertes: { type: Sequelize.INTEGER },
+        nbre_livrees: { type: Sequelize.INTEGER },
+        nbre_restantes: { type: Sequelize.INTEGER },
 
-        prevision_mois0: { type: DataTypes.INTEGER },
-        prevision_mois1: { type: DataTypes.INTEGER },
-        prevision_mois2: { type: DataTypes.INTEGER },
-        nbre_etudes_non_lancees: { type: DataTypes.INTEGER },
-        nbre_etudes_lancees: { type: DataTypes.INTEGER },
-        nbre_etudes_achevees: { type: DataTypes.INTEGER },
-        nbre_marches_lances: { type: DataTypes.INTEGER },
-        nbre_marches_adjuges: { type: DataTypes.INTEGER },
-        cout_global_marches_travaux: { type: DataTypes.DECIMAL(10, 2) },
-        cout_unitaire_moyen_marches_travaux: { type: DataTypes.DECIMAL(10, 2) },
+        prevision_mois0: { type: Sequelize.INTEGER },
+        prevision_mois1: { type: Sequelize.INTEGER },
+        prevision_mois2: { type: Sequelize.INTEGER },
+        nbre_etudes_non_lancees: { type: Sequelize.INTEGER },
+        nbre_etudes_lancees: { type: Sequelize.INTEGER },
+        nbre_etudes_achevees: { type: Sequelize.INTEGER },
+        nbre_marches_lances: { type: Sequelize.INTEGER },
+        nbre_marches_adjuges: { type: Sequelize.INTEGER },
+        cout_global_marches_travaux: { type: Sequelize.DECIMAL(10, 2) },
+        cout_unitaire_moyen_marches_travaux: { type: Sequelize.DECIMAL(10, 2) },
 
         date_lancement_etudes: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
                 isDate: true
             }
         },
-        nbre_encours_validation: { type: DataTypes.INTEGER },
+        nbre_encours_validation: { type: Sequelize.INTEGER },
 
-        remarques: { type: DataTypes.TEXT },
+        remarques: { type: Sequelize.TEXT },
 
 
-        /*salles_delegation_tr1: { type: DataTypes.INTEGER },
-        salles_delegation_tr2: { type: DataTypes.INTEGER },
-        salles_delegation_tr3: { type: DataTypes.INTEGER },
-        salles_delegation_tr4: { type: DataTypes.INTEGER },
+        /*salles_delegation_tr1: { type: Sequelize.INTEGER },
+        salles_delegation_tr2: { type: Sequelize.INTEGER },
+        salles_delegation_tr3: { type: Sequelize.INTEGER },
+        salles_delegation_tr4: { type: Sequelize.INTEGER },
 
-        salles_ouvertes_a_deleger_tr1: { type: DataTypes.INTEGER },
-        salles_ouvertes_a_deleger_tr2: { type: DataTypes.INTEGER },
-        salles_ouvertes_a_deleger_tr3: { type: DataTypes.INTEGER },
-        salles_ouvertes_a_deleger_tr4: { type: DataTypes.INTEGER },
+        salles_ouvertes_a_deleger_tr1: { type: Sequelize.INTEGER },
+        salles_ouvertes_a_deleger_tr2: { type: Sequelize.INTEGER },
+        salles_ouvertes_a_deleger_tr3: { type: Sequelize.INTEGER },
+        salles_ouvertes_a_deleger_tr4: { type: Sequelize.INTEGER },
 
-        salles_nonouvertes_a_deleger_tr1: { type: DataTypes.INTEGER },
-        salles_nonouvertes_a_deleger_tr2: { type: DataTypes.INTEGER },
-        salles_nonouvertes_a_deleger_tr3: { type: DataTypes.INTEGER },
-        salles_nonouvertes_a_deleger_tr4: { type: DataTypes.INTEGER },
+        salles_nonouvertes_a_deleger_tr1: { type: Sequelize.INTEGER },
+        salles_nonouvertes_a_deleger_tr2: { type: Sequelize.INTEGER },
+        salles_nonouvertes_a_deleger_tr3: { type: Sequelize.INTEGER },
+        salles_nonouvertes_a_deleger_tr4: { type: Sequelize.INTEGER },
         */
 
         date_situation: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -80,7 +80,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        modified_by: { type: DataTypes.STRING }
+        modified_by: { type: Sequelize.STRING }
     });
 
     Model.associate = function (models) {

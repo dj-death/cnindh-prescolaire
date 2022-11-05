@@ -1,10 +1,11 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("DelegationUnites", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -13,21 +14,21 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         lot_id: {
-            type: DataTypes.UUID,
+            type: Sequelize.UUID,
             allowNull: false
         },
 
         delegation_id: {
-            type: DataTypes.UUID,
+            type: Sequelize.UUID,
             allowNull: false
         },
 
         unite_id: {
-            type: DataTypes.UUID,
+            type: Sequelize.UUID,
             allowNull: false
         },
 
-        montant: { type: DataTypes.DECIMAL(10, 2) }
+        montant: { type: Sequelize.DECIMAL(10, 2) }
 
     }, {
         tableName: "delegationunites"

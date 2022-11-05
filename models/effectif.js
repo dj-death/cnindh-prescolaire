@@ -1,10 +1,11 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Effectif", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -12,20 +13,20 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        annee_scolaire: { type:DataTypes.STRING, allowNull: false },
-        ms_filles: { type: DataTypes.DECIMAL(3, 0), allowNull: true },
-        ms_garcons: { type: DataTypes.DECIMAL(3, 0), allowNull: true },
-        gs_filles: { type: DataTypes.DECIMAL(3, 0), allowNull: true },
-        gs_garcons: { type: DataTypes.DECIMAL(3, 0), allowNull: true },
-        inscrits_primaire_total: { type: DataTypes.INTEGER },
-        inscrits_primaire_filles: { type: DataTypes.INTEGER },
-        inscrits_primaire_garcons: { type: DataTypes.INTEGER },
-        ms_passe_gs: { type: DataTypes.INTEGER },
-        ms_reinscrit_ms: { type: DataTypes.INTEGER },
-        ms_passe_primaire: { type: DataTypes.INTEGER },
-        gs_primaire: { type: DataTypes.INTEGER },
-        gs_refait_gs: { type: DataTypes.INTEGER },
-        nbre_arret_scolarite: { type: DataTypes.INTEGER },
+        annee_scolaire: { type:Sequelize.STRING, allowNull: false },
+        ms_filles: { type: Sequelize.DECIMAL(3, 0), allowNull: true },
+        ms_garcons: { type: Sequelize.DECIMAL(3, 0), allowNull: true },
+        gs_filles: { type: Sequelize.DECIMAL(3, 0), allowNull: true },
+        gs_garcons: { type: Sequelize.DECIMAL(3, 0), allowNull: true },
+        inscrits_primaire_total: { type: Sequelize.INTEGER },
+        inscrits_primaire_filles: { type: Sequelize.INTEGER },
+        inscrits_primaire_garcons: { type: Sequelize.INTEGER },
+        ms_passe_gs: { type: Sequelize.INTEGER },
+        ms_reinscrit_ms: { type: Sequelize.INTEGER },
+        ms_passe_primaire: { type: Sequelize.INTEGER },
+        gs_primaire: { type: Sequelize.INTEGER },
+        gs_refait_gs: { type: Sequelize.INTEGER },
+        nbre_arret_scolarite: { type: Sequelize.INTEGER },
     });
 
     Model.associate = function (models) {

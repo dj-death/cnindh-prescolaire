@@ -1,10 +1,11 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Action", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -12,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         type: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true,
             validate: {
@@ -20,14 +21,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         subject: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             searchable: true,
             /*validate: {
                 notEmpty: true
             }*/
         },
         object: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             searchable: true,
             validate: {
@@ -35,7 +36,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         author: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true,
             validate: {

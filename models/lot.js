@@ -1,10 +1,11 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Lot", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -13,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         date_delegation: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: true,
 
             validate: {
@@ -21,8 +22,8 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        libelle: { type: DataTypes.STRING, allowNull: false, searchable: true },
-        observations: { type: DataTypes.TEXT, allowNull: true }
+        libelle: { type: Sequelize.STRING, allowNull: false, searchable: true },
+        observations: { type: Sequelize.TEXT, allowNull: true }
     });
 
     Model.associate = function (models) {

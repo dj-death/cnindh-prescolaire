@@ -87,7 +87,9 @@ fs.readdirSync(__dirname)
     })
     .forEach(function (file) {
         try {
-            var model = sequelize.import(path.join(__dirname, file));
+            //var model = sequelize.import(path.join(__dirname, file));
+            let model = require(`${__dirname}/${file}`)(sequelize);
+
             db[model.name] = model; //withCache(model);
         } catch (err) {
             console.log(err);

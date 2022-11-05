@@ -2,12 +2,13 @@
 
 var errors = require('../utils/errors');
 var helpers = require('../utils/helpers.js');
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Person", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -15,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         email: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             searchable: true,
             validate: {
@@ -23,7 +24,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         username: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true,
             unique: {
@@ -34,14 +35,14 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         password: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             validate: {
                 notEmpty: true
             }
         },
         firstname: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true,
             validate: {
@@ -49,7 +50,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         lastname: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true,
             validate: {
@@ -57,23 +58,23 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         title: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             searchable: true
         },
         phone: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             searchable: true
         },
 
         device: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true
         },
 
         role: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             defaultValue: 5,
             validate: {
@@ -81,9 +82,9 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        province_code: { type: DataTypes.INTEGER, allowNull: false },
-        region_code: { type: DataTypes.INTEGER, allowNull: false },
-        fondation_code: { type: DataTypes.INTEGER, allowNull: true }
+        province_code: { type: Sequelize.INTEGER, allowNull: false },
+        region_code: { type: Sequelize.INTEGER, allowNull: false },
+        fondation_code: { type: Sequelize.INTEGER, allowNull: true }
     }, {
         defaultScope: {
             attributes: {

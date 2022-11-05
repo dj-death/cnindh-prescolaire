@@ -1,10 +1,11 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Delegation", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -12,11 +13,11 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        plan_actions: { type: DataTypes.STRING, allowNull: false },
-        tranche_no: { type: DataTypes.INTEGER, allowNull: false },
-        nature_affectation: { type: DataTypes.STRING, allowNull: false, searchable: true },
+        plan_actions: { type: Sequelize.STRING, allowNull: false },
+        tranche_no: { type: Sequelize.INTEGER, allowNull: false },
+        nature_affectation: { type: Sequelize.STRING, allowNull: false, searchable: true },
         date_delegation: {
-            type: DataTypes.DATE,
+            type: Sequelize.DATE,
             allowNull: false,
             validate: {
                 isDate: true
@@ -24,17 +25,17 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         libelle: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true
         },
-        nbre_mois_fonctionnement: { type: DataTypes.INTEGER, allowNull: true },
-        est_effective: { type: DataTypes.BOOLEAN, defaultValue: false },
-        observations: { type: DataTypes.TEXT, allowNull: true },
-        montant_global: { type: DataTypes.DECIMAL(10, 2) },
+        nbre_mois_fonctionnement: { type: Sequelize.INTEGER, allowNull: true },
+        est_effective: { type: Sequelize.BOOLEAN, defaultValue: false },
+        observations: { type: Sequelize.TEXT, allowNull: true },
+        montant_global: { type: Sequelize.DECIMAL(10, 2) },
 
         unites_list: {
-            type: DataTypes.TEXT,
+            type: Sequelize.TEXT,
             allowNull: true,
             get: function () {
                 return JSON.parse(this.getDataValue('unites_list'));

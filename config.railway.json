@@ -40,11 +40,11 @@
 
   "database": {
     "dialect": "postgres",
-    "host": "dpg-cddvjkcgqg47mor3cncg-a.frankfurt-postgres.render.com",
-    "username": "admin",
-    "password": "YtiAETmT3joy6lfYtV6vx9j8hBPx7ieL",
-    "database": "prescolaire",
-    "port": 5432,
+    "host": "containers-us-west-64.railway.app",
+    "username": "postgres",
+    "password": "qLz9sj9UmrJOcJC4NRKi",
+    "database": "railway",
+    "port": 7885,
     "operatorsAliases": false,
     "quoteIdentifiers": false,
     "underscored": false,

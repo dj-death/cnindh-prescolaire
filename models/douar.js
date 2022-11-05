@@ -1,10 +1,11 @@
 "use strict";
+const { Sequelize } = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
     var Model = sequelize.define("Douar", {
         id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
             primaryKey: true,
             validate: {
@@ -13,86 +14,86 @@ module.exports = function(sequelize, DataTypes) {
         },
 
         province_code: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             searchable: false
         },
 
         commune_code: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: false,
             searchable: false
         },
 
         cercle_code: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: true,
             searchable: false
         },
 
         code_douar: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true
         },
 
         code_douar_mere: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             searchable: true
         },
 
         douar_mere: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             searchable: true
         },
 
         est_sousdouar: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             allowNull: true
         },
 
         commune: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true
         },
        
         nom_fr: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: false,
             searchable: true
         },
        
         nom_ar: {
-            type: DataTypes.STRING,
+            type: Sequelize.STRING,
             allowNull: true,
             searchable: true
         },
        
         type: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: true
         },
 
         milieu: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: true
         },
        
         population: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: true
         },
 
         nbre_menages: {
-            type: DataTypes.INTEGER,
+            type: Sequelize.INTEGER,
             allowNull: true
         },
        
         location: {
-            type: DataTypes.TEXT,
+            type: Sequelize.TEXT,
             allowNull: true,
             get: function () {
                 return JSON.parse(this.getDataValue('location'));
@@ -103,12 +104,12 @@ module.exports = function(sequelize, DataTypes) {
         },
        
         has_ecole: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             allowNull: true
         },
 
         has_prescolaire: {
-            type: DataTypes.BOOLEAN,
+            type: Sequelize.BOOLEAN,
             allowNull: true
         }
     }/*, {
