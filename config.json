@@ -40,10 +40,10 @@
 
   "database": {
     "dialect": "postgres",
-    "host": "dpg-cddvjkcgqg47mor3cncg-a.frankfurt-postgres.render.com",
-    "username": "admin",
-    "password": "YtiAETmT3joy6lfYtV6vx9j8hBPx7ieL",
-    "database": "prescolaire",
+    "host": "ec2-54-228-125-183.eu-west-1.compute.amazonaws.com",
+    "username": "evnxfwxlxtyeng",
+    "password": "fd8b95c64e0ed9813365fc22165f568e7161e5ae2f119cb0616572a5462740b8",
+    "database": "d3kcbs78p2g2g5",
     "port": 5432,
     "operatorsAliases": false,
     "quoteIdentifiers": false,
