@@ -185,7 +185,7 @@ if (config.server.uploadEnabled) {
             const ids = records.map(rec => rec.fp_id);
             const unique = [...new Set(ids)].length;
 
-            console.log('first row', records[records.length - 1]);
+            //console.log('first row', records[records.length - 1]);
     
             if (typeof(records[0].id) === 'undefined' && unique !== ids.length) {            
                 const groupedByFPID = helpers.groupBy(records, 'fp_id');
@@ -208,29 +208,32 @@ if (config.server.uploadEnabled) {
             //console.log(records);
             //return;
 
-            data.upsertUnites(records).then(function (rows) {
-                //console.log(rows);
-                /*const newRecords = rows.filter(row => row.isNewRecord);
-                const modifiedRecords = rows.filter(row => row.changed());*/
+            data.compareUnites(records).then(function (actions) {
+                //console.log(actions)
 
-                res.json({
-                    success: true,
-                    count: rows.length,
-                    message: 'ok' //`${newRecords.length} nouvelles UP identifiées. ${modifiedRecords.length} UP modifiées.`
+                return data.upsertUnites(records, actions).then(function (rows) {
+                    let msg;
+    
+                    return res.json({
+                        success: true,
+                        count: rows.length,
+                        message: `Modifications: ${actions.filter(a => a.type === 'Modification UP').length}; Ajouts: ${actions.filter(a => a.type === 'Ajout UP').length}; Suppressions: ${actions.filter(a => a.type === 'Suppression UP').length}`
+                    })
                 })
             }).catch(function (err) {
-                console.error(err);
-                return res.json({
+                console.log('230 err')
+
+                res.json({
                     success: false,
                     message: err.message
-                });   
+                });
             })
         } catch (err) {
-            console.error(err);
-            return res.json({
+            console.log('236 err')
+            res.json({
                 success: false,
                 message: err.message
-            });   
+            });
         }
     });
 }

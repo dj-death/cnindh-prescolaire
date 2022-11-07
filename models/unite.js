@@ -326,7 +326,7 @@ module.exports = function (sequelize, DataTypes) {
 
         Model.addScope('browse', {
             attributes: [
-                'id', 'fp_id', 'fp_code',
+                'id', 'fp_id', 'fp_code', 'fp_comments', 'date_situation',
                 'province_code', 'cercle_code', 'commune_code', 'douar_quartier', 
                 'plan_actions', 'intitule',
                 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 

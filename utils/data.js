@@ -5,6 +5,8 @@ var sequelize = models.sequelize;
 //var Promise = models.Sequelize.Promise;
 var throat = require('throat');
 const helpers = require('./helpers');
+const { help } = require("yargs");
+const {lig2} = require('talisman/metrics/lig');
 
 function pick(items, index) {
     var count = items.length;
@@ -15,30 +17,31 @@ function pick(items, index) {
     return items[index % count];
 }
 
-var corr = { "08577051706102": "AGLF",
-"08577051702001": "AGRAD NOUAMASSIOUNE",
-"08577051704802": "AGULZI NIKKAINE",
-"08577051700801": "AKHBOU",
-"08577051701101": "AMERDOUL AZOUGAGHE",
-"08577051702105": "ANOU NOUAACHA",
-"08577051703301": "ASSFALOU",
-"10473050103603": "Aتكمي افلا",
-"08577051702801": "BOUGAFER",
-"08577051702701": "DAW BOUTAGLIMTE",
-"08577051705901": "ID ZAGHANE",
-"08577051702702": "IKISS TAADI",
-"08577051703201": "Imin ouargue",
-"08577051704701": "IZILI",
-"08577051703401": "OUGOUG",
-"08577051701701": "TAFRAOUTE NOULKOUDE",
-"08577051702703": "Taghda Nikiss",
-"08577051706101": "TAGLIOUITE",
-"08577051700201": "TALBACHATE",
-"08577051702101": "TALOUDATE",
-"08577051703302": "Tanghourte",
-"08577051703101": "Tigolzatine",
-"08577051703001": "TISLITE NOUSSILKANE"
-        }
+var corr = {
+    "08577051706102": "AGLF",
+    "08577051702001": "AGRAD NOUAMASSIOUNE",
+    "08577051704802": "AGULZI NIKKAINE",
+    "08577051700801": "AKHBOU",
+    "08577051701101": "AMERDOUL AZOUGAGHE",
+    "08577051702105": "ANOU NOUAACHA",
+    "08577051703301": "ASSFALOU",
+    "10473050103603": "Aتكمي افلا",
+    "08577051702801": "BOUGAFER",
+    "08577051702701": "DAW BOUTAGLIMTE",
+    "08577051705901": "ID ZAGHANE",
+    "08577051702702": "IKISS TAADI",
+    "08577051703201": "Imin ouargue",
+    "08577051704701": "IZILI",
+    "08577051703401": "OUGOUG",
+    "08577051701701": "TAFRAOUTE NOULKOUDE",
+    "08577051702703": "Taghda Nikiss",
+    "08577051706101": "TAGLIOUITE",
+    "08577051700201": "TALBACHATE",
+    "08577051702101": "TALOUDATE",
+    "08577051703302": "Tanghourte",
+    "08577051703101": "Tigolzatine",
+    "08577051703001": "TISLITE NOUSSILKANE"
+}
 
 module.exports = {
 
@@ -85,12 +88,74 @@ module.exports = {
         })
     },
 
-    upsertUnites: function (records) {
+    compareUnites: function (records) {
+        return models.Unite.findAll({ where: { fp_code: records[0].fp_code }, raw: true})
+            .then(function (prevRecs) {
+                let i = 0, len = records.length, maintained = [], instance, match, object;
+
+                const actions = [];
+
+                for (; i < len; i++) {
+                    instance = records[i]
+                    match = prevRecs.find(r => r.fp_id == instance.fp_id)
+
+                    object = `[${instance.date_situation.toLocaleDateString()}] - ${helpers.getProvinceByCode(instance.province_code)} PA ${instance.plan_actions} / ${instance.intitule} (${instance.fp_id})`
+
+                    if (!match) {
+                        actions.push({
+                            type: 'Ajout UP',
+                            object: object,
+                            author: instance.fp_code === 1 ? 'FZ' : 'FMPS'
+                        })
+                    } else {
+                        let changes = []
+
+                        maintained.push(instance.fp_id.toString())
+
+                        for (const [key, value] of Object.entries(match)) {
+                            if (['id', 'created', 'updated', 'date_situation'].includes(key) || typeof(instance[key]) === 'undefined') continue
+
+                            if (!helpers.compare(instance[key], value)) {
+                                if (key === 'intitule' && lig2(instance[key], value) < 0.6)
+                                changes.push(`<li><b>${key}:</b> &nbsp; ${value} &nbsp; -> ${instance[key]}</li>`)
+                            }
+                        }
+
+                        if (changes.length > 0) {
+                            actions.push({
+                                type: 'Modification UP',
+                                object: object,
+                                subject: `<ul>${changes.join('')}</ul>`,
+                                author: instance.fp_code === 1 ? 'FZ' : 'FMPS'
+                            })
+                        }
+                    }
+                }
+
+                const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id))
+                deleted.forEach(function (d) {
+                    //if (records[0].plan_actions === '2022') return
+
+                    let object = `[${records[0].date_situation.toLocaleDateString()}] - ${helpers.getProvinceByCode(d.province_code)} PA ${d.plan_actions} / ${d.intitule} (${d.fp_id})`
+                    actions.push({
+                        type: 'Suppression UP',
+                        object: object,
+                        author: d.fp_code === 1 ? 'FZ' : 'FMPS',
+                        object_id: d.id
+                    })
+                })
+
+                return Promise.resolve(actions)
+            })
+    },
+
+    upsertUnites: function (records, actions) {
         //const fields = Object.keys(models.Unite.rawAttributes).filter(f => !['id', 'created', 'fp_id'].includes(f))
         const fields = Object.keys(records[0]).filter(f => !['id', 'created', 'fp_id'].includes(f));
 
         //console.log(records)
         //console.log('fields', fields)
+
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
                 /*return Promise.all(records.map(throat(1, function (record, index) {
@@ -98,7 +163,11 @@ module.exports = {
                     return models.Unite.upsert(record, { validate: false, transaction: t, updateOnDuplicate: fields, returning: ['id'] })
                 })))*/
 
-                return models.Unite.bulkCreate(records, { validate: false, transaction: t, updateOnDuplicate: fields, returning: ['id'] });
+                return models.Unite.bulkCreate(records, { individualHooks: false, validate: false, transaction: t, updateOnDuplicate: fields, returning: true /*['id']*/ }).then(function (rows) {
+                    return models.Action.bulkCreate(actions, { transaction: t, returning: false }).then(function () {                       
+                        return Promise.resolve(rows)
+                    })
+                })
             })
         })
     },
@@ -129,11 +198,11 @@ module.exports = {
                 douar_quartier = douar_quartier.replace(/\b(douar|up)\.?\b\s/ig, '');
                 douar_quartier = douar_quartier.replace(/\s?\([a-zA-Zé ]+\)\s?/, "");
                 douar_quartier = douar_quartier.replace(/^(ecole|nm_|nm_ecole)\s?/i, '');
-        
+
                 if ((douar_quartier.match(/\d/g) || []).length === 1) {
-                  douar_quartier = douar_quartier.replace(/[\-\s]{0,2}[1-4][\-\s]{0,2}$/, '');
+                    douar_quartier = douar_quartier.replace(/[\-\s]{0,2}[1-4][\-\s]{0,2}$/, '');
                 }
-        
+
                 douar_quartier = helpers.titleCase(douar_quartier);
 
                 return unite.update({
@@ -141,7 +210,7 @@ module.exports = {
                     douar_quartier: douar_quartier,
                     adresse: unite.get('fp_code') === 1 ? `${helpers.nameSig(douar_quartier)}/${helpers.nameSig(intitule)}` : null
                 });
-            })));  
+            })));
         }).then(function () {
             console.log('end = ', diffCount);
         })
@@ -169,8 +238,8 @@ module.exports = {
         var douars = require('../data/douars.json');
         douars = douars.map(function (dr) {
             let province = helpers.closestEntry(dr.province, helpers.provinces, true, true);
-            if (province) dr.province_code = helpers.decoupage.find(rec => rec.label ===  province).value;
-              
+            if (province) dr.province_code = helpers.decoupage.find(rec => rec.label === province).value;
+
 
             if (dr.code_sous_douar && corr[dr.code_sous_douar.toString()]) {
                 dr.nom_fr = corr[dr.code_sous_douar.toString()];

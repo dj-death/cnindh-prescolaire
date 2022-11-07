@@ -12814,6 +12814,12 @@ var Helpers = {
         return model.aggregate(model.name + '.id', 'count', query);
     },
 
+    getProvinceByCode: function (code) {
+        var match = decoupage.find(d => d.value == code)
+
+        return match ? match.label : null
+    },
+
     idsFromParams: function (params) {
         var type = typeof (params);
         if (type === 'string') {
@@ -13156,6 +13162,22 @@ var Helpers = {
         str = str.replace(/\d+/g, (match) => NumberToLetter(match));
 
         return namesig(str);
+    },
+
+    compare: function (a, b) {
+        if (a == b) return true
+
+        if (typeof(a) !== 'object' && typeof(b) !== 'object') {
+            return false
+        }
+
+        if (a == null || b == null) return false
+
+        if (a instanceof Date && b instanceof Date) {
+            return a.toDateString() == b.toDateString()
+        }
+
+        return false
     }
 };
 

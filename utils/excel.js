@@ -65,6 +65,7 @@ const fmpsMapping = {
   nb_enfants_2022_2023: 'saison_2022_2023_total_global',
   total_enf: 'saison_2021_2022_total_global',
   nb_enfants_2021_2022: 'saison_2021_2022_total_global',
+
   /*f_1: 'saison_2021_2022_total_filles',
   m: 'saison_2021_2022_total_garcons',
   gs: 'saison_2021_2022_total_grande_section',
@@ -73,6 +74,7 @@ const fmpsMapping = {
   ms: 'saison_2021_2022_total_moyenne_section',
   ms_f: 'saison_2021_2022_moyenne_section_filles',
   ms_g: 'saison_2021_2022_moyenne_section_garcons',*/
+
   f_1: 'saison_2022_2023_total_filles',
   m: 'saison_2022_2023_total_garcons',
   gs: 'saison_2022_2023_total_grande_section',
@@ -90,6 +92,7 @@ const fmpsMapping = {
   gs_2020: 'saison_2020_2021_total_grande_section',
   ms_2020: 'saison_2020_2021_total_moyenne_section',
   id_dev_douar: 'fp_id',
+
   primaire: 'saison_2021_2022_inscrits_primaire_total',
   primaire_f: 'saison_2021_2022_inscrits_primaire_filles',
   primaire_m: 'saison_2021_2022_inscrits_primaire_garcons',
@@ -99,6 +102,16 @@ const fmpsMapping = {
   gs_primaire: 'saison_2021_2022_gs_primaire',
   gs_refait_gs: 'saison_2021_2022_gs_refait_gs',
   arret_scolarite: 'saison_2021_2022_nbre_arret_scolarite',
+
+  /*primaire: 'saison_2020_2021_inscrits_primaire_total',
+  primaire_f: 'saison_2020_2021_inscrits_primaire_filles',
+  primaire_m: 'saison_2020_2021_inscrits_primaire_garcons',
+  ms_passe_gs: 'saison_2020_2021_ms_passe_gs',
+  ms_reinscrit_ms: 'saison_2020_2021_ms_reinscrit_ms',
+  ms_passe_primaire: 'saison_2020_2021_ms_passe_primaire',
+  gs_primaire: 'saison_2020_2021_gs_primaire',
+  gs_refait_gs: 'saison_2020_2021_gs_refait_gs',
+  arret_scolarite: 'saison_2020_2021_nbre_arret_scolarite',*/
 
 
   enfant_2019: 'saison_2019_2020_total_global',
@@ -303,7 +316,7 @@ var ExcelUtils = {
       titles.push(title)
     }
 
-    console.log(titles);
+    //console.log(titles);
 
     let samples = lines.slice(10).reduce((acc, curr) => {
       if (!curr || !curr.length) return acc;
@@ -443,7 +456,7 @@ var ExcelUtils = {
       return objRow
     }).filter(row => !!row.intitule)
 
-    console.debug("Headers", titles, maxColumns)
+    //console.debug("Headers", titles, maxColumns)
     //console.debug(data, nature)
 
     return data
