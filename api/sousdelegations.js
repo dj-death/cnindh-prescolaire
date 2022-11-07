@@ -7,7 +7,6 @@ var models = require('../models');
 
 const _ = require('lodash');
 
-var Promise = models.Sequelize.Promise;
 var PromiseThrottle = require('promise-throttle');
 var promiseThrottle = new PromiseThrottle({
     requestsPerSecond: 50,           // up to 1 request per second

@@ -2,7 +2,6 @@
 
 var models = require("../models");
 var sequelize = models.sequelize;
-//var Promise = models.Sequelize.Promise;
 var throat = require('throat');
 const helpers = require('./helpers');
 const { help } = require("yargs");
@@ -333,7 +332,7 @@ module.exports = {
 
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
-                return Promise.map(records, function (record, index) {
+                return Promise.all(records.map(function (record, index) {
                     return models.Reporting.findOne({
                         where: { plan_actions: record.plan_actions.toString(), province: record.province }
                     }).then(function (row) {
@@ -387,7 +386,7 @@ module.exports = {
                             });
                         })
                     })*/
-                })
+                }))
             })
         }).then(function () {
             console.info('Imports DONE');

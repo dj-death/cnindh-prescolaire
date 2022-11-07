@@ -5,8 +5,6 @@ var session = require('../utils/session.js');
 var errors = require('../utils/errors.js');
 var models = require('../models');
 
-var Promise = models.Sequelize.Promise;
-
 function hasFilter(coll, property) {
     if (!Array.isArray(coll)) {
         return false;
@@ -75,7 +73,7 @@ var Service = {
             }
 
             if (Array.isArray(params)) {
-                return Promise.map(params, function (_param) {
+                return Promise.all(params.map(function (_param) {
                     if (!_param.id) {
                         throw errors.types.invalidParams({
                             path: 'id', message: 'Missing required parameter: id',
@@ -104,7 +102,7 @@ var Service = {
                         // reload record data in case associations have been updated.
                         return row/*.cache()*/.reload();
                     })
-                })
+                }))
             }
 
             if (!params.id) {

@@ -5,8 +5,6 @@ var session = require('../utils/session.js');
 var errors = require('../utils/errors.js');
 var models = require('../models');
 
-var Promise = models.Sequelize.Promise;
-
 
 var Service = {
     list: function (params, callback, sid, req) {
