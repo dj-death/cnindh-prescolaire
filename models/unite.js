@@ -349,24 +349,18 @@ module.exports = function (sequelize, DataTypes) {
         });
 
         Model.addScope('browse_effectifs', {
-            attributes: [
-                'id', 'fp_id', 'created', 'updated', 'province_code', 'cercle_code', 'commune_code', 'annexe_administrative',
+            attributes: {
+                /*'id', 'fp_id', 'created', 'updated', 'province_code', 'cercle_code', 'commune_code', 'annexe_administrative',
                 'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
                 'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 
                 'date_ouverture',
-                'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',
-                'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons',
-                'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons',
-                'saison_2022_2023_moyenne_section_filles', 'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_grande_section_filles', 'saison_2022_2023_grande_section_garcons',
-
-                'saison_2021_2022_inscrits_primaire_total', 'saison_2021_2022_inscrits_primaire_filles',
-                'saison_2021_2022_inscrits_primaire_garcons', 'saison_2021_2022_ms_passe_gs', 'saison_2021_2022_ms_reinscrit_ms',
-                'saison_2021_2022_ms_passe_primaire', 'saison_2021_2022_gs_primaire', 'saison_2021_2022_gs_refait_gs', 'saison_2021_2022_nbre_arret_scolarite',
-                'saison_2019_2020_total_global', 'saison_2019_2020_total_grande_section', 'saison_2019_2020_total_moyenne_section', 'saison_2019_2020_inscrits_primaire_total', 'saison_2019_2020_inscrits_primaire_filles', 'saison_2019_2020_inscrits_primaire_garcons', 'saison_2019_2020_ms_passe_gs', 'saison_2019_2020_ms_reinscrit_ms', 'saison_2019_2020_ms_passe_primaire', 'saison_2019_2020_gs_primaire', 'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite'
+                'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',*/
                 
-                [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
-                [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
-            ],
+                include: [
+                    [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
+                    [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
+                ]
+            },
             include: [
                
             ]

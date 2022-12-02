@@ -199,9 +199,12 @@ var ExcelUtils = {
         dateUTC: true
       });
 
+      //console.log(workbook)
+      let date_situation = workbook.created
+
       workbook.eachSheet(function (worksheet, sheetId) {
         //console.log(sheetId)
-        const results = module.exports.readWorksheet(worksheet, sheetId, nature)
+        const results = module.exports.readWorksheet(worksheet, sheetId, nature, date_situation)
         if (results) {
           records = records.concat(results)
         }
@@ -214,7 +217,7 @@ var ExcelUtils = {
     return records
   },
 
-  readWorksheet: (worksheet, sheetId, nature) => {
+  readWorksheet: (worksheet, sheetId, nature, date_situation) => {
     let isColorChanged = false;
     let isColoured = false
     let previousFill
@@ -316,7 +319,7 @@ var ExcelUtils = {
       titles.push(title)
     }
 
-    //console.log(titles);
+    console.log(titles);
 
     let samples = lines.slice(10).reduce((acc, curr) => {
       if (!curr || !curr.length) return acc;
@@ -451,12 +454,12 @@ var ExcelUtils = {
 
       delete objRow.province;
 
-      objRow.date_situation = new Date();
+      objRow.date_situation = date_situation;
 
       return objRow
     }).filter(row => !!row.intitule)
 
-    //console.debug("Headers", titles, maxColumns)
+    console.debug("Headers", titles, maxColumns)
     //console.debug(data, nature)
 
     return data

@@ -30,18 +30,19 @@ var Service = {
     list: function (params, callback, sid, req) {
         session.verify(req).then(function (session) {
             const user = session.user;
-            const userRole = user.get('role');
-
-            if (userRole > 1) {
+            const accessFilters = helpers.checkListAuthorization(user, params)
+            
+            if (accessFilters === false) {
                 callback(new Error('Not authorized'));
                 return;
             }
 
-            const key = 'sousdelegations_' + ( params.filter ? JSON.stringify(params.filter) : '')
+            params.filter = accessFilters;
+
             let qScope = params.scope || (params.id ? 'nested' : 'browse');
             if (params.id && qScope === 'browse') qScope = 'nested';
 
-            return models.SousDelegation.scope(qScope)/*.cache(key)*/.findAndCountAll(
+            return models.SousDelegation.scope(qScope).findAndCountAll(
                 helpers.sequelizify(params, models.SousDelegation));
         }).then(function (result) {
             callback(null, {
@@ -143,7 +144,7 @@ var Service = {
         }).then(function (row) {
             if (!row) {
                 throw errors.types.invalidParams({
-                    path: 'id', message: 'Délégation with the specified id cannot be found',
+                    path: 'id', message: 'Délégation non retrouvée !',
                 });
             }
 

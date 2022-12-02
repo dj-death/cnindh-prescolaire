@@ -88,8 +88,9 @@ module.exports = {
     },
 
     compareUnites: function (records) {
-        return models.Unite.findAll({ where: { fp_code: records[0].fp_code }, raw: true})
+        return models.Unite.findAll({ where: { fp_code: records[0].fp_code }, order: [['date_situation', 'DESC']], raw: true})
             .then(function (prevRecs) {
+                const last_situation = prevRecs[0].date_situation
                 let i = 0, len = records.length, maintained = [], instance, match, object;
 
                 const actions = [];
@@ -131,7 +132,8 @@ module.exports = {
                     }
                 }
 
-                const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id))
+                const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id) && helpers.compare(r.date_situation, last_situation))
+
                 deleted.forEach(function (d) {
                     //if (records[0].plan_actions === '2022') return
 
