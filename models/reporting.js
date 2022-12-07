@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
         prevision_mois1: { type: Sequelize.INTEGER },
         prevision_mois2: { type: Sequelize.INTEGER },
         prevision_prochaine_rentree: { type: Sequelize.INTEGER },
-        
+
         nbre_etudes_non_lancees: { type: Sequelize.INTEGER },
         nbre_etudes_lancees: { type: Sequelize.INTEGER },
         nbre_etudes_achevees: { type: Sequelize.INTEGER },
@@ -82,7 +82,9 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
 
-        modified_by: { type: Sequelize.STRING }
+        modified_by: { type: Sequelize.STRING },
+        concernee_visio2022: { type: Sequelize.BOOLEAN, defaultValue: false }
+
     });
 
     Model.associate = function (models) {

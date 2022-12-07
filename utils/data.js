@@ -116,8 +116,8 @@ module.exports = {
                             if (['id', 'created', 'updated', 'date_situation'].includes(key) || typeof(instance[key]) === 'undefined') continue
 
                             if (!helpers.compare(instance[key], value)) {
-                                if (key === 'intitule' && lig2(instance[key], value) < 0.6) continue
-                                
+                                if (key === 'intitule' && lig2(instance[key], value) < 0.7) continue
+
                                 changes.push(`<li><b>${key}:</b> &nbsp; ${value} &nbsp; -> ${instance[key]}</li>`)
                             }
                         }
