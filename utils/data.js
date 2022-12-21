@@ -5,7 +5,7 @@ var sequelize = models.sequelize;
 var throat = require('throat');
 const helpers = require('./helpers');
 const { help } = require("yargs");
-const {lig2} = require('talisman/metrics/lig');
+const {lig3} = require('talisman/metrics/lig');
 
 function pick(items, index) {
     var count = items.length;
@@ -88,23 +88,28 @@ module.exports = {
     },
 
     compareUnites: function (records) {
-        return models.Unite.findAll({ where: { fp_code: records[0].fp_code }, order: [['date_situation', 'DESC']], raw: true})
+        const etat_date_situation = records[0].date_situation;
+
+        return models.Unite.findAll({ where: { fp_code: records[0].fp_code }, order: [['date_situation', 'DESC'], ['province_code', 'ASC'], ['plan_actions', 'ASC']], raw: true})
             .then(function (prevRecs) {
-                const last_situation = prevRecs[0].date_situation
-                let i = 0, len = records.length, maintained = [], instance, match, object;
+                const last_situation = prevRecs.find(r => r.plan_actions === '2019').date_situation
+                let i = 0, len = records.length, maintained = [], instance, match, pa, object;
+                const arrets = [];
 
                 const actions = [];
 
                 for (; i < len; i++) {
                     instance = records[i]
-                    match = prevRecs.find(r => r.fp_id == instance.fp_id)
+                    match = prevRecs.find(r => r.fp_id == instance.fp_id && r.date_situation <= etat_date_situation)
 
-                    object = `[${instance.date_situation.toLocaleDateString()}] - ${helpers.getProvinceByCode(instance.province_code)} PA ${instance.plan_actions} / ${instance.intitule} (${instance.fp_id})`
+                    pa = `${helpers.getProvinceByCode(instance.province_code)} ${instance.plan_actions}`;
+                    object = `${instance.douar_quartier} (${instance.fp_id})`
 
                     if (!match) {
                         actions.push({
                             type: 'Ajout UP',
-                            object: object,
+                            pa,
+                            object,
                             author: instance.fp_code === 1 ? 'FZ' : 'FMPS'
                         })
                     } else {
@@ -113,19 +118,38 @@ module.exports = {
                         maintained.push(instance.fp_id.toString())
 
                         for (const [key, value] of Object.entries(match)) {
-                            if (['id', 'created', 'updated', 'date_situation'].includes(key) || typeof(instance[key]) === 'undefined') continue
+                            if (['id', 'created', 'updated', 'date_situation', 'est_livree', 'dispose_convention_signee', 'est_programmee'].includes(key) || typeof(instance[key]) === 'undefined') continue
 
                             if (!helpers.compare(instance[key], value)) {
-                                if (key === 'intitule' && lig2(instance[key], value) < 0.7) continue
+                                if (key === 'intitule') {
+                                    if (lig3(instance[key], value.replace(/up /i, '')) > 0.7) {
+                                        continue
+                                    }
+                                    
+                                }
 
-                                changes.push(`<li><b>${key}:</b> &nbsp; ${value} &nbsp; -> ${instance[key]}</li>`)
+                                if (!value && !instance[key]) continue
+
+                                if (value instanceof Date || instance[key] instanceof Date) {
+                                    changes.push(`<li>${key}: &nbsp; ${value && value.toLocaleDateString()} &nbsp; -> ${instance[key] && instance[key].toLocaleDateString()}</li>`)
+                                } else {
+                                    changes.push(`<li>${key}: &nbsp; ${value} &nbsp; -> ${instance[key]}</li>`)
+
+                                    if (key === 'est_ouverte' && value == true && instance[key] == false) {
+                                        arrets.push({
+                                            pa, object
+                                        })
+                                    }
+                                }
+
                             }
                         }
 
                         if (changes.length > 0) {
                             actions.push({
                                 type: 'Modification UP',
-                                object: object,
+                                pa,
+                                object,
                                 subject: `<ul>${changes.join('')}</ul>`,
                                 author: instance.fp_code === 1 ? 'FZ' : 'FMPS'
                             })
@@ -133,21 +157,89 @@ module.exports = {
                     }
                 }
 
-                const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id) && helpers.compare(r.date_situation, last_situation))
+                const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id) && r.date_situation <= etat_date_situation && helpers.compare(r.date_situation, last_situation))
 
                 deleted.forEach(function (d) {
                     //if (records[0].plan_actions === '2022') return
 
-                    let object = `[${records[0].date_situation.toLocaleDateString()}] - ${helpers.getProvinceByCode(d.province_code)} PA ${d.plan_actions} / ${d.intitule} (${d.fp_id})`
+                    let object = `${d.douar_quartier} (${d.fp_id})`
+                    let pa = `${helpers.getProvinceByCode(d.province_code)} PA ${d.plan_actions}`
+
                     actions.push({
                         type: 'Suppression UP',
-                        object: object,
+                        object,
+                        pa,
                         author: d.fp_code === 1 ? 'FZ' : 'FMPS',
                         object_id: d.id
                     })
                 })
 
-                return Promise.resolve(actions)
+                const actionsConsolidated = []
+
+                if (actions.length > 0) {
+                    const ajouts = actions.filter(a => a.type === 'Ajout UP');
+                    const modifs = actions.filter(a => a.type === 'Modification UP');
+                    const suppressions = actions.filter(a => a.type === 'Suppression UP');
+
+                    let message = `<b>Arrêts: ${arrets.length}; Modifications: ${modifs.length}; Ajouts: ${ajouts.length}; Suppressions: ${suppressions.length};</b><hr/>`
+
+                    if (arrets.length) {
+                        message += '<ul>Arrêts:';
+                        
+                        arrets.forEach(function (up, idx) {
+                            message += `<li>${up.pa} / ${up.object}</li>`;
+                        })
+                        message += '</ul>';
+                    }
+
+                    if (modifs.length) {
+                        message += '<ul>Modifications:';
+                        
+                        for (const [_pa, _paModifs] of Object.entries(helpers.groupBy(modifs, 'pa'))) {
+                            message += `<li>${_pa}:<ul>`;
+                            message += `${_paModifs.map(a => '<li>' + a.object + ':' + a.subject).join('</li>')}`;
+                            message += '</ul></li>';
+                        }
+
+                        message += '</ul>'
+                    }
+
+
+                    if (ajouts.length) {
+                        message += '<ol>Ajouts:';
+                        
+                        for (const [_pa, _paAjouts] of Object.entries(helpers.groupBy(ajouts, 'pa'))) {
+                            message += `<li>${_pa}:<ul>`;
+                            message += _paAjouts.map(a => `<li>${a.object}</li>`).join('');
+                            message += '</ul></li>';
+                        }
+
+                        message += '</ol>';
+                    }
+
+                    if (suppressions.length) {
+                        message += '<ol>Suppressions:';
+                        
+                        for (const [_pa, _paSuppressions] of Object.entries(helpers.groupBy(suppressions, 'pa'))) {
+                            message += `<li>${_pa}:<ul>`;
+                            message += _paSuppressions.map(a => `<li>${a.object}</li>`).join('');
+                            message += '</ul></li>';
+                        }
+
+                        message += '</ol>';
+                    }
+
+                    const fp = actions[0].fp_code === 1 ? 'FZ' : 'FMPS';
+
+                    actionsConsolidated.push({
+                        type: 2,
+                        object: `Etat ${fp} ${etat_date_situation.toLocaleDateString()}`,
+                        subject: message,
+                        author: fp
+                    })
+                } 
+
+                return Promise.resolve(actionsConsolidated)
             })
     },
 

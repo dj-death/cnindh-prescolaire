@@ -13,12 +13,9 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         type: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            searchable: true,
-            validate: {
-                notEmpty: true
-            }
+            type: Sequelize.INTEGER,
+            allowNull: true,
+            searchable: true
         },
         subject: {
             type: Sequelize.STRING,
@@ -51,7 +48,10 @@ module.exports = function (sequelize, DataTypes) {
         Model.belongsTo(models.Person, { as: 'person', constraints: false });
 
         Model.addScope('browse', {
-            include: []
+            include: [{
+                model: models.Person,
+                as: 'person'
+            }]
         });
 
         Model.addScope('nested', {

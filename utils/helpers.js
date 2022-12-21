@@ -7,7 +7,7 @@ const accents = require('remove-accents');
 const { transliterate } = require('transliteration');
 const unvowel = require('unvowel');
 
-const {lig2} = require('talisman/metrics/lig');
+const {lig3} = require('talisman/metrics/lig');
 const namesig = require('talisman/keyers/name-sig');
 const { NumberToLetter } = require("convertir-nombre-lettre");
 
@@ -12776,6 +12776,13 @@ var Helpers = {
         return query;
     },
 
+    groupBy: function (array, key) {
+        return array.reduce(function (objectsByKeyValue, obj) {
+            const value = obj[key];
+            objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
+            return objectsByKeyValue;
+        }, {});
+    },
 
     fetchFilters: function (params, model, defaults) {
         var field = params.field;
@@ -13128,9 +13135,9 @@ var Helpers = {
 
             if (checkComposed && candidate.includes('-')) {
                 var parts = candidate.split('-').filter(p => p.length > 3);
-                similarity = Math.max(...parts.map(p => lig2(input, p)), lig2(input, candidate));
+                similarity = Math.max(...parts.map(p => lig3(input, p)), lig3(input, candidate));
             } else {
-                similarity = lig2(input, candidate);
+                similarity = lig3(input, candidate);
             }
 
             if (similarity > maxSimilarity) {

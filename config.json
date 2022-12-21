@@ -60,10 +60,9 @@
     },
 
     "pool": {
-      "max": 20,
+      "max": 10,
       "min": 0,
-      "idle": 10000,
-      "acquire": 60000
+      "idle": 10000
     },
 
     "logging": false,

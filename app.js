@@ -217,7 +217,7 @@ if (config.server.uploadEnabled) {
                     return res.json({
                         success: true,
                         count: rows.length,
-                        message: `Modifications: ${actions.filter(a => a.type === 'Modification UP').length}; Ajouts: ${actions.filter(a => a.type === 'Ajout UP').length}; Suppressions: ${actions.filter(a => a.type === 'Suppression UP').length}`
+                        message: actions[0] ? actions[0].subject.split('<hr/>')[0] : 'Réussi'
                     })
                 })
             }).catch(function (err) {
