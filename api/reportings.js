@@ -31,6 +31,17 @@ var Service = {
             params.filter = accessFilters;            
 
             const qScope = params.scope || 'browse';
+
+            if (params.filter) {
+
+                var concernee_visio2022Filter = params.filter.find(filt => filt.property === 'concernee_visio2022')
+
+                if (concernee_visio2022Filter && !typeFilter.value) {
+                    var idx = params.filter.findIndex(filt => filt.property === 'concernee_visio2022');
+                    params.filter.idx(idx, 1);
+                }
+            }
+
             return models.Reporting.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Reporting));
         }).then(function (result) {
             callback(null, {

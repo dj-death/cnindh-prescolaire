@@ -180,7 +180,8 @@ module.exports = function (sequelize, DataTypes) {
         est_livree: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_ouverte: { type: Sequelize.BOOLEAN, allowNull: true },
         est_resiliee: { type: Sequelize.BOOLEAN, defaultValue: false },
-        est_en_arret: { type: Sequelize.BOOLEAN, defaultValue: false, allowNull: true },
+        operationnalite: { type: Sequelize.INTEGER },
+        est_en_arret: { type: Sequelize.BOOLEAN, defaultValue: false },
 
         nombre_educatrices_femme: { type: Sequelize.INTEGER },
         nombre_educatrices_homme: { type: Sequelize.INTEGER },
@@ -217,6 +218,7 @@ module.exports = function (sequelize, DataTypes) {
         saison_2021_2022_moyenne_section_garcons: { type: Sequelize.INTEGER },
         saison_2021_2022_grande_section_filles: { type: Sequelize.INTEGER },
         saison_2021_2022_grande_section_garcons: { type: Sequelize.INTEGER },
+        saison_2021_2022_total_global: { type: Sequelize.INTEGER },
 
         saison_2020_2021_inscrits_primaire_total: { type: Sequelize.INTEGER },
         saison_2020_2021_inscrits_primaire_filles: { type: Sequelize.INTEGER },
@@ -330,7 +332,7 @@ module.exports = function (sequelize, DataTypes) {
                 'province_code', 'cercle_code', 'commune_code', 'douar_quartier', 
                 'plan_actions', 'intitule',
                 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
-                'est_ouverte', 'est_resiliee', 'est_en_arret', 'date_ouverture',
+                'est_ouverte', 'est_resiliee', 'operationnalite', 'est_en_arret', 'date_ouverture',
                 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 
                 'saison_2022_2023_moyenne_section_filles', 'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_grande_section_filles', 'saison_2022_2023_grande_section_garcons',
                 'saison_2021_2022_moyenne_section_filles', 'saison_2021_2022_moyenne_section_garcons', 'saison_2021_2022_grande_section_filles', 'saison_2021_2022_grande_section_garcons',
@@ -407,7 +409,7 @@ module.exports = function (sequelize, DataTypes) {
                     'statut',
                     'est_ouverte',
                     'est_resiliee',
-                    'est_en_arret',
+                    'est_en_arret', 'operationnalite',
 
                     //[sequelize.literal('(SELECT COUNT(*) FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id)'), 'delegationscount'],
                     
@@ -436,6 +438,7 @@ module.exports = function (sequelize, DataTypes) {
                     'est_ouverte',
                     'est_resiliee',
                     'est_en_arret',
+                    'operationnalite',
 
                     [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
                     [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']

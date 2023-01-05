@@ -434,11 +434,6 @@ var ExcelUtils = {
 
       if (nature === 'FZ') {
         objRow.fp_id =  objRow.id //`${objRow.province_code}/${objRow.plan_actions}/${objRow.commune_code}/${helpers.nameSig(objRow.douar_quartier)}/${helpers.nameSig(objRow.intitule)}`; 
-
-        if (!objRow.est_ouverte && objRow.est_livree && objRow.date_ouverture && objRow.fp_comments) {
-          objRow.est_ouverte = true
-          objRow.est_en_arret = true
-        }
       }
 
       if (objRow.id) objRow.id = objRow.id.toLowerCase();
@@ -447,6 +442,16 @@ var ExcelUtils = {
       if (objRow.est_ouverte) {
         objRow.statut = 'Opérationnel';
         objRow.tx_avancement_physique = 100;
+      }
+
+      if (objRow.est_resiliee) {
+        objRow.operationnalite = 2
+      } else if (objRow.est_ouverte) {
+        objRow.operationnalite = !objRow.saison_2022_2023_total_global ? 4 : 3
+      } else if (objRow.date_ouverture != null || objRow.saison_2019_2020_total_global > 0 || objRow.saison_2020_2021_total_global > 0 || objRow.saison_2021_2022_total_global > 0 || objRow.saison_2022_2023_total_global > 0) {
+        objRow.operationnalite = 1
+      } else {
+        objRow.operationnalite = 0
       }
 
       objRow.fp_code = objRow.fondation_partenaire === 'FMPS' ? 0 : 1;

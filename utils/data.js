@@ -131,7 +131,7 @@ module.exports = {
                                 if (!value && !instance[key]) continue
 
                                 if (value instanceof Date || instance[key] instanceof Date) {
-                                    changes.push(`<li>${key}: &nbsp; ${value && value.toLocaleDateString()} &nbsp; -> ${instance[key] && instance[key].toLocaleDateString()}</li>`)
+                                    changes.push(`<li>${key}: &nbsp; ${value && helpers.formatDate(value)} &nbsp; -> ${instance[key] && helpers.formatDate(instance[key])}</li>`)
                                 } else {
                                     changes.push(`<li>${key}: &nbsp; ${value} &nbsp; -> ${instance[key]}</li>`)
 
@@ -233,7 +233,7 @@ module.exports = {
 
                     actionsConsolidated.push({
                         type: 2,
-                        object: `Etat ${fp} ${etat_date_situation.toLocaleDateString()}`,
+                        object: `Etat ${fp} ${helpers.formatDate(etat_date_situation)}`,
                         subject: message,
                         author: fp
                     })

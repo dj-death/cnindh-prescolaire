@@ -13185,6 +13185,27 @@ var Helpers = {
         }
 
         return false
+    },
+
+    padToDigits: function (num, digits) {
+        return num.toString().padStart(digits, '0');
+    },
+      
+
+    formatDate: function(date) {
+        if (!date) {
+            return "";
+        }
+
+        if (!date instanceof Date) {
+            date = new Date(Date.parse(date));
+        }
+
+        return [
+            Helpers.padToDigits(date.getDate(), 2),
+            Helpers.padToDigits(date.getMonth() + 1, 2),
+            date.getFullYear(),
+        ].join('/');
     }
 };
 
