@@ -205,7 +205,8 @@ if (config.server.uploadEnabled) {
                 return;
             }
 
-            //return;
+            /*console.log(records)
+            return;*/
 
             data.compareUnites(records).then(function (actions) {
                 //console.log(actions)
