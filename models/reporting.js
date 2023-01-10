@@ -18,16 +18,21 @@ module.exports = function (sequelize, DataTypes) {
         nbre_programmees_t2: { type: Sequelize.INTEGER },
         nbre_programmees_t3: { type: Sequelize.INTEGER },
         nbre_programmees_amg: { type: Sequelize.INTEGER },
+        nbre_programmees_mod: { type: Sequelize.INTEGER },
+        nbre_programmees_man: { type: Sequelize.INTEGER },
         nbre_salles: { type: Sequelize.INTEGER },
         nbre_encours_25: { type: Sequelize.INTEGER },
         nbre_encours_25_50: { type: Sequelize.INTEGER },
         nbre_encours_50_75: { type: Sequelize.INTEGER },
         nbre_encours_75: { type: Sequelize.INTEGER },
         nbre_achevees: { type: Sequelize.INTEGER },
+        nbre_achevees_non_ouvertes: { type: Sequelize.INTEGER },
+        nbre_livrees_non_ouvertes: { type: Sequelize.INTEGER },
         nbre_encours_reception: { type: Sequelize.INTEGER },
         nbre_encours_inscription: { type: Sequelize.INTEGER },
         nbre_encours_equip: { type: Sequelize.INTEGER },
         nbre_ouvertes: { type: Sequelize.INTEGER },
+        nbre_en_arret_fct: { type: Sequelize.INTEGER },
         nbre_livrees: { type: Sequelize.INTEGER },
         nbre_restantes: { type: Sequelize.INTEGER },
 
@@ -62,6 +67,86 @@ module.exports = function (sequelize, DataTypes) {
         nbre_encours_validation: { type: Sequelize.INTEGER },
 
         remarques: { type: Sequelize.TEXT },
+
+        motif_non_lancement_etudes: { type: Sequelize.TEXT },
+        motif_retard_ouverture: { type: Sequelize.TEXT },
+        motif_retard_travaux: { type: Sequelize.TEXT },
+        motif_retard_demarrage_trvx: { type: Sequelize.TEXT },
+        motif_arret_travaux: { type: Sequelize.TEXT },
+        motif_arret_fct: { type: Sequelize.TEXT },
+        motif_relancement_marches: { type: Sequelize.TEXT },
+        nbre_encours_formation: { type: Sequelize.INTEGER },
+        date_lancement_marche: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+
+        date_arret_trvx: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+
+        date_resiliation: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+
+        date_relancement_marche: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+
+        date_adjudication_marche: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+        date_implantation: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+        date_reception: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+        date_remise_cles: {
+            type: Sequelize.DATE,
+            allowNull: true,
+
+            validate: {
+                isDate: true
+            }
+        },
+        nbre_en_arret: { type: Sequelize.INTEGER },
+        nbre_marches_resilies: { type: Sequelize.INTEGER },
+        nbre_marches_infructueux: { type: Sequelize.INTEGER },
 
 
         /*salles_delegation_tr1: { type: Sequelize.INTEGER },

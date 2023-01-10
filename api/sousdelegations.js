@@ -69,6 +69,11 @@ var Service = {
             if (params.delegation_id) params.delegationId = params.delegation_id
             if (!params.montant_effectif && params.montant_effectif > 0) params.montant_effectif = params.montant_effectif
 
+            if (!Array.isArray(params) && !params.nbre_ups_concernees) {
+                params.nbre_ups_concernees = params.nbre_t1 + params.nbre_t2 + params.nbre_t3 + params.nbre_amg + params.nbre_mod;
+                params.nbre_salles_concernees = params.nbre_t1 + params.nbre_t2 * 2 + params.nbre_t3 * 3 + params.nbre_amg + params.nbre_mod;
+            }
+
             return models.SousDelegation/*.cache()*/.create(params);
         }).then(function (row) {
             callback(null, { data: row });
