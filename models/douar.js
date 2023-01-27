@@ -138,15 +138,17 @@ module.exports = function(sequelize, DataTypes) {
 
     Model.associate = function (models) {
         //Model.belongsTo(models.Unite, { as: 'unite' });
-        Model.hasMany(models.Unite, { as: 'unites' });
+        Model.hasMany(models.Unite, { as: 'unites', foreignKey: 'code_douar', sourceKey: 'code_douar' });
 
         Model.addScope('browse', {
-            include: []
+            include: [
+                { model: models.Unite, as: 'unites' }
+            ]
         });
 
         Model.addScope('nested', {
             include: [
-                //{ model: models.Unite, as: 'unite' }
+                { model: models.Unite, as: 'unites' }
             ]
         });
     };

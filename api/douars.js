@@ -43,14 +43,7 @@ var Service = {
                 return;
             }
 
-            if (params.unite_id) {
-                params.uniteId = params.unite_id
-            } else {
-                callback(new Error('Aucune unité rattachée !'));
-                return;
-            }
-
-            return models.Douar.create(params, { include: [{ model: models.Unite, as: 'unite' }] });
+            return models.Douar.create(params);
         }).then(function (row) {
             callback(null, { data: row });
         }).catch(function (err) {

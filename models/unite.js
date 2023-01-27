@@ -3,6 +3,8 @@ const { Sequelize } = require("sequelize");
 
 
 module.exports = function (sequelize, DataTypes) {
+    var Douar = require('./douar');
+    
     var Model = sequelize.define("Unite", {
         id: {
             type: Sequelize.UUID,
@@ -22,7 +24,14 @@ module.exports = function (sequelize, DataTypes) {
         commune_code: { type: Sequelize.INTEGER, allowNull: false },
         commune: { type: Sequelize.STRING, searchable: true },
         douar_quartier: { type: Sequelize.STRING, searchable: true },
-        code_douar: { type: Sequelize.STRING, searchable: true },
+        code_douar: {
+            type: Sequelize.STRING,
+            searchable: true,
+            references: {
+              model: Douar,
+              key: 'code_douar'
+            }
+        },
         dans_ecole: { type: Sequelize.BOOLEAN, defaultValue: false },
         adresse: { type: Sequelize.STRING, searchable: true },
         location: {
@@ -285,6 +294,7 @@ module.exports = function (sequelize, DataTypes) {
         fp_id: {
             type: Sequelize.STRING,
             allowNull: false,
+            searchable: true,
             unique: {
                 msg: 'ID FP existe déjà'
             },
@@ -315,9 +325,6 @@ module.exports = function (sequelize, DataTypes) {
 
     Model.associate = function (models) {
         Model.hasMany(models.Effectif, { as: 'effectifs'});
-
-        Model.belongsTo(models.Douar, { as: 'douar' });
-
 
         Model.belongsToMany(models.Delegation, {
             through: models.DelegationUnites,
