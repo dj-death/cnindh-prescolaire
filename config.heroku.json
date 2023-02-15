@@ -48,7 +48,6 @@
     "operatorsAliases": false,
     "quoteIdentifiers": false,
     "underscored": false,
-
     "ssl": false,
 
     "dialectOptions": {

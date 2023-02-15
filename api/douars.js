@@ -18,8 +18,7 @@ var Service = {
 
             params.filter = accessFilters;
 
-            return models.Douar.scope('browse').findAndCountAll(
-                helpers.sequelizify(params, models.Douar));
+            return models.Douar.scope('browse').findAndCountAll({logging: console.log, ...helpers.sequelizify(params, models.Douar) });
         }).then(function (result) {
             callback(null, {
                 total: result.count,

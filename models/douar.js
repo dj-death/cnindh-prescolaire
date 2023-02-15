@@ -142,13 +142,25 @@ module.exports = function(sequelize, DataTypes) {
 
         Model.addScope('browse', {
             include: [
-                { model: models.Unite, as: 'unites' }
+                { 
+                    model: models.Unite,
+                    as: 'unites', 
+                    attributes: [
+                        'id', 'plan_actions', 'intitule', 'code_douar'
+                    ]
+                }
             ]
         });
 
         Model.addScope('nested', {
             include: [
-                { model: models.Unite, as: 'unites' }
+                { 
+                    model: models.Unite,
+                    as: 'unites', 
+                    attributes: [
+                        'id', 'province_code', 'plan_actions', 'fp_code', 'commune_code', 'intitule', 'nbre_salles', 'est_ouverte', 'est_resiliee', 'date_ouverture'
+                    ]
+                }
             ]
         });
     };

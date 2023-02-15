@@ -12988,6 +12988,8 @@ var Helpers = {
 
         maxRole = typeof (maxRole) === 'undefined' ? 3 : maxRole;
 
+        params['filter'] = params['filter'] || []
+
         if (userRole > maxRole) {
             return false;
         } else if (userRole > 1) {
@@ -12996,8 +12998,6 @@ var Helpers = {
             const userFP = user.get('fondation_code');
 
             var locationFilter = { property: '', value: '' }
-
-            params['filter'] = params['filter'] || []
 
             if (userRole === 2) {
                 locationFilter.property = 'province_code';
@@ -13017,7 +13017,6 @@ var Helpers = {
                 return false;
             }
 
-            console.log(locationFilter)
             params.filter.push(locationFilter)
         }
 

@@ -35,6 +35,8 @@ var Service = {
                 anneeBudgFilter.value = [fromDt, toDt];
             }
 
+            
+
             //if (params.id && qScope === 'browse') qScope = 'nested';
             return models.Lot.scope(qScope)/*.cache(key)*/.findAndCountAll(
                 helpers.sequelizify(params, models.Lot));
