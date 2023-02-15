@@ -26,9 +26,6 @@
     "apiUrl": "/api",
     "classRouteUrl": "/api",
     "classPath": "/api",
-    "server": "144.24.195.153",
-    "port": "3000",
-    "protocol": "http",
     "timeout": 600000,
     "cacheAPI": false,
     "relativeUrl": false,
@@ -40,15 +37,14 @@
 
   "database": {
     "dialect": "postgres",
-    "host": "ec2-54-228-125-183.eu-west-1.compute.amazonaws.com",
-    "username": "evnxfwxlxtyeng",
-    "password": "fd8b95c64e0ed9813365fc22165f568e7161e5ae2f119cb0616572a5462740b8",
-    "database": "d3kcbs78p2g2g5",
+    "host": "ec2-52-17-81-195.eu-west-1.compute.amazonaws.com",
+    "username": "vthrjqkubmnjhf",
+    "password": "ca63405359ba7dfbff499000f594388275b887dfde755d99691b11f3e03b7e92",
+    "database": "d5ns2cbdc40fko",
     "port": 5432,
     "operatorsAliases": false,
     "quoteIdentifiers": false,
     "underscored": false,
-
     "ssl": false,
 
     "dialectOptions": {
