@@ -124,6 +124,18 @@ if (process.env.HEROKU) {
     config.direct.protocol = "https";
 }
 
+if (process.env.DATABASE_URL) {
+    config.database = Object.assign(config.database, {
+        "host": null,
+        "username": null,
+        "password": null,
+        "database": null,
+        "dialectOptions": {
+            connectionString: process.env.DATABASE_URL
+        }
+    });
+}
+
 var directApi = direct.initApi(config.direct);
 var directRouter = direct.initRouter(config.direct);
 
