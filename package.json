@@ -19,6 +19,7 @@
     "exceljs-lightweight": "^1.14.0",
     "express": "~4.17.1",
     "extdirect": "~2.0.5",
+    "forwarder-http": "^3.2.0",
     "http-proxy": "^1.18.1",
     "jade": "^1.11.0",
     "jsonwebtoken": "~8.5.1",
