@@ -18,7 +18,7 @@ var Service = {
 
             params.filter = accessFilters;
 
-            return models.Douar.scope('browse').findAndCountAll(helpers.sequelizify(params, models.Douar));
+            return models.Commune.scope('browse').findAndCountAll(helpers.sequelizify(params, models.Commune));
         }).then(function (result) {
             callback(null, {
                 total: result.count,
@@ -42,7 +42,7 @@ var Service = {
                 return;
             }
 
-            return models.Douar.create(params);
+            return models.Commune.create(params);
         }).then(function (row) {
             callback(null, { data: row });
         }).catch(function (err) {
@@ -67,7 +67,7 @@ var Service = {
                 });
             }
 
-            return models.Douar.findOne({
+            return models.Commune.findOne({
                 where: {
                     id: params.id
                 }
@@ -75,7 +75,7 @@ var Service = {
         }).then(function (row) {
             if (!row) {
                 throw errors.types.invalidParams({
-                    path: 'id', message: 'Douar with the specified id cannot be found',
+                    path: 'id', message: 'Commune with the specified id cannot be found',
                 });
             }
 
@@ -113,7 +113,7 @@ var Service = {
                     path: 'id', message: 'Missing required parameter: id',
                 });
             }
-            return models.Douar.findOne({
+            return models.Commune.findOne({
                 where: {
                     id: params.id
                 }
@@ -121,7 +121,7 @@ var Service = {
         }).then(function (row) {
             if (!row) {
                 throw errors.types.invalidParams({
-                    path: 'id', message: 'Douar with the specified id cannot be found',
+                    path: 'id', message: 'Commune with the specified id cannot be found',
                 });
             }
 
@@ -143,7 +143,7 @@ var Service = {
 
     filters: function (params, callback, sid, req) {
         session.verify(req).then(function () {
-            return helpers.fetchFilters(params, models.Douar);
+            return helpers.fetchFilters(params, models.Commune);
         }).then(function (results) {
             callback(null, {
                 data: results
@@ -163,7 +163,7 @@ var Service = {
             return;
         }*/
 
-        return models.Douar.findAll({
+        return models.Commune.findAll({
             limit: 1,
             where: {},
             attributes: ['updated'],

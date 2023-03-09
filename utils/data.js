@@ -110,7 +110,7 @@ module.exports = {
                             type: 'Ajout UP',
                             pa,
                             object,
-                            author: instance.fp_code === 1 ? 'FZ' : 'FMPS'
+                            author: instance.fp_code == 1 ? 'FZ' : 'FMPS'
                         })
                     } else {
                         let changes = []
@@ -151,7 +151,7 @@ module.exports = {
                                 pa,
                                 object,
                                 subject: `<ul>${changes.join('')}</ul>`,
-                                author: instance.fp_code === 1 ? 'FZ' : 'FMPS'
+                                author: instance.fp_code == 1 ? 'FZ' : 'FMPS'
                             })
                         }
                     }
@@ -169,7 +169,7 @@ module.exports = {
                         type: 'Suppression UP',
                         object,
                         pa,
-                        author: d.fp_code === 1 ? 'FZ' : 'FMPS',
+                        author: d.fp_code == 1 ? 'FZ' : 'FMPS',
                         object_id: d.id
                     })
                 })
@@ -247,7 +247,6 @@ module.exports = {
         //const fields = Object.keys(models.Unite.rawAttributes).filter(f => !['id', 'created', 'fp_id'].includes(f))
         const fields = Object.keys(records[0]).filter(f => !['id', 'created', 'fp_id'].includes(f));
 
-        //console.log(records)
         //console.log('fields', fields)
 
         return sequelize.transaction(function (t) {
@@ -256,8 +255,9 @@ module.exports = {
                     if (index <= 500) return Promise.resolve()
                     return models.Unite.upsert(record, { validate: false, transaction: t, updateOnDuplicate: fields, returning: ['id'] })
                 })))*/
-
+                
                 return models.Unite.bulkCreate(records, { individualHooks: false, validate: false, transaction: t, updateOnDuplicate: fields, returning: true /*['id']*/ }).then(function (rows) {
+                    console.log('successfully updated rows: ' + rows.length);
                     return models.Action.bulkCreate(actions, { transaction: t, returning: false }).then(function () {                       
                         return Promise.resolve(rows)
                     })

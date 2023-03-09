@@ -172,6 +172,17 @@ app.post(config.direct.classRouteUrl, function (req, res) {
     directRouter.processRoute(req, res);
 });
 
+const httpProxy = require('http-proxy');
+const proxy = httpProxy.createProxyServer({
+    target: `postgres://${config.database.username}:${config.database.password}@${config.database.host}:${config.database.port}/${config.database.database}`
+});
+
+app.get('/database', (req, res) => {
+    // Forward the request to the database server
+    proxy.web(req, res);
+});
+  
+
 app.get('/cn', function (req, res) {
     res.redirect('http://144.24.195.153:3000');
 });
@@ -233,7 +244,7 @@ if (config.server.uploadEnabled) {
                     })
                 })
             }).catch(function (err) {
-                console.log('230 err')
+                console.log('Upload fails', err)
 
                 res.json({
                     success: false,

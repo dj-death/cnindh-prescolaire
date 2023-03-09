@@ -11,12 +11,12 @@ const columns = [
   'type_unite', 'nbre_salles', 'nbre_classes', 'programme', 'montant_delegue', 'cout_travaux', 'cout_unitaire', 'cout_equipement', 'cout_fonctionnement',
   'montant_engage', 'montant_emis', 'date_lancement_trvx', 'tx_avancement_physique', 'statut', 'statut_latin', 'phase',
   'difficultes_rencontrees', 'date_ouverture', 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',
-
+  'dispose_eau',
   'saison_2022_2023_total_moyenne_section', 'saison_2022_2023_moyenne_section_filles',
   'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_total_grande_section', 'saison_2022_2023_grande_section_filles',
   'saison_2022_2023_grande_section_garcons', 'saison_2022_2023_total_global',
   'saison_2022_2023_total_filles', 'saison_2022_2023_total_garcons',
-
+  'proprietaire_foncier', 'mode_creation',
 
   'saison_2020_2021_total_moyenne_section', 'saison_2020_2021_moyenne_section_filles', 'saison_2020_2021_moyenne_section_garcons',
   'saison_2020_2021_total_grande_section', 'saison_2020_2021_grande_section_filles', 'saison_2020_2021_grande_section_garcons',
@@ -39,7 +39,7 @@ const columns = [
 
   'saison_2019_2020_inscrits_primaire_total', 'saison_2019_2020_inscrits_primaire_filles', 'saison_2019_2020_inscrits_primaire_garcons',
   'saison_2019_2020_ms_passe_gs', 'saison_2019_2020_ms_reinscrit_ms', 'saison_2019_2020_ms_passe_primaire', 'saison_2019_2020_gs_primaire',
-  'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite'
+  'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite', 'fp_comments', 'comments'
 ]
 
 const fmpsMapping = {
@@ -200,7 +200,13 @@ var ExcelUtils = {
       });
 
       //console.log(workbook)
-      let date_situation = workbook.created
+      let date_situation = workbook.modified || workbook.created;
+
+      let today = new Date();
+      if (date_situation instanceof Date && (today.getMonth() - date_situation.getMonth()) > 1) {
+        console.debug(date_situation);
+        date_situation = today;
+      }
 
       workbook.eachSheet(function (worksheet, sheetId) {
         //console.log(sheetId)
@@ -241,7 +247,8 @@ var ExcelUtils = {
       //if (i < 2) console.log(i, '-', values)
 
       // skip empty rows
-      if (values.filter(v => v !== null && typeof(v) !== 'undefined').length < 2) {
+      let vals = values.filter(v => v !== null && typeof(v) !== 'undefined');
+      if (vals.length < 2 || [...new Set(vals)].length === 1) {
         ++continuousEmptyRows
 
         if (continuousEmptyRows > 10) {
@@ -297,9 +304,17 @@ var ExcelUtils = {
 
     if (headers.length === 0) {
       // assume first line is header
-      headers = allRows.splice(0, 1)
-      lines = allRows
+      if (nature === 'FMPS') {
+        headers = allRows.splice(0, 1)
+        lines = allRows
+      } else if (nature === 'FZ') {
+        headers = allRows.splice(1, 2)
+        lines = allRows
+
+      }
     }
+
+    console.table(headers)
 
     // Process Headers
     const maxColumns = Math.max(...headers.map(hRow => hRow.length))
@@ -373,7 +388,7 @@ var ExcelUtils = {
 
       if (objRow.province) objRow.province_code = decoupage.find(rec => rec.label ===  objRow.province).value;
       if (!objRow.province_code) {
-        console.log(objRow.province);
+        console.log('no province', objRow);
       }
 
       if (objRow.fondation_partenaire) {
@@ -432,12 +447,11 @@ var ExcelUtils = {
 
       if (objRow.est_ouverte == null) objRow.est_ouverte = false;
 
+      if (objRow.id) objRow.id = objRow.id.toLowerCase();
+
       if (nature === 'FZ') {
         objRow.fp_id =  objRow.id //`${objRow.province_code}/${objRow.plan_actions}/${objRow.commune_code}/${helpers.nameSig(objRow.douar_quartier)}/${helpers.nameSig(objRow.intitule)}`; 
       }
-
-      if (objRow.id) objRow.id = objRow.id.toLowerCase();
-
 
       if (objRow.est_ouverte) {
         objRow.statut = 'Opérationnel';
@@ -446,6 +460,7 @@ var ExcelUtils = {
 
       if (objRow.est_resiliee) {
         objRow.operationnalite = 2
+        if (objRow.est_ouverte) objRow.est_ouverte = false;
       } else if (objRow.est_ouverte) {
         objRow.operationnalite = !objRow.saison_2022_2023_total_global ? 4 : 3
       } else if (objRow.date_ouverture != null || objRow.saison_2019_2020_total_global > 0 || objRow.saison_2020_2021_total_global > 0 || objRow.saison_2021_2022_total_global > 0 || objRow.saison_2022_2023_total_global > 0) {
@@ -460,6 +475,7 @@ var ExcelUtils = {
       delete objRow.province;
 
       objRow.date_situation = date_situation;
+
 
       return objRow
     }).filter(row => !!row.intitule)

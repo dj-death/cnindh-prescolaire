@@ -37,6 +37,12 @@ module.exports = function(sequelize, DataTypes) {
             searchable: true
         },
 
+        code_hcp: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            searchable: true
+        },
+
         code_douar_mere: {
             type: Sequelize.STRING,
             allowNull: true,
