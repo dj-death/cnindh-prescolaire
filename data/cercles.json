@@ -1,0 +1,1429 @@
+[
+    {
+        "province_code": 6,
+        "label": "Bni Boufrah",
+        "value": 1,
+        "code_hcp": "01.051.03.",
+        "label_ar": "دائرة : بني بوفراح"
+    },
+    {
+        "province_code": 6,
+        "label": "Bni Ouriaghel Acharkia",
+        "value": 2,
+        "code_hcp": "01.051.05.",
+        "label_ar": "دائرة : بني أورياغل"
+    },
+    {
+        "province_code": 6,
+        "label": "Bni Ouriaghel Algharbia",
+        "value": 194
+    },
+    {
+        "province_code": 6,
+        "label": "Targuist",
+        "value": 3,
+        "code_hcp": "01.051.07.",
+        "label_ar": "دائرة : تارجيست"
+    },
+    {
+        "province_code": 6,
+        "label": "Ketama",
+        "value": 4,
+        "code_hcp": "01.051.09.",
+        "label_ar": "دائرة : كتامة"
+    },
+    {
+        "province_code": 7,
+        "label": "Assifane",
+        "value": 202
+    },
+    {
+        "province_code": 7,
+        "label": "Bab Berred",
+        "value": 5,
+        "code_hcp": "01.151.03.",
+        "label_ar": "دائرة : باب برد"
+    },
+    {
+        "province_code": 7,
+        "label": "Bab Taza",
+        "value": 6,
+        "code_hcp": "01.151.05.",
+        "label_ar": "دائرة : باب تازة"
+    },
+    {
+        "province_code": 7,
+        "label": "Bni Ahmed",
+        "value": 7,
+        "code_hcp": "01.151.06.",
+        "label_ar": "دائرة : بني أحمد"
+    },
+    {
+        "province_code": 7,
+        "label": "Bou Ahmed",
+        "value": 8,
+        "code_hcp": "01.151.07.",
+        "label_ar": "دائرة : بو أحمد"
+    },
+    {
+        "province_code": 7,
+        "label": "Jebha",
+        "value": 9,
+        "code_hcp": "01.151.09.",
+        "label_ar": "دائرة : جبهة"
+    },
+    {
+        "province_code": 4,
+        "label": "Anjra",
+        "value": 10,
+        "code_hcp": "01.227.03.",
+        "label_ar": "دائرة : أنجرة"
+    },
+    {
+        "province_code": 4,
+        "label": "Fahs",
+        "value": 11,
+        "code_hcp": "01.227.05.",
+        "label_ar": "دائرة : فحص"
+    },
+    {
+        "province_code": 5,
+        "label": "Loukouss",
+        "value": 12,
+        "code_hcp": "01.331.07.",
+        "label_ar": "دائرة : اللوكوس"
+    },
+    {
+        "province_code": 5,
+        "label": "Moulay Abdeslem-Ben M'chich",
+        "value": 13,
+        "code_hcp": "01.331.09.",
+        "label_ar": "دائرة : مولاي عبد السلام بن مشيش"
+    },
+    {
+        "province_code": 5,
+        "label": "Oued El Makhazine",
+        "value": 14,
+        "code_hcp": "01.331.11.",
+        "label_ar": "دائرة : وادي المخازين"
+    },
+    {
+        "province_code": 8,
+        "label": "Ouezzane",
+        "value": 15,
+        "code_hcp": "01.405.07.",
+        "label_ar": "دائرة : وزان"
+    },
+    {
+        "province_code": 8,
+        "label": "El Wahda",
+        "value": 197
+    },
+    {
+        "province_code": 8,
+        "label": "Moqrisset",
+        "value": 16,
+        "code_hcp": "01.405.09.",
+        "label_ar": "دائرة : مقريصات"
+    },
+    {
+        "province_code": 8,
+        "label": "Zoumi",
+        "value": 17,
+        "code_hcp": "01.405.11.",
+        "label_ar": "دائرة : زومي"
+    },
+    {
+        "province_code": 1,
+        "label": "Tanger",
+        "value": 201
+    },
+    {
+        "province_code": 1,
+        "label": "Assilah",
+        "value": 18,
+        "code_hcp": "01.511.03.",
+        "label_ar": "دائرة : أصيلة"
+    },
+    {
+        "province_code": 3,
+        "label": "Jebala",
+        "value": 19,
+        "code_hcp": "01.571.03.",
+        "label_ar": "دائرة : جبالة"
+    },
+    {
+        "province_code": 3,
+        "label": "Tétouan",
+        "value": 20,
+        "code_hcp": "01.571.05.",
+        "label_ar": "دائرة : تطوان"
+    },
+    {
+        "province_code": 13,
+        "label": "Ahfir",
+        "value": 21,
+        "code_hcp": "02.113.03.",
+        "label_ar": "دائرة : احفير"
+    },
+    {
+        "province_code": 13,
+        "label": "Aklim",
+        "value": 22,
+        "code_hcp": "02.113.05.",
+        "label_ar": "دائرة : اكليم"
+    },
+    {
+        "province_code": 11,
+        "label": "Driouch",
+        "value": 23,
+        "code_hcp": "02.167.03.",
+        "label_ar": "دائرة : الدريوش"
+    },
+    {
+        "province_code": 11,
+        "label": "Rif",
+        "value": 24,
+        "code_hcp": "02.167.09.",
+        "label_ar": "دائرة : الريف"
+    },
+    {
+        "province_code": 16,
+        "label": "Bni Tadjite",
+        "value": 25,
+        "code_hcp": "02.251.03.",
+        "label_ar": "دائرة : بني تادجيت"
+    },
+    {
+        "province_code": 16,
+        "label": "Figuig",
+        "value": 26,
+        "code_hcp": "02.251.05.",
+        "label_ar": "دائرة : فجيج"
+    },
+    {
+        "province_code": 16,
+        "label": "Talsint",
+        "value": 203
+    },
+    {
+        "province_code": 15,
+        "label": "Guercif",
+        "value": 27,
+        "code_hcp": "02.265.05.",
+        "label_ar": "دائرة : جرسيف"
+    },
+    {
+        "province_code": 15,
+        "label": "Taddart",
+        "value": 28,
+        "code_hcp": "02.265.07.",
+        "label_ar": "دائرة : تادرت"
+    },
+    {
+        "province_code": 12,
+        "label": "Jerada Banlieue Chamalia",
+        "value": 29,
+        "code_hcp": "02.275.03.",
+        "label_ar": "دائرة : أحواز جرادة"
+    },
+    {
+        "province_code": 12,
+        "label": "Jerada Banlieue El Janobiya",
+        "value": 207
+    },
+    {
+        "province_code": 12,
+        "label": "Ain Bni Mathar",
+        "value": 30,
+        "code_hcp": "02.275.05.",
+        "label_ar": "دائرة : عين بني مطهر"
+    },
+    {
+        "province_code": 10,
+        "label": "Guelaia",
+        "value": 31,
+        "code_hcp": "02.381.05.",
+        "label_ar": "دائرة : قلعية"
+    },
+    {
+        "province_code": 10,
+        "label": "Louta",
+        "value": 32,
+        "code_hcp": "02.381.07.",
+        "label_ar": "دائرة : لوطا"
+    },
+    {
+        "province_code": 9,
+        "label": "Oujda Banlieue Nord",
+        "value": 33,
+        "code_hcp": "02.411.03.",
+        "label_ar": "دائرة : أحواز وجدة الشمالية"
+    },
+    {
+        "province_code": 9,
+        "label": "Oujda Banlieue Sud",
+        "value": 34,
+        "code_hcp": "02.411.05.",
+        "label_ar": "دائرة : أحواز وجدة الجنوبية"
+    },
+    {
+        "province_code": 14,
+        "label": "Debdou",
+        "value": 35,
+        "code_hcp": "02.533.03.",
+        "label_ar": "دائرة : دبدو"
+    },
+    {
+        "province_code": 14,
+        "label": "El Aioun",
+        "value": 36,
+        "code_hcp": "02.533.07.",
+        "label_ar": "دائرة : العيون"
+    },
+    {
+        "province_code": 14,
+        "label": "Taourirt",
+        "value": 37,
+        "code_hcp": "02.533.09.",
+        "label_ar": "دائرة : تاوريرت"
+    },
+    {
+        "province_code": 18,
+        "label": "Ain Orma",
+        "value": 38,
+        "code_hcp": "03.061.03.",
+        "label_ar": "دائرة : عين عرمة"
+    },
+    {
+        "province_code": 18,
+        "label": "Meknès Banlieue",
+        "value": 39,
+        "code_hcp": "03.061.05.",
+        "label_ar": "دائرة : أحواز مكناس"
+    },
+    {
+        "province_code": 18,
+        "label": "Zerhoun",
+        "value": 40,
+        "code_hcp": "03.061.07.",
+        "label_ar": "دائرة : زرهون"
+    },
+    {
+        "province_code": 23,
+        "label": "Boulemane",
+        "value": 41,
+        "code_hcp": "03.131.03.",
+        "label_ar": "دائرة : بولمان"
+    },
+    {
+        "province_code": 23,
+        "label": "Marmoucha",
+        "value": 204
+    },
+    {
+        "province_code": 23,
+        "label": "Missour",
+        "value": 42,
+        "code_hcp": "03.131.05.",
+        "label_ar": "دائرة : ميسور"
+    },
+    {
+        "province_code": 23,
+        "label": "Outat El Haj",
+        "value": 43,
+        "code_hcp": "03.131.07.",
+        "label_ar": "دائرة : أوطاط الحاج"
+    },
+    {
+        "province_code": 19,
+        "label": "Agourai",
+        "value": 44,
+        "code_hcp": "03.171.03.",
+        "label_ar": "دائرة : أكوراي"
+    },
+    {
+        "province_code": 19,
+        "label": "Ain Taoujdate",
+        "value": 45,
+        "code_hcp": "03.171.05.",
+        "label_ar": "دائرة : عين تاوجطات"
+    },
+    {
+        "province_code": 19,
+        "label": "El Hajeb",
+        "value": 46,
+        "code_hcp": "03.171.07.",
+        "label_ar": "دائرة : الحاجب"
+    },
+    {
+        "province_code": 17,
+        "label": "Fès Banlieue",
+        "value": 47,
+        "code_hcp": "03.231.81.",
+        "label_ar": "دائرة : احواز فاس"
+    },
+    {
+        "province_code": 20,
+        "label": "Azrou",
+        "value": 48,
+        "code_hcp": "03.271.03.",
+        "label_ar": "دائرة : أزرو"
+    },
+    {
+        "province_code": 22,
+        "label": "El Menzel",
+        "value": 49,
+        "code_hcp": "03.451.03.",
+        "label_ar": "دائرة : المنزل"
+    },
+    {
+        "province_code": 22,
+        "label": "Imouzzer Kandar",
+        "value": 50,
+        "code_hcp": "03.451.05.",
+        "label_ar": "دائرة : إيموزار كندر"
+    },
+    {
+        "province_code": 22,
+        "label": "Sefrou",
+        "value": 51,
+        "code_hcp": "03.451.07.",
+        "label_ar": "دائرة : صفرو"
+    },
+    {
+        "province_code": 24,
+        "label": "Ghafsai",
+        "value": 52,
+        "code_hcp": "03.531.03.",
+        "label_ar": "دائرة : غفساي"
+    },
+    {
+        "province_code": 24,
+        "label": "Karia Ba Mohamed",
+        "value": 53,
+        "code_hcp": "03.531.05.",
+        "label_ar": "دائرة : قرية با محمد"
+    },
+    {
+        "province_code": 24,
+        "label": "Taounate",
+        "value": 54,
+        "code_hcp": "03.531.07.",
+        "label_ar": "دائرة : تاونات"
+    },
+    {
+        "province_code": 24,
+        "label": "Tissa",
+        "value": 55,
+        "code_hcp": "03.531.09.",
+        "label_ar": "دائرة : تيسة"
+    },
+    {
+        "province_code": 25,
+        "label": "Aknoul",
+        "value": 56,
+        "code_hcp": "03.561.03.",
+        "label_ar": "دائرة : أكنول"
+    },
+    {
+        "province_code": 25,
+        "label": "Oued Amlil",
+        "value": 57,
+        "code_hcp": "03.561.07.",
+        "label_ar": "دائرة : واد أمليل"
+    },
+    {
+        "province_code": 25,
+        "label": "Tahla",
+        "value": 58,
+        "code_hcp": "03.561.09.",
+        "label_ar": "دائرة : تاهلة"
+    },
+    {
+        "province_code": 25,
+        "label": "Tainaste",
+        "value": 59,
+        "code_hcp": "03.561.11.",
+        "label_ar": "دائرة : تيناست"
+    },
+    {
+        "province_code": 25,
+        "label": "Taza",
+        "value": 60,
+        "code_hcp": "03.561.13.",
+        "label_ar": "دائرة : تازة"
+    },
+    {
+        "province_code": 21,
+        "label": "Moulay Yacoub",
+        "value": 61,
+        "code_hcp": "03.591.03.",
+        "label_ar": "دائرة : مولاي يعقوب"
+    },
+    {
+        "province_code": 21,
+        "label": "Oulad Jemaa Lemta",
+        "value": 62,
+        "code_hcp": "03.591.05.",
+        "label_ar": "دائرة : أولاد جمعة لمطة"
+    },
+    {
+        "province_code": 29,
+        "label": "Kénitra-Banlieue",
+        "value": 63,
+        "code_hcp": "04.281.03.",
+        "label_ar": "دائرة : أحواز القنيطرة"
+    },
+    {
+        "province_code": 29,
+        "label": "Ben Mansour",
+        "value": 64,
+        "code_hcp": "04.281.05.",
+        "label_ar": "دائرة : بنمنصور"
+    },
+    {
+        "province_code": 29,
+        "label": "Souk Arbaa El Gharb",
+        "value": 65,
+        "code_hcp": "04.281.07.",
+        "label_ar": "دائرة : سوق الاربعاء  الغرب"
+    },
+    {
+        "province_code": 29,
+        "label": "Souk Tlet El Gharb",
+        "value": 66,
+        "code_hcp": "04.281.09.",
+        "label_ar": "دائرة : سوق ثلاثاء الغرب"
+    },
+    {
+        "province_code": 29,
+        "label": "Lalla Mimouna",
+        "value": 67,
+        "code_hcp": "04.281.11.",
+        "label_ar": "دائرة : للا ميمونة"
+    },
+    {
+        "province_code": 30,
+        "label": "Khémisset",
+        "value": 68,
+        "code_hcp": "04.291.03.",
+        "label_ar": "دائرة : الخميسات"
+    },
+    {
+        "province_code": 30,
+        "label": "Oulmes",
+        "value": 69,
+        "code_hcp": "04.291.05.",
+        "label_ar": "دائرة : أولماس"
+    },
+    {
+        "province_code": 30,
+        "label": "Rommani",
+        "value": 70,
+        "code_hcp": "04.291.07.",
+        "label_ar": "دائرة : الرماني"
+    },
+    {
+        "province_code": 30,
+        "label": "Tiflet",
+        "value": 71,
+        "code_hcp": "04.291.09.",
+        "label_ar": "دائرة : تيفلت"
+    },
+    {
+        "province_code": 31,
+        "label": "Tilal Al Gharb",
+        "value": 73,
+        "code_hcp": "04.481.03.",
+        "label_ar": "دائرة : تلال الغرب"
+    },
+    {
+        "province_code": 31,
+        "label": "Gharb-Bni Malek",
+        "value": 74,
+        "code_hcp": "04.481.05.",
+        "label_ar": "دائرة : غرب بني مالك"
+    },
+    {
+        "province_code": 31,
+        "label": "Ouargha",
+        "value": 75,
+        "code_hcp": "04.481.07.",
+        "label_ar": "دائرة : ورغة"
+    },
+    {
+        "province_code": 31,
+        "label": "Chrarda",
+        "value": 76,
+        "code_hcp": "04.481.09.",
+        "label_ar": "دائرة : الشراردة"
+    },
+    {
+        "province_code": 31,
+        "label": "Baht",
+        "value": 77,
+        "code_hcp": "04.481.11.",
+        "label_ar": "دائرة : بهت"
+    },
+    {
+        "province_code": 32,
+        "label": "Kceibya",
+        "value": 78,
+        "code_hcp": "04.491.03.",
+        "label_ar": "دائرة : قصيبية"
+    },
+    {
+        "province_code": 32,
+        "label": "Sidi slimane",
+        "value": 79,
+        "code_hcp": "04.491.05.",
+        "label_ar": "دائرة : سيدي سليمان"
+    },
+    {
+        "province_code": 28,
+        "label": "Ain El Aouda",
+        "value": 80,
+        "code_hcp": "04.501.03.",
+        "label_ar": "دائرة : عين العودة"
+    },
+    {
+        "province_code": 28,
+        "label": "Témara",
+        "value": 81,
+        "code_hcp": "04.501.05.",
+        "label_ar": "دائرة : تمارة"
+    },
+    {
+        "province_code": 34,
+        "label": "Azilal",
+        "value": 82,
+        "code_hcp": "05.081.03.",
+        "label_ar": "دائرة : أزيلال"
+    },
+    {
+        "province_code": 34,
+        "label": "Bzou",
+        "value": 83,
+        "code_hcp": "05.081.05.",
+        "label_ar": "دائرة : بزو"
+    },
+    {
+        "province_code": 34,
+        "label": "Ouaouizeght",
+        "value": 84,
+        "code_hcp": "05.081.09.",
+        "label_ar": "دائرة : واويزغت"
+    },
+    {
+        "province_code": 34,
+        "label": "Afourar",
+        "value": 85,
+        "code_hcp": "05.081.11.",
+        "label_ar": "دائرة : افورار"
+    },
+    {
+        "province_code": 34,
+        "label": "Fetouqka",
+        "value": 86,
+        "code_hcp": "05.081.13.",
+        "label_ar": "دائرة : فتواكة"
+    },
+    {
+        "province_code": 34,
+        "label": "Oultana",
+        "value": 87,
+        "code_hcp": "05.081.15.",
+        "label_ar": "دائرة : ولتانة"
+    },
+    {
+        "province_code": 33,
+        "label": "Béni Mellal",
+        "value": 88,
+        "code_hcp": "05.091.03.",
+        "label_ar": "دائرة : بني ملال"
+    },
+    {
+        "province_code": 33,
+        "label": "Aghbala",
+        "value": 89,
+        "code_hcp": "05.091.05.",
+        "label_ar": "دائرة : أغبالة"
+    },
+    {
+        "province_code": 33,
+        "label": "El Ksiba",
+        "value": 90,
+        "code_hcp": "05.091.07.",
+        "label_ar": "دائرة : القصيبة"
+    },
+    {
+        "province_code": 33,
+        "label": "Kasba Tadla",
+        "value": 91,
+        "code_hcp": "05.091.11.",
+        "label_ar": "دائرة : قصبة تادلة"
+    },
+    {
+        "province_code": 35,
+        "label": "Bni Moussa Charquia",
+        "value": 92,
+        "code_hcp": "05.255.05.",
+        "label_ar": "دائرة : ا بني موسى لشرقية"
+    },
+    {
+        "province_code": 35,
+        "label": "Fqih Ben Salah",
+        "value": 93,
+        "code_hcp": "05.255.09.",
+        "label_ar": "دائرة : الفقيه بن صالح"
+    },
+    {
+        "province_code": 35,
+        "label": "Bni Moussa Gharbia",
+        "value": 94,
+        "code_hcp": "05.255.11.",
+        "label_ar": "دائرة : ا بني موسى الغربية"
+    },
+    {
+        "province_code": 36,
+        "label": "El Kbab",
+        "value": 95,
+        "code_hcp": "05.301.03.",
+        "label_ar": "دائرة : القباب"
+    },
+    {
+        "province_code": 36,
+        "label": "Khénifra",
+        "value": 96,
+        "code_hcp": "05.301.05.",
+        "label_ar": "دائرة : خنيفرة"
+    },
+    {
+        "province_code": 36,
+        "label": "Aguelmous",
+        "value": 97,
+        "code_hcp": "05.301.07.",
+        "label_ar": "دائرة : اكلموس"
+    },
+    {
+        "province_code": 37,
+        "label": "Bejaad",
+        "value": 98,
+        "code_hcp": "05.311.03.",
+        "label_ar": "دائرة : ابي الجعد"
+    },
+    {
+        "province_code": 37,
+        "label": "Khouribga",
+        "value": 99,
+        "code_hcp": "05.311.05.",
+        "label_ar": "دائرة : خريبكة"
+    },
+    {
+        "province_code": 37,
+        "label": "Oued-Zem",
+        "value": 100,
+        "code_hcp": "05.311.07.",
+        "label_ar": "دائرة : واد زم"
+    },
+    {
+        "province_code": 43,
+        "label": "Benslimane",
+        "value": 101,
+        "code_hcp": "06.111.03.",
+        "label_ar": "دائرة : بنسليمان"
+    },
+    {
+        "province_code": 43,
+        "label": "Bouznika",
+        "value": 102,
+        "code_hcp": "06.111.05.",
+        "label_ar": "دائرة : بوزنيقة"
+    },
+    {
+        "province_code": 44,
+        "label": "Berrechid",
+        "value": 103,
+        "code_hcp": "06.117.05.",
+        "label_ar": "دائرة : برشيد"
+    },
+    {
+        "province_code": 44,
+        "label": "El Gara",
+        "value": 104,
+        "code_hcp": "06.117.08.",
+        "label_ar": "دائرة : الكارة"
+    },
+    {
+        "province_code": 40,
+        "label": "Azemmour",
+        "value": 105,
+        "code_hcp": "06.181.03.",
+        "label_ar": "دائرة : أزمور"
+    },
+    {
+        "province_code": 40,
+        "label": "El Jadida",
+        "value": 106,
+        "code_hcp": "06.181.05.",
+        "label_ar": "دائرة : الجديدة"
+    },
+    {
+        "province_code": 40,
+        "label": "Haouzia",
+        "value": 107,
+        "code_hcp": "06.181.07.",
+        "label_ar": "دائرة : حوزية"
+    },
+    {
+        "province_code": 40,
+        "label": "Sidi Smail",
+        "value": 108,
+        "code_hcp": "06.181.09.",
+        "label_ar": "دائرة : سيدي اسماعيل"
+    },
+    {
+        "province_code": 42,
+        "label": "Tit Mellil",
+        "value": 109,
+        "code_hcp": "06.355.03.",
+        "label_ar": "دائرة : تيط مليل"
+    },
+    {
+        "province_code": 39,
+        "label": "Znata",
+        "value": 110,
+        "code_hcp": "06.371.03.",
+        "label_ar": "دائرة : زناتة"
+    },
+    {
+        "province_code": 45,
+        "label": "Ben Ahmed Chamalia",
+        "value": 112,
+        "code_hcp": "06.461.03.",
+        "label_ar": "دائرة : بن أحمد"
+    },
+    {
+        "province_code": 45,
+        "label": "Ben Ahmed El Janobiya",
+        "value": 195
+    },
+    {
+        "province_code": 45,
+        "label": "El Borouj",
+        "value": 113,
+        "code_hcp": "06.461.07.",
+        "label_ar": "دائرة : البروج"
+    },
+    {
+        "province_code": 45,
+        "label": "Settat Chamalia",
+        "value": 114,
+        "code_hcp": "06.461.09.",
+        "label_ar": "دائرة : سطات"
+    },
+    {
+        "province_code": 45,
+        "label": "Settat El Janobiya",
+        "value": 196
+    },
+    {
+        "province_code": 46,
+        "label": "Sidi Bennour",
+        "value": 115,
+        "code_hcp": "06.467.07.",
+        "label_ar": "دائرة : سيدي بنور"
+    },
+    {
+        "province_code": 46,
+        "label": "Bni Hilal-Laaounate",
+        "value": 198
+    },
+    {
+        "province_code": 46,
+        "label": "Oulad Amrane",
+        "value": 199
+    },
+    {
+        "province_code": 46,
+        "label": "Zemamra",
+        "value": 116,
+        "code_hcp": "06.467.11.",
+        "label_ar": "دائرة : زمامرة"
+    },
+    {
+        "province_code": 49,
+        "label": "Ait Ourir",
+        "value": 117,
+        "code_hcp": "07.041.03.",
+        "label_ar": "دائرة : أيت اورير"
+    },
+    {
+        "province_code": 49,
+        "label": "Amizmiz",
+        "value": 118,
+        "code_hcp": "07.041.05.",
+        "label_ar": "دائرة : امزميز"
+    },
+    {
+        "province_code": 49,
+        "label": "Asni",
+        "value": 119,
+        "code_hcp": "07.041.07.",
+        "label_ar": "دائرة : أسني"
+    },
+    {
+        "province_code": 49,
+        "label": "Tahannaout",
+        "value": 120,
+        "code_hcp": "07.041.09.",
+        "label_ar": "دائرة : تحناوت"
+    },
+    {
+        "province_code": 49,
+        "label": "Touama",
+        "value": 121,
+        "code_hcp": "07.041.11.",
+        "label_ar": "دائرة : توامة"
+    },
+    {
+        "province_code": 48,
+        "label": "Chichaoua",
+        "value": 122,
+        "code_hcp": "07.161.03.",
+        "label_ar": "دائرة : شيشاوة"
+    },
+    {
+        "province_code": 48,
+        "label": "Imintanoute",
+        "value": 123,
+        "code_hcp": "07.161.05.",
+        "label_ar": "دائرة : امنتانوت"
+    },
+    {
+        "province_code": 48,
+        "label": "Majjat",
+        "value": 124,
+        "code_hcp": "07.161.07.",
+        "label_ar": "دائرة : مجاط"
+    },
+    {
+        "province_code": 48,
+        "label": "Mtouga",
+        "value": 125,
+        "code_hcp": "07.161.09.",
+        "label_ar": "دائرة : امتوكة"
+    },
+    {
+        "province_code": 50,
+        "label": "Assahrij-Sanhaja",
+        "value": 208
+    },
+    {
+        "province_code": 50,
+        "label": "El Kelaa-Ahl Ghaba",
+        "value": 126,
+        "code_hcp": "07.191.03.",
+        "label_ar": "دائرة : قلعة السراغنة"
+    },
+    {
+        "province_code": 50,
+        "label": "El Kelaa-Bni Aamr",
+        "value": 209
+    },
+    {
+        "province_code": 50,
+        "label": "Laattaouia",
+        "value": 127,
+        "code_hcp": "07.191.05.",
+        "label_ar": "دائرة : العطاوية"
+    },
+    {
+        "province_code": 50,
+        "label": "Tamallalt",
+        "value": 128,
+        "code_hcp": "07.191.07.",
+        "label_ar": "دائرة : تاملالت"
+    },
+    {
+        "province_code": 51,
+        "label": "Ait Daoud",
+        "value": 211
+    },
+    {
+        "province_code": 51,
+        "label": "El Hanchane",
+        "value": 210
+    },
+    {
+        "province_code": 51,
+        "label": "Essaouira",
+        "value": 129,
+        "code_hcp": "07.211.03.",
+        "label_ar": "دائرة : الصويرة"
+    },
+    {
+        "province_code": 51,
+        "label": "Tamanar",
+        "value": 130,
+        "code_hcp": "07.211.05.",
+        "label_ar": "دائرة : تمنار"
+    },
+    {
+        "province_code": 47,
+        "label": "Alouidane",
+        "value": 131,
+        "code_hcp": "07.351.02.",
+        "label_ar": "دائرة : الويدان"
+    },
+    {
+        "province_code": 47,
+        "label": "Bour",
+        "value": 132,
+        "code_hcp": "07.351.03.",
+        "label_ar": "دائرة : البور"
+    },
+    {
+        "province_code": 47,
+        "label": "Loudaya",
+        "value": 133,
+        "code_hcp": "07.351.05.",
+        "label_ar": "دائرة : الأوداية"
+    },
+    {
+        "province_code": 47,
+        "label": "Saada",
+        "value": 134,
+        "code_hcp": "07.351.07.",
+        "label_ar": "دائرة : سعادة"
+    },
+    {
+        "province_code": 52,
+        "label": "Rehamna",
+        "value": 135,
+        "code_hcp": "07.427.07.",
+        "label_ar": "دائرة : الرحامنة"
+    },
+    {
+        "province_code": 52,
+        "label": "Sidi Bou Othmane",
+        "value": 136,
+        "code_hcp": "07.427.09.",
+        "label_ar": "دائرة : سيدي بو عثمان"
+    },
+    {
+        "province_code": 53,
+        "label": "Abda",
+        "value": 137,
+        "code_hcp": "07.431.03.",
+        "label_ar": "دائرة : عبدة"
+    },
+    {
+        "province_code": 53,
+        "label": "Gzoula",
+        "value": 138,
+        "code_hcp": "07.431.07.",
+        "label_ar": "دائرة : كزولة"
+    },
+    {
+        "province_code": 53,
+        "label": "Hrara",
+        "value": 139,
+        "code_hcp": "07.431.09.",
+        "label_ar": "دائرة : حرارة"
+    },
+    {
+        "province_code": 54,
+        "label": "Ahmar",
+        "value": 140,
+        "code_hcp": "07.585.05.",
+        "label_ar": "دائرة : أحمر"
+    },
+    {
+        "province_code": 54,
+        "label": "Al Gantour",
+        "value": 141,
+        "code_hcp": "07.585.07.",
+        "label_ar": "دائرة : الكنتور"
+    },
+    {
+        "province_code": 55,
+        "label": "Arfoud",
+        "value": 142,
+        "code_hcp": "08.201.03.",
+        "label_ar": "دائرة : أرفود"
+    },
+    {
+        "province_code": 55,
+        "label": "Errachidia",
+        "value": 143,
+        "code_hcp": "08.201.07.",
+        "label_ar": "دائرة : الرشيدية"
+    },
+    {
+        "province_code": 55,
+        "label": "Er-Rissani",
+        "value": 144,
+        "code_hcp": "08.201.11.",
+        "label_ar": "دائرة : الريصاني"
+    },
+    {
+        "province_code": 55,
+        "label": "Goulmima",
+        "value": 145,
+        "code_hcp": "08.201.13.",
+        "label_ar": "دائرة : كلميمة"
+    },
+    {
+        "province_code": 55,
+        "label": "Tinjdad",
+        "value": 206
+    },
+    {
+        "province_code": 57,
+        "label": "Boumia",
+        "value": 146,
+        "code_hcp": "08.363.05.",
+        "label_ar": "دائرة : بومية"
+    },
+    {
+        "province_code": 57,
+        "label": "Midelt",
+        "value": 147,
+        "code_hcp": "08.363.07.",
+        "label_ar": "دائرة : ميدلت"
+    },
+    {
+        "province_code": 57,
+        "label": "Er-Rich",
+        "value": 148,
+        "code_hcp": "08.363.09.",
+        "label_ar": "دائرة : الريش"
+    },
+    {
+        "province_code": 57,
+        "label": "Imilchil",
+        "value": 149,
+        "code_hcp": "08.363.15.",
+        "label_ar": "دائرة : إملشيل"
+    },
+    {
+        "province_code": 56,
+        "label": "Amerzgane",
+        "value": 150,
+        "code_hcp": "08.401.03.",
+        "label_ar": "دائرة : امرزكان"
+    },
+    {
+        "province_code": 56,
+        "label": "Ouarzazate",
+        "value": 151,
+        "code_hcp": "08.401.07.",
+        "label_ar": "دائرة : ورزازات"
+    },
+    {
+        "province_code": 58,
+        "label": "Alnif",
+        "value": 152,
+        "code_hcp": "08.577.02.",
+        "label_ar": "دائرة : النيف"
+    },
+    {
+        "province_code": 58,
+        "label": "Assoul",
+        "value": 153,
+        "code_hcp": "08.577.03.",
+        "label_ar": "دائرة : أسول"
+    },
+    {
+        "province_code": 58,
+        "label": "Boumalne Dades",
+        "value": 154,
+        "code_hcp": "08.577.05.",
+        "label_ar": "دائرة : بو مالن دادس"
+    },
+    {
+        "province_code": 58,
+        "label": "Tinghir",
+        "value": 155,
+        "code_hcp": "08.577.07.",
+        "label_ar": "دائرة : تنغير"
+    },
+    {
+        "province_code": 58,
+        "label": "Kalaat M'Gouna",
+        "value": 200
+    },
+    {
+        "province_code": 59,
+        "label": "Agdz",
+        "value": 156,
+        "code_hcp": "08.587.03.",
+        "label_ar": "دائرة : اكدز"
+    },
+    {
+        "province_code": 59,
+        "label": "Tinzouline",
+        "value": 157,
+        "code_hcp": "08.587.07.",
+        "label_ar": "دائرة : تنزولين"
+    },
+    {
+        "province_code": 59,
+        "label": "Zagora",
+        "value": 158,
+        "code_hcp": "08.587.09.",
+        "label_ar": "دائرة : زاكورة"
+    },
+    {
+        "province_code": 60,
+        "label": "Agadir Banlieue",
+        "value": 159,
+        "code_hcp": "09.001.05.",
+        "label_ar": "دائرة : أحواز أكادير"
+    },
+    {
+        "province_code": 60,
+        "label": "Agadir Atlantique",
+        "value": 160,
+        "code_hcp": "09.001.07.",
+        "label_ar": "دائرة : أكادير الأطلسية"
+    },
+    {
+        "province_code": 62,
+        "label": "Ait Baha",
+        "value": 161,
+        "code_hcp": "09.163.03.",
+        "label_ar": "دائرة : أيت باها"
+    },
+    {
+        "province_code": 62,
+        "label": "Belfaa- Massa",
+        "value": 162,
+        "code_hcp": "09.163.05.",
+        "label_ar": "دائرة : بلفاع ماسة"
+    },
+    {
+        "province_code": 62,
+        "label": "Biougra",
+        "value": 163,
+        "code_hcp": "09.163.07.",
+        "label_ar": "دائرة : بيوكرة"
+    },
+    {
+        "province_code": 61,
+        "label": "Ait Melloul",
+        "value": 164,
+        "code_hcp": "09.273.05.",
+        "label_ar": "دائرة : أيت ملول"
+    },
+    {
+        "province_code": 63,
+        "label": "Irherm",
+        "value": 165,
+        "code_hcp": "09.541.03.",
+        "label_ar": "دائرة : ايغرم"
+    },
+    {
+        "province_code": 63,
+        "label": "Oulad Berhil",
+        "value": 166,
+        "code_hcp": "09.541.04.",
+        "label_ar": "دائرة : أولاد برحيل"
+    },
+    {
+        "province_code": 63,
+        "label": "Oulad Teima",
+        "value": 167,
+        "code_hcp": "09.541.05.",
+        "label_ar": "دائرة : أولاد تايمة"
+    },
+    {
+        "province_code": 63,
+        "label": "Sidi Moussa Lhamri",
+        "value": 205
+    },
+    {
+        "province_code": 63,
+        "label": "Taliouine",
+        "value": 168,
+        "code_hcp": "09.541.07.",
+        "label_ar": "دائرة : تالوين"
+    },
+    {
+        "province_code": 63,
+        "label": "Taroudannt",
+        "value": 169,
+        "code_hcp": "09.541.09.",
+        "label_ar": "دائرة : تارودانت"
+    },
+    {
+        "province_code": 65,
+        "label": "Akka",
+        "value": 170,
+        "code_hcp": "09.551.03.",
+        "label_ar": "دائرة : أقا"
+    },
+    {
+        "province_code": 65,
+        "label": "Foum Zguid",
+        "value": 171,
+        "code_hcp": "09.551.05.",
+        "label_ar": "دائرة : فم  زكيد"
+    },
+    {
+        "province_code": 65,
+        "label": "Tata",
+        "value": 172,
+        "code_hcp": "09.551.07.",
+        "label_ar": "دائرة : طاطا"
+    },
+    {
+        "province_code": 64,
+        "label": "Anezi",
+        "value": 173,
+        "code_hcp": "09.581.03.",
+        "label_ar": "دائرة : انزي"
+    },
+    {
+        "province_code": 64,
+        "label": "Tafraout",
+        "value": 174,
+        "code_hcp": "09.581.09.",
+        "label_ar": "دائرة : تافراوت"
+    },
+    {
+        "province_code": 64,
+        "label": "Tiznit",
+        "value": 175,
+        "code_hcp": "09.581.11.",
+        "label_ar": "دائرة : تزنيت"
+    },
+    {
+        "province_code": 67,
+        "label": "Assa",
+        "value": 176,
+        "code_hcp": "10.071.03.",
+        "label_ar": "دائرة : أسا"
+    },
+    {
+        "province_code": 67,
+        "label": "Zag",
+        "value": 177,
+        "code_hcp": "10.071.05.",
+        "label_ar": "دائرة : الزاك"
+    },
+    {
+        "province_code": 66,
+        "label": "Bouizakarne",
+        "value": 178,
+        "code_hcp": "10.261.03.",
+        "label_ar": "دائرة : بويزكارن"
+    },
+    {
+        "province_code": 66,
+        "label": "Guelmim",
+        "value": 179,
+        "code_hcp": "10.261.05.",
+        "label_ar": "دائرة : كلميم"
+    },
+    {
+        "province_code": 66,
+        "label": "Laqsabi",
+        "value": 180,
+        "code_hcp": "10.261.07.",
+        "label_ar": "دائرة : لقصابي"
+    },
+    {
+        "province_code": 69,
+        "label": "Ifni",
+        "value": 181,
+        "code_hcp": "10.473.05.",
+        "label_ar": "دائرة : إفني"
+    },
+    {
+        "province_code": 69,
+        "label": "Lakhsas",
+        "value": 182,
+        "code_hcp": "10.473.07.",
+        "label_ar": "دائرة : الاخصاص"
+    },
+    {
+        "province_code": 68,
+        "label": "Msied",
+        "value": 183,
+        "code_hcp": "10.521.03.",
+        "label_ar": "دائرة : امسيد"
+    },
+    {
+        "province_code": 68,
+        "label": "Tan Tan",
+        "value": 184,
+        "code_hcp": "10.521.05.",
+        "label_ar": "دائرة : طانطان"
+    },
+    {
+        "province_code": 71,
+        "label": "Jraifia",
+        "value": 185,
+        "code_hcp": "11.121.03.",
+        "label_ar": "دائرة : الجريفية"
+    },
+    {
+        "province_code": 73,
+        "label": "Es-Semara",
+        "value": 186,
+        "code_hcp": "11.221.03.",
+        "label_ar": "دائرة : السمارة"
+    },
+    {
+        "province_code": 70,
+        "label": "Laayoune",
+        "value": 187,
+        "code_hcp": "11.321.03.",
+        "label_ar": "دائرة : العيون"
+    },
+    {
+        "province_code": 72,
+        "label": "Daoura -el Hagounia",
+        "value": 188,
+        "code_hcp": "11.537.03.",
+        "label_ar": "دائرة : الدورة الحكونية"
+    },
+    {
+        "province_code": 72,
+        "label": "Tarfaya",
+        "value": 189,
+        "code_hcp": "11.537.05.",
+        "label_ar": "دائرة : طرفاية"
+    },
+    {
+        "province_code": 75,
+        "label": "Aousserd",
+        "value": 190,
+        "code_hcp": "12.066.03.",
+        "label_ar": "دائرة : أوسرد"
+    },
+    {
+        "province_code": 75,
+        "label": "Bir Gandouz",
+        "value": 191,
+        "code_hcp": "12.066.05.",
+        "label_ar": "دائرة : بئر كندوز"
+    },
+    {
+        "province_code": 74,
+        "label": "Bir Anzarane",
+        "value": 192,
+        "code_hcp": "12.391.05.",
+        "label_ar": "دائرة : بئر انزران"
+    },
+    {
+        "province_code": 74,
+        "label": "El Argoub",
+        "value": 193,
+        "code_hcp": "12.391.09.",
+        "label_ar": "دائرة : العركوب"
+    }
+]
