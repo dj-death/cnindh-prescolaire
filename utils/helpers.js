@@ -761,67 +761,103 @@ var cerclesCfg = require('../data/cercles.json');
 
 var communes = communesCfg.map(com => com.label);
 var mistypedCommunesMapping = {
-    "Taklfat": "Tagleft",
-    "Aghzaren": "Ighzrane",
-    "Idawaaza": "Ida Ou Aazza",
-    "Iyeere": "Ayir",
-    "Lehdada": "Haddada",
-    "Mars Lkhir": "Mers El Kheir",
-    "M.h.zayani": "Moha Ou Hammou Zayani",
-    "Mzamza Sud": "Mzamza Janoubia",
-    "Beni Mhamed": "Bni M'Hamed-Sijelmassa",
-    "Hssiya": "H'Ssyia",
-    "Ait Sbaa": "Ait Sebaa Lajrouf",
+    "taklfat": "Tagleft",
+    "aghzaren": "Ighzrane",
+    "idawaaza": "Ida Ou Aazza",
+    "iyeere": "Ayir",
+    "lehdada": "Haddada",
+    "mars lkhir": "Mers El Kheir",
+    "m.h.zayani": "Moha Ou Hammou Zayani",
+    "mzamza sud": "Mzamza Janoubia",
+    "beni mhamed": "Bni M'Hamed-Sijelmassa",
+    "hssiya": "H'Ssyia",
+    "ait sbaa": "Ait Sebaa Lajrouf",
     "zrrd@": "Zrarda",
     "bny frsn": "Bni Frassen",
-    "Rass Ain": "Ras El Ain Chaouia",
-    "Ras Ain": "Ras El Ain Chaouia",
-    "Z Nahliya": "Zaouia Annahlia",
-    "Ouled Lgarn": "Oulad El Garne",
-    "Jebeil": "Jbiel",
-    "Miat": "Mayate",
-    "Lafrayta": "Fraita",
-    "Lahdayna": "Hiadna",
-    "Lahyadna": "Hiadna",
-    "Almkren": "Mograne",
-    "El Hri": "Lehri",
-    "mGrw~": "Maghraoua",
+    "rass ain": "Ras El Ain Chaouia",
+    "ras ain": "Ras El Ain Chaouia",
+    "z nahliya": "Zaouia Annahlia",
+    "ouled lgarn": "Oulad El Garne",
+    "jebeil": "Jbiel",
+    "liat": "Mayate",
+    "lafrayta": "Fraita",
+    "lahdayna": "Hiadna",
+    "lahyadna": "Hiadna",
+    "almkren": "Mograne",
+    "el hri": "Lehri",
+    "mgrw~": "Maghraoua",
     "wld zbyr": "Oulad Zbair",
-    "Takzmirt": "Tigzmerte",
-    "Belaaguid": "Ouahat Sidi Brahim"
+    "takzmirt": "Tigzmerte",
+    "belaaguid": "Ouahat Sidi Brahim"
+    // commune should be lowercase
 };
 
 var misInterpretedCommunes = [
     {
         "province_code": 5,
-        "commune": "Rissana",
+        "commune": "rissana",
         "commune_juste": "Rissana Chamalia"
     },
     {
         "province_code": 7,
-        "commune": "Malha",
+        "commune": "malha",
         "commune_juste": "Oued Malha"
     },
     {
         "province_code": 15,
-        "commune": "Lamrija Guercif",
+        "commune": "lamrija guercif",
         "commune_juste": "Lamrija"
     },
     {
         "province_code": 12,
-        "commune": "Lamrija Jerrada",
+        "commune": "lamrija jerrada",
         "commune_juste": "Mrija"
     },
     {
         "province_code": 37,
-        "commune": "Old Ahmed",
+        "commune": "old ahmed",
         "commune_juste": "Oulad Aissa"
     },
     {
         "province_code": 54,
-        "commune": "Ras El Ain Youssoufia",
+        "commune": "ras el ain youssoufia",
         "commune_juste": "Ras El Ain"
-    }
+    },
+    {
+        "province_code": 49,
+        "commune": "ait hkim",
+        "commune_juste": "Ait Hkim-Ait Yzid"
+    },
+    {
+        "province_code": 48,
+        "commune": "amadlane",
+        "commune_juste": "Bouabout Amdlane"
+    },
+    {
+        "province_code": 55,
+        "commune": "taous",
+        "commune_juste": "Et-taous"
+    },
+    {
+        "province_code": 37,
+        "commune": "ouled ahmed",
+        "commune_juste": "Oulad Aissa"
+    },
+    {
+        "province_code": 18,
+        "commune": "el Haj kaddour",
+        "commune_juste": "Sidi Slimane Moul Al Kifane"
+    },
+    {
+        "province_code": 69,
+        "commune": "anfag sidi ifni",
+        "commune_juste": "Anfeg"
+    },
+    {
+        "province_code": 1,
+        "commune": "hjar nhal",
+        "commune_juste": "Hjar Ennhal"
+    } // commune should be lowercase
 ];
 
 var Helpers = {
@@ -1235,9 +1271,11 @@ var Helpers = {
         var provinceCommunes = [];
 
         provinceCommunesCfg.forEach(com => {
-            provinceCommunes.push(com.label);
-            if (com.altLabel) provinceCommunes.push(com.altLabel);
+            provinceCommunes.push(com.label.toLowerCase());
+            if (com.altLabel) provinceCommunes.push(com.altLabel.toLowerCase());
         })
+
+        commune = commune.toLowerCase();
 
         if (/[\u0621-\u064A]+/.test(commune)) {
             //console.log('AR', commune, transliterate(commune));
@@ -1246,53 +1284,23 @@ var Helpers = {
 
         if (!provinceCommunes.includes(commune)) {
             var justeMatch = misInterpretedCommunes.find(entry => entry.province_code === provinceCode && entry.commune === commune);
+            
             if (justeMatch) {
-                commune = justeMatch.commune_juste;
+                commune = justeMatch.commune_juste.toLowerCase();
             } else if (mistypedCommunesMapping.hasOwnProperty(commune)) {
-                commune = mistypedCommunesMapping[commune];
+                commune = mistypedCommunesMapping[commune].toLowerCase();
             } else {
                 var closestCommune = Helpers.closestEntry(commune, provinceCommunes);
                 commune = closestCommune;
-                /*var similarCommune = stringSimilarity.findBestMatch(commune, provinceCommunes);
-                if (similarCommune.bestMatch.rating > 0.7 && closestCommune === similarCommune.bestMatch.target) {
-                    commune = closestCommune;
-                } else {
-                    var dist = distance(commune, closestCommune);
-                    var distPercent = dist / Math.max(commune.length, closestCommune.length);
-
-                    if (dist <= 4 && distPercent <= 0.3) {
-                        commune = closestCommune;
-                    } else {
-                        var prob = 0;
-                        if (dist <= 3) prob += 1;
-                        if (distPercent > 0.5) prob += 1;
-                        if (closestCommune === similarCommune.bestMatch.target) {
-                            prob += 2;
-
-                            if (similarCommune.bestMatch.rating > 0.5) prob += 1;
-                        }
-
-                        if (prob >= 2) {
-                            commune = closestCommune;
-                        } else if (mistypedCommunesMapping.hasOwnProperty(commune)) {
-                            commune = mistypedCommunesMapping[commune];
-                        } else if (similarCommune.bestMatch.rating > 0.5) {
-                            commune = similarCommune.bestMatch.target;
-                        } else {
-                            //console.log(provinceCode, '"' + commune + '"', '"' + closestCommune + '"', prob, dist, distPercent, '"' + similarCommune.bestMatch.target + '"', similarCommune.bestMatch.rating);
-                            console.log(commune, provinceCommunes);
-                        }
-                    }
-                }*/
             }
         }
 
-        var match = provinceCommunesCfg.find(rec => rec.label === commune || rec.altLabel === commune);
+        var match = provinceCommunesCfg.find(rec => rec.label.toLowerCase() === commune || rec.altLabel.toLowerCase() === commune);
         if (match) {
             return match.value;
         }
 
-        return -1;
+        return null;
     },
 
     closestEntry: function (str, arr, checkUnvowel = true, checkComposed = false, treshould) {

@@ -194,7 +194,7 @@ if (config.server.uploadEnabled) {
 
     app.post('/upload', multerMid.any(), async function (req, res, next) {
         try {
-            const records = await excelUtils.readWorkbook(req.files[0], req.body.nature);
+            const records = await excelUtils.readWorkbook(req.files[0], req.body);
             const ids = records.map(rec => rec.fp_id);
             const unique = [...new Set(ids)].length;
 
@@ -309,6 +309,9 @@ if (yargs['first-launch']) {
         //data.setCommunesCode();
 
         //data.insertSousDelegations();
+
+        //data.cloneRecord('98628e84-fbf7-444f-b1e7-a2cecd808a84');
+        //data.updateCompoundUPs()
     })
 }
 

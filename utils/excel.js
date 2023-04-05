@@ -170,6 +170,36 @@ const fzMapping = {
   explication: 'fp_comments'
 }
 
+const alhaouzUPReportees2023 = [
+  '25694',
+'25695',
+'25979',
+'25665',
+'25701',
+'25702',
+'25934',
+'25708',
+'25707',
+'26054',
+'25640',
+'25706',
+'25644',
+'25643',
+'25645',
+'25652',
+'25698',
+'25696',
+'40038',
+'40033',
+'25664',
+'25700',
+'25670',
+'25628',
+'25625',
+'25709',
+'25641'
+]
+
 const formatCell = function (val) {
   if (val === null) return ''
 
@@ -189,9 +219,12 @@ const formatCell = function (val) {
 }
 
 var ExcelUtils = {
-  readWorkbook: async (file, nature) => {
+  readWorkbook: async (file, cfg) => {
     const workbook = new Excel.Workbook();
-    let records = []
+    let records = [];
+
+    const nature = cfg.nature;
+    const date_situation = new Date(parseInt(cfg.date_situation) * 1000);
 
     try {
       await workbook.xlsx.load(file.buffer, {
@@ -200,13 +233,6 @@ var ExcelUtils = {
       });
 
       //console.log(workbook)
-      let date_situation = workbook.modified || workbook.created;
-
-      let today = new Date();
-      if (date_situation instanceof Date && (today.getMonth() - date_situation.getMonth()) > 1) {
-        console.debug(date_situation);
-        date_situation = today;
-      }
 
       workbook.eachSheet(function (worksheet, sheetId) {
         //console.log(sheetId)
@@ -314,7 +340,7 @@ var ExcelUtils = {
       }
     }
 
-    console.table(headers)
+    //console.table(headers)
 
     // Process Headers
     const maxColumns = Math.max(...headers.map(hRow => hRow.length))
@@ -334,7 +360,7 @@ var ExcelUtils = {
       titles.push(title)
     }
 
-    console.log(titles);
+    //console.log(titles);
 
     let samples = lines.slice(10).reduce((acc, curr) => {
       if (!curr || !curr.length) return acc;
@@ -381,6 +407,12 @@ var ExcelUtils = {
         const anneeMatch = objRow.plan_actions.match(/\d{4}/)
         if (anneeMatch && anneeMatch[0]) objRow.plan_actions = anneeMatch[0]
       }
+      
+      if (objRow.fp_id == '42375' && objRow.plan_actions == '2019') {
+        objRow.plan_actions = '2021'
+      } else if (alhaouzUPReportees2023.includes(objRow.fp_id) && objRow.plan_actions == '2022') {
+        objRow.plan_actions = '2023'
+      }
 
       if (objRow.province && !provinces.includes(objRow.province)) {
         objRow.province = helpers.closestEntry(objRow.province, provinces, true, true);
@@ -390,6 +422,11 @@ var ExcelUtils = {
       if (!objRow.province_code) {
         console.log('no province', objRow);
       }
+
+      if (objRow.fp_id == '17147' && objRow.plan_actions == '2021' && objRow.province_code == 28) {
+        return null;
+      }
+
 
       if (objRow.fondation_partenaire) {
         objRow.fondation_partenaire = objRow.fondation_partenaire.toUpperCase()
@@ -403,11 +440,13 @@ var ExcelUtils = {
       if (objRow.commune) {
         objRow.commune = helpers.titleCase(objRow.commune);
         let commune_code = helpers.getCommuneCode(objRow.commune, objRow.province_code);
-        objRow.commune_code = commune_code;
+        if (commune_code != null) {
+          objRow.commune_code = commune_code;
 
-        var communeMatch = helpers.communesCfg.find(comm => comm.value === commune_code);
-        var cercleMatch = communeMatch ? helpers.cerclesCfg.find(cercle => cercle.value === communeMatch.cercle_code) : null;
-        objRow.cercle_code = cercleMatch ? cercleMatch.value : null;
+          var communeMatch = helpers.communesCfg.find(comm => comm.value === commune_code);
+          var cercleMatch = communeMatch ? helpers.cerclesCfg.find(cercle => cercle.value === communeMatch.cercle_code) : null;
+          objRow.cercle_code = cercleMatch ? cercleMatch.value : null;
+        }
       }
 
       let hasIntituleAndDouar = !!objRow.douar_quartier && !!objRow.intitule;
@@ -447,7 +486,10 @@ var ExcelUtils = {
 
       if (objRow.est_ouverte == null) objRow.est_ouverte = false;
 
-      if (objRow.id) objRow.id = objRow.id.toLowerCase();
+      if (objRow.id) {
+        objRow.id = objRow.id.toLowerCase();
+      }
+
 
       if (nature === 'FZ') {
         objRow.fp_id =  objRow.id //`${objRow.province_code}/${objRow.plan_actions}/${objRow.commune_code}/${helpers.nameSig(objRow.douar_quartier)}/${helpers.nameSig(objRow.intitule)}`; 
@@ -478,10 +520,10 @@ var ExcelUtils = {
 
 
       return objRow
-    }).filter(row => !!row.intitule)
+    }).filter(row => row && !!row.intitule)
 
-    console.debug("Headers", titles, maxColumns)
-    //console.debug(data, nature)
+    /*console.debug("Headers", titles, maxColumns)
+    console.debug(data, nature)*/
 
     return data
   },

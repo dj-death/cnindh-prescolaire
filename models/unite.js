@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
         fp_code: { type: Sequelize.INTEGER },
         annexe_administrative: { type: Sequelize.STRING },
         province_code: { type: Sequelize.INTEGER, allowNull: false },
-        cercle_code: { type: Sequelize.INTEGER, allowNull: false },
+        cercle_code: { type: Sequelize.INTEGER, allowNull: true },
         commune_code: { type: Sequelize.INTEGER, allowNull: false },
         commune: { type: Sequelize.STRING, searchable: true },
         douar_quartier: { type: Sequelize.STRING, searchable: true },
@@ -193,8 +193,10 @@ module.exports = function (sequelize, DataTypes) {
 
         dispose_convention_signee: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_programmee: { type: Sequelize.BOOLEAN, defaultValue: true },
+        est_programmee_pp: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_livree: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_ouverte: { type: Sequelize.BOOLEAN, allowNull: true },
+        est_ouverte_bilan2022: { type: Sequelize.BOOLEAN, allowNull: true },
         est_resiliee: { type: Sequelize.BOOLEAN, defaultValue: false },
         operationnalite: { type: Sequelize.INTEGER },
         est_en_arret: { type: Sequelize.BOOLEAN, defaultValue: false },
@@ -247,7 +249,6 @@ module.exports = function (sequelize, DataTypes) {
         saison_2020_2021_gs_primaire: { type: Sequelize.INTEGER },
         saison_2020_2021_gs_refait_gs: { type: Sequelize.INTEGER },
         saison_2020_2021_nbre_arret_scolarite: { type: Sequelize.INTEGER },
-
 
         saison_2022_2023_moyenne_section_filles: { type: Sequelize.INTEGER },
         saison_2022_2023_moyenne_section_garcons: { type: Sequelize.INTEGER },
@@ -334,6 +335,7 @@ module.exports = function (sequelize, DataTypes) {
 
     Model.associate = function (models) {
         Model.hasMany(models.Effectif, { as: 'effectifs'});
+        Model.belongsTo(models.Unite, { as: 'parent_up', constraints: false });
 
         Model.belongsToMany(models.Delegation, {
             through: models.DelegationUnites,
@@ -345,8 +347,8 @@ module.exports = function (sequelize, DataTypes) {
         Model.addScope('browse', {
             attributes: [
                 'id', 'fp_id', 'fp_code', 'fp_comments', 'date_situation',
-                'province_code', 'cercle_code', 'commune_code', 'douar_quartier', 
-                'plan_actions', 'intitule',
+                'province_code', 'cercle_code', 'commune', 'commune_code', 'douar_quartier', 
+                'plan_actions', 'intitule', //'parentupid',
                 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
                 'est_ouverte', 'est_resiliee', 'operationnalite', 'est_en_arret', 'date_ouverture',
                 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 
@@ -359,7 +361,9 @@ module.exports = function (sequelize, DataTypes) {
                 'saison_2021_2022_ms_passe_primaire', 'saison_2021_2022_gs_primaire', 'saison_2021_2022_gs_refait_gs', 'saison_2021_2022_nbre_arret_scolarite',
 
                 [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
-                [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
+                [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt'],
+                [sequelize.literal('(SELECT array_to_string(array_agg(tranche_no ORDER BY tranche_no ASC), \',\') FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'tranches']
+
             ],
             
             include: [
@@ -382,6 +386,18 @@ module.exports = function (sequelize, DataTypes) {
             },
             include: [
                
+            ]
+        });
+
+        Model.addScope('browse_tranches', {
+            attributes: {
+                
+                include: [
+                    [sequelize.literal('(SELECT array_to_string(array_agg(tranche_no ORDER BY tranche_no ASC), \',\') FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'tranches']
+                ]
+            },
+            include: [
+            
             ]
         });
 

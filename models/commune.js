@@ -58,8 +58,8 @@ module.exports = function(sequelize, DataTypes) {
         Model.addScope('browse', {
             attributes: {
                 include: [
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.commune_code = Commune.id AND Unites.est_resiliee = FALSE AND Unites.plan_actions <> \'2023\')'), 'nbre_ups_programmees'],
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.commune_code = Commune.id AND Unites.est_resiliee = FALSE AND Unites.est_ouverte = TRUE AND Unites.plan_actions <> \'2023\')'), 'nbre_ups_ouvertes'],
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.commune_code = Commune.id AND Unites.est_programmee_pp = TRUE AND Unites.plan_actions <> \'2023\')'), 'nbre_ups_programmees'],
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.commune_code = Commune.id AND Unites.est_programmee_pp = TRUE AND Unites.est_ouverte = TRUE AND Unites.plan_actions <> \'2023\')'), 'nbre_ups_ouvertes'],
                     [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.commune_code = Commune.id AND Unites.plan_actions = \'2023\')'), 'nbre_ups_programmees2023'],
                 ]
             }

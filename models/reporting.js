@@ -192,8 +192,8 @@ module.exports = function (sequelize, DataTypes) {
         Model.addScope('browse', {
             attributes: {
                 include: [
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nbre_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nbre_salles_ouvertes_fp'],
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_fp'], //Unites.est_resiliee = FALSE AND 
+                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_salles_ouvertes_fp'], //AND Unites.est_resiliee = FALSE 
 
                     //[sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = FALSE)'), 'nbre_up_fp'],
                     //[sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = FALSE)'), 'nbre_salles_fp']
@@ -207,11 +207,11 @@ module.exports = function (sequelize, DataTypes) {
         Model.addScope('nested', {
             attributes: {
                 include: [
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nbre_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nbre_salles_ouvertes_fp'],
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_fp'],
+                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee_pp = TRUE)'), 'nbre_salles_ouvertes_fp'],
 
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code)'), 'nbre_up_fp'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code)'), 'nbre_salles_fp'],
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_programmee_pp)'), 'nbre_up_fp'],
+                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_programmee_pp)'), 'nbre_salles_fp'],
                     [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = TRUE)'), 'nbre_resiliees_fp'],
                     [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = TRUE)'), 'nbre_salles_resiliees_fp'],
 

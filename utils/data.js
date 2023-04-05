@@ -42,6 +42,15 @@ var corr = {
     "08577051703001": "TISLITE NOUSSILKANE"
 }
 
+var notAggrNumCols = [
+    'fp_code',
+    'province_code',
+    'commune_code',
+    'cercle_code',
+    'operationnalite',
+    'delai_execution'
+];
+
 module.exports = {
 
     sync: function () {
@@ -245,8 +254,7 @@ module.exports = {
 
     upsertUnites: function (records, actions) {
         //const fields = Object.keys(models.Unite.rawAttributes).filter(f => !['id', 'created', 'fp_id'].includes(f))
-        const fields = Object.keys(records[0]).filter(f => !['id', 'created', 'fp_id'].includes(f));
-
+        const fields = Object.keys(records[0]).filter(f => !['id', 'created', 'fp_id', 'est_programmee_pp', 'est_ouverte_bilan2022'].includes(f));
         //console.log('fields', fields)
 
         return sequelize.transaction(function (t) {
@@ -258,8 +266,84 @@ module.exports = {
                 
                 return models.Unite.bulkCreate(records, { individualHooks: false, validate: false, transaction: t, updateOnDuplicate: fields, returning: true /*['id']*/ }).then(function (rows) {
                     console.log('successfully updated rows: ' + rows.length);
-                    return models.Action.bulkCreate(actions, { transaction: t, returning: false }).then(function () {                       
-                        return Promise.resolve(rows)
+                    return module.exports.updateCompoundUPs().then(function () {
+                        return models.Action.bulkCreate(actions, { transaction: t, returning: false }).then(function () {                       
+                            return Promise.resolve(rows)
+                        });
+                    })
+                    
+                })
+            })
+        })
+    },
+
+    updateCompoundUPs: function () {
+        let diffCount = 0;
+
+        return models.Unite.findAll({ where: { parent_up_id: { $not: null } }, raw: true }).then(function (unites) {
+            const compounds = helpers.groupBy(unites, 'parentupid');
+            console.log('count ', unites.length, Object.keys(compounds));
+
+            return models.Unite.findAll({ where: { id: { $in: Object.keys(compounds) } } }).then(function (parentUPs) {
+                return Promise.all(parentUPs.map(throat(1, function (_parentUP, index) {
+                    const pId = _parentUP.get('id').toString();
+                    let sums = {};
+
+                    let nbre_est_resilie = 0;
+                    let nbre_est_ouverte = 0;
+
+                    let dates = [];
+
+                    compounds[pId].forEach(item => {
+                        for (const [key, value] of Object.entries(item)) {
+                          if (typeof value === 'number' && !notAggrNumCols.includes(key)) {
+                            sums[key] = (sums[key] || 0) + value;
+                          }
+                        }
+
+                        nbre_est_resilie += (+item.est_resilie);
+                        nbre_est_ouverte += (+item.est_ouverte);
+
+                        if (item.date_ouverture) {
+                            dates.push(item.date_ouverture);
+                        }
+                    })
+
+                    sums.est_ouverte = nbre_est_ouverte > 0;
+                    sums.est_resilie = nbre_est_resilie === compounds[pId].length;
+
+                    dates.sort();
+                    sums.date_ouverture = dates[0];
+
+                    ++diffCount;
+                    console.log(sums)
+                    return _parentUP.update(sums);
+                })));
+            })
+        })
+    },
+
+    cloneRecord: function (id) {
+        return sequelize.transaction(function (t) {
+            return sequelize.sync({ force: false, transaction: t }).then(function () {
+                
+                return models.Unite.findOne({
+                    where: { id: id }
+                }).then(function (row) {
+                    console.log('record to clone', row.get('id'))
+
+                    const data = row.get({ plain: true });
+                    data.fp_id += '___' 
+                    delete data.id;
+
+                    return models.Unite.create(data, { transaction: t, returning: ['id'] }).then(function (result) {       
+                        console.log('successfully cloned row: ', result.get('id'));
+                        result.set('fp_id', result.get('id'))                
+                        return result.save().then(function() {
+                            return Promise.resolve(result)
+                        })
+                    }).catch(function (err) {
+                        console.log(err)
                     })
                 })
             })
@@ -269,8 +353,34 @@ module.exports = {
     setCommunesCode: function () {
         let diffCount = 0;
 
-        models.Unite.findAll(/*{ where: { plan_actions: '2021', fp_code: 1 } }*/).then(function (unites) {
+        var ids = ['bb65f24a-395d-4dbe-8990-056453d90d11',
+'cb3ca350-83ee-4124-bb82-4d92e1f1b88a',
+'9efa83c2-b2cf-48c3-ab0c-4545968005ab',
+'c3e0740a-d09f-4710-a465-425574ca297a',
+'00bfb302-7268-4e09-ab13-5aaf967a2306',
+'6bfd621b-9945-424e-ac6d-facd5271fe74',
+'f9de12e0-9c04-4706-84f0-defdd14c4420',
+'4198a24d-f499-402f-873c-2e9c58987719'];
+
+        models.Unite.findAll({ where: { id: ids } }).then(function (unites) {
             return Promise.all(/*Promise.map(unites,*/ unites.map(throat(1, function (unite, index) {
+                let commune = unite.get('commune');
+                let commune_code = helpers.getCommuneCode(commune, unite.get('province_code'));
+                let cercle_code;
+
+                if (commune_code != null) {
+                    var communeMatch = helpers.communesCfg.find(comm => comm.value === commune_code);
+                    var cercleMatch = communeMatch ? helpers.cerclesCfg.find(cercle => cercle.value === communeMatch.cercle_code) : null;
+                    cercle_code = cercleMatch ? cercleMatch.value : null;
+                }
+
+                ++diffCount;
+
+                return unite.update({
+                    commune_code,
+                    cercle_code
+                });
+
                 /*var douar_quartier = unite.get('douar_quartier');
                 var commune_code = unite.get('commune_code');
 
@@ -286,7 +396,7 @@ module.exports = {
                 
                 if (/coop/i.test(cleanedDr)) console.log(douar_quartier, cleanedDr);*/
 
-                var intitule = helpers.sanitizeDouar(unite.get('intitule'));
+                /*var intitule = helpers.sanitizeDouar(unite.get('intitule'));
                 var douar_quartier = intitule;
 
                 douar_quartier = douar_quartier.replace(/\b(douar|up)\.?\b\s/ig, '');
@@ -303,7 +413,7 @@ module.exports = {
                     intitule: intitule,
                     douar_quartier: douar_quartier,
                     adresse: unite.get('fp_code') === 1 ? `${helpers.nameSig(douar_quartier)}/${helpers.nameSig(intitule)}` : null
-                });
+                });*/
             })));
         }).then(function () {
             console.log('end = ', diffCount);
