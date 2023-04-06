@@ -39,7 +39,7 @@ module.exports = function (sequelize, DataTypes) {
         prevision_mois0: { type: Sequelize.INTEGER },
         prevision_mois1: { type: Sequelize.INTEGER },
         prevision_mois2: { type: Sequelize.INTEGER },
-        prevision_prochaine_rentree: { type: Sequelize.INTEGER },
+        prevision_mois3: { type: Sequelize.INTEGER },
 
         engag_ouv_baseline: { type: Sequelize.INTEGER },
         engag_ouv_dec22: { type: Sequelize.INTEGER },
@@ -67,6 +67,7 @@ module.exports = function (sequelize, DataTypes) {
         nbre_encours_validation: { type: Sequelize.INTEGER },
 
         remarques: { type: Sequelize.TEXT },
+        cnindh_comments: { type: Sequelize.TEXT },
 
         motif_non_lancement_etudes: { type: Sequelize.TEXT },
         motif_retard_ouverture: { type: Sequelize.TEXT },
