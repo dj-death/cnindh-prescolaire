@@ -40,6 +40,9 @@ module.exports = function (sequelize, DataTypes) {
         prevision_mois1: { type: Sequelize.INTEGER },
         prevision_mois2: { type: Sequelize.INTEGER },
         prevision_mois3: { type: Sequelize.INTEGER },
+        prevision_mois4: { type: Sequelize.INTEGER },
+        prevision_mois5: { type: Sequelize.INTEGER },
+        prevision_mois6: { type: Sequelize.INTEGER },
 
         engag_ouv_baseline: { type: Sequelize.INTEGER },
         engag_ouv_dec22: { type: Sequelize.INTEGER },
@@ -54,7 +57,6 @@ module.exports = function (sequelize, DataTypes) {
         nbre_marches_lances: { type: Sequelize.INTEGER },
         nbre_marches_adjuges: { type: Sequelize.INTEGER },
         cout_global_marches_travaux: { type: Sequelize.DECIMAL(10, 2) },
-        cout_unitaire_moyen_marches_travaux: { type: Sequelize.DECIMAL(10, 2) },
 
         date_lancement_etudes: {
             type: Sequelize.DATE,
