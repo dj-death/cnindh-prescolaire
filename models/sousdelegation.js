@@ -16,7 +16,7 @@ module.exports = function (sequelize, DataTypes) {
         province_code: { type: Sequelize.INTEGER, allowNull: false },
         nbre_ups_concernees: { type: Sequelize.INTEGER },
         nbre_salles_concernees: { type: Sequelize.INTEGER },
-
+        est_complement: { type: Sequelize.BOOLEAN, defaultValue: false },
         nbre_t1: { type: Sequelize.INTEGER },
         nbre_t2: { type: Sequelize.INTEGER },
         nbre_t3: { type: Sequelize.INTEGER },
