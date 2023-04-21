@@ -1,0 +1,1059 @@
+[
+    {
+        "province_code": 1,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 22,
+        "montant_effectif": 388557,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 2,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 7,
+        "montant_effectif": 251888,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 3,
+        "nbre_ups_concernees": 8,
+        "nbre_salles_concernees": 8,
+        "montant_effectif": 149634,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 4,
+        "nbre_ups_concernees": 51,
+        "nbre_salles_concernees": 61,
+        "montant_effectif": 964634,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 5,
+        "nbre_ups_concernees": 24,
+        "nbre_salles_concernees": 24,
+        "montant_effectif": 822568,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 6,
+        "nbre_ups_concernees": 5,
+        "nbre_salles_concernees": 6,
+        "montant_effectif": 389900,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 7,
+        "nbre_ups_concernees": 23,
+        "nbre_salles_concernees": 23,
+        "montant_effectif": 505787,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 8,
+        "nbre_ups_concernees": 8,
+        "nbre_salles_concernees": 8,
+        "montant_effectif": 122207,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 9,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 10,
+        "montant_effectif": 172289,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 10,
+        "nbre_ups_concernees": 3,
+        "nbre_salles_concernees": 3,
+        "montant_effectif": 45075,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 12,
+        "nbre_ups_concernees": 20,
+        "nbre_salles_concernees": 20,
+        "montant_effectif": 325550,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 13,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 7,
+        "montant_effectif": 47082,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 14,
+        "nbre_ups_concernees": 3,
+        "nbre_salles_concernees": 3,
+        "montant_effectif": 92326,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 15,
+        "nbre_ups_concernees": 6,
+        "nbre_salles_concernees": 6,
+        "montant_effectif": 84141,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 16,
+        "nbre_ups_concernees": 2,
+        "nbre_salles_concernees": 2,
+        "montant_effectif": 33056,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 17,
+        "nbre_ups_concernees": 2,
+        "nbre_salles_concernees": 5,
+        "montant_effectif": 223900,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 18,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 9,
+        "montant_effectif": 158384,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 19,
+        "nbre_ups_concernees": 12,
+        "nbre_salles_concernees": 17,
+        "montant_effectif": 393327,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 20,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 20,
+        "montant_effectif": 568201,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 21,
+        "nbre_ups_concernees": 3,
+        "nbre_salles_concernees": 3,
+        "montant_effectif": 71421,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 22,
+        "nbre_ups_concernees": 3,
+        "nbre_salles_concernees": 3,
+        "montant_effectif": 168764,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 23,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 11,
+        "montant_effectif": 260474,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 24,
+        "nbre_ups_concernees": 17,
+        "nbre_salles_concernees": 24,
+        "montant_effectif": 798999,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 25,
+        "nbre_ups_concernees": 19,
+        "nbre_salles_concernees": 20,
+        "montant_effectif": 417555,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 27,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 7,
+        "montant_effectif": 382028,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 28,
+        "nbre_ups_concernees": 14,
+        "nbre_salles_concernees": 17,
+        "montant_effectif": 310332,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 29,
+        "nbre_ups_concernees": 43,
+        "nbre_salles_concernees": 55,
+        "montant_effectif": 2334709,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 30,
+        "nbre_ups_concernees": 21,
+        "nbre_salles_concernees": 24,
+        "montant_effectif": 316535,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 31,
+        "nbre_ups_concernees": 53,
+        "nbre_salles_concernees": 53,
+        "montant_effectif": 4363923,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 32,
+        "nbre_ups_concernees": 18,
+        "nbre_salles_concernees": 24,
+        "montant_effectif": 374129,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 33,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 10,
+        "montant_effectif": 160270,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 34,
+        "nbre_ups_concernees": 22,
+        "nbre_salles_concernees": 22,
+        "montant_effectif": 728156,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 35,
+        "nbre_ups_concernees": 12,
+        "nbre_salles_concernees": 12,
+        "montant_effectif": 184308,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 36,
+        "nbre_ups_concernees": 9,
+        "nbre_salles_concernees": 9,
+        "montant_effectif": 176299,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 37,
+        "nbre_ups_concernees": 13,
+        "nbre_salles_concernees": 13,
+        "montant_effectif": 234390,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 40,
+        "nbre_ups_concernees": 27,
+        "nbre_salles_concernees": 27,
+        "montant_effectif": 835118,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 41,
+        "nbre_ups_concernees": 4,
+        "nbre_salles_concernees": 7,
+        "montant_effectif": 83640,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 42,
+        "nbre_ups_concernees": 13,
+        "nbre_salles_concernees": 36,
+        "montant_effectif": 524879,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 43,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 11,
+        "montant_effectif": 123713,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 44,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 13,
+        "montant_effectif": 247416,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 45,
+        "nbre_ups_concernees": 11,
+        "nbre_salles_concernees": 11,
+        "montant_effectif": 49588,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 46,
+        "nbre_ups_concernees": 62,
+        "nbre_salles_concernees": 100,
+        "montant_effectif": 1657021,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 47,
+        "nbre_ups_concernees": 47,
+        "nbre_salles_concernees": 57,
+        "montant_effectif": 1612800,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 48,
+        "nbre_ups_concernees": 25,
+        "nbre_salles_concernees": 25,
+        "montant_effectif": 512809,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 49,
+        "nbre_ups_concernees": 50,
+        "nbre_salles_concernees": 57,
+        "montant_effectif": 1133305,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 50,
+        "nbre_ups_concernees": 23,
+        "nbre_salles_concernees": 23,
+        "montant_effectif": 901578,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 51,
+        "nbre_ups_concernees": 40,
+        "nbre_salles_concernees": 40,
+        "montant_effectif": 1076555,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 52,
+        "nbre_ups_concernees": 27,
+        "nbre_salles_concernees": 29,
+        "montant_effectif": 588771,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 53,
+        "nbre_ups_concernees": 25,
+        "nbre_salles_concernees": 25,
+        "montant_effectif": 474866,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 54,
+        "nbre_ups_concernees": 29,
+        "nbre_salles_concernees": 31,
+        "montant_effectif": 582931,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 55,
+        "nbre_ups_concernees": 26,
+        "nbre_salles_concernees": 34,
+        "montant_effectif": 316039,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 56,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 7,
+        "montant_effectif": 265419,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 57,
+        "nbre_ups_concernees": 13,
+        "nbre_salles_concernees": 15,
+        "montant_effectif": 242408,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 58,
+        "nbre_ups_concernees": 85,
+        "nbre_salles_concernees": 98,
+        "montant_effectif": 4052140,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 59,
+        "nbre_ups_concernees": 70,
+        "nbre_salles_concernees": 89,
+        "montant_effectif": 1318727,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 60,
+        "nbre_ups_concernees": 11,
+        "nbre_salles_concernees": 12,
+        "montant_effectif": 167782,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 61,
+        "nbre_ups_concernees": 12,
+        "nbre_salles_concernees": 13,
+        "montant_effectif": 531842,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 62,
+        "nbre_ups_concernees": 19,
+        "nbre_salles_concernees": 19,
+        "montant_effectif": 354237,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 63,
+        "nbre_ups_concernees": 73,
+        "nbre_salles_concernees": 73,
+        "montant_effectif": 2313172,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 64,
+        "nbre_ups_concernees": 18,
+        "nbre_salles_concernees": 18,
+        "montant_effectif": 503626,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 65,
+        "nbre_ups_concernees": 14,
+        "nbre_salles_concernees": 14,
+        "montant_effectif": 475948,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 69,
+        "nbre_ups_concernees": 26,
+        "nbre_salles_concernees": 26,
+        "montant_effectif": 1069238,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 70,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 1,
+        "montant_effectif": 16027,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 72,
+        "nbre_ups_concernees": 4,
+        "nbre_salles_concernees": 4,
+        "montant_effectif": 109338,
+        "delegationId": "dbd1da20-676e-497e-9921-d12e0107674f"
+    },
+    {
+        "province_code": 1,
+        "nbre_ups_concernees": 5,
+        "nbre_salles_concernees": 6,
+        "montant_effectif": 343501,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 3,
+        "nbre_ups_concernees": 2,
+        "nbre_salles_concernees": 2,
+        "montant_effectif": 133834,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 4,
+        "nbre_ups_concernees": 62,
+        "nbre_salles_concernees": 71,
+        "montant_effectif": 1355291,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 5,
+        "nbre_ups_concernees": 40,
+        "nbre_salles_concernees": 45,
+        "montant_effectif": 1576119,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 6,
+        "nbre_ups_concernees": 63,
+        "nbre_salles_concernees": 76,
+        "montant_effectif": 2257394,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 7,
+        "nbre_ups_concernees": 82,
+        "nbre_salles_concernees": 82,
+        "montant_effectif": 3493925,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 8,
+        "nbre_ups_concernees": 44,
+        "nbre_salles_concernees": 45,
+        "montant_effectif": 1821592,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 9,
+        "nbre_ups_concernees": 6,
+        "nbre_salles_concernees": 6,
+        "montant_effectif": 361868,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 10,
+        "nbre_ups_concernees": 34,
+        "nbre_salles_concernees": 36,
+        "montant_effectif": 1651618,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 11,
+        "nbre_ups_concernees": 46,
+        "nbre_salles_concernees": 47,
+        "montant_effectif": 1845340,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 12,
+        "nbre_ups_concernees": 3,
+        "nbre_salles_concernees": 4,
+        "montant_effectif": 244468,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 13,
+        "nbre_ups_concernees": 30,
+        "nbre_salles_concernees": 30,
+        "montant_effectif": 1525134,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 14,
+        "nbre_ups_concernees": 11,
+        "nbre_salles_concernees": 11,
+        "montant_effectif": 684851,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 15,
+        "nbre_ups_concernees": 33,
+        "nbre_salles_concernees": 34,
+        "montant_effectif": 2138397,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 16,
+        "nbre_ups_concernees": 20,
+        "nbre_salles_concernees": 21,
+        "montant_effectif": 118704,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 17,
+        "nbre_ups_concernees": 11,
+        "nbre_salles_concernees": 17,
+        "montant_effectif": 1006122,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 18,
+        "nbre_ups_concernees": 16,
+        "nbre_salles_concernees": 22,
+        "montant_effectif": 1173472,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 19,
+        "nbre_ups_concernees": 33,
+        "nbre_salles_concernees": 38,
+        "montant_effectif": 1330101,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 20,
+        "nbre_ups_concernees": 18,
+        "nbre_salles_concernees": 19,
+        "montant_effectif": 285475,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 21,
+        "nbre_ups_concernees": 39,
+        "nbre_salles_concernees": 39,
+        "montant_effectif": 1024919,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 24,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 1,
+        "montant_effectif": 15025,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 25,
+        "nbre_ups_concernees": 45,
+        "nbre_salles_concernees": 45,
+        "montant_effectif": 529308,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 27,
+        "nbre_ups_concernees": 15,
+        "nbre_salles_concernees": 19,
+        "montant_effectif": 770513,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 28,
+        "nbre_ups_concernees": 12,
+        "nbre_salles_concernees": 15,
+        "montant_effectif": 948772,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 30,
+        "nbre_ups_concernees": 16,
+        "nbre_salles_concernees": 21,
+        "montant_effectif": 1011820,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 31,
+        "nbre_ups_concernees": 58,
+        "nbre_salles_concernees": 68,
+        "montant_effectif": 3205232,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 32,
+        "nbre_ups_concernees": 50,
+        "nbre_salles_concernees": 54,
+        "montant_effectif": 3085715,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 34,
+        "nbre_ups_concernees": 101,
+        "nbre_salles_concernees": 104,
+        "montant_effectif": 5216994,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 35,
+        "nbre_ups_concernees": 25,
+        "nbre_salles_concernees": 34,
+        "montant_effectif": 669309,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 36,
+        "nbre_ups_concernees": 21,
+        "nbre_salles_concernees": 22,
+        "montant_effectif": 1408374,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 39,
+        "nbre_ups_concernees": 6,
+        "nbre_salles_concernees": 12,
+        "montant_effectif": 529434,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 40,
+        "nbre_ups_concernees": 63,
+        "nbre_salles_concernees": 91,
+        "montant_effectif": 4211593,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 42,
+        "nbre_ups_concernees": 12,
+        "nbre_salles_concernees": 13,
+        "montant_effectif": 396473,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 43,
+        "nbre_ups_concernees": 15,
+        "nbre_salles_concernees": 16,
+        "montant_effectif": 160272,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 44,
+        "nbre_ups_concernees": 45,
+        "nbre_salles_concernees": 46,
+        "montant_effectif": 2525250,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 45,
+        "nbre_ups_concernees": 49,
+        "nbre_salles_concernees": 50,
+        "montant_effectif": 1913400,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 46,
+        "nbre_ups_concernees": 31,
+        "nbre_salles_concernees": 33,
+        "montant_effectif": 504656,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 47,
+        "nbre_ups_concernees": 37,
+        "nbre_salles_concernees": 41,
+        "montant_effectif": 805171,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 48,
+        "nbre_ups_concernees": 9,
+        "nbre_salles_concernees": 9,
+        "montant_effectif": 144732,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 49,
+        "nbre_ups_concernees": 51,
+        "nbre_salles_concernees": 59,
+        "montant_effectif": 3553229,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 50,
+        "nbre_ups_concernees": 23,
+        "nbre_salles_concernees": 47,
+        "montant_effectif": 1099373,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 51,
+        "nbre_ups_concernees": 82,
+        "nbre_salles_concernees": 82,
+        "montant_effectif": 5101497,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 53,
+        "nbre_ups_concernees": 73,
+        "nbre_salles_concernees": 75,
+        "montant_effectif": 4670762,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 54,
+        "nbre_ups_concernees": 48,
+        "nbre_salles_concernees": 48,
+        "montant_effectif": 2921058,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 55,
+        "nbre_ups_concernees": 14,
+        "nbre_salles_concernees": 17,
+        "montant_effectif": 31561,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 56,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 7,
+        "montant_effectif": 324385,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 57,
+        "nbre_ups_concernees": 37,
+        "nbre_salles_concernees": 44,
+        "montant_effectif": 2868950,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 58,
+        "nbre_ups_concernees": 90,
+        "nbre_salles_concernees": 98,
+        "montant_effectif": 4458846,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 59,
+        "nbre_ups_concernees": 30,
+        "nbre_salles_concernees": 30,
+        "montant_effectif": 1906020,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 60,
+        "nbre_ups_concernees": 5,
+        "nbre_salles_concernees": 5,
+        "montant_effectif": 311867,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 61,
+        "nbre_ups_concernees": 3,
+        "nbre_salles_concernees": 3,
+        "montant_effectif": 88750,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 62,
+        "nbre_ups_concernees": 24,
+        "nbre_salles_concernees": 32,
+        "montant_effectif": 1512042,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 63,
+        "nbre_ups_concernees": 40,
+        "nbre_salles_concernees": 40,
+        "montant_effectif": 1022068,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 64,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 1,
+        "montant_effectif": 50967,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 65,
+        "nbre_ups_concernees": 3,
+        "nbre_salles_concernees": 3,
+        "montant_effectif": 37563,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 67,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 1,
+        "montant_effectif": 67884,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 74,
+        "nbre_ups_concernees": 2,
+        "nbre_salles_concernees": 4,
+        "montant_effectif": 260900,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 75,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 1,
+        "montant_effectif": 67400,
+        "delegationId": "2a2ccd21-3b1b-4733-9f81-3b268b5644dd"
+    },
+    {
+        "province_code": 1,
+        "nbre_ups_concernees": 9,
+        "nbre_salles_concernees": 9,
+        "montant_effectif": 74627,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 3,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 10,
+        "montant_effectif": 93661,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 6,
+        "nbre_ups_concernees": 4,
+        "nbre_salles_concernees": 4,
+        "montant_effectif": 8016,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 7,
+        "nbre_ups_concernees": 14,
+        "nbre_salles_concernees": 14,
+        "montant_effectif": 41570,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 8,
+        "nbre_ups_concernees": 11,
+        "nbre_salles_concernees": 11,
+        "montant_effectif": 95166,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 11,
+        "nbre_ups_concernees": 18,
+        "nbre_salles_concernees": 18,
+        "montant_effectif": 140107,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 14,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 1,
+        "montant_effectif": 46134,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 15,
+        "nbre_ups_concernees": 42,
+        "nbre_salles_concernees": 42,
+        "montant_effectif": 288504,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 19,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 2,
+        "montant_effectif": 24040,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 21,
+        "nbre_ups_concernees": 21,
+        "nbre_salles_concernees": 21,
+        "montant_effectif": 47595,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 29,
+        "nbre_ups_concernees": 5,
+        "nbre_salles_concernees": 5,
+        "montant_effectif": 184139,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 31,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 2,
+        "montant_effectif": 19032,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 33,
+        "nbre_ups_concernees": 9,
+        "nbre_salles_concernees": 12,
+        "montant_effectif": 44578,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 34,
+        "nbre_ups_concernees": 18,
+        "nbre_salles_concernees": 18,
+        "montant_effectif": 18036,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 36,
+        "nbre_ups_concernees": 18,
+        "nbre_salles_concernees": 18,
+        "montant_effectif": 50595,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 41,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 1,
+        "montant_effectif": 10518,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 48,
+        "nbre_ups_concernees": 23,
+        "nbre_salles_concernees": 23,
+        "montant_effectif": 57615,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 49,
+        "nbre_ups_concernees": 87,
+        "nbre_salles_concernees": 97,
+        "montant_effectif": 714845,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 50,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 12,
+        "montant_effectif": 51089,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 52,
+        "nbre_ups_concernees": 2,
+        "nbre_salles_concernees": 2,
+        "montant_effectif": 30050,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 53,
+        "nbre_ups_concernees": 10,
+        "nbre_salles_concernees": 10,
+        "montant_effectif": 40067,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 56,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 2,
+        "montant_effectif": 5009,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 57,
+        "nbre_ups_concernees": 9,
+        "nbre_salles_concernees": 10,
+        "montant_effectif": 29053,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 58,
+        "nbre_ups_concernees": 41,
+        "nbre_salles_concernees": 43,
+        "montant_effectif": 193453,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 59,
+        "nbre_ups_concernees": 121,
+        "nbre_salles_concernees": 129,
+        "montant_effectif": 780325,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 60,
+        "nbre_ups_concernees": 6,
+        "nbre_salles_concernees": 8,
+        "montant_effectif": 62607,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 61,
+        "nbre_ups_concernees": 7,
+        "nbre_salles_concernees": 8,
+        "montant_effectif": 66614,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 71,
+        "nbre_ups_concernees": 2,
+        "nbre_salles_concernees": 7,
+        "montant_effectif": 105175,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    },
+    {
+        "province_code": 75,
+        "nbre_ups_concernees": 1,
+        "nbre_salles_concernees": 3,
+        "montant_effectif": 15025,
+        "delegationId": "538d4e92-5265-490f-9824-b37fac580234"
+    }
+]

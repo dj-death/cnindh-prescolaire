@@ -502,8 +502,12 @@ module.exports = {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
                 /*return models.Delegation.destroy({ where: query, truncate: query ? false : true, transaction: t })
             }).then(function () {*/
-                return models.SousDelegation.bulkCreate(require('../data/sousdelegsoct212022.json'), { include: [{ model: models.Delegation, as: 'delegation' }], transaction: t })
+                return models.SousDelegation.bulkCreate(require('../data/sousdelegationsmars2023.json'), { include: [{ model: models.Delegation, as: 'delegation' }], transaction: t })
+            }).catch(function (err) {
+                console.log(err)
             })
+        }).then(function () {
+            console.info('Imports From Google Sheets: DONE');
         })
     },
 
