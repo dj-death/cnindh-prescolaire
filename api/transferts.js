@@ -31,18 +31,8 @@ var Service = {
             params.filter = accessFilters;            
 
             const qScope = params.scope || 'browse';
-
-            if (params.filter) {
-
-                var concernee_visio2022Filter = params.filter.find(filt => filt.property === 'concernee_visio2022')
-
-                if (concernee_visio2022Filter && !typeFilter.value) {
-                    var idx = params.filter.findIndex(filt => filt.property === 'concernee_visio2022');
-                    params.filter.idx(idx, 1);
-                }
-            }
-
-            return models.Reporting.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Reporting));
+            
+            return models.Transfert.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Transfert));
         }).then(function (result) {
             callback(null, {
                 total: result.count,
@@ -65,7 +55,7 @@ var Service = {
                 return;
             }
 
-            return models.Reporting/*.cache()*/.create(params);
+            return models.Transfert/*.cache()*/.create(params);
         }).then(function (row) {
             callback(null, { data: row });
         }).catch(function (err) {
@@ -92,10 +82,10 @@ var Service = {
                         });
                     }
 
-                    return models.Reporting/*.cache()*/.findByPk(_param.id).then(function (row) {
+                    return models.Transfert/*.cache()*/.findByPk(_param.id).then(function (row) {
                         if (!row) {
                             throw errors.types.invalidParams({
-                                path: 'id', message: 'Reporting with the specified id cannot be found',
+                                path: 'id', message: 'Transfert with the specified id cannot be found',
                             });
                         }
 
@@ -123,7 +113,7 @@ var Service = {
                 });
             }
 
-            return models.Reporting/*.cache()*/.findByPk(params.id);
+            return models.Transfert/*.cache()*/.findByPk(params.id);
         }).then(function (row) {
             if (Array.isArray(row)) {
                 callback(null, {
@@ -134,7 +124,7 @@ var Service = {
 
                 if (!row) {
                     throw errors.types.invalidParams({
-                        path: 'id', message: 'Reporting with the specified id cannot be found',
+                        path: 'id', message: 'Transfert with the specified id cannot be found',
                     });
                 }
 
@@ -181,11 +171,11 @@ var Service = {
                     path: 'id', message: 'Missing required parameter: id',
                 });
             }
-            return models.Reporting/*.cache()*/.findByPk(params.id);
+            return models.Transfert/*.cache()*/.findByPk(params.id);
         }).then(function (row) {
             if (!row) {
                 throw errors.types.invalidParams({
-                    path: 'id', message: 'Reporting with the specified id cannot be found',
+                    path: 'id', message: 'Transfert with the specified id cannot be found',
                 });
             }
 
@@ -207,7 +197,7 @@ var Service = {
 
     filters: function (params, callback, sid, req) {
         session.verify(req).then(function () {
-            return helpers.fetchFilters(params, models.Reporting);
+            return helpers.fetchFilters(params, models.Transfert);
         }).then(function (results) {
             callback(null, {
                 data: results
@@ -227,7 +217,7 @@ var Service = {
             return;
         }*/
 
-        return models.Reporting.findAll({
+        return models.Transfert.findAll({
             limit: 1,
             where: {},
             attributes: ['updated'],

@@ -1,6 +1,8 @@
 "use strict";
 const { Sequelize } = require("sequelize");
 
+
+
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("SousDelegation", {
         id: {

@@ -323,7 +323,9 @@ module.exports = function (sequelize, DataTypes) {
                 isDate: true
             }
         }*/
-
+        trans_fiche_completee: { type: Sequelize.BOOLEAN, allowNull: true },
+        trans_situation_financiere_regularisee: { type: Sequelize.BOOLEAN, allowNull: true },
+        trans_retenue_phase1: { type: Sequelize.BOOLEAN, allowNull: true }
     }, {
         indexes: [
           {
@@ -359,7 +361,9 @@ module.exports = function (sequelize, DataTypes) {
                 'saison_2021_2022_inscrits_primaire_total', 'saison_2021_2022_inscrits_primaire_filles',
                 'saison_2021_2022_inscrits_primaire_garcons', 'saison_2021_2022_ms_passe_gs', 'saison_2021_2022_ms_reinscrit_ms',
                 'saison_2021_2022_ms_passe_primaire', 'saison_2021_2022_gs_primaire', 'saison_2021_2022_gs_refait_gs', 'saison_2021_2022_nbre_arret_scolarite',
-
+                'trans_fiche_completee', 'trans_situation_financiere_regularisee', 'trans_retenue_phase1',
+                'comments', 'statut',
+                
                 [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
                 [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt'],
                 [sequelize.literal('(SELECT array_to_string(array_agg(tranche_no ORDER BY tranche_no ASC), \',\') FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'tranches']

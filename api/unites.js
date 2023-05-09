@@ -87,33 +87,46 @@ var Service = {
                 return;
             }
 
-            if (!params.id) {
+            params = Array.isArray(params) ? params : [params];
+            const ids = params.map(p => p.id).filter(pId => pId != null);
+
+            if (!ids.length) {
                 throw errors.types.invalidParams({
                     path: 'id', message: 'Missing required parameter: id',
                 });
             }
 
-            return models.Unite/*.cache()*/.findByPk(params.id);
-        }).then(function (row) {
-            if (!row) {
-                throw errors.types.invalidParams({
-                    path: 'id', message: 'Unite with the specified id cannot be found',
-                });
-            }
+            return models.Unite.findAll({ where: { id: ids }, attributes: ['id', 'fp_id'], raw: true });
+        }).then(function (rows) {
+            const notAllowedFields = ['id', 'created', 'fp_id', 'est_programmee_pp', 'est_ouverte_bilan2022'];
+            const updatedFields = Object.keys(params[0]).filter(f => !notAllowedFields.includes(f));
 
-            if (helpers.checkModifyAuthorization(user, row, 4) === false) {
-                callback(new Error('Not authorized'));
+            const updatedRows = params.map(function (item) {
+                /*if (helpers.checkModifyAuthorization(user, row, 4) === false) {
+                    callback(new Error('Not authorized'));
+                    return null;
+                }*/
+    
+                const match = rows.find(row => item.id == row.id);
+                
+                if (match) {
+                    item['fp_id'] = match['fp_id'];
+                }
+
+                return item;
+
+            }).filter(r => r != null)
+
+            if (!updatedRows.length || updatedRows.length !== params.length) {
+                callback(new Error(`Difference between matchs ${updatedRows.length} and supplieds ${params.length} `));
                 return;
             }
 
-            return row/*.cache()*/.update(params);
-        }).then(function (row) {
-            // reload record data in case associations have been updated.
-            return row/*.cache()*/.reload();
-        }).then(function (row) {
+            return models.Unite.bulkCreate(updatedRows, { updateOnDuplicate: updatedFields, returning: true });
+        }).then(function (result) {
             callback(null, {
-                data: [row],
-                total: 1
+                data: result,
+                total: result.length
             });
         }).catch(function (err) {
             callback(errors.parse(err));
