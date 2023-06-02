@@ -436,6 +436,16 @@ module.exports = {
         })
     },
 
+    insertImplementations: function (records, query) {
+        return sequelize.transaction(function (t) {
+            return sequelize.sync({ force: false, transaction: t }).then(function () {
+                return models.Implementation.bulkCreate(require('../data/implementations.json'), { transaction: t })
+            }).catch(function (err) {
+                console.log(err)
+            })
+        })
+    },
+
     insertLots: function (records, query) {
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {

@@ -173,31 +173,42 @@ const fzMapping = {
 const alhaouzUPReportees2023 = [
   '25694',
 '25695',
+'25696',
+'40038',
 '25979',
 '25665',
+'40033',
+'25664',
 '25701',
 '25702',
 '25934',
+'25700',
+'25670',
+'25703',
+'25627',
+'25628',
+'25629',
+'25625',
 '25708',
+'42151',
 '25707',
 '26054',
+'25709',
 '25640',
+'25641',
+'40015',
+'25657',
+'39276',
+'39213',
+'25656',
 '25706',
 '25644',
 '25643',
 '25645',
 '25652',
-'25698',
-'25696',
-'40038',
-'40033',
-'25664',
-'25700',
-'25670',
-'25628',
-'25625',
-'25709',
-'25641'
+'25697',
+'25699',
+'25698'
 ]
 
 const formatCell = function (val) {
@@ -411,6 +422,10 @@ var ExcelUtils = {
       if (objRow.fp_id == '42375' && objRow.plan_actions == '2019') {
         objRow.plan_actions = '2021'
       } else if (alhaouzUPReportees2023.includes(objRow.fp_id) && objRow.plan_actions == '2022') {
+        objRow.plan_actions = '2023'
+      } else if (objRow.fp_id == '2778' && objRow.plan_actions == '2020') { // ifrane
+        objRow.plan_actions = '2023'
+      } else if (objRow.fp_id == '10154' && objRow.plan_actions == '2021') { // boulemane
         objRow.plan_actions = '2023'
       }
 

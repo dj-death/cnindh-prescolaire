@@ -845,7 +845,7 @@ var misInterpretedCommunes = [
     },
     {
         "province_code": 18,
-        "commune": "el Haj kaddour",
+        "commune": "el haj kaddour",
         "commune_juste": "Sidi Slimane Moul Al Kifane"
     },
     {
@@ -1264,6 +1264,67 @@ var Helpers = {
         return true;
     },
 
+
+    checkListAuthorization2: function (user, params, maxRole) {
+        const userRole = user.get('role');
+
+        maxRole = typeof (maxRole) === 'undefined' ? 13 : maxRole;
+
+        params['filter'] = params['filter'] || []
+
+        if (userRole > maxRole || userRole < 10) {
+            return false;
+        } else if (userRole > 10) {
+            const userRegion = user.get('region_code');
+            const userProvince = user.get('province_code');
+            const userFP = user.get('fondation_code');
+
+            var locationFilter = { property: '', value: '' }
+
+            if (userRole === 12) {
+                locationFilter.property = 'province_code';
+                locationFilter.operator = 'in';
+
+                const regionMatch = decoupageRegions.find(rec => rec.value == userRegion);
+                locationFilter.value = regionMatch ? regionMatch.provinces : [];
+            } else if (userRole === 13) {
+                locationFilter.property = 'province_code'
+                locationFilter.value = userProvince
+            }
+
+            if (locationFilter.value == null) {
+                return false;
+            }
+
+            params.filter.push(locationFilter)
+        }
+
+        return params.filter;
+    },
+
+    checkModifyAuthorization2: function (user, rec, maxRole) {
+        if (Array.isArray(rec)) rec = rec[0];
+
+        const userRole = user.get('role');
+        maxRole = typeof (maxRole) === 'undefined' ? 13 : maxRole;
+
+        if (userRole == 10) return true;
+        else if (userRole > maxRole || userRole < 10) return false;
+
+        if (userRole > 10) {
+            const recProvince = typeof (rec.get) === 'function' ? rec.get('province_code') : rec.province_code;
+            const userProvince = user.get('province_code');
+            const userRegion = user.get('region_code');
+            const regionMatch = decoupageRegions.find(rec => rec.value == userRegion);
+            const userRegionProvinces = regionMatch ? regionMatch.provinces : [];
+
+            return (userRole === 12 && userRegionProvinces.includes(recProvince)) ||
+                (userRole === 13 && userProvince === recProvince);
+        }
+
+        return true;
+    },
+
     getCommuneCode: function (commune, provinceCode) {
         if (!commune) return null;
 
@@ -1284,7 +1345,6 @@ var Helpers = {
 
         if (!provinceCommunes.includes(commune)) {
             var justeMatch = misInterpretedCommunes.find(entry => entry.province_code === provinceCode && entry.commune === commune);
-            
             if (justeMatch) {
                 commune = justeMatch.commune_juste.toLowerCase();
             } else if (mistypedCommunesMapping.hasOwnProperty(commune)) {
@@ -1303,7 +1363,10 @@ var Helpers = {
         return null;
     },
 
-    closestEntry: function (str, arr, checkUnvowel = true, checkComposed = false, treshould) {
+    closestEntry: function (str, arr, checkUnvowel, checkComposed, treshould) {
+        checkUnvowel = typeof(checkUnvowel) === 'undefined' ? true : checkUnvowel;
+        checkComposed = typeof(checkComposed) === 'undefined' ? false : checkComposed;
+
         let result;
 
         let similars = [];
