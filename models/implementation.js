@@ -14,6 +14,7 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         province_code: { type: Sequelize.INTEGER, allowNull: false },
+        cercle_code: { type: Sequelize.INTEGER, allowNull: true },
 
         AMI_lancee: {
             type: Sequelize.BOOLEAN,
