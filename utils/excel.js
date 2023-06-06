@@ -10,7 +10,7 @@ const columns = [
   'plan_actions', 'fondation_partenaire', 'annexe_administrative', 'province', 'commune', 'douar_quartier', 'code_douar', 'intitule',
   'type_unite', 'nbre_salles', 'nbre_classes', 'programme', 'montant_delegue', 'cout_travaux', 'cout_unitaire', 'cout_equipement', 'cout_fonctionnement',
   'montant_engage', 'montant_emis', 'date_lancement_trvx', 'tx_avancement_physique', 'statut', 'statut_latin', 'phase',
-  'difficultes_rencontrees', 'date_ouverture', 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',
+  'difficultes_rencontrees', 'date_ouverture', 'nombre_postes_total', 'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',
   'dispose_eau',
   'saison_2022_2023_total_moyenne_section', 'saison_2022_2023_moyenne_section_filles',
   'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_total_grande_section', 'saison_2022_2023_grande_section_filles',
@@ -226,7 +226,21 @@ const formatCell = function (val) {
   } else {
     return val
   }
+}
 
+const hideUncompleteFields = function (titles, fields) {
+  var check = fields.map(function (f) {
+    return titles.includes(f) ? 1 : 0;
+  })
+  
+  if (check > 0 && check < fields.length) {
+    titles = titles.filter(function (t) {
+      if (fields.includes(t)) return false;
+      return true;
+    })
+  }
+
+  return titles;
 }
 
 var ExcelUtils = {
@@ -371,7 +385,7 @@ var ExcelUtils = {
       titles.push(title)
     }
 
-    //console.log(titles);
+    console.log(titles);
 
     let samples = lines.slice(10).reduce((acc, curr) => {
       if (!curr || !curr.length) return acc;
@@ -385,6 +399,10 @@ var ExcelUtils = {
     }, []);
 
     titles = module.exports.sanitizeColumns(titles, nature, samples);
+
+    // check for total fields
+    titles = hideUncompleteFields(titles, ['saison_2022_2023_grande_section_filles', 'saison_2022_2023_grande_section_garcons', 'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_moyenne_section_filles'])
+    titles = hideUncompleteFields(titles, ['nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme'])
 
     const data = lines.map(row => {
       let objRow = {}
@@ -538,8 +556,8 @@ var ExcelUtils = {
       return objRow
     }).filter(row => row && !!row.intitule)
 
-    /*console.debug("Headers", titles, maxColumns)
-    console.debug(data, nature)*/
+    console.debug("Headers", titles, maxColumns)
+    //console.debug(data, nature)
 
     return data
   },
