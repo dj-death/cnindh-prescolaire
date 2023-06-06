@@ -219,7 +219,7 @@ if (config.server.uploadEnabled) {
             }
 
             //console.log(records)
-            return;
+            //return;
 
             data.compareUnites(records).then(function (actions) {
                 //console.log(actions)

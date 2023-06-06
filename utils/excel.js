@@ -556,7 +556,7 @@ var ExcelUtils = {
       return objRow
     }).filter(row => row && !!row.intitule)
 
-    console.debug("Headers", titles, maxColumns)
+    //console.debug("Headers", titles, maxColumns)
     //console.debug(data, nature)
 
     return data
