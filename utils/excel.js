@@ -59,7 +59,7 @@ const fmpsMapping = {
   nb_salle: 'nbre_salles',
   nb_classe: 'nbre_classes',
   total_educ: 'nombre_educatrices_total',
-  nb_postes: 'nombre_educatrices_total',
+  nb_postes: 'nombre_postes_total',
   f: 'nombre_educatrices_femme',
   h: 'nombre_educatrices_homme',
   nb_enfants_2022_2023: 'saison_2022_2023_total_global',
@@ -508,6 +508,7 @@ var ExcelUtils = {
 
       if (nature === 'FZ') {
         objRow.fp_id =  objRow.id //`${objRow.province_code}/${objRow.plan_actions}/${objRow.commune_code}/${helpers.nameSig(objRow.douar_quartier)}/${helpers.nameSig(objRow.intitule)}`; 
+        objRow.nombre_postes_total = objRow.nombre_educatrices_total
       }
 
       if (objRow.est_ouverte) {
