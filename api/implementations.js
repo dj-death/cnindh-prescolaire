@@ -32,6 +32,8 @@ var Service = {
 
             const qScope = params.scope || 'browse';
 
+            console.log(params);
+
             return models.Implementation.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Implementation));
         }).then(function (result) {
             callback(null, {

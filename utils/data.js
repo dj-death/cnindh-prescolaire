@@ -522,7 +522,7 @@ module.exports = {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
                 /*return models.Delegation.destroy({ where: query, truncate: query ? false : true, transaction: t })
             }).then(function () {*/
-                return models.SousDelegation.bulkCreate(require('../data/sousdelegationsmars2023.json'), { include: [{ model: models.Delegation, as: 'delegation' }], transaction: t })
+                return models.SousDelegation.bulkCreate(require('../data/dlg.json'), { include: [{ model: models.Delegation, as: 'delegation' }], transaction: t })
             }).catch(function (err) {
                 console.log(err)
             })
@@ -531,6 +531,15 @@ module.exports = {
         })
     },
 
+    insertUsersDPE: function (records) {
+        return sequelize.transaction(function (t) {
+            return sequelize.sync({ force: false, transaction: t }).then(function () {
+                return models.Person.bulkCreate(require('../data/users_dpe.json'), { transaction: t })
+            })
+        }).then(function () {
+            console.info('users added');
+        })
+    },
 
     insertUsers: function (records) {
         return sequelize.transaction(function (t) {

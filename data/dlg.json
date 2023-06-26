@@ -1,0 +1,3258 @@
+[
+    {
+      "province_code": 23,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 377000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "a19ad7b0-008a-48bd-a0f5-61eaec682d5e"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 609000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "a19ad7b0-008a-48bd-a0f5-61eaec682d5e"
+    },
+    {
+      "province_code": 68,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "a19ad7b0-008a-48bd-a0f5-61eaec682d5e"
+    },
+    {
+      "province_code": 24,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1189000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "a19ad7b0-008a-48bd-a0f5-61eaec682d5e"
+    },
+    {
+      "province_code": 2,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "a19ad7b0-008a-48bd-a0f5-61eaec682d5e"
+    },
+    {
+      "province_code": 43,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 493000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 23,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 348000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 30,
+      "montant_effectif": 870000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 66,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 696000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 1073000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 46,
+      "nbre_salles_concernees": 61,
+      "montant_effectif": 1769000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 24,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 261000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 54,
+      "montant_effectif": 1566000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 406000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 6,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "50ad5d5b-7664-45e1-82c0-49d86bba05e8"
+    },
+    {
+      "province_code": 43,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 493000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 23,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 348000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 40,
+      "nbre_salles_concernees": 27,
+      "montant_effectif": 783000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 30,
+      "montant_effectif": 870000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 35,
+      "nbre_salles_concernees": 34,
+      "montant_effectif": 986000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 66,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 696000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 5,
+      "nbre_salles_concernees": 45,
+      "montant_effectif": 1305000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 1102000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 39,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 348000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 21,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 638000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 10,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 8,
+      "nbre_salles_concernees": 23,
+      "montant_effectif": 667000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 22,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 261000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 45,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 742500,
+      "observations": "Montant comptable restant au lieu de 27 salles",
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 46,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 2059000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 19,
+      "montant_effectif": 551000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 39,
+      "montant_effectif": 1131000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 24,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 63,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1276000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 261000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1595000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 58,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 928000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 34,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 116000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1595000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 493000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 6,
+      "nbre_salles_concernees": 61,
+      "montant_effectif": 1769000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "83c4e327-8a80-44b0-9325-eb35780b84c9"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 50000,
+      "observations": "deux UP (Agafay et Iguintsila)",
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 800000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 175000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 925000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 100000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 450000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 27,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 25000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 22,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 500000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 125000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 250000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 6,
+      "nbre_salles_concernees": 29,
+      "montant_effectif": 725000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "96a0bd1d-4ff8-4c24-99a6-596be943882b"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 928000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 203000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 1073000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": "Calcul sur la base de nombre des groupes. Pas besoin d'équipement pour les 10 UP",
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 116000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 28,
+      "montant_effectif": 42000,
+      "observations": "Complément pour 28 salles objet de délégation sur un cout de 27500 au lieu de 29000",
+      "est_complement": true,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 27,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 22,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 580000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 6,
+      "nbre_salles_concernees": 29,
+      "montant_effectif": 841000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "cbb0d32d-391f-48c7-ac2f-df308f69946e"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 67,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 33,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 15000,
+      "observations": "Les 10 salles non ouvertes ayant fait l’objet de délégation de la première tranche, bénéficieront uniquement de la deuxième tranche, soit 6 mois de fonctionnement (  le crédit reçu de fonctionnement de 660000 pour le fonctionnement de la 2ème tranche 6 mois  concerne juste les 20 up opérationnelles) puisque la das à déjà prévu ce décaissement le reliquat du crédit à demander sera (29000-27500)/salle/6 mois=1500/salle/6mois",
+      "est_complement": true,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 13,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 1073000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 23,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 19,
+      "nbre_salles_concernees": 9,
+      "montant_effectif": 261000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 40,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 493000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 55,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 1914000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 19,
+      "montant_effectif": 551000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 35,
+      "nbre_salles_concernees": 28,
+      "montant_effectif": 812000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 1073000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 61,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 30,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 5,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 580000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 1392000,
+      "observations": "Calcul sur la base de nombre des groupes 38 salles / 48 groupes",
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 18,
+      "nbre_salles_concernees": 11,
+      "montant_effectif": 319000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 39,
+      "nbre_salles_concernees": 27,
+      "montant_effectif": 783000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 10,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 41,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1334000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 8,
+      "nbre_salles_concernees": 31,
+      "montant_effectif": 899000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 9,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1334000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 27,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 609000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 22,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 754000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 45,
+      "nbre_salles_concernees": 182,
+      "montant_effectif": 5278000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 28,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 24,
+      "nbre_salles_concernees": 67,
+      "montant_effectif": 1943000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 14,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 63,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 348000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 45,
+      "montant_effectif": 1305000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 64,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 34,
+      "nbre_salles_concernees": 16,
+      "montant_effectif": 464000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 56,
+      "montant_effectif": 1624000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 350000,
+      "observations": "2000 DH surplus",
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 72,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 6,
+      "nbre_salles_concernees": 29,
+      "montant_effectif": 841000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "74e5d9b5-891c-490f-bf55-e9e35a342cbf"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 49,
+      "nbre_salles_concernees": 161,
+      "montant_effectif": 4669000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 75,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 33,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 696000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 43,
+      "nbre_salles_concernees": 33,
+      "montant_effectif": 957000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 44,
+      "nbre_salles_concernees": 102,
+      "montant_effectif": 2958000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 203000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 23,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 7,
+      "nbre_salles_concernees": 96,
+      "montant_effectif": 2784000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 11,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1189000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 19,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 754000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 40,
+      "nbre_salles_concernees": 88,
+      "montant_effectif": 2552000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 55,
+      "nbre_salles_concernees": 119,
+      "montant_effectif": 3451000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 96,
+      "montant_effectif": 2784000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 754000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 66,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 15,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1276000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 61,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 12,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 30,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 580000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 36,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 696000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 70,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 5,
+      "nbre_salles_concernees": 27,
+      "montant_effectif": 783000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 18,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1189000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 57,
+      "nbre_salles_concernees": 74,
+      "montant_effectif": 2146000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 21,
+      "nbre_salles_concernees": 65,
+      "montant_effectif": 1885000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 10,
+      "nbre_salles_concernees": 42,
+      "montant_effectif": 1218000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 139,
+      "montant_effectif": 4031000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 74,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 116000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 8,
+      "nbre_salles_concernees": 56,
+      "montant_effectif": 1624000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 9,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 53,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 2378000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1595000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 1,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 68,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 14,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 63,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 203000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 3,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 58,
+      "nbre_salles_concernees": 114,
+      "montant_effectif": 3306000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 64,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 59,
+      "nbre_salles_concernees": 149,
+      "montant_effectif": 4321000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 54,
+      "nbre_salles_concernees": 57,
+      "montant_effectif": 1653000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 37,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 928000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 34,
+      "nbre_salles_concernees": 51,
+      "montant_effectif": 1479000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 33,
+      "montant_effectif": 957000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 1914000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 29,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 72,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 6,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 725000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f2a32c6-574f-4f7b-9fa5-4716e072c8dd"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 49,
+      "nbre_salles_concernees": 161,
+      "montant_effectif": 4669000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 75,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 33,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 696000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 43,
+      "nbre_salles_concernees": 33,
+      "montant_effectif": 957000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 44,
+      "nbre_salles_concernees": 102,
+      "montant_effectif": 2958000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 203000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 23,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 7,
+      "nbre_salles_concernees": 96,
+      "montant_effectif": 2784000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 11,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1189000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 19,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 754000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 40,
+      "nbre_salles_concernees": 88,
+      "montant_effectif": 2552000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 55,
+      "nbre_salles_concernees": 119,
+      "montant_effectif": 3451000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 96,
+      "montant_effectif": 2784000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 754000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 66,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 15,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1276000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 61,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 12,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 30,
+      "nbre_salles_concernees": 20,
+      "montant_effectif": 580000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 36,
+      "nbre_salles_concernees": 36,
+      "montant_effectif": 1044000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 70,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 5,
+      "nbre_salles_concernees": 27,
+      "montant_effectif": 783000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 18,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1189000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 57,
+      "nbre_salles_concernees": 74,
+      "montant_effectif": 2146000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 21,
+      "nbre_salles_concernees": 65,
+      "montant_effectif": 1885000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 10,
+      "nbre_salles_concernees": 42,
+      "montant_effectif": 1218000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 139,
+      "montant_effectif": 4031000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 74,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 116000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 8,
+      "nbre_salles_concernees": 56,
+      "montant_effectif": 1624000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 9,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 53,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 2378000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1595000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 1,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 68,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 14,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 63,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 7,
+      "montant_effectif": 203000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 3,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 58,
+      "nbre_salles_concernees": 114,
+      "montant_effectif": 3306000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 64,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 59,
+      "nbre_salles_concernees": 149,
+      "montant_effectif": 4321000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 54,
+      "nbre_salles_concernees": 57,
+      "montant_effectif": 1653000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 37,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 928000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 34,
+      "nbre_salles_concernees": 51,
+      "montant_effectif": 1479000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 33,
+      "montant_effectif": 957000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 1914000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 29,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 72,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 6,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 725000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "120aa2b6-4808-42e1-826f-cb62ac903c13"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 100000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 49,
+      "nbre_salles_concernees": 163,
+      "montant_effectif": 4075000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 67,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 25000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 33,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 925000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 43,
+      "nbre_salles_concernees": 34,
+      "montant_effectif": 850000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 13,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 350000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 44,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 650000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 62,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 11,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 425000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 19,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 40,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 1075000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 75,
+      "montant_effectif": 1875000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 16,
+      "montant_effectif": 400000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 550000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 35,
+      "nbre_salles_concernees": 39,
+      "montant_effectif": 975000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 66,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 15,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 61,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 12,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 30,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 550000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 36,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 325000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 5,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 625000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 18,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 875000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 57,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1375000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 21,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 950000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 10,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1100000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 41,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 250000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 47,
+      "montant_effectif": 1175000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 8,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 150000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 9,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 50000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 375000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 53,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 2050000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 27,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 200000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 45,
+      "nbre_salles_concernees": 67,
+      "montant_effectif": 1675000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 46,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 1775000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 29,
+      "montant_effectif": 725000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1150000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 28,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 50000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 1,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 50000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 24,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 1775000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 14,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 450000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 125000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 875000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 3,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 350000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 64,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 59,
+      "nbre_salles_concernees": 76,
+      "montant_effectif": 1900000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 54,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 525000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 37,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 325000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 34,
+      "nbre_salles_concernees": 173,
+      "montant_effectif": 4325000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 875000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 31,
+      "montant_effectif": 775000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 29,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 450000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 72,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 75000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 73,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 125000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "7f72848b-fff0-495a-b464-0b05b7cde29e"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 6000,
+      "observations": "Différence nouveau cout et ancien coût pour 4 salles ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 116000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 49,
+      "nbre_salles_concernees": 163,
+      "montant_effectif": 4727000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 67,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 33,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 1073000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 43,
+      "nbre_salles_concernees": 34,
+      "montant_effectif": 986000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 13,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 406000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 44,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 754000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 62,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 11,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 493000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 19,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 40,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 1247000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 75,
+      "montant_effectif": 2175000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 16,
+      "montant_effectif": 464000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 638000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 35,
+      "nbre_salles_concernees": 39,
+      "montant_effectif": 1131000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 66,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 15,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 61,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 12,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 30,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 638000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 36,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 377000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 5,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 725000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 18,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 1015000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 57,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1595000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 21,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 1102000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 10,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1276000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 41,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 47,
+      "montant_effectif": 1363000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 8,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 9,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 53,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 2378000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 27,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 232000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 45,
+      "nbre_salles_concernees": 67,
+      "montant_effectif": 1943000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 46,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 2059000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 29,
+      "montant_effectif": 841000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1334000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 28,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 1,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 24,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 2059000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 14,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 1015000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 3,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 406000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 64,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 59,
+      "nbre_salles_concernees": 76,
+      "montant_effectif": 2204000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 54,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 609000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 37,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 377000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 34,
+      "nbre_salles_concernees": 173,
+      "montant_effectif": 5017000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 1015000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 31,
+      "montant_effectif": 899000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 29,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 72,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 73,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 75,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 1500,
+      "observations": "Différence nouveau cout et ancien coût pour 1 salle ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 7,
+      "nbre_salles_concernees": 65,
+      "montant_effectif": 97500,
+      "observations": "Différence nouveau cout et ancien coût pour 65 salle ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 52500,
+      "observations": "Différence nouveau cout et ancien coût pour 35 salle ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 1,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 3000,
+      "observations": "Différence nouveau cout et ancien coût pour 2 salle ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 58,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 99000,
+      "observations": "Différence nouveau cout et ancien coût pour 66 salle ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 37,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 3000,
+      "observations": "Différence nouveau cout et ancien coût pour 2 salles ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 12,
+      "montant_effectif": 18000,
+      "observations": "Différence nouveau cout et ancien coût pour 12 salles ayant bénéficié de délégation",
+      "est_complement": true,
+      "delegationId": "787b9057-c27d-479a-b035-abb978897365"
+    },
+    {
+      "province_code": 60,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 232000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 49,
+      "nbre_salles_concernees": 163,
+      "montant_effectif": 4727000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 75,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 67,
+      "nbre_salles_concernees": 1,
+      "montant_effectif": 29000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 33,
+      "nbre_salles_concernees": 37,
+      "montant_effectif": 1073000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 43,
+      "nbre_salles_concernees": 34,
+      "montant_effectif": 986000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 13,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 406000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 44,
+      "nbre_salles_concernees": 26,
+      "montant_effectif": 754000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 71,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 7,
+      "nbre_salles_concernees": 65,
+      "montant_effectif": 1885000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 62,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 11,
+      "nbre_salles_concernees": 17,
+      "montant_effectif": 493000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 19,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 40,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 1247000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 55,
+      "nbre_salles_concernees": 24,
+      "montant_effectif": 696000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 51,
+      "nbre_salles_concernees": 75,
+      "montant_effectif": 2175000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 17,
+      "nbre_salles_concernees": 16,
+      "montant_effectif": 464000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 16,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 638000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 35,
+      "nbre_salles_concernees": 39,
+      "montant_effectif": 1131000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 66,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 15,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 20,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 61,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 12,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 30,
+      "nbre_salles_concernees": 22,
+      "montant_effectif": 638000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 36,
+      "nbre_salles_concernees": 13,
+      "montant_effectif": 377000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 5,
+      "nbre_salles_concernees": 25,
+      "montant_effectif": 725000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 47,
+      "nbre_salles_concernees": 41,
+      "montant_effectif": 1189000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 18,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 1015000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 57,
+      "nbre_salles_concernees": 55,
+      "montant_effectif": 1595000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 21,
+      "nbre_salles_concernees": 38,
+      "montant_effectif": 1102000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 10,
+      "nbre_salles_concernees": 44,
+      "montant_effectif": 1276000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 41,
+      "nbre_salles_concernees": 10,
+      "montant_effectif": 290000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 56,
+      "nbre_salles_concernees": 47,
+      "montant_effectif": 1363000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 8,
+      "nbre_salles_concernees": 6,
+      "montant_effectif": 174000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 9,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 52,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 53,
+      "nbre_salles_concernees": 82,
+      "montant_effectif": 2378000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 27,
+      "nbre_salles_concernees": 8,
+      "montant_effectif": 232000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 45,
+      "nbre_salles_concernees": 67,
+      "montant_effectif": 1943000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 46,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 2059000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 31,
+      "nbre_salles_concernees": 64,
+      "montant_effectif": 1856000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 32,
+      "nbre_salles_concernees": 46,
+      "montant_effectif": 1334000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 28,
+      "nbre_salles_concernees": 2,
+      "montant_effectif": 58000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 1,
+      "nbre_salles_concernees": 4,
+      "montant_effectif": 116000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 24,
+      "nbre_salles_concernees": 71,
+      "montant_effectif": 2059000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 14,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 63,
+      "nbre_salles_concernees": 32,
+      "montant_effectif": 928000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 65,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 25,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 1015000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 3,
+      "nbre_salles_concernees": 14,
+      "montant_effectif": 406000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 58,
+      "nbre_salles_concernees": 66,
+      "montant_effectif": 1914000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 64,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 59,
+      "nbre_salles_concernees": 76,
+      "montant_effectif": 2204000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 54,
+      "nbre_salles_concernees": 21,
+      "montant_effectif": 609000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 37,
+      "nbre_salles_concernees": 15,
+      "montant_effectif": 435000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 34,
+      "nbre_salles_concernees": 173,
+      "montant_effectif": 5017000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 50,
+      "nbre_salles_concernees": 35,
+      "montant_effectif": 1015000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 48,
+      "nbre_salles_concernees": 43,
+      "montant_effectif": 1247000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 29,
+      "nbre_salles_concernees": 18,
+      "montant_effectif": 522000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 72,
+      "nbre_salles_concernees": 3,
+      "montant_effectif": 87000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    },
+    {
+      "province_code": 73,
+      "nbre_salles_concernees": 5,
+      "montant_effectif": 145000,
+      "observations": null,
+      "est_complement": false,
+      "delegationId": "871bb7a8-e1cb-4f52-a065-db709f32c05a"
+    }
+   ]
