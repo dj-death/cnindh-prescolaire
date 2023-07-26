@@ -95,6 +95,20 @@ module.exports = function (sequelize, DataTypes) {
             type: Sequelize.INTEGER,
             allowNull: true
         },
+
+        nbre_ups_retenues_conv_cat1: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+        nbre_ups_retenues_conv_cat2: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+        nbre_ups_retenues_conv_cat3: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+
         observations: {
             type: Sequelize.STRING,
             allowNull: true
@@ -166,7 +180,12 @@ module.exports = function (sequelize, DataTypes) {
     Model.associate = function (models) {
         Model.addScope('browse', {
             attributes: {
-                include: []
+                include: [
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.province_code = Transfert.province_code AND Unites.trans_retenue_phase1 = TRUE)'), 'trans_retenue_phase1'],
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.province_code = Transfert.province_code AND Unites.trans_situation_financiere_regularisee = TRUE)'), 'trans_situation_financiere_regularisee'],
+                    [sequelize.literal('(SELECT SUM(nbre_ouvertes_cn) FROM Reportings WHERE Reportings.province_code = Transfert.province_code)'), 'total_up_ouvertes']
+                    
+                ]
             },
             include: []
         });
