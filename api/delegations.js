@@ -32,10 +32,10 @@ var Service = {
         return models.Delegation.scope('nested').findByPk(id).then(function (deleg) {
             return Promise.all([
                 deleg.getSousdelegations({
-                    attributes: [
-                        'id', 'province_code', 'montant_effectif', 'montant_effectif', 'observations',
+                    /*attributes: [
+                        'id', 'province_code', 'montant_effectif', 'montant_effectif', 'observations', 'credits_restitues',
                         'nbre_ups_concernees', 'nbre_salles_concernees', 'nbre_t1', 'nbre_t2', 'nbre_t3', 'nbre_amg', 'nbre_modulaire'
-                    ]
+                    ]*/
                 }),
 
                 deleg.getUnites({

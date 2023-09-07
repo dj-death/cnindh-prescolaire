@@ -19,11 +19,16 @@ module.exports = function (sequelize, DataTypes) {
         nbre_ups_concernees: { type: Sequelize.INTEGER },
         nbre_salles_concernees: { type: Sequelize.INTEGER },
         est_complement: { type: Sequelize.BOOLEAN,  allowNull: false, defaultValue: false },
+        credits_restitues: { type: Sequelize.BOOLEAN,  allowNull: false, defaultValue: false },
         nbre_t1: { type: Sequelize.INTEGER },
         nbre_t2: { type: Sequelize.INTEGER },
         nbre_t3: { type: Sequelize.INTEGER },
         nbre_amg: { type: Sequelize.INTEGER },
         nbre_modulaire: { type: Sequelize.INTEGER },
+
+        nbre_ups_ouvertes: { type: Sequelize.INTEGER },
+        nbre_ups_achevees: { type: Sequelize.INTEGER },
+        nbre_ups_encours: { type: Sequelize.INTEGER },
 
         montant_effectif: { type: Sequelize.DECIMAL(10, 2) },
         //montant_effectif2: { type: Sequelize.DECIMAL(10, 2) },

@@ -79,6 +79,15 @@ module.exports = function (sequelize, DataTypes) {
                 isDate: true
             }
         },
+        convention_signee_fp: {
+            type: Sequelize.BOOLEAN,
+            allowNull: true
+        },
+        convention_signee_aref: {
+            type: Sequelize.BOOLEAN,
+            allowNull: true
+        },
+
         convention_signee: {
             type: Sequelize.BOOLEAN,
             allowNull: true
