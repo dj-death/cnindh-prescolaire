@@ -376,7 +376,7 @@ module.exports = function (sequelize, DataTypes) {
                 'province_code', 'cercle_code', 'commune', 'commune_code', 'douar_quartier', 
                 'plan_actions', 'intitule', //'parentupid',
                 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
-                'est_ouverte', 'est_resiliee', 'operationnalite', 'est_en_arret', 'date_ouverture', 'est_programmee_pp',
+                'est_ouverte', 'est_ouverte_fp', 'est_resiliee', 'operationnalite', 'est_en_arret', 'date_ouverture', 'est_programmee_pp',
                 'nombre_educatrices_total', 'nombre_postes_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 
                 'saison_2023_2024_total_global', 'saison_2022_2023_total_global',
                 'saison_2023_2024_moyenne_section_filles', 'saison_2023_2024_moyenne_section_garcons', 'saison_2023_2024_grande_section_filles', 'saison_2023_2024_grande_section_garcons',
