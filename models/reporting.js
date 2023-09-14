@@ -193,100 +193,86 @@ module.exports = function (sequelize, DataTypes) {
             include: []
         });
 
+        const commonAttrs = [
+            [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_cn'], //Unites.est_resiliee = FALSE AND
+            [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'salles_ouvertes_cn'], //AND Unites.est_resiliee = FALSE 
+            [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_fp'], //Unites.est_resiliee = FALSE AND 
+            [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_salles_ouvertes_fp'], //AND Unites.est_resiliee = FALSE 
+        ]
+
         Model.addScope('browse', {
             attributes: {
-                include: [
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_fp'], //Unites.est_resiliee = FALSE AND 
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_salles_ouvertes_fp'], //AND Unites.est_resiliee = FALSE 
-
-                    //[sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = FALSE)'), 'nbre_up_fp'],
-                    //[sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = FALSE)'), 'nbre_salles_fp']
-                ]
+                include: commonAttrs
             },
-
             include: []
         });
 
+        const activiteFields = [
+            ...commonAttrs,
+            [sequelize.literal('(SELECT SUM(nombre_educatrices_total) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_educ_total_fp'], 
+            [sequelize.literal('(SELECT SUM(nombre_educatrices_femme) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_educ_femmes_fp'],
+            [sequelize.literal('(SELECT SUM(nombre_educatrices_homme) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_educ_hommes_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_total_global) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_total_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_total_filles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_filles_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_total_garcons) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_garcons_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_total_moyenne_section) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_ms_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_moyenne_section_filles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_ms_f_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_moyenne_section_garcons) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_ms_g_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_total_grande_section) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_gs_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_grande_section_filles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_gs_f_fp'],
+            [sequelize.literal('(SELECT SUM(saison_2023_2024_grande_section_garcons) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_inscrits_gs_g_fp']
+        ]
 
-        Model.addScope('nested', {
+        Model.addScope('activite', {
             attributes: {
-                include: [
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee_pp = TRUE)'), 'nbre_salles_ouvertes_fp'],
-
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_programmee_pp)'), 'nbre_up_fp'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_programmee_pp)'), 'nbre_salles_fp'],
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = TRUE)'), 'nbre_resiliees_fp'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = TRUE)'), 'nbre_salles_resiliees_fp'],
-
-                    /*[sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nbre_ouvertes_fp'],
-                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nbre_programmees_fp'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nbre_salles_programmees_fp']
-                    */
-
-                    /*[sequelize.literal('(SELECT SUM(nombre_educatrices_total) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nombre_educatrices_total_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(nombre_educatrices_femme) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nombre_educatrices_femme_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(nombre_educatrices_homme) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'nombre_educatrices_homme_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(saison_2021_2022_total_global) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'saison_2021_2022_total_global_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(saison_2021_2022_total_garcons) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'saison_2021_2022_total_garcons_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(saison_2021_2022_total_filles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'saison_2021_2022_total_filles_ouvertes_fp'],
-
-                    [sequelize.literal('(SELECT SUM(saison_2021_2022_total_moyenne_section) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'saison_2021_2022_total_moyenne_section_ouvertes_fp'],
-                    [sequelize.literal('(SELECT SUM(saison_2021_2022_total_grande_section) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_resiliee = FALSE AND Unites.est_programmee = TRUE)'), 'saison_2021_2022_total_grande_section_ouvertes_fp'],
-                    */
-
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 0))'), 'delegations_etudes'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_travaux'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 2))'), 'delegations_equip'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND (Delegations.tranche_no >= 3 AND Delegations.tranche_no <= 9) ))'), 'delegations_fct_2ans'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND (Delegations.tranche_no >= 10 AND Delegations.tranche_no <= 23) ))'), 'delegations_peren'],
-
-
-                    [sequelize.literal('(SELECT SUM(nbre_ups_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_ups'],
-                    [sequelize.literal('(SELECT SUM(nbre_t1) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t1'],
-                    [sequelize.literal('(SELECT SUM(nbre_t2) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t2'],
-                    [sequelize.literal('(SELECT SUM(nbre_t3) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t3'],
-                    [sequelize.literal('(SELECT SUM(nbre_amg) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_amg'],
-
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 2 ))'), 'deleg_equip_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 3 ))'), 'deleg_tr1_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 4 ))'), 'deleg_tr2_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 5 ))'), 'deleg_tr3_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 6 ))'), 'deleg_tr4_nbre_salles']
-
-                ]
+                include: activiteFields
             },
-
             include: []
         });
 
+
+        const delegationsFields = [
+            ...commonAttrs,
+            [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 0))'), 'delegations_etudes'],
+            [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_travaux'],
+            [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 2))'), 'delegations_equip'],
+            [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND (Delegations.tranche_no >= 3 AND Delegations.tranche_no <= 9) ))'), 'delegations_fct_2ans'],
+            [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND (Delegations.tranche_no >= 10 AND Delegations.tranche_no <= 23) ))'), 'delegations_peren'],
+
+
+            [sequelize.literal('(SELECT SUM(nbre_ups_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_ups'],
+            [sequelize.literal('(SELECT SUM(nbre_t1) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t1'],
+            [sequelize.literal('(SELECT SUM(nbre_t2) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t2'],
+            [sequelize.literal('(SELECT SUM(nbre_t3) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t3'],
+            [sequelize.literal('(SELECT SUM(nbre_amg) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_amg'],
+
+            [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 2 ))'), 'deleg_equip_nbre_salles'],
+            [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 3 ))'), 'deleg_tr1_nbre_salles'],
+            [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 4 ))'), 'deleg_tr2_nbre_salles'],
+            [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 6 ))'), 'deleg_tr3_nbre_salles'],
+            [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 7 ))'), 'deleg_tr4_nbre_salles']
+        ]
 
         Model.addScope('delegations', {
             attributes: {
-                include: [
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 0))'), 'delegations_etudes'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_travaux'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 2))'), 'delegations_equip'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND (Delegations.tranche_no >= 3 AND Delegations.tranche_no <= 9) ))'), 'delegations_fct_2ans'],
-                    [sequelize.literal('(SELECT SUM(montant_effectif) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND (Delegations.tranche_no >= 10 AND Delegations.tranche_no <= 23) ))'), 'delegations_peren'],
-
-
-                    [sequelize.literal('(SELECT SUM(nbre_ups_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_ups'],
-                    [sequelize.literal('(SELECT SUM(nbre_t1) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t1'],
-                    [sequelize.literal('(SELECT SUM(nbre_t2) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t2'],
-                    [sequelize.literal('(SELECT SUM(nbre_t3) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_t3'],
-                    [sequelize.literal('(SELECT SUM(nbre_amg) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 1))'), 'delegations_nbre_amg'],
-
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 2 ))'), 'deleg_equip_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 3 ))'), 'deleg_tr1_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 4 ))'), 'deleg_tr2_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 6 ))'), 'deleg_tr3_nbre_salles'],
-                    [sequelize.literal('(SELECT SUM(nbre_salles_concernees) FROM SousDelegations WHERE SousDelegations.province_code = Reporting.province_code AND SousDelegations.est_complement = FALSE AND SousDelegations.delegation_id IN (SELECT id FROM Delegations WHERE Delegations.plan_actions = Reporting.plan_actions AND Delegations.tranche_no = 7 ))'), 'deleg_tr4_nbre_salles']
-                ]
+                include: delegationsFields
             },
 
             include: []
         });
+
+
+        const nestedsFields = [
+            ...delegationsFields,
+        ]
+
+        Model.addScope('nested', {
+            attributes: {
+                include: nestedsFields
+            },
+            include: []
+        });
+
     }
 
     return Model;
