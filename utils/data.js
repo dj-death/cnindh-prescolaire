@@ -168,7 +168,11 @@ module.exports = {
 
                 const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id) && r.date_situation <= etat_date_situation && helpers.compare(r.date_situation, last_situation))
 
-                deleted.forEach(function (d) {
+                let x = 0, dLen = deleted.length, d = null;
+
+                for (; x < dLen; x++) {
+                    d = deleted[x]
+
                     //if (records[0].plan_actions === '2022') return
 
                     let object = `${d.douar_quartier} (${d.fp_id})`
@@ -181,7 +185,17 @@ module.exports = {
                         author: d.fp_code == 1 ? 'FZ' : 'FMPS',
                         object_id: d.id
                     })
-                })
+                }
+
+                Unite.update({ est_ouverte_fp: false }, {
+                    where: {
+                        id: {
+                            $in: dLen.map(u => u.id)
+                        },
+
+                        est_ouverte_fp: true
+                    }
+                });
 
                 const actionsConsolidated = []
 
@@ -291,6 +305,7 @@ module.exports = {
 
                     let nbre_est_resilie = 0;
                     let nbre_est_ouverte = 0;
+                    let nbre_est_ouverte_fp = 0;
 
                     let dates = [];
 
@@ -302,6 +317,7 @@ module.exports = {
                         }
 
                         nbre_est_resilie += (+item.est_resilie);
+                        nbre_est_ouverte_fp += (+item.nbre_est_ouverte_fp);
                         nbre_est_ouverte += (+item.est_ouverte);
 
                         if (item.date_ouverture) {
@@ -309,8 +325,10 @@ module.exports = {
                         }
                     })
 
-                    sums.est_ouverte = nbre_est_ouverte > 0;
+                    sums.est_ouverte_fp = nbre_est_ouverte_fp > 0;
+                    sums.est_ouverte = sums.est_ouverte_fp || (nbre_est_ouverte > 0)
                     sums.est_resilie = nbre_est_resilie === compounds[pId].length;
+                    sums.date_situation = new Date(Math.max.apply(null, compounds[pId].map(c => d).date_situation));
 
                     dates.sort();
                     sums.date_ouverture = dates[0];

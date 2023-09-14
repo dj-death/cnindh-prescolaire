@@ -26,7 +26,7 @@ const columns = [
   'saison_2021_2022_grande_section_garcons', 'saison_2021_2022_total_global',
   'saison_2021_2022_total_filles', 'saison_2021_2022_total_garcons',
   'saison_2020_2021_total_filles', 'saison_2020_2021_total_garcons',
-  'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_programmee', 'est_resiliee',
+  'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_programmee', 'est_resiliee', 'est_ouverte_fp',
   'fp_id',
   
   'saison_2021_2022_inscrits_primaire_total', 'saison_2021_2022_inscrits_primaire_filles', 'saison_2021_2022_inscrits_primaire_garcons',
@@ -39,8 +39,19 @@ const columns = [
 
   'saison_2019_2020_inscrits_primaire_total', 'saison_2019_2020_inscrits_primaire_filles', 'saison_2019_2020_inscrits_primaire_garcons',
   'saison_2019_2020_ms_passe_gs', 'saison_2019_2020_ms_reinscrit_ms', 'saison_2019_2020_ms_passe_primaire', 'saison_2019_2020_gs_primaire',
-  'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite', 'fp_comments', 'comments'
+  'saison_2019_2020_gs_refait_gs', 'saison_2019_2020_nbre_arret_scolarite', 'fp_comments', 'comments',
+
+  'saison_2022_2023_inscrits_primaire_total', 'saison_2022_2023_inscrits_primaire_filles',
+  'saison_2022_2023_inscrits_primaire_garcons', 'saison_2022_2023_ms_passe_gs', 'saison_2022_2023_ms_reinscrit_ms',
+  'saison_2022_2023_ms_passe_primaire', 'saison_2022_2023_gs_primaire', 'saison_2022_2023_gs_refait_gs',
+  'saison_2022_2023_nbre_arret_scolarite',  'saison_2023_2024_moyenne_section_filles',
+  'saison_2023_2024_moyenne_section_garcons', 'saison_2023_2024_total_moyenne_section',
+  'saison_2023_2024_grande_section_filles', 'saison_2023_2024_grande_section_garcons',
+  'saison_2023_2024_total_grande_section', 'saison_2023_2024_total_global', 'saison_2023_2024_total_filles',
+  'saison_2023_2024_total_garcons'
 ]
+
+const curr_saison = '2023_2024'
 
 const fmpsMapping = {
   pa: 'plan_actions',
@@ -53,7 +64,7 @@ const fmpsMapping = {
   up_conv_signee: 'dispose_convention_signee',
   up_conventionnee: 'dispose_convention_signee',
   up_livrees: 'est_livree',
-  up_ouvertes: 'est_ouverte',
+  up_ouvertes: 'est_ouverte_fp',
   up_resiliees: 'est_resiliee',
   nbr_salle: 'nbre_salles',
   nb_salle: 'nbre_salles',
@@ -62,27 +73,20 @@ const fmpsMapping = {
   nb_postes: 'nombre_postes_total',
   f: 'nombre_educatrices_femme',
   h: 'nombre_educatrices_homme',
+
+  total_enf: `saison_${curr_saison}_total_global`,
+  f_1: `saison_${curr_saison}_total_filles`,
+  m: `saison_${curr_saison}_total_garcons`,
+  gs: `saison_${curr_saison}_total_grande_section`,
+  gs_f: `saison_${curr_saison}_grande_section_filles`,
+  gs_m: `saison_${curr_saison}_grande_section_garcons`,
+  ms: `saison_${curr_saison}_total_moyenne_section`,
+  ms_f: `saison_${curr_saison}_moyenne_section_filles`,
+  ms_g: `saison_${curr_saison}_moyenne_section_garcons`,
+
   nb_enfants_2022_2023: 'saison_2022_2023_total_global',
-  total_enf: 'saison_2021_2022_total_global',
   nb_enfants_2021_2022: 'saison_2021_2022_total_global',
 
-  /*f_1: 'saison_2021_2022_total_filles',
-  m: 'saison_2021_2022_total_garcons',
-  gs: 'saison_2021_2022_total_grande_section',
-  gs_f: 'saison_2021_2022_grande_section_filles',
-  gs_m: 'saison_2021_2022_grande_section_garcons',
-  ms: 'saison_2021_2022_total_moyenne_section',
-  ms_f: 'saison_2021_2022_moyenne_section_filles',
-  ms_g: 'saison_2021_2022_moyenne_section_garcons',*/
-
-  f_1: 'saison_2022_2023_total_filles',
-  m: 'saison_2022_2023_total_garcons',
-  gs: 'saison_2022_2023_total_grande_section',
-  gs_f: 'saison_2022_2023_grande_section_filles',
-  gs_m: 'saison_2022_2023_grande_section_garcons',
-  ms: 'saison_2022_2023_total_moyenne_section',
-  ms_f: 'saison_2022_2023_moyenne_section_filles',
-  ms_g: 'saison_2022_2023_moyenne_section_garcons',
 
   enfant_2021: 'saison_2021_2022_total_global',
   gs_2021: 'saison_2021_2022_total_grande_section',
@@ -102,17 +106,6 @@ const fmpsMapping = {
   gs_primaire: 'saison_2021_2022_gs_primaire',
   gs_refait_gs: 'saison_2021_2022_gs_refait_gs',
   arret_scolarite: 'saison_2021_2022_nbre_arret_scolarite',
-
-  /*primaire: 'saison_2020_2021_inscrits_primaire_total',
-  primaire_f: 'saison_2020_2021_inscrits_primaire_filles',
-  primaire_m: 'saison_2020_2021_inscrits_primaire_garcons',
-  ms_passe_gs: 'saison_2020_2021_ms_passe_gs',
-  ms_reinscrit_ms: 'saison_2020_2021_ms_reinscrit_ms',
-  ms_passe_primaire: 'saison_2020_2021_ms_passe_primaire',
-  gs_primaire: 'saison_2020_2021_gs_primaire',
-  gs_refait_gs: 'saison_2020_2021_gs_refait_gs',
-  arret_scolarite: 'saison_2020_2021_nbre_arret_scolarite',*/
-
 
   enfant_2019: 'saison_2019_2020_total_global',
   gs_2019: 'saison_2019_2020_total_grande_section',
@@ -135,38 +128,25 @@ const fzMapping = {
   douar: 'douar_quartier',
   up_conv_signee: 'dispose_convention_signee',
   up_livrees: 'est_livree',
-  up_ouvertes: 'est_ouverte',
+  up_ouvertes: 'est_ouverte_fp',
   nbr_salle_ouvertes: 'nbre_salles',
   nb_classe_groupe: 'nbre_classes',
   total_educ: 'nombre_educatrices_total',
   f: 'nombre_educatrices_femme',
   h: 'nombre_educatrices_homme',
 
-  annee_scolaire_2022_2023_total_enf: 'saison_2022_2023_total_global',
-  annee_scolaire_2022_2023_f: 'saison_2022_2023_total_filles',
-  annee_scolaire_2022_2023_m: 'saison_2022_2023_total_garcons',
-  annee_scolaire_2022_2023_gs: 'saison_2022_2023_total_grande_section',
-  annee_scolaire_2022_2023_gs_f: 'saison_2022_2023_grande_section_filles',
-  annee_scolaire_2022_2023_gs_m: 'saison_2022_2023_grande_section_garcons',
-  annee_scolaire_2022_2023_ms: 'saison_2022_2023_total_moyenne_section',
-  annee_scolaire_2022_2023_ms_f: 'saison_2022_2023_moyenne_section_filles',
-  annee_scolaire_2022_2023_ms_g: 'saison_2022_2023_moyenne_section_garcons',
-  "2022_2023_gs": 'saison_2022_2023_total_grande_section',
-  "2022_2023_gs_f": 'saison_2022_2023_grande_section_filles',
-  "2022_2023_gs_m": 'saison_2022_2023_grande_section_garcons',
-  "2022_2023_ms": 'saison_2022_2023_total_moyenne_section',
-  "2022_2023_ms_f": 'saison_2022_2023_moyenne_section_filles',
-  "2022_2023_ms_g": 'saison_2022_2023_moyenne_section_garcons',
-  
-  annee_scolaire_2021_22_total_enf: 'saison_2021_2022_total_global',
-  annee_scolaire_2021_22_f: 'saison_2021_2022_total_filles',
-  annee_scolaire_2021_22_m: 'saison_2021_2022_total_garcons',
-  annee_scolaire_2021_22_gs: 'saison_2021_2022_total_grande_section',
-  annee_scolaire_2021_22_gs_f: 'saison_2021_2022_grande_section_filles',
-  annee_scolaire_2021_22_gs_m: 'saison_2021_2022_grande_section_garcons',
-  annee_scolaire_2021_22_ms: 'saison_2021_2022_total_moyenne_section',
-  annee_scolaire_2021_22_ms_f: 'saison_2021_2022_moyenne_section_filles',
-  annee_scolaire_2021_22_ms_g: 'saison_2021_2022_moyenne_section_garcons',
+  total_enf: `saison_${curr_saison}_total_global`,
+  filles: `saison_${curr_saison}_total_filles`,
+  garcons: `saison_${curr_saison}_total_garcons`,
+  gs: `saison_${curr_saison}_total_grande_section`,
+  gs_f: `saison_${curr_saison}_grande_section_filles`,
+  gs_m: `saison_${curr_saison}_grande_section_garcons`,
+  gs_g: `saison_${curr_saison}_grande_section_garcons`,
+  ms: `saison_${curr_saison}_total_moyenne_section`,
+  ms_f: `saison_${curr_saison}_moyenne_section_filles`,
+  ms_g: `saison_${curr_saison}_moyenne_section_garcons`,
+  ms_m: `saison_${curr_saison}_moyenne_section_garcons`,
+
   explication: 'fp_comments'
 }
 
@@ -517,7 +497,7 @@ var ExcelUtils = {
 
       if (objRow.date_ouverture) objRow.date_ouverture = helpers.extractDate(objRow.date_ouverture)
 
-      if (objRow.est_ouverte == null) objRow.est_ouverte = false;
+      if (objRow.est_ouverte_fp == null) objRow.est_ouverte_fp = false;
 
       if (objRow.id) {
         objRow.id = objRow.id.toLowerCase();
@@ -529,9 +509,10 @@ var ExcelUtils = {
         objRow.nombre_postes_total = objRow.nombre_educatrices_total
       }
 
-      if (objRow.est_ouverte) {
+      if (objRow.est_ouverte_fp) {
         objRow.statut = 'Opérationnel';
         objRow.tx_avancement_physique = 100;
+        objRow.est_ouverte = true;
       }
 
       if (objRow.est_resiliee) {
@@ -556,9 +537,8 @@ var ExcelUtils = {
       return objRow
     }).filter(row => row && !!row.intitule)
 
-    //console.debug("Headers", titles, maxColumns)
+    console.debug("Headers", titles, maxColumns)
     //console.debug(data, nature)
-
     return data
   },
 
