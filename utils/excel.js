@@ -48,7 +48,8 @@ const columns = [
   'saison_2023_2024_moyenne_section_garcons', 'saison_2023_2024_total_moyenne_section',
   'saison_2023_2024_grande_section_filles', 'saison_2023_2024_grande_section_garcons',
   'saison_2023_2024_total_grande_section', 'saison_2023_2024_total_global', 'saison_2023_2024_total_filles',
-  'saison_2023_2024_total_garcons'
+  'saison_2023_2024_total_garcons',
+  'saison_2023_2024_total_global_q'
 ]
 
 const curr_saison = '2023_2024'
@@ -74,6 +75,7 @@ const fmpsMapping = {
   f: 'nombre_educatrices_femme',
   h: 'nombre_educatrices_homme',
 
+  nb_enfants: `saison_${curr_saison}_total_global_q`,
   total_enf: `saison_${curr_saison}_total_global`,
   f_1: `saison_${curr_saison}_total_filles`,
   m: `saison_${curr_saison}_total_garcons`,

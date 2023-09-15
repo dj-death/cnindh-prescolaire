@@ -187,10 +187,12 @@ module.exports = {
                     })
                 }
 
-                Unite.update({ est_ouverte_fp: false }, {
+                const unmaintainedIds = deleted.map(u => u.id)
+                console.log(unmaintainedIds)
+                models.Unite.update({ est_ouverte_fp: false }, {
                     where: {
                         id: {
-                            $in: dLen.map(u => u.id)
+                            $in: unmaintainedIds
                         },
 
                         est_ouverte_fp: true
@@ -324,17 +326,20 @@ module.exports = {
                             dates.push(item.date_ouverture);
                         }
                     })
+                   
+                    try {
+                        sums.est_ouverte_fp = nbre_est_ouverte_fp > 0;
+                        sums.est_ouverte = sums.est_ouverte_fp || (nbre_est_ouverte > 0)
+                        sums.est_resilie = nbre_est_resilie === compounds[pId].length;    
+                        sums.date_situation = new Date(Math.max.apply(null, compounds[pId].map(c => c.date_situation)));
 
-                    sums.est_ouverte_fp = nbre_est_ouverte_fp > 0;
-                    sums.est_ouverte = sums.est_ouverte_fp || (nbre_est_ouverte > 0)
-                    sums.est_resilie = nbre_est_resilie === compounds[pId].length;
-                    sums.date_situation = new Date(Math.max.apply(null, compounds[pId].map(c => d).date_situation));
-
-                    dates.sort();
-                    sums.date_ouverture = dates[0];
+                        dates.sort();
+                        sums.date_ouverture = dates[0];
+                    } catch (e) {
+                        console.log(e)
+                    }
 
                     ++diffCount;
-                    console.log(sums)
                     return _parentUP.update(sums);
                 })));
             })

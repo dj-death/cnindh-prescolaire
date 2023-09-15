@@ -292,7 +292,8 @@ module.exports = function (sequelize, DataTypes) {
         saison_2023_2024_total_global: { type: Sequelize.INTEGER },
         saison_2023_2024_total_filles: { type: Sequelize.INTEGER },
         saison_2023_2024_total_garcons: { type: Sequelize.INTEGER },
-
+        saison_2023_2024_total_global_q: { type: Sequelize.INTEGER },
+        
         date_situation: {
             type: Sequelize.DATE,
             allowNull: true,
@@ -378,7 +379,7 @@ module.exports = function (sequelize, DataTypes) {
                 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
                 'est_ouverte', 'est_ouverte_fp', 'est_resiliee', 'operationnalite', 'est_en_arret', 'date_ouverture', 'est_programmee_pp',
                 'nombre_educatrices_total', 'nombre_postes_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme', 
-                'saison_2023_2024_total_global', 'saison_2022_2023_total_global',
+                'saison_2023_2024_total_global', 'saison_2023_2024_total_global_q', 'saison_2022_2023_total_global',
                 'saison_2023_2024_moyenne_section_filles', 'saison_2023_2024_moyenne_section_garcons', 'saison_2023_2024_grande_section_filles', 'saison_2023_2024_grande_section_garcons',
                 'saison_2022_2023_moyenne_section_filles', 'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_grande_section_filles', 'saison_2022_2023_grande_section_garcons',
                 'saison_2023_2024_total_moyenne_section', 'saison_2023_2024_total_grande_section', 'saison_2023_2024_total_filles', 'saison_2023_2024_total_garcons',
