@@ -32,7 +32,7 @@ module.exports = function (sequelize, DataTypes) {
         nbre_encours_inscription: { type: Sequelize.INTEGER },
         nbre_encours_equip: { type: Sequelize.INTEGER },
         nbre_ouvertes: { type: Sequelize.INTEGER },
-        nbre_ouvertes_cn: { type: Sequelize.INTEGER },
+        nbre_ouvertes_cn0: { type: Sequelize.INTEGER },
         nbre_en_arret_fct: { type: Sequelize.INTEGER },
         nbre_livrees: { type: Sequelize.INTEGER },
         nbre_restantes: { type: Sequelize.INTEGER },

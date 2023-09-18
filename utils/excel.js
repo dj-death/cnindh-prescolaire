@@ -519,9 +519,13 @@ var ExcelUtils = {
 
       if (objRow.est_resiliee) {
         objRow.operationnalite = 2
-        if (objRow.est_ouverte) objRow.est_ouverte = false;
-      } else if (objRow.est_ouverte) {
-        objRow.operationnalite = !objRow.saison_2022_2023_total_global ? 4 : 3
+
+        if (objRow.est_ouverte_fp) {
+          objRow.est_ouverte_fp = false;
+        }
+
+      } else if (objRow.est_ouverte_fp) {
+        objRow.operationnalite = !objRow.saison_2023_2024_total_global ? 4 : 3
       } else if (objRow.date_ouverture != null || objRow.saison_2019_2020_total_global > 0 || objRow.saison_2020_2021_total_global > 0 || objRow.saison_2021_2022_total_global > 0 || objRow.saison_2022_2023_total_global > 0) {
         objRow.operationnalite = 1
       } else {

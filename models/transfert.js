@@ -192,8 +192,7 @@ module.exports = function (sequelize, DataTypes) {
                 include: [
                     [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.province_code = Transfert.province_code AND Unites.trans_retenue_phase1 = TRUE)'), 'trans_retenue_phase1'],
                     [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.province_code = Transfert.province_code AND Unites.trans_situation_financiere_regularisee = TRUE)'), 'trans_situation_financiere_regularisee'],
-                    [sequelize.literal('(SELECT SUM(nbre_ouvertes_cn) FROM Reportings WHERE Reportings.province_code = Transfert.province_code)'), 'total_up_ouvertes']
-                    
+                    [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.province_code = Transfert.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'total_up_ouvertes']
                 ]
             },
             include: []
