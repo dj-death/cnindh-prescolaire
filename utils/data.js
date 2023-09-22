@@ -144,7 +144,7 @@ module.exports = {
                                 } else {
                                     changes.push(`<li>${key}: &nbsp; ${value} &nbsp; -> ${instance[key]}</li>`)
 
-                                    if (key === 'est_ouverte' && value == true && instance[key] == false) {
+                                    if (key === 'est_ouverte_fp' && value == true && instance[key] == false) {
                                         arrets.push({
                                             pa, object
                                         })
@@ -188,8 +188,8 @@ module.exports = {
                 }
 
                 const unmaintainedIds = deleted.map(u => u.id)
-                console.log(unmaintainedIds)
-                models.Unite.update({ est_ouverte_fp: false }, {
+                console.log('!!! unmaintainedIds: ', unmaintainedIds)
+                /*models.Unite.update({ est_ouverte_fp: false }, {
                     where: {
                         id: {
                             $in: unmaintainedIds
@@ -197,7 +197,7 @@ module.exports = {
 
                         est_ouverte_fp: true
                     }
-                });
+                });*/
 
                 const actionsConsolidated = []
 

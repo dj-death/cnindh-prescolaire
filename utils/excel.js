@@ -520,7 +520,7 @@ var ExcelUtils = {
       if (objRow.est_resiliee) {
         objRow.operationnalite = 2
 
-        if (objRow.est_ouverte_fp) {
+        if (objRow.est_ouverte_fp == true) {
           objRow.est_ouverte_fp = false;
         }
 

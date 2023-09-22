@@ -203,7 +203,8 @@ module.exports = function (sequelize, DataTypes) {
         est_en_arret: { type: Sequelize.BOOLEAN, defaultValue: false },
 
         est_retenue: { type: Sequelize.BOOLEAN, allowNull: true },
-
+        objet_etude_impact: { type: Sequelize.BOOLEAN, allowNull: true },
+        
         nombre_educatrices_femme: { type: Sequelize.INTEGER },
         nombre_educatrices_homme: { type: Sequelize.INTEGER },
         nombre_educatrices_total: { type: Sequelize.INTEGER },
