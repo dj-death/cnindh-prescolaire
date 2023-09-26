@@ -195,12 +195,15 @@ module.exports = function (sequelize, DataTypes) {
         est_programmee: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_programmee_pp: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_livree: { type: Sequelize.BOOLEAN, defaultValue: true },
-        est_ouverte: { type: Sequelize.BOOLEAN, allowNull: true },
+        est_ouverte: { type: Sequelize.BOOLEAN, allowNull: false },
         est_ouverte_bilan2022: { type: Sequelize.BOOLEAN, allowNull: true },
         est_ouverte_fp: { type: Sequelize.BOOLEAN, allowNull: true },
         est_resiliee: { type: Sequelize.BOOLEAN, defaultValue: false },
         operationnalite: { type: Sequelize.INTEGER },
         est_en_arret: { type: Sequelize.BOOLEAN, defaultValue: false },
+
+        est_composee: { type: Sequelize.BOOLEAN, defaultValue: false },
+
 
         est_retenue: { type: Sequelize.BOOLEAN, allowNull: true },
         objet_etude_impact: { type: Sequelize.BOOLEAN, allowNull: true },

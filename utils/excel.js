@@ -250,7 +250,7 @@ var ExcelUtils = {
       });
 
     } catch (err) {
-      console.error(err)
+      console.error('readWorkbook error: ', err)
     }
 
     return records
@@ -272,6 +272,7 @@ var ExcelUtils = {
     let firstHeaderCol
 
     const allRows = []
+    let criticalErrorsCount = 0
 
     for (; i <= totalRow; i++) {
       row = worksheet.getRow(i)
@@ -367,7 +368,7 @@ var ExcelUtils = {
       titles.push(title)
     }
 
-    console.log(titles);
+    console.log('found titles', titles);
 
     let samples = lines.slice(10).reduce((acc, curr) => {
       if (!curr || !curr.length) return acc;
@@ -383,8 +384,10 @@ var ExcelUtils = {
     titles = module.exports.sanitizeColumns(titles, nature, samples);
 
     // check for total fields
-    titles = hideUncompleteFields(titles, ['saison_2022_2023_grande_section_filles', 'saison_2022_2023_grande_section_garcons', 'saison_2022_2023_moyenne_section_garcons', 'saison_2022_2023_moyenne_section_filles'])
+    titles = hideUncompleteFields(titles, [`saison_${curr_saison}_grande_section_filles`, `saison_${curr_saison}_grande_section_garcons`, `saison_${curr_saison}_moyenne_section_garcons`, `saison_${curr_saison}_moyenne_section_filles`])
     titles = hideUncompleteFields(titles, ['nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme'])
+
+    //console.log('sanitized titles', titles);
 
     const data = lines.map(row => {
       let objRow = {}
@@ -392,7 +395,7 @@ var ExcelUtils = {
         const title = titles[colIdx];
         objRow[title] = cell;
 
-        if (title.startsWith('est_') || title.startsWith('dispose_')) {
+        if (title && (title.startsWith('est_') || title.startsWith('dispose_'))) {
           objRow[title] = helpers.parseBoolean(objRow[title]);
         }
       })
@@ -436,7 +439,10 @@ var ExcelUtils = {
       if (objRow.province) objRow.province_code = decoupage.find(rec => rec.label ===  objRow.province).value;
       if (!objRow.province_code) {
         console.log('no province', objRow);
+        ++criticalErrorsCount;
       }
+
+      if (criticalErrorsCount > 3) throw new Error('Must finish for serious error !')
 
       if (objRow.fp_id == '17147' && objRow.plan_actions == '2021' && objRow.province_code == 28) {
         return null;
@@ -539,6 +545,9 @@ var ExcelUtils = {
 
       objRow.date_situation = date_situation;
 
+      if (objRow.fp_id == '1769') {
+        console.log('ERRRRRR: ', objRow)
+      }
 
       return objRow
     }).filter(row => row && !!row.intitule)

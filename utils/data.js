@@ -99,7 +99,7 @@ module.exports = {
     compareUnites: function (records) {
         const etat_date_situation = records[0].date_situation;
 
-        return models.Unite.findAll({ where: { fp_code: records[0].fp_code }, order: [['date_situation', 'DESC'], ['province_code', 'ASC'], ['plan_actions', 'ASC']], raw: true})
+        return models.Unite.findAll({ where: { fp_code: records[0].fp_code, est_composee: false }, order: [['date_situation', 'DESC'], ['province_code', 'ASC'], ['plan_actions', 'ASC']], raw: true})
             .then(function (prevRecs) {
                 const last_situation = prevRecs.find(r => r.plan_actions === '2019').date_situation
                 let i = 0, len = records.length, maintained = [], instance, match, pa, object;
@@ -109,7 +109,8 @@ module.exports = {
 
                 for (; i < len; i++) {
                     instance = records[i]
-                    match = prevRecs.find(r => r.fp_id == instance.fp_id && r.date_situation <= etat_date_situation)
+                    let instanceFPId = instance.fp_id.toString()
+                    match = prevRecs.find(r => r.fp_id === instanceFPId)
 
                     pa = `${helpers.getProvinceByCode(instance.province_code)} ${instance.plan_actions}`;
                     object = `${instance.douar_quartier} (${instance.fp_id})`
@@ -121,7 +122,23 @@ module.exports = {
                             object,
                             author: instance.fp_code == 1 ? 'FZ' : 'FMPS'
                         })
+
+                        // fix issue of upserting undefined
+                        if (typeof(instance.est_ouverte) === 'undefined') {
+                            instance.est_ouverte = false
+                        }
+
                     } else {
+                        if (etat_date_situation - match.date_situation > 24 * 60 * 3600) {
+                            console.log('situation ancienne');
+                        }
+
+                        // fix issue of upserting undefined
+                        if (typeof(instance.est_ouverte) === 'undefined') {
+                            instance.est_ouverte = match.est_ouverte 
+                        }
+
+
                         let changes = []
 
                         maintained.push(instance.fp_id.toString())
@@ -144,10 +161,14 @@ module.exports = {
                                 } else {
                                     changes.push(`<li>${key}: &nbsp; ${value} &nbsp; -> ${instance[key]}</li>`)
 
-                                    if (key === 'est_ouverte_fp' && value == true && instance[key] == false) {
-                                        arrets.push({
-                                            pa, object
-                                        })
+                                    if (key === 'est_ouverte_fp') {
+
+                                        if (value == true && instance[key] === false) {
+                                            arrets.push({
+                                                pa, object
+                                            })
+                                        }
+                                        
                                     }
                                 }
 
@@ -189,7 +210,7 @@ module.exports = {
 
                 const unmaintainedIds = deleted.map(u => u.id)
                 console.log('!!! unmaintainedIds: ', unmaintainedIds)
-                /*models.Unite.update({ est_ouverte_fp: false }, {
+                models.Unite.update({ est_ouverte_fp: false }, {
                     where: {
                         id: {
                             $in: unmaintainedIds
@@ -197,7 +218,7 @@ module.exports = {
 
                         est_ouverte_fp: true
                     }
-                });*/
+                });
 
                 const actionsConsolidated = []
 
@@ -272,6 +293,8 @@ module.exports = {
         //const fields = Object.keys(models.Unite.rawAttributes).filter(f => !['id', 'created', 'fp_id'].includes(f))
         const fields = Object.keys(records[0]).filter(f => !['id', 'created', 'fp_id', 'est_programmee_pp', 'est_ouverte_bilan2022'].includes(f));
         //console.log('fields', fields)
+
+        if (!fields.includes('est_ouverte')) fields.push('est_ouverte')
 
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {
