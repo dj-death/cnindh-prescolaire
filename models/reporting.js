@@ -59,6 +59,12 @@ module.exports = function (sequelize, DataTypes) {
         nbre_marches_adjuges: { type: Sequelize.INTEGER },
         cout_global_marches_travaux: { type: Sequelize.DECIMAL(10, 2) },
 
+        cout_travaux: { type: Sequelize.DECIMAL(10, 2) },
+        cout_etudes: { type: Sequelize.DECIMAL(10, 2) },
+        cout_equipement: { type: Sequelize.DECIMAL(10, 2) },
+        cout_fct_2ans: { type: Sequelize.DECIMAL(10, 2) },
+        cout_fct_audela_2ans: { type: Sequelize.DECIMAL(10, 2) },
+
         date_lancement_etudes: {
             type: Sequelize.DATE,
             allowNull: true,
