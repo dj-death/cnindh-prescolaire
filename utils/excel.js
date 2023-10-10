@@ -426,8 +426,6 @@ var ExcelUtils = {
         objRow.plan_actions = '2021'
       } else if (alhaouzUPReportees2023.includes(objRow.fp_id) && objRow.plan_actions == '2022') { // al haouz
         objRow.plan_actions = '2023'
-      } else if (objRow.fp_id == '2778' && objRow.plan_actions == '2020') { // ifrane
-        objRow.plan_actions = '2023'
       } else if (objRow.fp_id == '10154' && objRow.plan_actions == '2021') { // boulemane
         objRow.plan_actions = '2023'
       }
