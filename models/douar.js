@@ -151,8 +151,11 @@ module.exports = function(sequelize, DataTypes) {
                 { 
                     model: models.Unite,
                     as: 'unites', 
+                    where: {
+                        est_programmee_pp: true
+                    },
                     attributes: [
-                        'id', 'plan_actions', 'intitule', 'code_douar'
+                        'intitule', 'plan_actions', 'nbre_salles'
                     ]
                 }
             ]
@@ -162,9 +165,12 @@ module.exports = function(sequelize, DataTypes) {
             include: [
                 { 
                     model: models.Unite,
-                    as: 'unites', 
+                    as: 'unites',
+                    where: {
+                        est_programmee_pp: true
+                    }, 
                     attributes: [
-                        'id', 'province_code', 'plan_actions', 'fp_code', 'commune_code', 'intitule', 'nbre_salles', 'est_ouverte', 'est_resiliee', 'date_ouverture'
+                        'intitule', 'plan_actions', 'nbre_salles' /*'id', 'province_code', 'fp_code', 'commune_code', 'est_ouverte', 'est_resiliee', 'date_ouverture'*/
                     ]
                 }
             ]

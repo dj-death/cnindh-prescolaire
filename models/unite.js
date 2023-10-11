@@ -367,6 +367,7 @@ module.exports = function (sequelize, DataTypes) {
     Model.associate = function (models) {
         Model.hasMany(models.Effectif, { as: 'effectifs'});
         Model.belongsTo(models.Unite, { as: 'parent_up', constraints: false });
+        Model.belongsTo(models.Douar, { as: 'douar', constraints: false, foreignKey: 'code_douar', targetKey: 'code_douar' });
 
         Model.belongsToMany(models.Delegation, {
             through: models.DelegationUnites,
@@ -375,9 +376,8 @@ module.exports = function (sequelize, DataTypes) {
             otherKey: 'delegation_id'
         });
 
-        Model.addScope('browse', {
-            attributes: [
-                'id', 'fp_id', 'fp_code', 'fp_comments', 'date_situation',
+        const commonAttrs = [
+            'id', 'fp_id', 'fp_code', 'fp_comments', 'date_situation',
                 'province_code', 'cercle_code', 'commune', 'commune_code', 'douar_quartier', 
                 'plan_actions', 'intitule', //'parentupid',
                 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
@@ -397,30 +397,38 @@ module.exports = function (sequelize, DataTypes) {
                 [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
                 [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt'],
                 [sequelize.literal('(SELECT array_to_string(array_agg(tranche_no ORDER BY tranche_no ASC), \',\') FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'tranches']
+        ]
 
+        Model.addScope('browse', {
+            attributes: commonAttrs,
+            include: []
+        });
+
+        Model.addScope('targa', {
+            attributes: [
+                ...commonAttrs,
+                'code_douar'
             ],
             
             include: [
-                
+                { 
+                    model: models.Douar,
+                    as: 'douar',
+                    attributes: [
+                        'nom_fr', 'est_sousdouar'
+                    ]
+                }
             ]
         });
 
         Model.addScope('browse_effectifs', {
             attributes: {
-                /*'id', 'fp_id', 'created', 'updated', 'province_code', 'cercle_code', 'commune_code', 'annexe_administrative',
-                'douar_quartier', 'adresse', 'plan_actions', 'fp_code', 'intitule', 'nbre_salles', 'nbre_salles_ouvertes', 'nbre_classes', 
-                'est_programmee', 'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_resiliee', 'est_en_arret', 'modified_by', 
-                'date_ouverture',
-                'nombre_educatrices_total', 'nombre_educatrices_femme', 'nombre_educatrices_homme',*/
-                
                 include: [
                     [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
                     [sequelize.literal('(SELECT MAX(date_delegation) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_delegation_dt']
                 ]
             },
-            include: [
-               
-            ]
+            include: []
         });
 
         Model.addScope('browse_tranches', {

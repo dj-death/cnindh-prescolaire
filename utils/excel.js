@@ -428,6 +428,8 @@ var ExcelUtils = {
         objRow.plan_actions = '2023'
       } else if (objRow.fp_id == '10154' && objRow.plan_actions == '2021') { // boulemane
         objRow.plan_actions = '2023'
+      }  else if (objRow.fp_id == '52737' && objRow.plan_actions == '2020') { // fahs
+        objRow.plan_actions = '2023'
       }
 
       if (objRow.province && !provinces.includes(objRow.province)) {
