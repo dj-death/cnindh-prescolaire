@@ -4,9 +4,13 @@ const { Sequelize } = require("sequelize");
 module.exports = function (sequelize, DataTypes) {
     var Model = sequelize.define("Transfert", {
         id: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.UUID,
+            defaultValue: Sequelize.UUIDV4,
             allowNull: false,
-            primaryKey: true
+            primaryKey: true,
+            validate: {
+                isUUID: 4
+            }
         },
 
         province_code: { type: Sequelize.INTEGER, allowNull: false },
@@ -30,11 +34,6 @@ module.exports = function (sequelize, DataTypes) {
         },
 
         statut: {
-            type: Sequelize.STRING,
-            allowNull: true
-        },
-
-        label: {
             type: Sequelize.STRING,
             allowNull: true
         },
@@ -67,6 +66,17 @@ module.exports = function (sequelize, DataTypes) {
                 isDate: true
             }
         },
+
+        transfert_sans_convention: {
+            type: Sequelize.BOOLEAN,
+            allowNull: true
+        },
+
+        cadre_est_avenant: {
+            type: Sequelize.BOOLEAN,
+            allowNull: true
+        },
+
         convention_envoyee: {
             type: Sequelize.BOOLEAN,
             allowNull: true
@@ -105,18 +115,50 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true
         },
 
-        nbre_ups_retenues_conv_cat1: {
+        nbre_salles_retenues_conventions: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        nbre_ups_retenues_conv_cat2: {
+
+        nbre_ups_ouvertes_plus2ans: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
-        nbre_ups_retenues_conv_cat3: {
+
+        nbre_salles_ouvertes_plus2ans: {
             type: Sequelize.INTEGER,
             allowNull: true
         },
+
+        nbre_ups_ouvertes_moins2ans: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+
+        nbre_salles_ouvertes_moins2ans: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+
+        nbre_ups_encours: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+
+        nbre_salles_encours: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+
+        nbre_ups_regularisees: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+        nbre_ups_non_regularisees: {
+            type: Sequelize.INTEGER,
+            allowNull: true
+        },
+        
 
         observations: {
             type: Sequelize.STRING,

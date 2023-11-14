@@ -314,6 +314,7 @@ if (yargs['first-launch']) {
         //data.updateCompoundUPs()
         //data.insertImplementations()
         //data.insertUsersDPE()
+        //data.insertTransferts()
     })
 }
 
