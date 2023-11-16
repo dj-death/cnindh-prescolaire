@@ -12,7 +12,7 @@ var Service = {
             const userRole = user.get('role');
 
             if (userRole > 4) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             } else if (userRole > 1) {
                 params['filter'] = params['filter'] || []
@@ -101,7 +101,7 @@ var Service = {
             const userRole = user.get('role');
 
             if (userRole > 4) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             } else if (userRole > 1) {
                 params['filter'] = params['filter'] || []
@@ -135,7 +135,7 @@ var Service = {
         const userRole = user.get('role');
 
         if (userRole > 3) {
-            callback(new Error('Not authorized'));
+            callback(new Error('Non autorisé'));
             return;
         }*/
 

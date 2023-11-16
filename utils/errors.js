@@ -30,7 +30,7 @@ function generate(message, error, code, data) {
 var types = {
     unauthorized: function(data) {
         return generate(
-            'User is not authorized to perform this action',
+            'User is Non autorisé to perform this action',
             'Unauthorized',
             codes.UNAUTHORIZED,
             data

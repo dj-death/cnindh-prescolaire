@@ -35,7 +35,7 @@ var Service = {
     list: function (params, callback, sid, req) {
         session.verify(req).then(function (session) {
             if (session.user.get('role') > 0 && session.user.get('id') !== params.id) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -61,7 +61,7 @@ var Service = {
     insert: function (params, callback, sid, req) {
         session.verify(req).then(function (session) {
             if (session.user.get('role') > 0) { // && session.user.get('id') !== params.id
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -76,7 +76,7 @@ var Service = {
     update: function (params, callback, sid, req) {
         session.verify(req).then(function (session) {
             if (session.user.get('role') > 0 && session.user.get('id') !== params.id) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -116,7 +116,7 @@ var Service = {
     remove: function (params, callback, sid, req) {
         session.verify(req).then(function (session) {
             if (session.user.get('role') > 0) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -208,7 +208,7 @@ var Service = {
         const userRole = user.get('role');
 
         if (userRole > 3) {
-            callback(new Error('Not authorized'));
+            callback(new Error('Non autorisé'));
             return;
         }*/
 

@@ -15,7 +15,7 @@ var Service = {
             const accessFilters = helpers.checkListAuthorization(user, params, 4)
             
             if (accessFilters === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -53,7 +53,7 @@ var Service = {
             user = session.user;
 
             if (helpers.checkModifyAuthorization(user, params, 4) === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -83,7 +83,7 @@ var Service = {
             user = session.user;
 
             if (user.get('role') > 4) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -103,7 +103,7 @@ var Service = {
 
             const updatedRows = params.map(function (item) {
                 /*if (helpers.checkModifyAuthorization(user, row, 4) === false) {
-                    callback(new Error('Not authorized'));
+                    callback(new Error('Non autorisé'));
                     return null;
                 }*/
     
@@ -143,7 +143,7 @@ var Service = {
             user = session.user;
 
             if (user.get('role') > 4) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -161,7 +161,7 @@ var Service = {
             }
 
             if (helpers.checkModifyAuthorization(user, row, 4) === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -194,7 +194,7 @@ var Service = {
         const userRole = user.get('role');
 
         if (userRole > 3) {
-            callback(new Error('Not authorized'));
+            callback(new Error('Non autorisé'));
             return;
         }*/
 

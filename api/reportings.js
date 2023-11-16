@@ -24,7 +24,7 @@ var Service = {
             const accessFilters = helpers.checkListAuthorization(user, params)
             
             if (accessFilters === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -61,7 +61,7 @@ var Service = {
             user = session.user;
 
             if (helpers.checkModifyAuthorization(user, params) === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -80,7 +80,7 @@ var Service = {
 
             const role = user.get('role');
             if (role == 2 || role > 3) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -100,7 +100,7 @@ var Service = {
                         }
 
                         if (helpers.checkModifyAuthorization(user, row) === false) {
-                            callback(new Error('Not authorized'));
+                            callback(new Error('Non autorisé'));
                             return;
                         }
 
@@ -139,7 +139,7 @@ var Service = {
                 }
 
                 if (helpers.checkModifyAuthorization(user, row) === false) {
-                    callback(new Error('Not authorized'));
+                    callback(new Error('Non autorisé'));
                     return;
                 }
 
@@ -172,7 +172,7 @@ var Service = {
             user = session.user;
 
             if (user.get('role') > 3) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -190,7 +190,7 @@ var Service = {
             }
 
             if (helpers.checkModifyAuthorization(user, row) === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -223,7 +223,7 @@ var Service = {
         const userRole = user.get('role');
 
         if (userRole > 3) {
-            callback(new Error('Not authorized'));
+            callback(new Error('Non autorisé'));
             return;
         }*/
 

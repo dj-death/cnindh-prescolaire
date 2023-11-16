@@ -24,7 +24,7 @@ var Service = {
             const accessFilters = helpers.checkListAuthorization(user, params)
             
             if (accessFilters === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -51,7 +51,7 @@ var Service = {
             user = session.user;
 
             if (helpers.checkModifyAuthorization(user, params) === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -70,7 +70,7 @@ var Service = {
 
             const role = user.get('role');
             if (role == 2 || role > 3) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -90,8 +90,19 @@ var Service = {
                         }
 
                         if (helpers.checkModifyAuthorization(user, row) === false) {
-                            callback(new Error('Not authorized'));
+                            callback(new Error('Non autorisé'));
                             return;
+                        }
+
+                        if (user.get('role') > 0 && row.get('ordre') == 1) {
+                            const updatedFields = Object.keys(_param)
+                            const isNbreTouched = updatedFields.filter(f => ['nbre_ups_retenues_conventions', 'nbre_ups_ouvertes_plus2ans', 'nbre_ups_ouvertes_moins2ans', 'nbre_ups_encours'].includes(f)).length > 0;
+
+               
+                            if (isNbreTouched) {
+                                callback(new Error('Modification non autorisée ! Veuillez communiquer avec l\'administrateur !'));
+                                return;
+                            }
                         }
 
                         if (user.get('role') > 0) {
@@ -99,10 +110,10 @@ var Service = {
                             _param.date_situation = new Date();
                         }
 
-                        return row/*.cache()*/.update(_param);
+                        return row.update(_param);
                     }).then(function (row) {
                         // reload record data in case associations have been updated.
-                        return row/*.cache()*/.reload();
+                        return row.reload();
                     })
                 }))
             }
@@ -129,7 +140,7 @@ var Service = {
                 }
 
                 if (helpers.checkModifyAuthorization(user, row) === false) {
-                    callback(new Error('Not authorized'));
+                    callback(new Error('Non autorisé'));
                     return;
                 }
 
@@ -162,7 +173,7 @@ var Service = {
             user = session.user;
 
             if (user.get('role') > 3) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -180,7 +191,7 @@ var Service = {
             }
 
             if (helpers.checkModifyAuthorization(user, row) === false) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -213,7 +224,7 @@ var Service = {
         const userRole = user.get('role');
 
         if (userRole > 3) {
-            callback(new Error('Not authorized'));
+            callback(new Error('Non autorisé'));
             return;
         }*/
 

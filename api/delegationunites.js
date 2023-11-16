@@ -25,7 +25,7 @@ var Service = {
             const userRole = user.get('role');
 
             if (userRole > 1) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -51,7 +51,7 @@ var Service = {
             const userRole = user.get('role');
 
             if (userRole > 1) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -78,7 +78,7 @@ var Service = {
             user = session.user;
 
             if (user.get('role') > 1) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -120,7 +120,7 @@ var Service = {
             user = session.user;
 
             if (user.get('role') > 1) {
-                callback(new Error('Not authorized'));
+                callback(new Error('Non autorisé'));
                 return;
             }
 
@@ -170,7 +170,7 @@ var Service = {
         const userRole = user.get('role');
      
         if (userRole > 3) {
-            callback(new Error('Not authorized'));
+            callback(new Error('Non autorisé'));
             return;
         }*/
 
