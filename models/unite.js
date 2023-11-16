@@ -354,7 +354,11 @@ module.exports = function (sequelize, DataTypes) {
         }*/
         trans_fiche_completee: { type: Sequelize.BOOLEAN, allowNull: true },
         trans_situation_financiere_regularisee: { type: Sequelize.BOOLEAN, allowNull: true },
-        trans_retenue_phase1: { type: Sequelize.BOOLEAN, allowNull: true }
+        trans_retenue_phase1: { type: Sequelize.BOOLEAN, allowNull: true },
+
+        trans_retenue_phase2: { type: Sequelize.BOOLEAN, allowNull: true },
+        trans_phase2_fiche_completee: { type: Sequelize.BOOLEAN, allowNull: true },
+        trans_phase2_situation_financiere_regularisee: { type: Sequelize.BOOLEAN, allowNull: true }
     }, {
         indexes: [
           {
