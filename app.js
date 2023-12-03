@@ -311,7 +311,7 @@ if (yargs['first-launch']) {
         //data.insertSousDelegations();
 
         //data.cloneRecord('98628e84-fbf7-444f-b1e7-a2cecd808a84');
-        //data.updateCompoundUPs()
+        //cd data.updateCompoundUPs()
         //data.insertImplementations()
         //data.insertUsersDPE()
         //data.insertTransferts()

@@ -342,7 +342,7 @@ module.exports = {
                         }
 
                         nbre_est_resilie += (+item.est_resilie);
-                        nbre_est_ouverte_fp += (+item.nbre_est_ouverte_fp);
+                        nbre_est_ouverte_fp += (+item.est_ouverte_fp);
                         nbre_est_ouverte += (+item.est_ouverte);
 
                         if (item.date_ouverture) {
@@ -352,6 +352,7 @@ module.exports = {
                    
                     try {
                         sums.est_ouverte_fp = nbre_est_ouverte_fp > 0;
+                        console.log(pId, sums.est_ouverte_fp, nbre_est_ouverte_fp)
                         sums.est_ouverte = sums.est_ouverte_fp || (nbre_est_ouverte > 0)
                         sums.est_resilie = nbre_est_resilie === compounds[pId].length;    
                         sums.date_situation = new Date(Math.max.apply(null, compounds[pId].map(c => c.date_situation)));
