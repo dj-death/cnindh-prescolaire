@@ -1,0 +1,98 @@
+[
+    {
+      "id": 701,
+      "province_code": 6,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 10,
+      "nbre_etudes_non_lancees": 0,
+      "nbre_etudes_lancees": 10,
+      "nbre_etudes_achevees": 0,
+      "nbre_marches_lances": 0,
+      "nbre_marches_adjuges": 0
+    },
+    {
+        "id": 702,
+      "province_code": 7,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 60,
+      "nbre_etudes_non_lancees": 60,
+      "nbre_etudes_lancees": 0,
+      "nbre_etudes_achevees": 0,
+      "nbre_marches_lances": 0,
+      "nbre_marches_adjuges": 0
+    },
+    {
+        "id": 703,
+      "province_code": 21,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 3,
+      "nbre_etudes_non_lancees": 0,
+      "nbre_etudes_lancees": 0,
+      "nbre_etudes_achevees": 0,
+      "nbre_marches_lances": 3,
+      "nbre_marches_adjuges": 0
+    },
+    {
+        "id": 704,
+      "province_code": 22,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 9,
+      "nbre_etudes_non_lancees": 0,
+      "nbre_etudes_lancees": 0,
+      "nbre_etudes_achevees": 0,
+      "nbre_marches_lances": 9,
+      "nbre_marches_adjuges": 0
+    },
+    {
+        "id": 705,
+      "province_code": 24,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 62,
+      "nbre_etudes_non_lancees": 0,
+      "nbre_etudes_lancees": 0,
+      "nbre_etudes_achevees": 3,
+      "nbre_marches_lances": 0,
+      "nbre_marches_adjuges": 59
+    },
+    {
+        "id": 706,
+      "province_code": 46,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 94,
+      "nbre_etudes_non_lancees": 0,
+      "nbre_etudes_lancees": 0,
+      "nbre_etudes_achevees": 0,
+      "nbre_marches_lances": 94,
+      "nbre_marches_adjuges": 0
+    },
+    {
+        "id": 707,
+      "province_code": 52,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 29,
+      "nbre_etudes_non_lancees": 0,
+      "nbre_etudes_lancees": 0,
+      "nbre_etudes_achevees": 0,
+      "nbre_marches_lances": 29,
+      "nbre_marches_adjuges": 0
+    },
+    {
+        "id": 708,
+      "province_code": 57,
+      "plan_actions": "2024",
+      "fp_code": 0,
+      "nbre_programmees": 29,
+      "nbre_etudes_non_lancees": 0,
+      "nbre_etudes_lancees": 29,
+      "nbre_etudes_achevees": 0,
+      "nbre_marches_lances": 0,
+      "nbre_marches_adjuges": 0
+    }
+   ]

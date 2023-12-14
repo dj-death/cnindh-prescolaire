@@ -315,6 +315,7 @@ if (yargs['first-launch']) {
         //data.insertImplementations()
         //data.insertUsersDPE()
         //data.insertTransferts()
+        //data.insertPA2024()
     })
 }
 

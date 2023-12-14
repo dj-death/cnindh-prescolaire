@@ -473,6 +473,16 @@ module.exports = {
         })*/
     },
 
+    insertPA2024: function (records, query) {
+        return sequelize.transaction(function (t) {
+            return sequelize.sync({ force: false, transaction: t }).then(function () {
+                return models.Reporting.bulkCreate(require('../data/pa24.json'), { transaction: t })
+            }).catch(function (err) {
+                console.log(err)
+            })
+        })
+    },
+
     insertTransferts: function (records, query) {
         return sequelize.transaction(function (t) {
             return sequelize.sync({ force: false, transaction: t }).then(function () {

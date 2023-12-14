@@ -19,8 +19,11 @@ function hasFilter(coll, property) {
 
 var Service = {
     list: function (params, callback, sid, req) {
+        let user;
+        let filteredPA;
+
         session.verify(req).then(function (session) {
-            const user = session.user;
+            user = session.user;
             const accessFilters = helpers.checkListAuthorization(user, params)
             
             if (accessFilters === false) {
@@ -28,7 +31,15 @@ var Service = {
                 return;
             }
 
-            params.filter = accessFilters;            
+            params.filter = accessFilters;
+
+            if (user.role > 1) {
+                params.filter.push({
+                    property: 'plan_actions',
+                    operator: '!=',
+                    value: '2024'
+                })
+            }
 
             const qScope = params.scope || 'browse';
 
@@ -42,11 +53,124 @@ var Service = {
                 }
             }
 
-            return models.Reporting.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Reporting));
+            if (params.livrable === 'true') {
+                let paFilter = params.filter.find(f => f.property === 'plan_actions')
+                if (paFilter) {
+                    filteredPA = paFilter.value
+
+                    if (filteredPA === '2023' || filteredPA === '2024') {
+                        paFilter.operator = 'in'
+                        paFilter.value = ['2023', '2024']
+                    }
+                }
+            }
+
+            return models.Reporting.scope(qScope).findAndCountAll(helpers.sequelizify(params, models.Reporting, { raw: true }));
         }).then(function (result) {
+            let rows = result.rows
+
+            // handle mechanizm of assainissement of PA 2023
+            if (params.livrable === 'true' && user.role <= 1) {
+                const pa24report = []
+
+                rows = rows.map(function (r) {
+                    if (r.plan_actions !== '2023') return r
+                    //if (![6, 21, 22, 24, 46, 52].includes(r.province_code)) return r
+
+                    let nbre_reportees = r.nbre_etudes_non_lancees + r.nbre_etudes_lancees + r.nbre_etudes_achevees + r.nbre_marches_lances
+                    let adjuge_a_reporter = 0
+
+                    if (r.nbre_marches_adjuges > 0) {
+                        // PP dont 100% UP dispose des crédits
+                        if (![69, 60, 63].includes(r.province_code)) {
+                            if (r.province_code === 21) {
+                                if (r.nbre_marches_lances < 3) adjuge_a_reporter = Math.min(3 - r.nbre_marches_lances, r.nbre_marches_adjuges)   
+                            } else {
+                                adjuge_a_reporter = r.nbre_marches_adjuges
+                            }
+                        }
+
+                        nbre_reportees += adjuge_a_reporter
+                    }
+
+                    if (!nbre_reportees) return r;
+
+                    // all
+                    if (r.nbre_programmees === nbre_reportees) {
+                        r.plan_actions = '2024'
+
+                        let i = 6;
+                        for(; i > 0; i--) {
+                            r['prevision_mois' + i] = 0
+                        }
+
+                        r.prevision_mois7 = nbre_reportees
+
+                    } else {
+                        let newR = {
+                            id: 800 + pa24report.length,
+                            plan_actions: '2024',
+                            fondation_partenaire: r.fondation_partenaire,
+                            province_code: r.province_code,
+                            nbre_programmees: nbre_reportees,
+                            nbre_etudes_non_lancees: r.nbre_etudes_non_lancees,
+                            nbre_etudes_lancees: r.nbre_etudes_lancees,
+                            nbre_etudes_achevees: r.nbre_etudes_achevees,
+                            nbre_marches_lances: r.nbre_marches_lances,
+                            nbre_marches_adjuges: adjuge_a_reporter,
+                            date_situation: r.date_situation,
+                            updated: r.updated,
+                            prevision_mois7: nbre_reportees
+                        }
+
+                        r.nbre_programmees -= nbre_reportees
+                        r.nbre_etudes_non_lancees = 0
+                        r.nbre_etudes_lancees = 0
+                        r.nbre_etudes_achevees = 0
+                        r.nbre_marches_lances = 0
+                        r.nbre_marches_adjuges -= adjuge_a_reporter
+
+                        let i = 6;
+                        let restant = nbre_reportees
+                        for(; i > 0; i--) {
+                            if (r['prevision_mois' + i] > 0) {
+                                let a_deduire = Math.min(r['prevision_mois' + i], restant)
+                                restant -= a_deduire
+                                r['prevision_mois' + i] -= a_deduire
+                            }
+
+                            if (!restant) break
+                        }
+
+                        if (r.province_code === 52) {
+                            newR.nbre_programmees_t1 = Math.min(r.nbre_programmees_t1, nbre_reportees)
+                            newR.nbre_programmees_amg = nbre_reportees - newR.nbre_programmees_t1
+                            newR.nbre_salles = nbre_reportees
+
+                            r.nbre_programmees_t1 -= newR.nbre_programmees_t1
+                            r.nbre_programmees_amg -=  newR.nbre_programmees_amg
+                            r.nbre_salles -= nbre_reportees
+                        } else {
+                            r.nbre_programmees_t1 -= nbre_reportees
+                            r.nbre_salles -= nbre_reportees
+
+                            newR.nbre_programmees_t1 = nbre_reportees
+                            newR.nbre_salles = nbre_reportees
+                        }
+
+                        pa24report.push(newR)
+                    }
+        
+                    return r
+                })
+
+                rows = [...rows, ...pa24report]
+                if (filteredPA) rows = rows.filter(r => r.plan_actions === filteredPA)
+            }
+
             callback(null, {
-                total: result.count,
-                data: result.rows,
+                total: rows.length,
+                data: rows,
                 lastupdated: new Date()
             });
         }).catch(function (err) {

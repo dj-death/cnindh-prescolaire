@@ -44,6 +44,7 @@ module.exports = function (sequelize, DataTypes) {
         prevision_mois4: { type: Sequelize.INTEGER },
         prevision_mois5: { type: Sequelize.INTEGER },
         prevision_mois6: { type: Sequelize.INTEGER },
+        prevision_mois7: { type: Sequelize.INTEGER },
 
         engag_ouv_baseline: { type: Sequelize.INTEGER },
         engag_ouv_dec22: { type: Sequelize.INTEGER },
