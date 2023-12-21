@@ -987,7 +987,7 @@ var Helpers = {
             query.limit = params.limit;
         }
 
-        query.raw = true
+        //query.raw = true
 
         return query;
     },

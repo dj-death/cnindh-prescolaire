@@ -38,7 +38,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Model.associate = function (models) {
-        Model.belongsTo(models.Delegation, { as: 'delegation' });
+        Model.belongsTo(models.Delegation, { as: 'delegation'});
 
         Model.addScope('browse', {
             attributes: {
