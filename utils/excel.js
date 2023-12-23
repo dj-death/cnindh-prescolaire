@@ -28,7 +28,7 @@ const columns = [
   'saison_2020_2021_total_filles', 'saison_2020_2021_total_garcons',
   'dispose_convention_signee', 'est_livree', 'est_ouverte', 'est_programmee', 'est_resiliee', 'est_ouverte_fp',
   'fp_id',
-  
+
   'saison_2021_2022_inscrits_primaire_total', 'saison_2021_2022_inscrits_primaire_filles', 'saison_2021_2022_inscrits_primaire_garcons',
   'saison_2021_2022_ms_passe_gs', 'saison_2021_2022_ms_reinscrit_ms', 'saison_2021_2022_ms_passe_primaire', 'saison_2021_2022_gs_primaire',
   'saison_2021_2022_gs_refait_gs', 'saison_2021_2022_nbre_arret_scolarite',
@@ -44,7 +44,7 @@ const columns = [
   'saison_2022_2023_inscrits_primaire_total', 'saison_2022_2023_inscrits_primaire_filles',
   'saison_2022_2023_inscrits_primaire_garcons', 'saison_2022_2023_ms_passe_gs', 'saison_2022_2023_ms_reinscrit_ms',
   'saison_2022_2023_ms_passe_primaire', 'saison_2022_2023_gs_primaire', 'saison_2022_2023_gs_refait_gs',
-  'saison_2022_2023_nbre_arret_scolarite',  'saison_2023_2024_moyenne_section_filles',
+  'saison_2022_2023_nbre_arret_scolarite', 'saison_2023_2024_moyenne_section_filles',
   'saison_2023_2024_moyenne_section_garcons', 'saison_2023_2024_total_moyenne_section',
   'saison_2023_2024_grande_section_filles', 'saison_2023_2024_grande_section_garcons',
   'saison_2023_2024_total_grande_section', 'saison_2023_2024_total_global', 'saison_2023_2024_total_filles',
@@ -154,43 +154,43 @@ const fzMapping = {
 
 const alhaouzUPReportees2023 = [
   '25625',
-'25627',
-'25628',
-'25656',
-'25657',
-'25629',
-'39276',
-'39213',
-'24630',
-'24627',
-'24628',
-'25615',
-'25616',
-'25617',
-'25676',
-'25677',
-'25678',
-'25679',
-'25680',
-'25681',
-'25682',
-'25683',
-'25684',
-'25685',
-'25675',
-'25619',
-'25622',
-'25623',
-'25686',
-'25687',
-'25688',
-'25689',
-'25690',
-'25691',
-'25692',
-'25728',
-'25693',
-'26056'
+  '25627',
+  '25628',
+  '25656',
+  '25657',
+  '25629',
+  '39276',
+  '39213',
+  '24630',
+  '24627',
+  '24628',
+  '25615',
+  '25616',
+  '25617',
+  '25676',
+  '25677',
+  '25678',
+  '25679',
+  '25680',
+  '25681',
+  '25682',
+  '25683',
+  '25684',
+  '25685',
+  '25675',
+  '25619',
+  '25622',
+  '25623',
+  '25686',
+  '25687',
+  '25688',
+  '25689',
+  '25690',
+  '25691',
+  '25692',
+  '25728',
+  '25693',
+  '26056'
 ]
 
 const formatCell = function (val) {
@@ -214,7 +214,7 @@ const hideUncompleteFields = function (titles, fields) {
   var check = fields.map(function (f) {
     return titles.includes(f) ? 1 : 0;
   })
-  
+
   if (check > 0 && check < fields.length) {
     titles = titles.filter(function (t) {
       if (fields.includes(t)) return false;
@@ -281,7 +281,7 @@ var ExcelUtils = {
       //if (i < 2) console.log(i, '-', values)
 
       // skip empty rows
-      let vals = values.filter(v => v !== null && typeof(v) !== 'undefined');
+      let vals = values.filter(v => v !== null && typeof (v) !== 'undefined');
       if (vals.length < 2 || [...new Set(vals)].length === 1) {
         ++continuousEmptyRows
 
@@ -400,11 +400,18 @@ var ExcelUtils = {
         }
       })
 
+      if (objRow.id) {
+        objRow.id = objRow.id.toLowerCase();
+      }
+      
       if (nature === 'FMPS') {
         if (!objRow.plan_actions) {
           objRow.plan_actions = worksheet.name
         }
       } else if (nature === 'FZ') {
+        objRow.fp_id = objRow.id //`${objRow.province_code}/${objRow.plan_actions}/${objRow.commune_code}/${helpers.nameSig(objRow.douar_quartier)}/${helpers.nameSig(objRow.intitule)}`; 
+        objRow.nombre_postes_total = objRow.nombre_educatrices_total
+
         if (!objRow.plan_actions && objRow.province) {
           const groups = objRow.province.match(/(\D+)[-\s]+(\d{4})/)
           const year = groups && groups[2]
@@ -421,22 +428,26 @@ var ExcelUtils = {
         const anneeMatch = objRow.plan_actions.match(/\d{4}/)
         if (anneeMatch && anneeMatch[0]) objRow.plan_actions = anneeMatch[0]
       }
-      
-      if (objRow.fp_id == '42375' && objRow.plan_actions == '2019') {
-        objRow.plan_actions = '2021'
-      } else if (alhaouzUPReportees2023.includes(objRow.fp_id.toString()) && objRow.plan_actions == '2022') { // al haouz
-        objRow.plan_actions = '2023'
-      } else if (objRow.fp_id == '10154' && objRow.plan_actions == '2021') { // boulemane
-        objRow.plan_actions = '2023'
-      }  else if (objRow.fp_id == '52737' && objRow.plan_actions == '2020') { // fahs
-        objRow.plan_actions = '2023'
+
+      const fp_id = objRow.fp_id && objRow.fp_id.toString();
+
+      if (fp_id) {
+        if (fp_id == '42375' && objRow.plan_actions == '2019') {
+          objRow.plan_actions = '2021'
+        } else if (alhaouzUPReportees2023.includes(fp_id) && objRow.plan_actions == '2022') { // al haouz
+          objRow.plan_actions = '2023'
+        } else if (fp_id == '10154' && objRow.plan_actions == '2021') { // boulemane
+          objRow.plan_actions = '2023'
+        } else if (fp_id == '52737' && objRow.plan_actions == '2020') { // fahs
+          objRow.plan_actions = '2023'
+        }
       }
 
       if (objRow.province && !provinces.includes(objRow.province)) {
         objRow.province = helpers.closestEntry(objRow.province, provinces, true, true);
       }
 
-      if (objRow.province) objRow.province_code = decoupage.find(rec => rec.label ===  objRow.province).value;
+      if (objRow.province) objRow.province_code = decoupage.find(rec => rec.label === objRow.province).value;
       if (!objRow.province_code) {
         console.log('no province', objRow);
         ++criticalErrorsCount;
@@ -444,7 +455,7 @@ var ExcelUtils = {
 
       if (criticalErrorsCount > 3) throw new Error('Must finish for serious error !')
 
-      if (objRow.fp_id == '17147' && objRow.plan_actions == '2021' && objRow.province_code == 28) {
+      if (fp_id == '17147' && objRow.plan_actions == '2021' && objRow.province_code == 28) {
         return null;
       }
 
@@ -454,7 +465,7 @@ var ExcelUtils = {
       }
 
       if (!objRow.fondation_partenaire || !fondations.includes(objRow.fondation_partenaire)) {
-        var provinceMatch = decoupage.find(rec => rec.label ===  objRow.province);
+        var provinceMatch = decoupage.find(rec => rec.label === objRow.province);
         objRow.fondation_partenaire = provinceMatch ? provinceMatch.fp : nature;
       }
 
@@ -506,16 +517,6 @@ var ExcelUtils = {
       if (objRow.date_ouverture) objRow.date_ouverture = helpers.extractDate(objRow.date_ouverture)
 
       if (objRow.est_ouverte_fp == null) objRow.est_ouverte_fp = false;
-
-      if (objRow.id) {
-        objRow.id = objRow.id.toLowerCase();
-      }
-
-
-      if (nature === 'FZ') {
-        objRow.fp_id =  objRow.id //`${objRow.province_code}/${objRow.plan_actions}/${objRow.commune_code}/${helpers.nameSig(objRow.douar_quartier)}/${helpers.nameSig(objRow.intitule)}`; 
-        objRow.nombre_postes_total = objRow.nombre_educatrices_total
-      }
 
       if (objRow.est_ouverte_fp) {
         objRow.statut = 'Opérationnel';

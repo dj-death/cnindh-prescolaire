@@ -221,7 +221,7 @@ if (config.server.uploadEnabled) {
             //console.log(records)
             //return;
 
-            data.compareUnites(records).then(function (actions) {
+            data.compareUnites(records, req.body.nature).then(function (actions) {
                 //console.log(actions)
 
                 return data.upsertUnites(records, actions).then(function (rows) {

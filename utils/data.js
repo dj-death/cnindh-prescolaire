@@ -96,8 +96,9 @@ module.exports = {
         })
     },
 
-    compareUnites: function (records) {
+    compareUnites: function (records, author) {
         const etat_date_situation = records[0].date_situation;
+    
 
         return models.Unite.findAll({ where: { fp_code: records[0].fp_code, est_composee: false }, order: [['date_situation', 'DESC'], ['province_code', 'ASC'], ['plan_actions', 'ASC']], raw: true})
             .then(function (prevRecs) {
@@ -120,7 +121,7 @@ module.exports = {
                             type: 'Ajout UP',
                             pa,
                             object,
-                            author: instance.fp_code == 1 ? 'FZ' : 'FMPS'
+                            author
                         })
 
                         // fix issue of upserting undefined
@@ -129,8 +130,8 @@ module.exports = {
                         }
 
                     } else {
-                        if (etat_date_situation - match.date_situation > 24 * 60 * 3600) {
-                            console.log('situation ancienne');
+                        if (etat_date_situation < match.date_situation) {
+                            console.log('situation ancienne', etat_date_situation, match.date_situation);
                         }
 
                         // fix issue of upserting undefined
@@ -181,13 +182,13 @@ module.exports = {
                                 pa,
                                 object,
                                 subject: `<ul>${changes.join('')}</ul>`,
-                                author: instance.fp_code == 1 ? 'FZ' : 'FMPS'
+                                author
                             })
                         }
                     }
                 }
 
-                const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id) && r.date_situation <= etat_date_situation && helpers.compare(r.date_situation, last_situation))
+                const deleted = prevRecs.filter(r => !maintained.includes(r.fp_id.toString()) && r.date_situation < etat_date_situation && helpers.compare(r.date_situation, last_situation))
 
                 let x = 0, dLen = deleted.length, d = null;
 
@@ -203,13 +204,13 @@ module.exports = {
                         type: 'Suppression UP',
                         object,
                         pa,
-                        author: d.fp_code == 1 ? 'FZ' : 'FMPS',
+                        author,
                         object_id: d.id
                     })
                 }
 
                 const unmaintainedIds = deleted.map(u => u.id)
-                console.log('!!! unmaintainedIds: ', unmaintainedIds)
+                console.log('!!! unmaintainedIds: ', unmaintainedIds.length)
                 models.Unite.update({ est_ouverte_fp: false }, {
                     where: {
                         id: {
@@ -275,13 +276,11 @@ module.exports = {
                         message += '</ol>';
                     }
 
-                    const fp = actions[0].fp_code === 1 ? 'FZ' : 'FMPS';
-
                     actionsConsolidated.push({
                         type: 2,
-                        object: `Etat ${fp} ${helpers.formatDate(etat_date_situation)}`,
+                        object: `Etat ${author} ${helpers.formatDate(etat_date_situation)}`,
                         subject: message,
-                        author: fp
+                        author
                     })
                 } 
 
