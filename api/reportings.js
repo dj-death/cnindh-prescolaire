@@ -82,7 +82,7 @@ var Service = {
 
                     if (r.nbre_marches_adjuges > 0) {
                         // PP dont 100% UP dispose des crédits
-                        if (![69, 60, 63].includes(r.province_code)) {
+                        if (![46, 69, 60, 63, 66].includes(r.province_code)) {
                             if (r.province_code === 21) {
                                 if (r.nbre_marches_lances < 3) adjuge_a_reporter = Math.min(3 - r.nbre_marches_lances, r.nbre_marches_adjuges)   
                             } else {
