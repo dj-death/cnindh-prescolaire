@@ -396,6 +396,7 @@ module.exports = function (sequelize, DataTypes) {
                 'saison_2022_2023_ms_passe_primaire', 'saison_2022_2023_gs_primaire', 'saison_2022_2023_gs_refait_gs', 'saison_2022_2023_nbre_arret_scolarite',
 
                 'trans_fiche_completee', 'trans_situation_financiere_regularisee', 'trans_retenue_phase1',
+                'trans_retenue_phase2', 'trans_phase2_fiche_completee', 'trans_phase2_situation_financiere_regularisee',
                 'comments', 'statut',
                 
                 [sequelize.literal('(SELECT MAX(tranche_no) FROM Delegations WHERE Delegations.id IN (SELECT delegation_id FROM DelegationUnites WHERE DelegationUnites.unite_id = Unite.id))'), 'last_tranche'],
