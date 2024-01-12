@@ -101,6 +101,7 @@ var Service = {
             const notAllowedFields = ['id', 'created', 'fp_id', /*'est_programmee_pp',*/ 'est_ouverte_bilan2022'];
             const updatedFields = Object.keys(params[0]).filter(f => !notAllowedFields.includes(f));
 
+
             const updatedRows = params.map(function (item) {
                 /*if (helpers.checkModifyAuthorization(user, row, 4) === false) {
                     callback(new Error('Non autorisé'));
@@ -111,7 +112,7 @@ var Service = {
                 
                 if (match) {
                     item['fp_id'] = match['fp_id'];
-                    item['est_ouverte'] = match['est_ouverte'];
+                    if (match['est_ouverte'] == undefined) item['est_ouverte'] = match['est_ouverte'];      
                 }
 
                 return item;
