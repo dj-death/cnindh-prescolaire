@@ -96,7 +96,7 @@ var Service = {
                 });
             }
 
-            return models.Unite.findAll({ where: { id: ids }, attributes: ['id', 'fp_id', 'est_ouverte'], raw: true });
+            return models.Unite.findAll({ where: { id: ids }, attributes: ['id', 'fp_id'/*, 'est_ouverte'*/], raw: true });
         }).then(function (rows) {
             const notAllowedFields = ['id', 'created', 'fp_id', /*'est_programmee_pp',*/ 'est_ouverte_bilan2022'];
             const updatedFields = Object.keys(params[0]).filter(f => !notAllowedFields.includes(f));
@@ -112,7 +112,7 @@ var Service = {
                 
                 if (match) {
                     item['fp_id'] = match['fp_id'];
-                    if (match['est_ouverte'] == undefined) item['est_ouverte'] = match['est_ouverte'];      
+                    //if (match['est_ouverte'] == undefined) item['est_ouverte'] = match['est_ouverte'];      
                 }
 
                 return item;

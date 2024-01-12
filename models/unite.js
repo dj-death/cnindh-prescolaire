@@ -195,7 +195,7 @@ module.exports = function (sequelize, DataTypes) {
         est_programmee: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_programmee_pp: { type: Sequelize.BOOLEAN, defaultValue: true },
         est_livree: { type: Sequelize.BOOLEAN, defaultValue: true },
-        est_ouverte: { type: Sequelize.BOOLEAN, allowNull: false },
+        est_ouverte: { type: Sequelize.BOOLEAN, allowNull: true },
         est_ouverte_bilan2022: { type: Sequelize.BOOLEAN, allowNull: true },
         est_ouverte_fp: { type: Sequelize.BOOLEAN, allowNull: true },
         est_resiliee: { type: Sequelize.BOOLEAN, defaultValue: false },
