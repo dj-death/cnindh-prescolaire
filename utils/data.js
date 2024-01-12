@@ -145,7 +145,7 @@ module.exports = {
                         maintained.push(instance.fp_id.toString())
 
                         for (const [key, value] of Object.entries(match)) {
-                            if (['id', 'created', 'updated', 'date_situation', 'est_livree', 'dispose_convention_signee', 'est_programmee'].includes(key) || typeof(instance[key]) === 'undefined') continue
+                            if (['id', 'created', 'updated', 'date_situation', 'est_livree', 'dispose_convention_signee', 'est_programmee', 'operationnalite'].includes(key) || typeof(instance[key]) === 'undefined') continue
 
                             if (!helpers.compare(instance[key], value)) {
                                 if (key === 'intitule') {

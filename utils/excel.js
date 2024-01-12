@@ -518,6 +518,10 @@ var ExcelUtils = {
 
       if (objRow.est_ouverte_fp == null) objRow.est_ouverte_fp = false;
 
+      if (objRow.est_ouverte_fp == true && (objRow.date_ouverture - new Date()) > 10*24*60*60*1000) {
+        objRow.est_ouverte_fp = false
+      }
+
       if (objRow.est_ouverte_fp) {
         objRow.statut = 'Opérationnel';
         objRow.tx_avancement_physique = 100;
