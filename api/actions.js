@@ -32,13 +32,15 @@ var Service = {
 
             var typeFilter = params.filter.find(filt => filt.property === 'type')
 
-            if (typeFilter && typeFilter.value == 1) {
+            if (userRole > 0 && typeFilter && typeFilter.value == 1) {
                 params.filter.push({
                     property: 'person_id',
                     operator: '!=',
                     value: '431d69a9-7262-4ae1-bd01-9cff3f8515eb'
                 })
             }
+
+            console.log(params)
 
             return models.Action.scope(qScope).findAndCountAll(
                 helpers.sequelizify(params, models.Action));

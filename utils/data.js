@@ -105,6 +105,7 @@ module.exports = {
                 const last_situation = prevRecs.find(r => r.plan_actions === '2019').date_situation
                 let i = 0, len = records.length, maintained = [], instance, match, pa, object;
                 const arrets = [];
+                const nouv_ouvertures = [];
 
                 const actions = [];
 
@@ -170,6 +171,12 @@ module.exports = {
                                             })
                                         }
                                         
+                                    } else if (key === 'est_ouverte') {
+                                        if (value == false && instance[key] === true) {
+                                            nouv_ouvertures.push({
+                                                pa, object
+                                            })
+                                        }
                                     }
                                 }
 
@@ -228,7 +235,16 @@ module.exports = {
                     const modifs = actions.filter(a => a.type === 'Modification UP');
                     const suppressions = actions.filter(a => a.type === 'Suppression UP');
 
-                    let message = `<b>Arrêts: ${arrets.length}; Modifications: ${modifs.length}; Ajouts: ${ajouts.length}; Suppressions: ${suppressions.length};</b><hr/>`
+                    let message = `<b>Ouvertures: ${nouv_ouvertures.length}; Arrêts: ${arrets.length}; Modifications: ${modifs.length}; Ajouts: ${ajouts.length}; Suppressions: ${suppressions.length};</b><hr/>`
+
+                    if (nouv_ouvertures.length) {
+                        message += '<ul>Ouvertures:';
+                        
+                        nouv_ouvertures.forEach(function (up, idx) {
+                            message += `<li>${up.pa} / ${up.object}</li>`;
+                        })
+                        message += '</ul>';
+                    }
 
                     if (arrets.length) {
                         message += '<ul>Arrêts:';

@@ -228,10 +228,11 @@ var Service = {
                             return;
                         }
 
-                        if (user.get('role') > 0) {
+                        if (user.get('role') > 1) {
                             _param.modified_by = user.get('title') || user.get('username');
-                            _param.date_situation = new Date();
                         }
+
+                        _param.date_situation = new Date();
 
                         return row/*.cache()*/.update(_param);
                     }).then(function (row) {
