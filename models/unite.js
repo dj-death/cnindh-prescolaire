@@ -323,10 +323,14 @@ module.exports = function (sequelize, DataTypes) {
             type: Sequelize.TEXT,
             allowNull: true,
             get: function () {
-                return JSON.parse(this.getDataValue('images'));
+                var img = this.getDataValue('images');
+                if (!img) return null;
+
+                return  JSON.parse(img);
             },
             set: function (value) {
-                return this.setDataValue('images', JSON.stringify(value));
+                if (!value) return null;
+                return this.setDataValue('images', value);
             }
         },
 
