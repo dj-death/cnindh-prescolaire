@@ -32,11 +32,13 @@ module.exports = function (sequelize, DataTypes) {
         nbre_encours_inscription: { type: Sequelize.INTEGER },
         nbre_encours_equip: { type: Sequelize.INTEGER },
         nbre_ouvertes: { type: Sequelize.INTEGER },
-        nbre_ouvertes_cn0: { type: Sequelize.INTEGER },
         nbre_en_arret_fct: { type: Sequelize.INTEGER },
         nbre_livrees: { type: Sequelize.INTEGER },
         nbre_restantes: { type: Sequelize.INTEGER },
 
+        nbre_ouvertes_phantomes: { type: Sequelize.INTEGER },
+        salles_ouvertes_phantomes: { type: Sequelize.INTEGER },
+        
         prevision_mois0: { type: Sequelize.INTEGER },
         prevision_mois1: { type: Sequelize.INTEGER },
         prevision_mois2: { type: Sequelize.INTEGER },
@@ -201,8 +203,8 @@ module.exports = function (sequelize, DataTypes) {
         });
 
         const commonAttrs = [
-            [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_cn'], //Unites.est_resiliee = FALSE AND
-            [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'salles_ouvertes_cn'], //AND Unites.est_resiliee = FALSE 
+            [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_fp_valides'], //Unites.est_resiliee = FALSE AND
+            [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte = TRUE AND Unites.est_programmee_pp = TRUE)'), 'salles_ouvertes_fp_valides'], //AND Unites.est_resiliee = FALSE 
             [sequelize.literal('(SELECT COUNT(*) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_ouvertes_fp'], //Unites.est_resiliee = FALSE AND 
             [sequelize.literal('(SELECT SUM(nbre_salles) FROM Unites WHERE Unites.plan_actions = Reporting.plan_actions AND Unites.province_code = Reporting.province_code AND Unites.est_ouverte_fp = TRUE AND Unites.est_programmee_pp = TRUE)'), 'nbre_salles_ouvertes_fp'], //AND Unites.est_resiliee = FALSE 
         ]
