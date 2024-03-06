@@ -434,9 +434,9 @@ var ExcelUtils = {
       if (fp_id) {
         if (fp_id == '42375' && objRow.plan_actions == '2019') {
           objRow.plan_actions = '2021'
-        } /* else if (alhaouzUPReportees2023.includes(fp_id) && objRow.plan_actions == '2022') { // al haouz
+        } else if (alhaouzUPReportees2023.includes(fp_id.toString()) && objRow.plan_actions == '2022') { // al haouz
           objRow.plan_actions = '2023'
-        }*/ else if (fp_id == '10154' && objRow.plan_actions == '2021') { // boulemane
+        } else if (fp_id == '10154' && objRow.plan_actions == '2021') { // boulemane
           objRow.plan_actions = '2023'
         } else if (fp_id == '52737' && objRow.plan_actions == '2020') { // fahs
           objRow.plan_actions = '2023'
