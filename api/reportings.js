@@ -99,12 +99,12 @@ var Service = {
                     if (r.nbre_programmees === nbre_reportees) {
                         r.plan_actions = '2024'
 
-                        let i = 6;
-                        for(; i > 0; i--) {
+                        let i = 1;
+                        for(; i <= 7; i++) {
                             r['prevision_mois' + i] = 0
                         }
 
-                        r.prevision_mois7 = nbre_reportees
+                        r.prevision_mois0 = nbre_reportees
 
                     } else {
                         let newR = {
@@ -120,7 +120,7 @@ var Service = {
                             nbre_marches_adjuges: adjuge_a_reporter,
                             date_situation: r.date_situation,
                             updated: r.updated,
-                            prevision_mois7: nbre_reportees
+                            prevision_mois0: nbre_reportees
                         }
 
                         r.nbre_programmees -= nbre_reportees
@@ -130,9 +130,10 @@ var Service = {
                         r.nbre_marches_lances = 0
                         r.nbre_marches_adjuges -= adjuge_a_reporter
 
-                        let i = 6;
+                        let i = 7;
                         let restant = nbre_reportees
-                        for(; i > 0; i--) {
+
+                        for(; i >= 0; i--) {
                             if (r['prevision_mois' + i] > 0) {
                                 let a_deduire = Math.min(r['prevision_mois' + i], restant)
                                 restant -= a_deduire
