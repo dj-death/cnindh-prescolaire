@@ -75,7 +75,7 @@ var Service = {
 
                 rows = rows.map(function (r) {
                     if (r.plan_actions !== '2023') return r
-                    //if (![6, 21, 22, 24, 46, 52].includes(r.province_code)) return r
+                    if ([60].includes(r.province_code)) return r
 
                     let nbre_reportees = r.nbre_etudes_non_lancees + r.nbre_etudes_lancees + r.nbre_etudes_achevees + r.nbre_marches_lances
                     let adjuge_a_reporter = 0
