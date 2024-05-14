@@ -338,14 +338,8 @@ var ExcelUtils = {
 
     if (headers.length === 0) {
       // assume first line is header
-      if (nature === 'FMPS') {
-        headers = allRows.splice(0, 1)
-        lines = allRows
-      } else if (nature === 'FZ') {
-        headers = allRows.splice(1, 2)
-        lines = allRows
-
-      }
+      headers = allRows.splice(0, 1)
+      lines = allRows
     }
 
     //console.table(headers)

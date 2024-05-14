@@ -13,7 +13,8 @@ module.exports = function (sequelize, DataTypes) {
             primaryKey: true,
             validate: {
                 isUUID: 4
-            }
+            },
+            searchable: true
         },
 
         plan_actions: { type: Sequelize.STRING, searchable: true },
