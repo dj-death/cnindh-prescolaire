@@ -4,6 +4,7 @@ var helpers = require('../utils/helpers.js');
 var session = require('../utils/session.js');
 var errors = require('../utils/errors.js');
 var models = require('../models');
+const { property } = require('lodash');
 
 
 var Service = {
@@ -20,6 +21,11 @@ var Service = {
             }
 
             params.filter = accessFilters;
+
+            params.filter.push({
+                property: 'est_programmee_pp',
+                value: true
+            })
 
             let qScope = params.scope || 'browse';
 
