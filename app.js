@@ -20,6 +20,7 @@ var Q = require('q');
 var logger = require("./utils/logger");
 
 var models = require('./models');
+const processRequest = require('request');
 
 require("console-stamp")(console);
 
@@ -61,7 +62,6 @@ default:
 }*/
 
 config.client.path = process.env.NODE_ENV === 'production' ? './front' : path.resolve(__dirname, config.client.path)
-console.log(path.resolve(__dirname, config.client.path))
 
 
 var app = express();
@@ -98,6 +98,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.resolve(__dirname, config.client.path)));
 
+app.use('/dpe', express.static(path.resolve(__dirname, './front_dpe')));
 
 // CORS
 if (config.cors && config.cors.enabled) {
@@ -135,6 +136,15 @@ if (process.env.DATABASE_URL) {
         }
     });
 }
+
+app.use('/dpe/api', function(req, res) {
+    console.log('here')
+    req.get({url: '/api', headers: req.headers});
+  
+    processRequest(req);
+    res.setHeader('Content-Type', 'application/json');
+    res.send('Req OK');
+  });
 
 var directApi = direct.initApi(config.direct);
 var directRouter = direct.initRouter(config.direct);
