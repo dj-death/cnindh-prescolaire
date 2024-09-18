@@ -191,6 +191,9 @@ app.get('/redirect', function (req, res) {
     res.redirect('/');
 });
 
+const validate = require('uuid-validate')
+
+
 if (config.server.uploadEnabled) {
     const multer = require('multer')
 
@@ -208,7 +211,7 @@ if (config.server.uploadEnabled) {
             const ids = records.map(rec => rec.fp_id);
             const unique = [...new Set(ids)].length;
 
-            //console.log('first row', records[records.length - 1]);
+            console.log('first row', records[records.length - 1]);
     
             if (typeof(records[0].id) === 'undefined' && unique !== ids.length) {            
                 const groupedByFPID = helpers.groupBy(records, 'fp_id');
@@ -226,6 +229,20 @@ if (config.server.uploadEnabled) {
                 });     
                 
                 return;
+            }
+
+            if (req.body.nature === 'FZ') {
+                console.log("check")
+                var errorMatch = records.filter(rec => !validate(rec.fp_id))
+
+                if (errorMatch != null) {
+                    res.json({
+                        success: false,
+                        message: `ID FP non valide !<br/><br/> Entrée ${errorMatch.intitule} / PA ${errorMatch.plan_actions} du ${errorMatch.region}`
+                    });     
+                    
+                    return;
+                }
             }
 
             //console.log(records)

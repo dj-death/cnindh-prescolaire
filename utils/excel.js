@@ -137,7 +137,7 @@ const fzMapping = {
   f: 'nombre_educatrices_femme',
   h: 'nombre_educatrices_homme',
 
-  total_enf: `saison_${curr_saison}_total_global`,
+  /*total_enf: `saison_${curr_saison}_total_global`,
   filles: `saison_${curr_saison}_total_filles`,
   garcons: `saison_${curr_saison}_total_garcons`,
   gs: `saison_${curr_saison}_total_grande_section`,
@@ -147,7 +147,7 @@ const fzMapping = {
   ms: `saison_${curr_saison}_total_moyenne_section`,
   ms_f: `saison_${curr_saison}_moyenne_section_filles`,
   ms_g: `saison_${curr_saison}_moyenne_section_garcons`,
-  ms_m: `saison_${curr_saison}_moyenne_section_garcons`,
+  ms_m: `saison_${curr_saison}_moyenne_section_garcons`,*/
 
   explication: 'fp_comments'
 }
@@ -543,10 +543,6 @@ var ExcelUtils = {
       delete objRow.province;
 
       objRow.date_situation = date_situation;
-
-      if (objRow.fp_id == '1769') {
-        console.log('ERRRRRR: ', objRow)
-      }
 
       return objRow
     }).filter(row => row && !!row.intitule)
