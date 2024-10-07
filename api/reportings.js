@@ -33,7 +33,7 @@ var Service = {
 
             params.filter = accessFilters;
 
-            if (user.role > 1 && [46, 69, 60, 63, 66].includes(r.province_code)) {
+            if (user.role > 1 && [46, 69, 60, 63, 66].includes(user.province_code)) {
                 params.filter.push({
                     property: 'plan_actions',
                     operator: '!=',
