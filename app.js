@@ -123,6 +123,10 @@ if (process.env.HEROKU) {
     config.direct.server = "cnindh-prescolaire.cyclic.app";
     config.direct.port = 80;
     config.direct.protocol = "https";
+} else {
+    config.direct.server = "cnindh.glitch.me";
+    config.direct.port = 80;
+    config.direct.protocol = "https";
 }
 
 if (process.env.DATABASE_URL) {
