@@ -115,7 +115,11 @@ if (process.env.NODE_ENV !== 'production') {
     config.direct.cacheAPI = false;
 }
 
-if (process.env.HEROKU) {
+config.direct.server = "cnindh.onrender.com";
+config.direct.port = 80;
+config.direct.protocol = "https";
+
+/*if (process.env.HEROKU) {
     config.direct.server = "cnindh-prescolaire.herokuapp.com";
     config.direct.port = 80;
     config.direct.protocol = "https";
@@ -127,7 +131,7 @@ if (process.env.HEROKU) {
     config.direct.server = "cnindh.glitch.me";
     config.direct.port = 80;
     config.direct.protocol = "https";
-}
+}*/
 
 if (process.env.DATABASE_URL) {
     config.database = Object.assign(config.database, {

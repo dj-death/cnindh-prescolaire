@@ -37,10 +37,10 @@
 
   "database": {
     "dialect": "postgres",
-    "host": "clhtb6lu92mj2.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
-    "username": "ufmqqnsv19ljq",
-    "password": "p3a0593dc9fd5d80e29e702a7609e193088381ec03357788d963e0bdf7bb6e3ab",
-    "database": "db4ff58j1tlas5",
+    "host": "dpg-cup04fqj1k6c739e9gbg-a.frankfurt-postgres.render.com",
+    "username": "cn_db_zjbu_user",
+    "password": "X1hzzOu2LYMU0CgYG39XZsI5iEubSb6c",
+    "database": "cn_db_zjbu",
     "port": 5432,
     "operatorsAliases": false,
     "quoteIdentifiers": false,
