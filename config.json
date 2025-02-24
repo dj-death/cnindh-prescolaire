@@ -35,7 +35,44 @@
     "responseHelper": true
   },
 
+
+
   "database": {
+    "dialect": "postgres",
+    "host": "cah8ha8ra8h8i7.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com",
+    "username": "ue2ulsgse19atj",
+    "password": "p15b4e5315925c9113510eb11cdfde874c06692aa3146a384c360f13ecd0c7b40",
+    "database": "da4ql9sgt03odl",
+    "port": 5432,
+    "operatorsAliases": false,
+    "quoteIdentifiers": false,
+    "underscored": false,
+    "ssl": false,
+
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false,
+        "cert": ""
+      }
+    },
+
+    "pool": {
+      "max": 10,
+      "min": 0,
+      "idle": 10000
+    },
+
+    "logging": false,
+    "define": {
+      "createdAt": "created",
+      "updatedAt": "updated",
+      "deletedAt": "deleted",
+      "underscored": true
+    }
+  },
+
+  "database2": {
     "dialect": "postgres",
     "host": "dpg-cup04fqj1k6c739e9gbg-a.frankfurt-postgres.render.com",
     "username": "cn_db_zjbu_user",
